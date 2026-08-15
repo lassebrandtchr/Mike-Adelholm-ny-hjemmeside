@@ -1,0 +1,15 @@
+:root{
+  /* Long, soft, warm-tinted, heavily negative-spread. Never neutral black. */
+  --sh-dock:0 12px 30px -20px rgba(23,19,14,.5);
+  --sh-card:0 30px 60px -40px rgba(23,19,14,.3);
+  --sh-card-hover:0 30px 54px -32px rgba(23,19,14,.38);
+  --sh-row-hover:0 22px 44px -30px rgba(23,19,14,.4);
+  --sh-panel:0 30px 64px -42px rgba(23,19,14,.3);
+  --sh-media:0 30px 60px -34px rgba(23,19,14,.42);
+  --sh-float:0 22px 42px -18px rgba(0,0,0,.7);
+  --sh-medal:0 46px 90px -26px rgba(0,0,0,.72),0 0 70px -10px rgba(217,154,43,.4),inset 0 2px 0 rgba(255,255,255,.6);
+  --sh-gold:0 16px 32px -14px rgba(217,154,43,.7);
+  --sh-gold-hover:0 24px 40px -14px rgba(217,154,43,.85);
+  --sh-gold-pill:0 8px 18px -8px rgba(217,154,43,.95);
+  --ring-focus:0 0 0 3px rgba(217,154,43,.18);
+}

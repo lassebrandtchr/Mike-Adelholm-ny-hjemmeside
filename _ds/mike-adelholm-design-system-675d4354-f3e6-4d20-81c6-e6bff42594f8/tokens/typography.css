@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+
+:root{
+  /* ═══ Skrift ═══
+     Archivo — display/labels. Altid VERSALER, tung vægt, stramt spor.
+     Hanken Grotesk — brødtekst. Aldrig versaler, aldrig tungere end 600. */
+  --font-display:'Archivo',system-ui,sans-serif;
+  --font-body:'Hanken Grotesk',system-ui,sans-serif;
+
+  --fw-body:400; /* @kind font */
+  --fw-body-med:500; /* @kind font */
+  --fw-body-semi:600; /* @kind font */
+  --fw-display:700; /* @kind font */
+  --fw-display-bold:800; /* @kind font */
+  --fw-display-black:900; /* @kind font */
+
+  /* ── Skala (mobil-først, som på landingssiden) ── */
+  --fs-hero:43px;      --lh-hero:1.02; /* @kind font */   --ls-hero:-.015em;
+  --fs-h2:32px;        --lh-h2:1.08; /* @kind font */     --ls-h2:-.01em;
+  --fs-h2-sm:26px;
+  --fs-h3:19px;
+  --fs-lead:17px;      --lh-lead:1.6; /* @kind font */
+  --fs-body:15.5px;    --lh-body:1.6; /* @kind font */
+  --fs-body-sm:14.5px; --lh-body-sm:1.5; /* @kind font */
+  --fs-chip:12px;
+  --fs-eyebrow:11.5px; --ls-eyebrow:.30em;
+  --fs-badge:11px;     --ls-badge:.12em;
+  --ls-label:.26em;
+  --ls-cta:.05em;
+
+  /* ── Desktop-opskalering ── */
+  --fs-hero-lg:64px;
+  --fs-h2-lg:42px;
+}
+
+@media (min-width:900px){
+  :root{ --fs-hero:var(--fs-hero-lg); --fs-h2:var(--fs-h2-lg); }
+}
+
+:root{
+  /* ── Aliaser til eksisterende kort/komponenter ── */
+  --font-ui:var(--font-body);
+  --tracking-heading:var(--ls-h2);
+  --tracking-display:var(--ls-hero);
+  --leading-heading:var(--lh-h2);
+  --display-1:var(--fs-hero);
+  --display-2:var(--fs-h2);
+  --body-lg:var(--fs-lead);
+  --body-md:var(--fs-body);
+  --body-sm:var(--fs-body-sm);
+}

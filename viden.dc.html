@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viden — smerte, belastning og træning forklaret enkelt | Mike Adelholm</title>
+<meta name="description" content="Korte, brugbare forklaringer om smerte, belastning, restitution og progression. Skrevet i almindeligt dansk, uden fagsprog og uden løfter.">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
+<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
+<script src="site.js"></script>
+<style>
+  html,body{background:#080706;}
+  a{color:#e0a877;}
+  a:hover{color:#f3c79b;}
+  @keyframes maShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
+  @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
+  @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
+
+<dc-import name="SiteNav" current="viden" hint-size="100%,0px"></dc-import>
+
+<main id="hovedindhold" style="animation:maPageIn .5s cubic-bezier(.16,1,.3,1) both;">
+
+  <section data-screen-label="Banner" style="position:relative;overflow:hidden;background:#000;padding:clamp(112px,13vw,158px) 0 clamp(44px,5.5vw,66px);">
+    <div data-ambient="" aria-hidden="true" style="position:absolute;top:-210px;right:-130px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.24),transparent 66%);pointer-events:none;animation:maPulse 12s ease-in-out infinite;"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
+      <div data-reveal="0" style="max-width:740px;">
+        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#6f6353;">
+          <a href="index.html" style="color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;">Forside</a> <span aria-hidden="true">/</span> Viden
+        </nav>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <span aria-hidden="true" style="width:34px;height:1.5px;background:linear-gradient(90deg,#cf8a4f,rgba(207,138,79,0));"></span>
+          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#c79064;">Viden</span>
+        </div>
+        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,4.8vw,60px);line-height:1.04;letter-spacing:-.018em;text-transform:uppercase;color:#f3ead9;margin:0 0 22px;">Forklaret <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:maShimmer 8s linear infinite;">i almindeligt dansk.</span></h1>
+        <p style="margin:0;max-width:620px;font-size:clamp(16.5px,1.4vw,18.5px);line-height:1.62;color:#b6a791;">Fire ting, det hjælper de fleste at få styr på, før de begynder at træne igen. Ingen fagudtryk, ingen skræmmekampagne — bare det, der er værd at vide.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Emner" style="padding:clamp(40px,5vw,64px) 0 clamp(56px,7vw,88px);">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:clamp(20px,2.6vw,30px);">
+
+      <article data-reveal="0" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+        <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Smerte</span>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Smerte er ikke altid lig med skade</h2>
+        <p style="margin:0 0 14px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Smerte er kroppens alarm, ikke et måleinstrument. Alarmen kan gå i gang, fordi noget er blevet belastet mere, end det er vant til — uden at der er sket en skade. Den kan også blive skruet op af søvnmangel, stress og bekymring for, hvad smerten betyder.</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">Det er derfor, vi ikke automatisk stopper al træning, når noget gør ondt. Vi kigger på, hvad der provokerer det, hvor meget der er i orden, og hvad du kan gøre imens.</p>
+      </article>
+
+      <article data-reveal="60" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+        <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Belastning</span>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Kroppen tilpasser sig det, du gør ved den</h2>
+        <p style="margin:0 0 20px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Væv bliver stærkere af at blive brugt, og svagere af ikke at blive brugt. Problemet opstår sjældent ved belastning i sig selv, men ved en stor forskel mellem det, kroppen er vant til, og det, du beder den om.</p>
+        <div style="padding:clamp(18px,2.2vw,26px);border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.14);">
+          <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Belastning kontra kapacitet</div>
+          <svg viewBox="0 0 420 200" role="img" aria-label="Diagram: når belastningen stiger langsomt sammen med kapaciteten, holder kroppen. Et pludseligt spring i belastning over kapaciteten er der, hvor generne typisk opstår." style="width:100%;height:auto;display:block;overflow:visible;">
+            <g stroke="rgba(224,168,124,.12)" stroke-width="1">
+              <line x1="12" y1="160" x2="410" y2="160"></line><line x1="12" y1="112" x2="410" y2="112"></line><line x1="12" y1="64" x2="410" y2="64"></line>
+            </g>
+            <path data-draw="1500" d="M12 150 C110 138 190 118 270 100 C330 88 370 80 410 74" fill="none" stroke="#cf8a4f" stroke-width="3" stroke-linecap="round"></path>
+            <path data-draw="1500" data-draw-delay="250" d="M12 156 C90 150 150 140 210 132 L250 130 L252 44 C300 46 350 44 410 40" fill="none" stroke="#7a5c44" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0"></path>
+            <g data-reveal="1100">
+              <circle cx="252" cy="60" r="5" fill="#0d0a07" stroke="#f3c79b" stroke-width="2"></circle>
+              <text x="262" y="34" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12.5" fill="#e0a877">For stort spring</text>
+            </g>
+            <g data-reveal="1200" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12.5" fill="#8c7e6b">
+              <text x="12" y="188">Tid</text>
+              <text x="410" y="188" text-anchor="end">Senere</text>
+            </g>
+          </svg>
+          <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:12px 20px;">
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:2.6px;border-radius:2px;background:#cf8a4f;"></span>Kapacitet</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:2.6px;border-radius:2px;background:#7a5c44;"></span>Belastning</span>
+          </div>
+          <p style="margin:14px 0 0;font-size:13.5px;line-height:1.6;color:#6f6353;">Forenklet illustration af et princip — ikke en kundecase.</p>
+        </div>
+      </article>
+
+      <article data-reveal="120" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+        <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Restitution</span>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Fremgangen sker mellem træningerne</h2>
+        <p style="margin:0 0 14px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Træningen er stimulus. Tilpasningen sker, når du sover, spiser og har det roligt. Derfor kan mere træning i en presset periode gøre resultatet dårligere, ikke bedre.</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">Når hverdagen er hård, er det som regel dosis, der skal justeres — ikke ambitionen.</p>
+      </article>
+
+      <article data-reveal="180" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+        <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Progression</span>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Lidt mere, lidt oftere — ikke alt på én gang</h2>
+        <p style="margin:0 0 14px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Progression er små tilføjelser: en gentagelse mere, lidt mere vægt, en bedre udførelse eller et sæt mere. Over tolv uger bliver de små tilføjelser til en tydelig forskel.</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">Læs mere om, hvordan det ser ud i praksis under <a href="styrke-performance.dc.html">styrke &amp; performance</a>.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section data-screen-label="Kommer" style="padding:0 0 clamp(56px,7vw,88px);">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
+      <div data-reveal="0" style="padding:clamp(24px,3vw,34px);border-radius:24px;background:rgba(255,255,255,.02);border:1px dashed rgba(224,168,124,.26);">
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);line-height:1.14;text-transform:uppercase;color:#f0e6d6;margin:0 0 12px;">Flere emner på vej</h2>
+        <p style="margin:0 0 20px;font-size:16px;line-height:1.65;color:#ab9c87;">Her kommer korte artikler om de spørgsmål, jeg oftest får. Skriv til mig, hvis der er noget, du gerne vil have forklaret.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <span style="padding:10px 15px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.16);font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:#a3937e;">[Indsæt emne]</span>
+          <span style="padding:10px 15px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.16);font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:#a3937e;">[Indsæt emne]</span>
+          <span style="padding:10px 15px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.16);font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:#a3937e;">[Indsæt emne]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="CTA" style="position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) 0;background:linear-gradient(180deg,#000,#080706);border-top:1px solid rgba(224,168,124,.1);">
+    <div data-ambient="" aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.2),transparent 64%);pointer-events:none;animation:maPulse 11s ease-in-out infinite;"></div>
+    <div data-reveal="0" style="position:relative;max-width:720px;margin:0 auto;padding:0 clamp(20px,4vw,32px);text-align:center;">
+      <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(24px,3.4vw,40px);line-height:1.06;letter-spacing:-.015em;text-transform:uppercase;color:#f3ead9;margin:0 0 18px;">Vil du have det oversat til din situation?</h2>
+      <p style="margin:0 auto 30px;max-width:500px;font-size:17px;line-height:1.62;color:#b6a791;">Det generelle er nemt at læse. Det svære er at vide, hvad det betyder for netop dig.</p>
+      <a href="kontakt.dc.html" style="display:inline-flex;align-items:center;gap:10px;padding:19px 28px;border-radius:16px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 16px 40px -12px rgba(196,127,71,.75),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Book en uforpligtende samtale<span style="font-size:17px;line-height:0;">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    if (window.MASite) window.MASite.init();
+    this.t = setTimeout(() => { if (window.MASite) window.MASite.init(); }, 500);
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

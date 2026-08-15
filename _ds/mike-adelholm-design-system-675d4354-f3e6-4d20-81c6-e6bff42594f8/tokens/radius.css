@@ -1,0 +1,8 @@
+:root{
+  --r-xs:9px; --r-sm:11px; --r-md:14px; --r-lg:16px; --r-xl:18px;
+  --r-2xl:22px; --r-3xl:24px; --r-4xl:26px; --r-5xl:28px; --r-6xl:30px;
+  --r-page:clamp(28px,5vw,52px); /* @kind radius */
+  --r-panel:clamp(28px,4vw,44px); /* @kind radius */
+  --r-pill:999px;
+  --r-round:50%;
+}

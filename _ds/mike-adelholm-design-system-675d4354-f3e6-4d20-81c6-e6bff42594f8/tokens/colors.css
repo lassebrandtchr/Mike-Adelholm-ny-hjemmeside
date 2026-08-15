@@ -1,0 +1,142 @@
+:root{
+  /* ═══ MIKE ADELHOLM — kernepalette, hentet 1:1 fra landingssiden ═══ */
+
+  /* ── Ground: sort → varm nærsort ── */
+  --ink-1000:#000000;      /* hero-baggrund, dybeste lag */
+  --ink-950:#080706;       /* sidens standardbaggrund */
+  --ink-900:#0b0907;
+  --ink-850:#0d0a07;       /* kortbund, nedre stop */
+  --ink-800:#16110c;
+  --ink-750:#1a140e;       /* kortbund, øvre stop */
+  --ink-700:#1c150e;
+  --ink-650:#1c1107;       /* tekst PÅ kobber */
+  --ink-600:#2a2018;
+
+  /* ── Kobber/bronze: mærkets metal ── */
+  --copper-700:#7a5c44;
+  --copper-600:#8c5429;
+  --copper-550:#a5612f;
+  --copper-500:#bd7a44;
+  --copper-450:#c07f4a;
+  --copper-400:#c47f47;
+  --copper-350:#c98049;
+  --copper-300:#cf8a4f;    /* PRIMÆR accent — prikker, glød, ikoner */
+  --copper-250:#c79064;    /* øjenbryns-labels */
+  --copper-200:#d99a63;
+  --copper-150:#e0a877;
+  --copper-100:#e3a877;
+  --copper-050:#eab784;
+
+  /* ── Champagne: metallets lyseste ende (gradient-højlys) ── */
+  --champagne-300:#e7b083;
+  --champagne-200:#f3c089;
+  --champagne-150:#f3c79b;
+  --champagne-100:#f5c693;
+  --champagne-050:#f7d8b4;
+
+  /* ── Bone: varm læsbar tekst på sort ── */
+  --bone-000:#f3ead9;      /* h1 */
+  --bone-050:#f1e7d7;      /* h2 */
+  --bone-100:#f0e6d6;
+  --bone-150:#ede3d4;      /* brødtekst-standard */
+  --bone-200:#ecdcc6;
+  --bone-250:#e8d4bf;
+  --bone-300:#e7dccb;
+  --bone-350:#e6cfb4;      /* badge-tekst */
+  --bone-400:#ddd0bd;
+  --bone-450:#d6c4ac;
+
+  /* ── Dæmpede toner (sekundær tekst på sort) ── */
+  --n-100:#cdb9a2;
+  --n-200:#c8b69e;
+  --n-300:#bcae99;
+  --n-350:#b6a791;         /* hero-underrubrik */
+  --n-400:#ab9c87;         /* kort-brødtekst */
+  --n-450:#a3937e;
+  --n-500:#9c8b78;
+  --n-550:#998a76;
+  --n-600:#8c7e6b;
+  --n-700:#7c6e5d;
+  --n-800:#6f6353;
+  --n-900:#5f5547;
+
+  /* ── Hårstreger: altid kobbertonede, aldrig grå ── */
+  --line-copper-10:rgba(224,168,124,.10);
+  --line-copper-16:rgba(224,168,124,.16);
+  --line-copper-18:rgba(224,168,124,.18);
+  --line-copper-22:rgba(224,168,124,.22);
+  --line-copper-30:rgba(224,168,124,.30);
+  --line-copper-34:rgba(224,168,124,.34);
+  --line-bone-035:rgba(255,255,255,.035);
+  --line-bone-06:rgba(255,255,255,.06);
+
+  /* ── Wash: hvid/kobber ved lav alpha (kortflader) ── */
+  --wash-bone-012:rgba(255,255,255,.012);
+  --wash-bone-03:rgba(255,255,255,.03);
+  --wash-bone-035:rgba(255,255,255,.035);
+  --wash-bone-05:rgba(255,255,255,.05);
+  --wash-copper-12:rgba(196,127,71,.12);
+  --wash-copper-32:rgba(207,138,79,.32);
+  --wash-copper-42:rgba(196,127,71,.42);
+  --wash-copper-50:rgba(196,127,71,.50);
+
+  /* ── Semantiske aliaser ── */
+  --surface-page:var(--ink-950);
+  --surface-hero:var(--ink-1000);
+  --surface-card:var(--wash-bone-05);
+  --surface-inset:var(--wash-bone-03);
+  --surface-chip:var(--wash-bone-035);
+
+  --text-heading:var(--bone-050);
+  --text-hero:var(--bone-000);
+  --text-body:var(--bone-150);
+  --text-muted:var(--n-400);
+  --text-subtle:var(--n-450);
+  --text-eyebrow:var(--copper-250);
+  --text-badge:var(--bone-350);
+  --text-on-copper:var(--ink-650);
+
+  --accent:var(--copper-300);
+  --accent-hover:var(--champagne-100);
+  --accent-soft:var(--copper-150);
+  --link:var(--copper-150);
+  --link-hover:var(--champagne-100);
+
+  --border-card:var(--line-copper-16);
+  --border-card-hover:var(--line-copper-34);
+  --border-field:var(--line-copper-22);
+  --border-field-focus:var(--copper-300);
+
+  /* ── Signaturflader ── */
+  --grad-cta:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f); /* @kind color */
+  --grad-metal-text:linear-gradient(120deg,#f7d8b4 0%,#e0a877 24%,#c07f4a 46%,#f3c79b 66%,#bd7a44 84%,#e7b083 100%); /* @kind color */
+  --grad-metal-text-short:linear-gradient(120deg,#f7d8b4,#cf8a4f,#f3c79b); /* @kind color */
+  --grad-card:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012)); /* @kind color */
+  --grad-chip:linear-gradient(135deg,#1a140e,#0d0a07); /* @kind color */
+  --grad-icon-tile:linear-gradient(135deg,#1c150e,#0d0a07); /* @kind color */
+  --grad-strip:linear-gradient(180deg,#000,#080706); /* @kind color */
+  --grad-portrait:radial-gradient(120% 95% at 50% 12%,#2a2018 0%,#16110c 42%,#0b0907 100%); /* @kind color */
+  --grad-scrim:linear-gradient(180deg,transparent,rgba(8,7,6,.85)); /* @kind color */
+  --glow-hero:radial-gradient(circle,rgba(196,127,71,.42) 0%,rgba(140,84,41,.12) 38%,transparent 66%); /* @kind color */
+  --glow-badge:radial-gradient(circle,rgba(196,127,71,.5),transparent 70%); /* @kind color */
+  --glow-portrait:radial-gradient(95% 70% at 50% 8%,rgba(207,138,79,.32),transparent 58%); /* @kind color */
+  --sheen:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent); /* @kind color */
+  /* ── Aliaser: navne systemets kort og komponenter allerede bruger ── */
+  --ink-800-alias:var(--ink-800);
+  --gold-500:var(--copper-300);
+  --gold-600:var(--copper-450);
+  --gold-400:var(--champagne-200);
+  --bronze-600:var(--copper-600);
+  --champagne-500:var(--champagne-100);
+  --line-ink-08:rgba(11,9,7,.08);
+  --line-ink-10:rgba(11,9,7,.10);
+  --line-ink-14:rgba(11,9,7,.14);
+  --line-gold-20:var(--line-copper-18);
+  --line-gold-40:var(--line-copper-34);
+  --wash-gold-06:rgba(207,138,79,.06);
+  --wash-gold-12:var(--wash-copper-12);
+  --wash-gold-20:rgba(207,138,79,.20);
+  --grad-hero:var(--grad-portrait);
+  --grad-banner:var(--grad-strip);
+  --grad-gold:var(--grad-cta);
+}

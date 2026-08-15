@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sådan foregår et forløb — fire trin fra spørgsmål til plan | Mike Adelholm</title>
+<meta name="description" content="Sådan kommer du i gang: du svarer på et par spørgsmål, jeg læser dine svar, vi tager en uforpligtende samtale, og du får en klar vej frem.">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
+<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
+<script src="site.js"></script>
+<style>
+  html,body{background:#080706;}
+  a{color:#e0a877;}
+  a:hover{color:#f3c79b;}
+  summary::-webkit-details-marker{display:none;}
+  @keyframes maShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
+  @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
+  @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
+
+<dc-import name="SiteNav" current="forloeb" hint-size="100%,0px"></dc-import>
+
+<main id="hovedindhold" style="animation:maPageIn .5s cubic-bezier(.16,1,.3,1) both;">
+
+  <section data-screen-label="Banner" style="position:relative;overflow:hidden;background:#000;padding:clamp(112px,13vw,158px) 0 clamp(40px,5vw,60px);">
+    <div data-ambient="" aria-hidden="true" style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:720px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.26),transparent 66%);pointer-events:none;animation:maPulse 11s ease-in-out infinite;"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
+      <div data-reveal="0" style="max-width:720px;">
+        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#6f6353;">
+          <a href="index.html" style="color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;">Forside</a> <span aria-hidden="true">/</span> Sådan foregår et forløb
+        </nav>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+          <span aria-hidden="true" style="width:34px;height:1.5px;background:linear-gradient(90deg,#cf8a4f,rgba(207,138,79,0));"></span>
+          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#c79064;">Første skridt</span>
+        </div>
+        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,4.8vw,60px);line-height:1.04;letter-spacing:-.018em;text-transform:uppercase;color:#f3ead9;margin:0 0 22px;">Sådan kommer <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:maShimmer 8s linear infinite;">du i gang</span></h1>
+        <p style="margin:0;max-width:620px;font-size:clamp(16.5px,1.4vw,18.5px);line-height:1.62;color:#b6a791;">Det skal være nemt at tage det første skridt. Sådan finder vi ud af, om et forløb med mig giver mening for dig.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Trin" style="padding:clamp(40px,5vw,64px) 0 clamp(60px,7.5vw,96px);">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
+      <ol style="list-style:none;margin:0;padding:0;position:relative;">
+        <span data-grow="0" data-grow-origin="top" aria-hidden="true" style="position:absolute;left:29px;top:24px;bottom:clamp(56px,7vw,80px);width:1.5px;background:linear-gradient(180deg,rgba(224,168,124,.62),rgba(224,168,124,.5) 62%,rgba(224,168,124,.1));"></span>
+
+        <li style="position:relative;display:flex;gap:clamp(20px,3vw,34px);padding-bottom:clamp(38px,5vw,56px);">
+          <span data-reveal="0" aria-hidden="true" style="position:relative;z-index:1;flex-shrink:0;width:59px;height:59px;border-radius:50%;background:radial-gradient(circle at 50% 30%,#1f1810,#0b0907);border:1.5px solid rgba(224,168,124,.55);box-shadow:0 0 0 6px rgba(8,7,6,1),0 12px 30px -14px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.08);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;color:#f3c79b;">1</span>
+          <div data-reveal="60" style="padding-top:6px;">
+            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.16;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 12px;">Du svarer på et par spørgsmål</h2>
+            <p style="margin:0;max-width:560px;font-size:17px;line-height:1.65;color:#ab9c87;">Fortæl kort, hvad du gerne vil have hjælp til, og hvad du håber at kunne opnå.</p>
+          </div>
+        </li>
+
+        <li style="position:relative;display:flex;gap:clamp(20px,3vw,34px);padding-bottom:clamp(38px,5vw,56px);">
+          <span data-reveal="0" aria-hidden="true" style="position:relative;z-index:1;flex-shrink:0;width:59px;height:59px;border-radius:50%;background:radial-gradient(circle at 50% 30%,#1f1810,#0b0907);border:1.5px solid rgba(224,168,124,.4);box-shadow:0 0 0 6px rgba(8,7,6,1),inset 0 1px 0 rgba(255,255,255,.06);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;color:#e0a877;">2</span>
+          <div data-reveal="60" style="padding-top:6px;">
+            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.16;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 12px;">Jeg læser dine svar</h2>
+            <p style="margin:0;max-width:560px;font-size:17px;line-height:1.65;color:#ab9c87;">Jeg bruger dit udgangspunkt til at vurdere, hvordan jeg bedst kan hjælpe dig videre.</p>
+          </div>
+        </li>
+
+        <li style="position:relative;display:flex;gap:clamp(20px,3vw,34px);padding-bottom:clamp(38px,5vw,56px);">
+          <span data-reveal="0" aria-hidden="true" style="position:relative;z-index:1;flex-shrink:0;width:59px;height:59px;border-radius:50%;background:radial-gradient(circle at 50% 30%,#1f1810,#0b0907);border:1.5px solid rgba(224,168,124,.3);box-shadow:0 0 0 6px rgba(8,7,6,1);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;color:#c79064;">3</span>
+          <div data-reveal="60" style="padding-top:6px;">
+            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.16;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 12px;">Vi tager en uforpligtende samtale</h2>
+            <p style="margin:0;max-width:560px;font-size:17px;line-height:1.65;color:#ab9c87;">Vi taler om dine mål, din hverdag og om et forløb er det rigtige næste skridt.</p>
+          </div>
+        </li>
+
+        <li style="position:relative;display:flex;gap:clamp(20px,3vw,34px);">
+          <span data-reveal="0" aria-hidden="true" style="position:relative;z-index:1;flex-shrink:0;width:59px;height:59px;border-radius:50%;background:radial-gradient(circle at 50% 30%,#1f1810,#0b0907);border:1.5px solid rgba(224,168,124,.22);box-shadow:0 0 0 6px rgba(8,7,6,1);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;color:#a3937e;">4</span>
+          <div data-reveal="60" style="padding-top:6px;">
+            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.16;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 12px;">Du får en klar vej frem</h2>
+            <p style="margin:0;max-width:560px;font-size:17px;line-height:1.65;color:#ab9c87;">Hvis vi er et godt match, lægger vi en plan, der passer til dig og dit liv.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div data-reveal="0" style="margin-top:clamp(40px,5vw,60px);display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+        <a href="kontakt.dc.html" style="display:inline-flex;align-items:center;gap:10px;padding:19px 28px;border-radius:16px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 16px 40px -12px rgba(196,127,71,.75),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Start med et par spørgsmål<span style="font-size:17px;line-height:0;">→</span></a>
+        <span style="font-size:14.5px;color:#7c6e5d;">Det tager kun et par minutter, og du binder dig ikke til noget.</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Før og efter" style="position:relative;padding:clamp(56px,7vw,88px) 0;background:linear-gradient(180deg,#080706,#000);border-top:1px solid rgba(224,168,124,.1);border-bottom:1px solid rgba(224,168,124,.1);">
+    <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:clamp(18px,2.4vw,26px);">
+      <div data-reveal="0" style="flex:1 1 340px;min-width:0;padding:clamp(26px,3vw,34px);border-radius:24px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Før samtalen</div>
+        <h2 style="margin:0 0 14px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,25px);line-height:1.16;text-transform:uppercase;color:#f0e6d6;">Du skal ikke forberede noget særligt</h2>
+        <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#ab9c87;">Du behøver ikke vide, hvad der er i vejen, eller have en plan klar. Det er min opgave at stille de rigtige spørgsmål.</p>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:#7c6e5d;">Har du scanningssvar, en genoptræningsplan eller andet relevant, kan du nævne det — men det er ikke et krav.</p>
+      </div>
+      <div data-reveal="80" style="flex:1 1 340px;min-width:0;padding:clamp(26px,3vw,34px);border-radius:24px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Efter samtalen</div>
+        <h2 style="margin:0 0 14px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,25px);line-height:1.16;text-transform:uppercase;color:#f0e6d6;">Du bestemmer, hvad der sker</h2>
+        <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#ab9c87;">Er vi enige om, at et forløb er det rigtige, lægger vi en plan. Er vi ikke, siger jeg det ærligt og peger dig et bedre sted hen.</p>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:#7c6e5d;">Der er ingen salgstale og ingen forpligtelse efter samtalen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Spørgsmål" style="padding:clamp(56px,7vw,88px) 0;">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
+      <h2 data-reveal="0" style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.1;letter-spacing:-.012em;text-transform:uppercase;color:#f1e7d7;margin:0 0 clamp(24px,3vw,34px);">Spørgsmål, jeg ofte får</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <details data-reveal="40" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Skal jeg vide, hvad der er i vejen, før jeg skriver?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
+          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Nej. De fleste skriver netop, fordi de er i tvivl. Du beskriver, hvad du oplever, og hvad du gerne vil kunne — resten tager vi derfra.</p>
+        </details>
+        <details data-reveal="90" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad koster samtalen, og hvor lang tid tager den?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
+          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">[Indsæt pris eller om samtalen er gratis] og [Indsæt varighed]. Samtalen er under alle omstændigheder uforpligtende.</p>
+        </details>
+        <details data-reveal="140" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvor hurtigt hører jeg fra dig?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
+          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">[Indsæt forventet svartid]. Du får svar fra mig personligt — ikke et autosvar.</p>
+        </details>
+        <details data-reveal="190" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad hvis jeg har smerter lige nu?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
+          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Så er du ikke det forkerte sted. Læs mere om, hvordan jeg arbejder med <a href="smerter-genoptraening.dc.html">smerter og genoptræning</a>. Er symptomerne akutte, kraftige eller forværrede, skal du dog kontakte egen læge, vagtlæge eller 112 først.</p>
+        </details>
+        <details data-reveal="240" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad hvis jeg ikke er sikker på, at jeg vil i gang?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
+          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Så er en samtale et fint sted at starte. Du må gerne bruge den til at undersøge mulighederne uden at beslutte noget.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="CTA" style="position:relative;overflow:hidden;padding:clamp(60px,8vw,104px) 0;background:linear-gradient(180deg,#000,#080706);border-top:1px solid rgba(224,168,124,.1);">
+    <div data-ambient="" aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.2),transparent 64%);pointer-events:none;animation:maPulse 10s ease-in-out infinite;"></div>
+    <div data-reveal="0" style="position:relative;max-width:720px;margin:0 auto;padding:0 clamp(20px,4vw,32px);text-align:center;">
+      <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(26px,3.6vw,44px);line-height:1.06;letter-spacing:-.015em;text-transform:uppercase;color:#f3ead9;margin:0 0 18px;">Klar til det første skridt?</h2>
+      <p style="margin:0 auto 30px;max-width:500px;font-size:17px;line-height:1.62;color:#b6a791;">Svar på nogle få spørgsmål, så tager vi den derfra.</p>
+      <a href="kontakt.dc.html" style="display:inline-flex;align-items:center;gap:10px;padding:19px 28px;border-radius:16px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 16px 40px -12px rgba(196,127,71,.75),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Book en uforpligtende samtale<span style="font-size:17px;line-height:0;">→</span></a>
+    </div>
+  </section>
+
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    if (window.MASite) window.MASite.init();
+    this.t = setTimeout(() => { if (window.MASite) window.MASite.init(); }, 500);
+    /* Åbn/luk-tegnet roterer til et kryds, når et spørgsmål er åbent. */
+    document.querySelectorAll('details').forEach((d) => {
+      if (d.dataset.maToggle === '1') return;
+      d.dataset.maToggle = '1';
+      const mark = d.querySelector('summary span[aria-hidden]');
+      if (mark) mark.style.transition = 'transform .35s cubic-bezier(.22,.61,.36,1)';
+      d.addEventListener('toggle', () => {
+        if (mark) mark.style.transform = d.open ? 'rotate(45deg)' : 'none';
+        d.style.borderColor = d.open ? 'rgba(224,168,124,.34)' : 'rgba(224,168,124,.14)';
+      });
+    });
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

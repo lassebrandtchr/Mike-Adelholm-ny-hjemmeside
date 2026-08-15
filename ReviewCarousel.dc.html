@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
+<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
+<style>html,body{background:#080706;}</style>
+</helmet>
+<section aria-roledescription="karrusel" aria-label="Anmeldelser" style="font-family:'Hanken Grotesk',system-ui,sans-serif;position:relative;width:100%;">
+
+  <div ref="{{ stageRef }}" role="group" tabindex="0" aria-label="Anmeldelser — brug piletasterne eller træk for at skifte" onKeyDown="{{ onKeyDown }}" style="position:relative;height:392px;width:100%;perspective:1500px;perspective-origin:50% 45%;touch-action:pan-y;cursor:grab;outline-offset:6px;user-select:none;" style-focus="outline:2px solid #cf8a4f;">
+
+    <article data-slide="0" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(168deg,#1a140e 0%,#0d0a07 62%,#0b0907 100%);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
+        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
+      </div>
+      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">[Godkendt anmeldelse indsættes her]</p>
+      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
+        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">[Fornavn]</div>
+        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">[Indsæt godkendt kontekst — fx forløbstype]</div>
+      </div>
+    </article>
+
+    <article data-slide="1" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(168deg,#1a140e 0%,#0d0a07 62%,#0b0907 100%);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
+        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
+      </div>
+      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">[Godkendt anmeldelse indsættes her]</p>
+      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
+        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">[Anonym kunde]</div>
+        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">Anonymiseret efter aftale</div>
+      </div>
+    </article>
+
+    <article data-slide="2" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(168deg,#1a140e 0%,#0d0a07 62%,#0b0907 100%);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
+        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
+      </div>
+      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">[Godkendt anmeldelse indsættes her]</p>
+      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
+        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">[Fornavn]</div>
+        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">[Indsæt godkendt kontekst — fx forløbstype]</div>
+      </div>
+    </article>
+
+    <article data-slide="3" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(168deg,#1a140e 0%,#0d0a07 62%,#0b0907 100%);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
+        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
+      </div>
+      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">[Godkendt anmeldelse indsættes her]</p>
+      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
+        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">[Fornavn]</div>
+        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">Skriftligt samtykke indhentet [dato]</div>
+      </div>
+    </article>
+
+    <article data-slide="4" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(168deg,#1a140e 0%,#0d0a07 62%,#0b0907 100%);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
+        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
+      </div>
+      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">[Godkendt anmeldelse indsættes her]</p>
+      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
+        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">[Anonym kunde]</div>
+        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">[Indsæt godkendt kontekst — fx forløbstype]</div>
+      </div>
+    </article>
+
+  </div>
+
+  <div style="margin-top:26px;display:flex;align-items:center;justify-content:center;gap:16px;">
+    <button type="button" onClick="{{ prev }}" aria-label="Forrige anmeldelse" style="width:48px;height:48px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.28);color:#e8d4bf;cursor:pointer;transition:background .3s,border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(255,255,255,.075);border-color:rgba(224,168,124,.5);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+    </button>
+
+    <div ref="{{ dotsRef }}" style="display:flex;align-items:center;gap:9px;">
+      <button type="button" data-dot="0" onClick="{{ go0 }}" aria-label="Gå til anmeldelse 1" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
+      <button type="button" data-dot="1" onClick="{{ go1 }}" aria-label="Gå til anmeldelse 2" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
+      <button type="button" data-dot="2" onClick="{{ go2 }}" aria-label="Gå til anmeldelse 3" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
+      <button type="button" data-dot="3" onClick="{{ go3 }}" aria-label="Gå til anmeldelse 4" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
+      <button type="button" data-dot="4" onClick="{{ go4 }}" aria-label="Gå til anmeldelse 5" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
+    </div>
+
+    <button type="button" onClick="{{ next }}" aria-label="Næste anmeldelse" style="width:48px;height:48px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.28);color:#e8d4bf;cursor:pointer;transition:background .3s,border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(255,255,255,.075);border-color:rgba(224,168,124,.5);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    </button>
+  </div>
+
+  <p aria-live="polite" style="margin:14px 0 0;text-align:center;font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6f6353;">{{ statusText }}</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:520},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;preview&quot;],&quot;default&quot;:&quot;full&quot;,&quot;tsType&quot;:&quot;'full' | 'preview'&quot;,&quot;section&quot;:&quot;Karrusel&quot;}}">
+class Component extends DCLogic {
+  state = { index: 0 };
+  stageRef = React.createRef();
+  dotsRef = React.createRef();
+  drag = 0;
+
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const stage = this.stageRef.current;
+    if (!stage) return;
+
+    this.onResize = () => this.layout();
+    window.addEventListener('resize', this.onResize, { passive: true });
+
+    let startX = 0, active = false, w = 1;
+    const down = (e) => {
+      active = true; startX = e.clientX; w = stage.clientWidth || 1;
+      stage.style.cursor = 'grabbing';
+      if (stage.setPointerCapture && e.pointerId != null) { try { stage.setPointerCapture(e.pointerId); } catch (err) {} }
+    };
+    const move = (e) => {
+      if (!active) return;
+      this.drag = -((e.clientX - startX) / (w * 0.34));
+      this.layout(true);
+    };
+    const up = () => {
+      if (!active) return;
+      active = false;
+      stage.style.cursor = 'grab';
+      const snap = Math.round(this.state.index + this.drag);
+      this.drag = 0;
+      this.goTo(snap);
+    };
+    stage.addEventListener('pointerdown', down);
+    stage.addEventListener('pointermove', move);
+    stage.addEventListener('pointerup', up);
+    stage.addEventListener('pointercancel', up);
+    stage.addEventListener('lostpointercapture', up);
+    this.cleanup = () => {
+      stage.removeEventListener('pointerdown', down);
+      stage.removeEventListener('pointermove', move);
+      stage.removeEventListener('pointerup', up);
+      stage.removeEventListener('pointercancel', up);
+      stage.removeEventListener('lostpointercapture', up);
+    };
+
+    if (this.props.variant === 'preview') {
+      stage.style.height = '340px';
+      stage.querySelectorAll('[data-slide]').forEach((c) => {
+        c.style.width = '312px'; c.style.height = '272px'; c.style.margin = '-136px 0 0 -156px';
+        c.style.padding = '24px 24px 20px';
+      });
+    }
+    this.layout();
+  }
+
+  componentDidUpdate() { this.layout(); }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    if (this.cleanup) this.cleanup();
+  }
+
+  layout(dragging) {
+    const stage = this.stageRef.current;
+    if (!stage) return;
+    const cards = Array.from(stage.querySelectorAll('[data-slide]'));
+    if (!cards.length) return;
+    const cw = cards[0].offsetWidth || 352;
+    const narrow = stage.clientWidth < 640;
+    const spread = narrow ? cw * 0.46 : cw * 0.62;
+    const depth = narrow ? 70 : 170;
+    const rot = narrow ? 16 : 34;
+    const pos = this.state.index + (dragging ? this.drag : 0);
+
+    cards.forEach((card, i) => {
+      const o = i - pos;
+      const a = Math.abs(o);
+      const clamped = Math.max(-2.4, Math.min(2.4, o));
+      const scale = Math.max(0.6, 1 - a * 0.09);
+      card.style.transition = (dragging || this.reduced) ? 'none' : 'transform .55s cubic-bezier(.22,.61,.36,1),opacity .45s cubic-bezier(.22,.61,.36,1),filter .45s';
+      card.style.transform = 'translate3d(' + (clamped * spread) + 'px,0,' + (-a * depth) + 'px) rotateY(' + (-clamped * rot) + 'deg) scale(' + scale + ')';
+      card.style.opacity = a > 2.35 ? '0' : String(Math.max(0, 1 - a * 0.3));
+      card.style.zIndex = String(100 - Math.round(a * 10));
+      card.style.pointerEvents = a < 0.5 ? 'auto' : 'none';
+      card.style.borderColor = a < 0.5 ? 'rgba(224,168,124,.4)' : 'rgba(224,168,124,.16)';
+      card.setAttribute('aria-hidden', a < 0.5 ? 'false' : 'true');
+    });
+
+    const dots = this.dotsRef.current;
+    if (dots) {
+      Array.from(dots.querySelectorAll('[data-dot]')).forEach((b, i) => {
+        const on = i === this.state.index;
+        const s = b.firstElementChild;
+        if (s) { s.style.width = on ? '26px' : '8px'; s.style.background = on ? '#cf8a4f' : '#5f5547'; }
+        b.setAttribute('aria-current', on ? 'true' : 'false');
+      });
+    }
+  }
+
+  goTo(i) {
+    const n = Math.max(0, Math.min(4, i));
+    if (n === this.state.index) { this.layout(); return; }
+    this.setState({ index: n });
+  }
+
+  renderVals() {
+    return {
+      stageRef: this.stageRef,
+      dotsRef: this.dotsRef,
+      statusText: 'Anmeldelse ' + (this.state.index + 1) + ' af 5',
+      prev: () => this.goTo(this.state.index - 1),
+      next: () => this.goTo(this.state.index + 1),
+      go0: () => this.goTo(0), go1: () => this.goTo(1), go2: () => this.goTo(2),
+      go3: () => this.goTo(3), go4: () => this.goTo(4),
+      onKeyDown: (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); this.goTo(this.state.index - 1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); this.goTo(this.state.index + 1); }
+        else if (e.key === 'Home') { e.preventDefault(); this.goTo(0); }
+        else if (e.key === 'End') { e.preventDefault(); this.goTo(4); }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

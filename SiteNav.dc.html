@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
+<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
+<style>
+  html,body{background:#080706;}
+  @keyframes maNavIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+  @keyframes maSheetIn{from{opacity:0}to{opacity:1}}
+  /* Berøringsmål: mindst 44px høje på mobil, hvor dokken skifter til
+     Book-knap + burger. Kun under 1180px, så desktop-dokkens slanke
+     proportioner er urørte. */
+  @media (max-width:1179px){
+    header a[href="index.html"],
+    header a[href="kontakt.dc.html"]{min-height:44px}
+  }
+</style>
+</helmet>
+<div style="font-family:'Hanken Grotesk',system-ui,sans-serif;">
+
+  <header style="position:fixed;top:14px;left:0;right:0;z-index:900;display:flex;justify-content:center;padding:0 14px;pointer-events:none;animation:maNavIn .6s cubic-bezier(.16,1,.3,1) both;">
+    <div ref="{{ shellRef }}" style="pointer-events:auto;display:flex;align-items:center;gap:10px;max-width:100%;padding:9px 10px 9px 13px;border-radius:999px;background:linear-gradient(180deg,#151009 0%,#0a0806 100%);border:1px solid rgba(224,168,124,.22);box-shadow:0 20px 46px -22px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.045);transition:padding .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s cubic-bezier(.22,.61,.36,1),border-color .45s;">
+
+      <a href="index.html" aria-label="Mike Adelholm — forside" style="display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0;padding:2px 4px 2px 2px;border-radius:999px;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
+        <img src="assets/logo-badge.webp" alt="" width="36" height="36" style="width:36px;height:36px;object-fit:contain;display:block;" fetchpriority="high" decoding="async">
+        <span style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#f0e6d6;line-height:1;white-space:nowrap;">Mike Adelholm</span>
+          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#8c7e6b;line-height:1;white-space:nowrap;">Fysioterapi &amp; coaching</span>
+        </span>
+      </a>
+
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <span style="width:1px;height:26px;background:rgba(224,168,124,.16);flex-shrink:0;"></span>
+        <nav ref="{{ listRef }}" aria-label="Hovednavigation" style="position:relative;display:flex;align-items:center;gap:1px;">
+          <span data-nav-pill="" aria-hidden="true" style="position:absolute;top:50%;left:0;width:0;height:31px;transform:translateY(-50%);border-radius:999px;background:linear-gradient(135deg,rgba(245,198,147,.17),rgba(165,97,47,.26));border:1px solid rgba(224,168,124,.30);box-shadow:inset 0 1px 0 rgba(255,255,255,.10);opacity:0;pointer-events:none;transition:left .42s cubic-bezier(.22,.61,.36,1),width .42s cubic-bezier(.22,.61,.36,1),opacity .3s;"></span>
+          <a data-nav-key="forside" href="index.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Forside</a>
+          <a data-nav-key="online-coaching" href="online-coaching.dc.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Online coaching</a>
+          <a data-nav-key="styrke-performance" href="styrke-performance.dc.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Styrke</a>
+          <a data-nav-key="smerter-genoptraening" href="smerter-genoptraening.dc.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Smerter</a>
+          <a data-nav-key="forloeb" href="forloeb.dc.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Forløb</a>
+          <a data-nav-key="resultater" href="resultater.dc.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Resultater</a>
+          <a data-nav-key="om-mike" href="om-mike.dc.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Om Mike</a>
+          <a data-nav-key="viden" href="viden.dc.html" style="position:relative;padding:9px 11px;border-radius:999px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#bcae99;text-decoration:none;white-space:nowrap;transition:color .3s cubic-bezier(.22,.61,.36,1),transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="color:#f3ead9;transform:translateY(-1px);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;color:#f3ead9;">Viden</a>
+        </nav>
+        <a href="kontakt.dc.html" style="flex-shrink:0;display:inline-flex;align-items:center;gap:8px;padding:11px 17px;border-radius:999px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;box-shadow:0 12px 26px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);box-shadow:0 18px 42px -10px rgba(196,127,71,.85),inset 0 1px 0 rgba(255,255,255,.55);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Book en uforpligtende samtale<span style="font-size:13px;line-height:0;">→</span></a>
+      </sc-if>
+
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <a href="kontakt.dc.html" style="margin-left:auto;display:inline-flex;align-items:center;justify-content:center;padding:12px 15px;border-radius:999px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;box-shadow:0 12px 26px -14px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Book</a>
+        <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpenStr }}" aria-controls="ma-mobil-menu" aria-label="{{ menuLabel }}" style="width:44px;height:44px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.30);color:#e8d4bf;cursor:pointer;transition:background .3s,border-color .3s;" style-hover="background:rgba(255,255,255,.07);border-color:rgba(224,168,124,.5);" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"></path></svg>
+        </button>
+      </sc-if>
+
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div id="ma-mobil-menu" role="dialog" aria-modal="true" aria-label="Menu" style="position:fixed;inset:0;z-index:950;background:#0a0806;overflow-y:auto;padding:20px 20px 40px;animation:maSheetIn .3s cubic-bezier(.22,.61,.36,1) both;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px;">
+        <img src="assets/logo-badge.webp" alt="Mike Adelholm" width="44" height="44" style="width:44px;height:44px;object-fit:contain;">
+        <button type="button" ref="{{ closeRef }}" onClick="{{ toggleMenu }}" aria-label="Luk menu" style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.30);color:#e8d4bf;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <nav aria-label="Hovednavigation" style="display:flex;flex-direction:column;">
+        <a data-nav-key="forside" href="index.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Forside<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+        <a data-nav-key="online-coaching" href="online-coaching.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Online coaching<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+        <a data-nav-key="styrke-performance" href="styrke-performance.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Styrke &amp; performance<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+        <a data-nav-key="smerter-genoptraening" href="smerter-genoptraening.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Smerter &amp; genoptræning<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+        <a data-nav-key="forloeb" href="forloeb.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Sådan foregår et forløb<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+        <a data-nav-key="resultater" href="resultater.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Resultater<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+        <a data-nav-key="om-mike" href="om-mike.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Om Mike<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+        <a data-nav-key="viden" href="viden.dc.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 4px;border-bottom:1px solid rgba(224,168,124,.12);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#f0e6d6;text-decoration:none;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">Viden<span style="color:#8c7e6b;font-size:15px;">→</span></a>
+      </nav>
+      <a href="kontakt.dc.html" style="margin-top:26px;display:flex;align-items:center;justify-content:center;gap:10px;padding:19px 22px;border-radius:16px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;text-align:center;box-shadow:0 14px 34px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Book en uforpligtende samtale<span style="font-size:16px;line-height:0;">→</span></a>
+      <p style="margin:18px 0 0;font-size:14px;line-height:1.6;color:#8c7e6b;text-align:center;">Uforpligtende. Du binder dig ikke til noget ved at skrive.</p>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;bottom:0;left:0;right:0;z-index:880;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(8,7,6,0),rgba(8,7,6,.94) 38%,#080706);pointer-events:none;">
+      <a href="kontakt.dc.html" style="pointer-events:auto;display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:14px 20px;border-radius:999px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 16px 34px -14px rgba(196,127,71,.8),inset 0 1px 0 rgba(255,255,255,.5);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Book en uforpligtende samtale<span style="font-size:15px;line-height:0;">→</span></a>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:220},&quot;current&quot;:{&quot;editor&quot;:null,&quot;default&quot;:&quot;forside&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = {
+    isDesktop: typeof window === 'undefined' ? true : window.innerWidth >= 1180,
+    menuOpen: false
+  };
+
+  shellRef = React.createRef();
+  listRef = React.createRef();
+  closeRef = React.createRef();
+
+  componentDidMount() {
+    this.mq = window.matchMedia('(min-width:1180px)');
+    this.onMq = (e) => this.setState({ isDesktop: e.matches, menuOpen: false });
+    this.mq.addEventListener('change', this.onMq);
+
+    this.onScroll = () => {
+      const el = this.shellRef.current;
+      if (!el) return;
+      const c = window.scrollY > 40;
+      if (c === this.compact) return;
+      this.compact = c;
+      el.style.padding = c ? '6px 8px 6px 11px' : '9px 10px 9px 13px';
+      el.style.boxShadow = c
+        ? '0 14px 34px -18px rgba(0,0,0,.98),inset 0 1px 0 rgba(255,255,255,.045)'
+        : '0 20px 46px -22px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.045)';
+      el.style.borderColor = c ? 'rgba(224,168,124,.34)' : 'rgba(224,168,124,.22)';
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+
+    this.onKey = (e) => { if (e.key === 'Escape' && this.state.menuOpen) this.setState({ menuOpen: false }); };
+    window.addEventListener('keydown', this.onKey);
+
+    this.wire();
+  }
+
+  componentDidUpdate() { this.wire(); }
+
+  componentWillUnmount() {
+    if (this.mq) this.mq.removeEventListener('change', this.onMq);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('keydown', this.onKey);
+  }
+
+  /* Active-page marking + the gliding bronze pill. Applied from script so the
+     markup paints instantly and stays plain HTML for editing. */
+  wire() {
+    const cur = this.props.current || '';
+    document.querySelectorAll('[data-nav-key]').forEach((a) => {
+      const on = a.getAttribute('data-nav-key') === cur;
+      a.setAttribute('aria-current', on ? 'page' : 'false');
+      if (on) { a.style.color = '#f3c79b'; a.style.fontWeight = '800'; }
+    });
+
+    const nav = this.listRef.current;
+    if (!nav || nav.dataset.maWired === '1') return;
+    nav.dataset.maWired = '1';
+    const pill = nav.querySelector('[data-nav-pill]');
+    const links = Array.from(nav.querySelectorAll('[data-nav-key]'));
+    const active = links.find((a) => a.getAttribute('data-nav-key') === cur);
+
+    const place = (el, visible) => {
+      if (!pill || !el) return;
+      pill.style.left = el.offsetLeft + 'px';
+      pill.style.width = el.offsetWidth + 'px';
+      pill.style.opacity = visible ? '1' : '0';
+    };
+    const rest = () => {
+      if (!active) { if (pill) pill.style.opacity = '0'; return; }
+      place(active, true);
+      if (pill) pill.style.background = 'linear-gradient(135deg,rgba(245,198,147,.13),rgba(165,97,47,.2))';
+    };
+
+    links.forEach((a) => {
+      const enter = () => {
+        if (pill) pill.style.background = 'linear-gradient(135deg,rgba(245,198,147,.2),rgba(165,97,47,.3))';
+        place(a, true);
+      };
+      a.addEventListener('mouseenter', enter);
+      a.addEventListener('focus', enter);
+      a.addEventListener('blur', rest);
+    });
+    nav.addEventListener('mouseleave', rest);
+    this.ro = new ResizeObserver(() => rest());
+    this.ro.observe(nav);
+    requestAnimationFrame(rest);
+  }
+
+  renderVals() {
+    return {
+      isDesktop: this.state.isDesktop,
+      isMobile: !this.state.isDesktop,
+      menuOpen: this.state.menuOpen,
+      menuOpenStr: this.state.menuOpen ? 'true' : 'false',
+      menuLabel: this.state.menuOpen ? 'Luk menu' : 'Åbn menu',
+      shellRef: this.shellRef,
+      listRef: this.listRef,
+      closeRef: this.closeRef,
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen }))
+    };
+  }
+}
+</script>
+</body>
+</html>
