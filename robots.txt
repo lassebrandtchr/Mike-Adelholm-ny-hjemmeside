@@ -2,12 +2,12 @@
 User-agent: *
 Allow: /
 
-# Implementeringsfragmenter er ikke sider. De skal kunne hentes af
-# browseren, men hører ikke til i et søgeresultat.
-User-agent: *
-Disallow: /Mike-Adelholm-ny-hjemmeside/SiteNav.dc.html
-Disallow: /Mike-Adelholm-ny-hjemmeside/SiteFooter.dc.html
-Disallow: /Mike-Adelholm-ny-hjemmeside/ReviewCarousel.dc.html
+# Implementeringsfragmenterne (SiteNav, SiteFooter, ReviewCarousel) er
+# bevidst IKKE spærret her. De hentes af browseren — og af Googlebot —
+# når siden renderes; spærrer man dem, forsvinder navigation og sidefod
+# fra det, crawleren ser. De holdes ude af søgeresultater med
+# <meta name="robots" content="noindex"> i filerne selv, hvilket
+# kræver, at de må hentes.
 
 # Søge-agenter (Googlebot, OAI-SearchBot, Claude-SearchBot, PerplexityBot)
 # er bevidst ikke blokeret — de er forudsætningen for at blive fundet.

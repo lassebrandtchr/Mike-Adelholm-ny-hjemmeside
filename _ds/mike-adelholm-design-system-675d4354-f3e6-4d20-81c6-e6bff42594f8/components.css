@@ -34,3 +34,13 @@
 /* Mørke ikonfliser på pladen beholder deres bronzefarvede ikon */
 [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
 [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
+
+/* ── Pre-render: begge udgaver af navigationen ───────────────────────────────
+   tools/prerender.mjs lægger både den brede dok og burgerudgaven ind i den
+   statiske HTML, fordi en fil ikke kan kende skærmbredden. Her vælges den
+   rigtige. Begge forsvinder igen, når React overtager. */
+[data-pre-narrow]{display:none}
+@media (max-width:1179px){
+  [data-pre-wide]{display:none}
+  [data-pre-narrow]{display:block}
+}

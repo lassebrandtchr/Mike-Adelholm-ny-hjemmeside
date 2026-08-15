@@ -54,9 +54,36 @@ for (const file of PAGES) {
   await page.goto(`${BASE}/${file}`, { waitUntil: 'networkidle' });
   await page.waitForSelector('#dc-root main, #dc-root footer', { timeout: 20000 });
 
-  const html = await page.evaluate(() => {
+  /* Navigationen vælger mellem bred dok og burgermenu ud fra skærmbredden —
+     en JavaScript-tilstand, en statisk fil ikke kan kende. Derfor hentes
+     begge udgaver, og CSS vælger imellem dem (se _ds/…/components.css).
+     Uden det ville en mobilbruger se den brede dok skåret af i højre side,
+     indtil React nåede frem. */
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.waitForTimeout(900);
+  const narrowHeader = await page.evaluate(() => {
+    const h = document.querySelector('#dc-root header');
+    return h ? h.outerHTML : '';
+  });
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.waitForTimeout(900);
+
+  const html = await page.evaluate((narrow) => {
     const root = document.getElementById('dc-root');
     const copy = root.cloneNode(true);
+
+    const header = copy.querySelector('header');
+    if (header && narrow) {
+      const wide = document.createElement('div');
+      wide.setAttribute('data-pre-wide', '');
+      header.replaceWith(wide);
+      wide.appendChild(header);
+
+      const narrowBox = document.createElement('div');
+      narrowBox.setAttribute('data-pre-narrow', '');
+      narrowBox.innerHTML = narrow;
+      wide.after(narrowBox);
+    }
 
     /* Attributter, runtimet og animationslaget selv sætter, skal ikke med:
        ellers tror site.js, at reservekopien allerede er behandlet, og
@@ -72,7 +99,7 @@ for (const file of PAGES) {
       el.setAttribute('tabindex', '-1');
     }
     return copy.innerHTML;
-  });
+  }, narrowHeader);
 
   await page.close();
 

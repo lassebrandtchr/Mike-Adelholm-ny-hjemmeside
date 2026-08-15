@@ -272,10 +272,18 @@ try {
 }
 
 /* ── 5c. Pre-render: indhold og navigation uden JavaScript ── */
-for (const path of ['index.html', 'kontakt.dc.html', 'viden.dc.html']) {
-  const c = await browser.newContext({ javaScriptEnabled: false });
+for (const [path, w] of [['index.html', 1280], ['index.html', 375], ['index.html', 320],
+  ['kontakt.dc.html', 375], ['viden.dc.html', 1280]]) {
+  const c = await browser.newContext({ javaScriptEnabled: false, viewport: { width: w, height: 900 } });
   const page = await c.newPage();
   await page.goto(`${BASE}/${path}`);
+  const over = await page.evaluate(() =>
+    document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  if (over > 1) fail(`${path} @${w} uden JS`, `vandret overløb ${over}px`);
+  /* Kun én af navigationens to udgaver må være synlig ad gangen. */
+  const navs = await page.$$eval('#dc-prerender header',
+    (els) => els.filter((e) => e.getBoundingClientRect().width > 0).length);
+  if (navs !== 1) fail(`${path} @${w} uden JS`, `${navs} synlige navigationer`);
   const text = await page.locator('body').innerText();
   if (text.trim().length < 800) fail(path, `kun ${text.trim().length} tegn uden JavaScript`);
   if (PLACEHOLDER.test(text)) fail(path, 'skabelontekst i pre-render');
