@@ -29,6 +29,21 @@
   @keyframes maShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
   @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+
+  /* ═══ Bronzeplade-kort ═══
+     Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+     style-strengen, fordi dc-runtimet omskriver style-attributten gennem
+     React (#f5c693 bliver til rgb(245, 198, 147)). */
+  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze]{
+    border-color:rgba(28,17,7,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-bronze] svg{stroke:#1c1107!important}
+  /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
+  [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
 </helmet>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
@@ -101,13 +116,13 @@
 
   <section data-screen-label="Før og efter" style="position:relative;padding:clamp(56px,7vw,88px) 0;background:linear-gradient(180deg,#080706,#000);border-top:1px solid rgba(224,168,124,.1);border-bottom:1px solid rgba(224,168,124,.1);">
     <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:clamp(18px,2.4vw,26px);">
-      <div data-reveal="0" style="flex:1 1 340px;min-width:0;padding:clamp(26px,3vw,34px);border-radius:24px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+      <div data-bronze="" data-reveal="0" style="flex:1 1 340px;min-width:0;padding:clamp(26px,3vw,34px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
         <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Før samtalen</div>
         <h2 style="margin:0 0 14px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,25px);line-height:1.16;text-transform:uppercase;color:#f0e6d6;">Du skal ikke forberede noget særligt</h2>
         <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#ab9c87;">Du behøver ikke vide, hvad der er i vejen, eller have en plan klar. Det er min opgave at stille de rigtige spørgsmål.</p>
         <p style="margin:0;font-size:15.5px;line-height:1.65;color:#7c6e5d;">Har du scanningssvar, en genoptræningsplan eller andet relevant, kan du nævne det — men det er ikke et krav.</p>
       </div>
-      <div data-reveal="80" style="flex:1 1 340px;min-width:0;padding:clamp(26px,3vw,34px);border-radius:24px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+      <div data-bronze="" data-reveal="80" style="flex:1 1 340px;min-width:0;padding:clamp(26px,3vw,34px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
         <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Efter samtalen</div>
         <h2 style="margin:0 0 14px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,25px);line-height:1.16;text-transform:uppercase;color:#f0e6d6;">Du bestemmer, hvad der sker</h2>
         <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#ab9c87;">Er vi enige om, at et forløb er det rigtige, lægger vi en plan. Er vi ikke, siger jeg det ærligt og peger dig et bedre sted hen.</p>
@@ -120,23 +135,23 @@
     <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
       <h2 data-reveal="0" style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.1;letter-spacing:-.012em;text-transform:uppercase;color:#f1e7d7;margin:0 0 clamp(24px,3vw,34px);">Spørgsmål, jeg ofte får</h2>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <details data-reveal="40" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+        <details data-bronze="" data-reveal="40" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Skal jeg vide, hvad der er i vejen, før jeg skriver?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
           <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Nej. De fleste skriver netop, fordi de er i tvivl. Du beskriver, hvad du oplever, og hvad du gerne vil kunne — resten tager vi derfra.</p>
         </details>
-        <details data-reveal="90" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+        <details data-bronze="" data-reveal="90" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad koster samtalen, og hvor lang tid tager den?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
           <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">[Indsæt pris eller om samtalen er gratis] og [Indsæt varighed]. Samtalen er under alle omstændigheder uforpligtende.</p>
         </details>
-        <details data-reveal="140" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+        <details data-bronze="" data-reveal="140" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvor hurtigt hører jeg fra dig?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
           <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">[Indsæt forventet svartid]. Du får svar fra mig personligt — ikke et autosvar.</p>
         </details>
-        <details data-reveal="190" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+        <details data-bronze="" data-reveal="190" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad hvis jeg har smerter lige nu?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
           <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Så er du ikke det forkerte sted. Læs mere om, hvordan jeg arbejder med <a href="smerter-genoptraening.dc.html">smerter og genoptræning</a>. Er symptomerne akutte, kraftige eller forværrede, skal du dog kontakte egen læge, vagtlæge eller 112 først.</p>
         </details>
-        <details data-reveal="240" style="border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
+        <details data-bronze="" data-reveal="240" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad hvis jeg ikke er sikker på, at jeg vil i gang?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
           <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Så er en samtale et fint sted at starte. Du må gerne bruge den til at undersøge mulighederne uden at beslutte noget.</p>
         </details>

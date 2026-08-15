@@ -28,6 +28,21 @@
   @keyframes maShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
   @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+
+  /* ═══ Bronzeplade-kort ═══
+     Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+     style-strengen, fordi dc-runtimet omskriver style-attributten gennem
+     React (#f5c693 bliver til rgb(245, 198, 147)). */
+  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze]{
+    border-color:rgba(28,17,7,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-bronze] svg{stroke:#1c1107!important}
+  /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
+  [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
 </helmet>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
@@ -56,14 +71,14 @@
   <section data-screen-label="Emner" style="padding:clamp(40px,5vw,64px) 0 clamp(56px,7vw,88px);">
     <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:clamp(20px,2.6vw,30px);">
 
-      <article data-reveal="0" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+      <article data-bronze="" data-reveal="0" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
         <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Smerte</span>
         <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Smerte er ikke altid lig med skade</h2>
         <p style="margin:0 0 14px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Smerte er kroppens alarm, ikke et måleinstrument. Alarmen kan gå i gang, fordi noget er blevet belastet mere, end det er vant til — uden at der er sket en skade. Den kan også blive skruet op af søvnmangel, stress og bekymring for, hvad smerten betyder.</p>
         <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">Det er derfor, vi ikke automatisk stopper al træning, når noget gør ondt. Vi kigger på, hvad der provokerer det, hvor meget der er i orden, og hvad du kan gøre imens.</p>
       </article>
 
-      <article data-reveal="60" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+      <article data-bronze="" data-reveal="60" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
         <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Belastning</span>
         <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Kroppen tilpasser sig det, du gør ved den</h2>
         <p style="margin:0 0 20px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Væv bliver stærkere af at blive brugt, og svagere af ikke at blive brugt. Problemet opstår sjældent ved belastning i sig selv, men ved en stor forskel mellem det, kroppen er vant til, og det, du beder den om.</p>
@@ -92,14 +107,14 @@
         </div>
       </article>
 
-      <article data-reveal="120" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+      <article data-bronze="" data-reveal="120" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
         <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Restitution</span>
         <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Fremgangen sker mellem træningerne</h2>
         <p style="margin:0 0 14px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Træningen er stimulus. Tilpasningen sker, når du sover, spiser og har det roligt. Derfor kan mere træning i en presset periode gøre resultatet dårligere, ikke bedre.</p>
         <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">Når hverdagen er hård, er det som regel dosis, der skal justeres — ikke ambitionen.</p>
       </article>
 
-      <article data-reveal="180" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
+      <article data-bronze="" data-reveal="180" style="padding:clamp(26px,3vw,38px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);box-shadow:0 26px 56px -34px rgba(0,0,0,.9);">
         <span style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:14px;">Progression</span>
         <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,28px);line-height:1.14;letter-spacing:-.005em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Lidt mere, lidt oftere — ikke alt på én gang</h2>
         <p style="margin:0 0 14px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Progression er små tilføjelser: en gentagelse mere, lidt mere vægt, en bedre udførelse eller et sæt mere. Over tolv uger bliver de små tilføjelser til en tydelig forskel.</p>

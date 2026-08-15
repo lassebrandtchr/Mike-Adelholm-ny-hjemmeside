@@ -29,6 +29,21 @@
   @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
   @keyframes maSpin{to{transform:rotate(360deg)}}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+
+  /* ═══ Bronzeplade-kort ═══
+     Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+     style-strengen, fordi dc-runtimet omskriver style-attributten gennem
+     React (#f5c693 bliver til rgb(245, 198, 147)). */
+  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze]{
+    border-color:rgba(28,17,7,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-bronze] svg{stroke:#1c1107!important}
+  /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
+  [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
 </helmet>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
@@ -53,12 +68,13 @@
         <p style="margin:0;max-width:560px;font-size:16px;line-height:1.7;color:#8c7e6b;">[Indsæt din egen introduktion: hvor du er uddannet, hvor du har arbejdet, og hvorfor du startede for dig selv.]</p>
       </div>
 
-      <div data-reveal="140" style="flex:1 1 320px;min-width:0;display:flex;justify-content:center;">
-        <div style="position:relative;width:min(360px,84vw);aspect-ratio:1;">
-          <div data-ambient="" aria-hidden="true" style="position:absolute;inset:-16px;border-radius:50%;border:1.5px dashed rgba(224,168,124,.34);animation:maSpin 52s linear infinite;"></div>
-          <div aria-hidden="true" style="position:absolute;inset:4%;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.3),transparent 68%);"></div>
-          <div style="position:absolute;inset:0;border-radius:50%;overflow:hidden;border:10px solid rgba(207,138,79,.85);background:radial-gradient(120% 100% at 50% 6%,#2a2018,#0b0907 72%);box-shadow:0 30px 64px -28px rgba(0,0,0,.95),inset 0 2px 0 rgba(255,255,255,.14);">
-            <img src="assets/mike-portrait.webp" alt="Mike Adelholm" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 96%;transform:scale(1.12);" fetchpriority="high" decoding="async">
+      <div data-reveal="140" style="flex:1 1 340px;min-width:0;display:flex;justify-content:center;">
+        <div style="position:relative;width:min(430px,86vw);">
+          <div data-ambient="" aria-hidden="true" style="position:absolute;inset:-12%;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.28),transparent 66%);pointer-events:none;"></div>
+          <!-- Portrættet har navn og titel indbygget, så det vises helt frem for
+               beskåret i en cirkel, som ville klippe navnepladen af. -->
+          <div style="position:relative;border-radius:26px;overflow:hidden;border:1px solid rgba(224,168,124,.34);box-shadow:0 34px 74px -30px rgba(0,0,0,.95),inset 0 1px 0 rgba(245,198,147,.22);">
+            <img src="assets/mike-brand-portrait.webp" alt="Mike Adelholm, muskuloskeletal fysioterapeut" width="1200" height="1200" style="display:block;width:100%;height:auto;" fetchpriority="high" decoding="async">
           </div>
         </div>
       </div>
@@ -72,23 +88,23 @@
         <p style="margin:0;font-size:16.5px;line-height:1.65;color:#ab9c87;">Kort om uddannelse, videreuddannelse og erfaring. Felterne her udfyldes med dine egne oplysninger, så der ikke står noget, du ikke kan stå på mål for.</p>
       </div>
       <div style="flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:12px;">
-        <div data-reveal="40" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="40" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span style="flex:0 0 150px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c79064;">Grunduddannelse</span>
           <span style="flex:1 1 200px;font-size:16px;line-height:1.6;color:#e7dccb;">[Indsæt uddannelse og årstal]</span>
         </div>
-        <div data-reveal="90" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="90" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span style="flex:0 0 150px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c79064;">Specialisering</span>
           <span style="flex:1 1 200px;font-size:16px;line-height:1.6;color:#e7dccb;">Muskuloskeletal fysioterapi · [Indsæt eksamen eller kursusrække]</span>
         </div>
-        <div data-reveal="140" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="140" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span style="flex:0 0 150px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c79064;">Erfaring</span>
           <span style="flex:1 1 200px;font-size:16px;line-height:1.6;color:#e7dccb;">[Indsæt hvor du har arbejdet, og med hvem]</span>
         </div>
-        <div data-reveal="190" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="190" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span style="flex:0 0 150px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c79064;">Coaching</span>
           <span style="flex:1 1 200px;font-size:16px;line-height:1.6;color:#e7dccb;">[Indsæt certificeringer eller efteruddannelse i træning]</span>
         </div>
-        <div data-reveal="240" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="240" style="display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span style="flex:0 0 150px;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c79064;">Egen træning</span>
           <span style="flex:1 1 200px;font-size:16px;line-height:1.6;color:#e7dccb;">[Indsæt din egen træningsbaggrund]</span>
         </div>
@@ -103,19 +119,19 @@
         <p style="margin:0;font-size:17px;line-height:1.62;color:#ab9c87;">Fire ting, du kan holde mig fast på — uanset om du kommer for at blive stærkere eller for at komme tilbage efter en skade.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(14px,1.8vw,20px);">
-        <div data-reveal="40" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);">
+        <div data-bronze="" data-reveal="40" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);">
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Faglighed uden fagsprog</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.65;color:#ab9c87;">Du skal forstå, hvad vi gør, og hvorfor. Kan jeg ikke forklare det i almindeligt dansk, er det mig, der har et problem — ikke dig.</p>
         </div>
-        <div data-reveal="100" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);">
+        <div data-bronze="" data-reveal="100" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);">
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Realistiske forventninger</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.65;color:#ab9c87;">Jeg siger, hvad jeg tror er muligt, og hvad der vil tage tid. Ingen løfter om hurtige resultater, som ingen kan indfri.</p>
         </div>
-        <div data-reveal="160" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);">
+        <div data-bronze="" data-reveal="160" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);">
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Din hverdag først</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.65;color:#ab9c87;">Planen skal passe ind i dit liv, dit udstyr og din tid. Et program, du ikke kan følge, er ikke en god plan — uanset hvor rigtigt det ser ud på papiret.</p>
         </div>
-        <div data-reveal="220" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.2);">
+        <div data-bronze="" data-reveal="220" style="padding:clamp(24px,2.6vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.2);">
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Ærlighed om grænser</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.65;color:#ab9c87;">Er du bedre hjulpet et andet sted — hos egen læge, en fysisk undersøgelse eller en anden fagperson — siger jeg det, også hvis det koster mig en kunde.</p>
         </div>

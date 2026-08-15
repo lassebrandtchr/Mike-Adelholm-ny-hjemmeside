@@ -28,6 +28,21 @@
   @keyframes maShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
   @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+
+  /* ═══ Bronzeplade-kort ═══
+     Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+     style-strengen, fordi dc-runtimet omskriver style-attributten gennem
+     React (#f5c693 bliver til rgb(245, 198, 147)). */
+  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze]{
+    border-color:rgba(28,17,7,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-bronze] svg{stroke:#1c1107!important}
+  /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
+  [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
 </helmet>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
@@ -72,7 +87,7 @@
         <p style="margin:0;font-size:16.5px;line-height:1.62;color:#ab9c87;">Når jeg har fået lov, deler jeg eksempler på, hvordan et forløb er gået — hvad udgangspunktet var, hvad vi gjorde, og hvor det endte. Altid anonymiseret og altid med samtykke.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(14px,1.8vw,20px);">
-        <div data-reveal="40" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:rgba(255,255,255,.028);border:1px dashed rgba(224,168,124,.26);">
+        <div data-bronze="" data-reveal="40" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px dashed rgba(224,168,124,.26);">
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Pladsholder · styrke</span>
           <div>
             <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Udgangspunkt</div>
@@ -88,7 +103,7 @@
           </div>
           <p style="margin:auto 0 0;padding-top:16px;border-top:1px solid rgba(224,168,124,.14);font-size:13px;line-height:1.55;color:#6f6353;">Deles kun med skriftligt samtykke. Et forløb kan ikke overføres til andre — dit udgangspunkt er dit eget.</p>
         </div>
-        <div data-reveal="100" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:rgba(255,255,255,.028);border:1px dashed rgba(224,168,124,.26);">
+        <div data-bronze="" data-reveal="100" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px dashed rgba(224,168,124,.26);">
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Pladsholder · genoptræning</span>
           <div>
             <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Udgangspunkt</div>
@@ -104,7 +119,7 @@
           </div>
           <p style="margin:auto 0 0;padding-top:16px;border-top:1px solid rgba(224,168,124,.14);font-size:13px;line-height:1.55;color:#6f6353;">Deles kun med skriftligt samtykke. Et forløb kan ikke overføres til andre — dit udgangspunkt er dit eget.</p>
         </div>
-        <div data-reveal="160" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:rgba(255,255,255,.028);border:1px dashed rgba(224,168,124,.26);">
+        <div data-bronze="" data-reveal="160" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px dashed rgba(224,168,124,.26);">
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Pladsholder · hverdag</span>
           <div>
             <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Udgangspunkt</div>
@@ -132,19 +147,19 @@
         <p style="margin:0;font-size:15.5px;line-height:1.7;color:#7c6e5d;">Hvad vi måler, aftaler vi ud fra dit mål. Det skal være noget, du selv kan mærke forskel på.</p>
       </div>
       <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px;">
-        <div data-reveal="40" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="40" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.16);color:#f3c79b;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">✓</span>
           <span><strong style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin-bottom:6px;">Belastning over tid</strong><span style="font-size:15.5px;line-height:1.6;color:#ab9c87;">Hvor meget du løfter, hvor mange gange, og hvordan det udvikler sig.</span></span>
         </div>
-        <div data-reveal="90" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="90" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.16);color:#f3c79b;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">✓</span>
           <span><strong style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin-bottom:6px;">Funktion i hverdagen</strong><span style="font-size:15.5px;line-height:1.6;color:#ab9c87;">Det du gerne vil kunne: bære, løbe, sove, sidde, spille, arbejde.</span></span>
         </div>
-        <div data-reveal="140" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="140" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.16);color:#f3c79b;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">✓</span>
           <span><strong style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin-bottom:6px;">Oplevet begrænsning</strong><span style="font-size:15.5px;line-height:1.6;color:#ab9c87;">Hvor meget generne står i vejen for det, du gerne vil lave.</span></span>
         </div>
-        <div data-reveal="190" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.14);">
+        <div data-bronze="" data-reveal="190" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
           <span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.16);color:#f3c79b;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">✓</span>
           <span><strong style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:14.5px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin-bottom:6px;">Gennemførte træninger</strong><span style="font-size:15.5px;line-height:1.6;color:#ab9c87;">Hvor meget af planen der faktisk bliver til virkelighed i din uge.</span></span>
         </div>

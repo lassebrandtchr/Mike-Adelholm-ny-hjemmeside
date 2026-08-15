@@ -36,6 +36,21 @@
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   @keyframes maStepIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
   @keyframes maCheck{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+
+
+  /* ═══ Bronzeplade-kort ═══
+     Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+     style-strengen, fordi dc-runtimet omskriver style-attributten gennem
+     React (#f5c693 bliver til rgb(245, 198, 147)). */
+  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze]{
+    border-color:rgba(28,17,7,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-bronze] svg{stroke:#1c1107!important}
+  /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
+  [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
 </helmet>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
@@ -152,7 +167,7 @@
             <span aria-hidden="true" style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;display:inline-flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;margin-bottom:24px;box-shadow:0 16px 36px -14px rgba(196,127,71,.8);">✓</span>
             <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);line-height:1.14;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Så er dine svar samlet</h2>
             <p style="margin:0 0 24px;font-size:16.5px;line-height:1.65;color:#ab9c87;">Send dem afsted med knappen nedenfor, så åbner din e-mailklient med teksten klar. Jeg vender tilbage [Indsæt forventet svartid].</p>
-            <div style="padding:22px 24px;border-radius:18px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.16);margin-bottom:24px;">
+            <div data-bronze="" style="padding:22px 24px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);margin-bottom:24px;">
               <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#c79064;margin-bottom:16px;">Dine svar</div>
               <dl style="margin:0;display:flex;flex-direction:column;gap:14px;">
                 <div style="display:flex;flex-wrap:wrap;gap:6px 20px;">
@@ -196,7 +211,7 @@
       </div>
 
       <aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px;">
-        <div data-reveal="60" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:rgba(255,255,255,.028);border:1px solid rgba(224,168,124,.16);">
+        <div data-bronze="" data-reveal="60" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
           <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Direkte kontakt</div>
           <div style="display:flex;flex-direction:column;gap:12px;">
             <a href="mailto:" style="font-size:16px;color:#e0a877;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">[Indsæt e-mail]</a>

@@ -29,6 +29,21 @@
   @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
   @keyframes maSheen{0%{transform:translateX(-120%)}60%,100%{transform:translateX(240%)}}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+
+  /* ═══ Bronzeplade-kort ═══
+     Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+     style-strengen, fordi dc-runtimet omskriver style-attributten gennem
+     React (#f5c693 bliver til rgb(245, 198, 147)). */
+  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze]{
+    border-color:rgba(28,17,7,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-bronze] svg{stroke:#1c1107!important}
+  /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
+  [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
 </helmet>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
@@ -56,7 +71,7 @@
         </a>
       </div>
 
-      <div data-reveal="140" style="flex:1 1 320px;min-width:0;padding:clamp(24px,2.6vw,32px);border-radius:24px;background:linear-gradient(168deg,#1a140e,#0d0a07);border:1px solid rgba(224,168,124,.22);box-shadow:0 28px 60px -32px rgba(0,0,0,.95);">
+      <div data-bronze="" data-reveal="140" style="flex:1 1 320px;min-width:0;padding:clamp(24px,2.6vw,32px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.22);box-shadow:0 28px 60px -32px rgba(0,0,0,.95);">
         <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:20px;">Det indgår i et forløb</div>
         <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;">
           <li style="display:flex;gap:12px;align-items:flex-start;font-size:15.5px;line-height:1.55;color:#e7dccb;"><span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.16);color:#f3c79b;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">✓</span>Individuel plan bygget på dit udgangspunkt</li>
@@ -77,27 +92,27 @@
         <p style="margin:0;font-size:17px;line-height:1.62;color:#ab9c87;">Fem dele, der hænger sammen. Planen er startpunktet — opfølgningen er det, der får den til at holde.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(14px,1.8vw,20px);">
-        <div data-reveal="40" style="padding:28px 24px;border-radius:22px;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid rgba(224,168,124,.16);">
+        <div data-bronze="" data-reveal="40" style="padding:28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
           <span aria-hidden="true" style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:20px;color:rgba(224,168,124,.4);margin-bottom:16px;">01</span>
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Individuel plan</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.62;color:#ab9c87;">Vi starter med dit udgangspunkt: erfaring, tid, udstyr, historik og mål. Planen skal kunne gennemføres i din uge — ellers er den ikke god nok.</p>
         </div>
-        <div data-reveal="100" style="padding:28px 24px;border-radius:22px;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid rgba(224,168,124,.16);">
+        <div data-bronze="" data-reveal="100" style="padding:28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
           <span aria-hidden="true" style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:20px;color:rgba(224,168,124,.4);margin-bottom:16px;">02</span>
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Check-ins</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.62;color:#ab9c87;">Vi taler sammen med jævne mellemrum om, hvordan træningen føles, hvad du har gennemført, og hvad der driller.</p>
         </div>
-        <div data-reveal="160" style="padding:28px 24px;border-radius:22px;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid rgba(224,168,124,.16);">
+        <div data-bronze="" data-reveal="160" style="padding:28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
           <span aria-hidden="true" style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:20px;color:rgba(224,168,124,.4);margin-bottom:16px;">03</span>
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Progression</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.62;color:#ab9c87;">Belastningen stiger i et tempo, kroppen kan følge. Nogle uger går det hurtigt, andre uger holder vi niveauet — begge dele er planlagt.</p>
         </div>
-        <div data-reveal="220" style="padding:28px 24px;border-radius:22px;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid rgba(224,168,124,.16);">
+        <div data-bronze="" data-reveal="220" style="padding:28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
           <span aria-hidden="true" style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:20px;color:rgba(224,168,124,.4);margin-bottom:16px;">04</span>
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Feedback og tilpasning</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.62;color:#ab9c87;">Du kan sende video af dine løft og få konkret feedback. Driller en øvelse, finder vi en variation, der giver samme effekt.</p>
         </div>
-        <div data-reveal="280" style="padding:28px 24px;border-radius:22px;background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border:1px solid rgba(224,168,124,.16);">
+        <div data-bronze="" data-reveal="280" style="padding:28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
           <span aria-hidden="true" style="display:block;font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:20px;color:rgba(224,168,124,.4);margin-bottom:16px;">05</span>
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 11px;">Støtte undervejs</h3>
           <p style="margin:0;font-size:15.5px;line-height:1.62;color:#ab9c87;">Du skal ikke gætte dig frem alene. Når du er i tvivl om smerte, dosering eller teknik, kan du skrive til mig.</p>
