@@ -1,0 +1,40 @@
+html,body{background:#080706;}
+  a{color:#e0a877;}
+  a:hover{color:#f3c79b;}
+  input::placeholder,textarea::placeholder{color:#8c7e6b;}
+  /* Kontaktpanelets mail- og telefonlink er 21px hoeje tekstlinjer — for lidt
+     at ramme paa mobil, hvor de netop er den hurtigste vej til at skrive. */
+  @media (max-width:1179px){
+    aside a{min-height:44px;display:flex;align-items:center}
+  }
+  /* Valgmulighederne er ægte radioknapper i en <label>. Rækken markeres via
+     :has(), så udseendet følger den faktiske tilstand i stedet for at blive
+     sat med JavaScript. */
+  [data-opt]:has(input:checked){
+    border-color:rgba(224,168,124,.55)!important;
+    background:rgba(207,138,79,.13)!important;
+  }
+  [data-opt]:has(input:focus-visible){
+    border-color:rgba(243,199,155,.7)!important;
+  }
+  /* Ugyldige felter markeres synligt, ikke kun for skærmlæsere. */
+  [aria-invalid="true"]{border-color:#e0a877!important;box-shadow:0 0 0 1px #e0a877;}
+  @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
+  @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes maStepIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes maCheck{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:scale(1)}}
+
+
+  /* ═══ Bronzeplade-kort ═══
+     Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+     style-strengen, fordi dc-runtimet omskriver style-attributten gennem
+     React (#f5c693 bliver til rgb(245, 198, 147)). */
+  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze]{
+    border-color:rgba(28,17,7,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-bronze] svg{stroke:#1c1107!important}
+  /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
+  [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<!-- Implementeringsfragment, ikke en side: hentes af dc-runtimet og må
+     ikke indekseres. Står derfor heller ikke i sitemap.xml. -->
+<meta name="robots" content="noindex,nofollow">
+<title>Anmeldelseskarrusel (fragment)</title>
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/spacing.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/elevation.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
-<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
-<style>html,body{background:#080706;}
+<style>x-dc{display:none}</style>
+<style data-page-css>html,body{background:#080706;}
 
   /* ═══ Bronzeplade-kort ═══
      Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
@@ -33,100 +33,79 @@
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
-</helmet>
+<script defer src="vendor/react-18.3.1.production.min.js"></script>
+<script defer src="vendor/react-dom-18.3.1.production.min.js"></script>
+<script defer src="site-config.js"></script>
+<script defer src="site.js"></script>
+<script defer src="support.js"></script>
+</head>
+<body>
+<x-dc>
 <section aria-roledescription="karrusel" aria-label="Anmeldelser" style="font-family:'Hanken Grotesk',system-ui,sans-serif;position:relative;width:100%;">
 
-  <div ref="{{ stageRef }}" role="group" tabindex="0" aria-label="Anmeldelser — brug piletasterne eller træk for at skifte" onKeyDown="{{ onKeyDown }}" style="position:relative;height:392px;width:100%;perspective:1500px;perspective-origin:50% 45%;touch-action:pan-y;cursor:grab;outline-offset:6px;user-select:none;" style-focus="outline:2px solid #cf8a4f;">
+  <!-- Anmeldelserne kommer fra MA_SITE.reviews i site-config.js. Listen er tom,
+       indtil der findes godkendt, dateret samtykke for hver enkelt — se
+       NEEDS_INPUT.md. Er den tom, vises den ærlige tomme tilstand herunder i
+       stedet for eksempeltekst. -->
+  <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width:560px;margin:0 auto;padding:clamp(26px,3.4vw,38px);border-radius:22px;background:rgba(255,255,255,.02);border:1px dashed rgba(224,168,124,.3);text-align:center;">
+      <span aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;background:rgba(207,138,79,.14);color:#e0a877;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:20px;margin-bottom:18px;">”</span>
+      <p style="margin:0 0 10px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#f1e7d7;">Ingen anmeldelser endnu</p>
+      <p style="margin:0;font-size:15.5px;line-height:1.65;color:#ab9c87;">Her kommer der ord fra dem, jeg har hjulpet — men først når de selv har skrevet dem og sagt ja til, at de må stå her. Der står ikke noget, jeg har fundet på.</p>
+    </div>
+  </sc-if>
 
-    <article data-bronze="" data-slide="0" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
-        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
-      </div>
-      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">Jeg havde ondt i lænden i månedsvis uden at vide hvorfor. Mike fandt et niveau, jeg kunne træne på, og byggede roligt op derfra. Efter få uger turde jeg bevæge mig frit igen.</p>
-      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
-        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">Sofie</div>
-        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">Smerter &amp; genoptræning</div>
-      </div>
-    </article>
-
-    <article data-bronze="" data-slide="1" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
-        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
-      </div>
-      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">Professionel fra første samtale. Jeg har prøvet online coaching før, men her føler jeg mig faktisk set — planen bliver justeret, når hverdagen ændrer sig, ikke omvendt.</p>
-      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
-        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">Anonym kunde</div>
-        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">Anonymiseret efter aftale</div>
-      </div>
-    </article>
-
-    <article data-bronze="" data-slide="2" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
-        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
-      </div>
-      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">Jeg forventede at blive presset hårdt for at rykke mig. I stedet fik jeg en plan, der passede til hverdagen med to børn og skiftende vagter — og resultaterne kom alligevel.</p>
-      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
-        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">Anders</div>
-        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">Online coaching</div>
-      </div>
-    </article>
-
-    <article data-bronze="" data-slide="3" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
-        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
-      </div>
-      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">Mike er tydelig i sin kommunikation og god til at forklare hvorfor. Min skulder generede mig i over et år — nu træner jeg tungere, end jeg har gjort længe.</p>
-      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
-        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">Camilla</div>
-        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">Skriftligt samtykke indhentet [dato]</div>
-      </div>
-    </article>
-
-    <article data-bronze="" data-slide="4" style="position:absolute;top:50%;left:50%;width:352px;height:308px;margin:-154px 0 0 -176px;display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-        <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
-        <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(224,168,124,.22);">”</span>
-      </div>
-      <p style="margin:0;flex:1;font-size:16.5px;line-height:1.6;color:#ede3d4;">Det bedste har været aldrig at stå alene med tvivlen. Skriver jeg en besked, får jeg et gennemtænkt svar — ikke bare "det ser fint ud". Det giver en tryghed, jeg ikke havde ventet.</p>
-      <div style="padding-top:16px;border-top:1px solid rgba(224,168,124,.14);">
-        <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">Anonym kunde</div>
-        <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">Styrke &amp; performance</div>
-      </div>
-    </article>
-
-  </div>
-
-  <div style="margin-top:26px;display:flex;align-items:center;justify-content:center;gap:16px;">
-    <button type="button" onClick="{{ prev }}" aria-label="Forrige anmeldelse" style="width:48px;height:48px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.28);color:#e8d4bf;cursor:pointer;transition:background .3s,border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(255,255,255,.075);border-color:rgba(224,168,124,.5);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
-    </button>
-
-    <div ref="{{ dotsRef }}" style="display:flex;align-items:center;gap:9px;">
-      <button type="button" data-dot="0" onClick="{{ go0 }}" aria-label="Gå til anmeldelse 1" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
-      <button type="button" data-dot="1" onClick="{{ go1 }}" aria-label="Gå til anmeldelse 2" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
-      <button type="button" data-dot="2" onClick="{{ go2 }}" aria-label="Gå til anmeldelse 3" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
-      <button type="button" data-dot="3" onClick="{{ go3 }}" aria-label="Gå til anmeldelse 4" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
-      <button type="button" data-dot="4" onClick="{{ go4 }}" aria-label="Gå til anmeldelse 5" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#5f5547;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
+  <sc-if value="{{ hasReviews }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ stageRef }}" role="group" tabindex="0" aria-label="Anmeldelser — brug piletasterne eller træk for at skifte" onKeyDown="{{ onKeyDown }}" style="position:relative;min-height:308px;width:100%;perspective:1500px;perspective-origin:50% 45%;touch-action:pan-y;cursor:grab;outline-offset:6px;user-select:none;" style-focus="outline:2px solid #cf8a4f;">
+      <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="1">
+        <article data-bronze="" data-slide="" style="position:absolute;top:50%;left:50%;width:min(352px,86vw);display:flex;flex-direction:column;gap:16px;padding:28px 28px 24px;border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 70px -34px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform,opacity;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+            <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Anmeldelse</span>
+            <span aria-hidden="true" style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:34px;line-height:.6;color:rgba(207,138,79,.5);">”</span>
+          </div>
+          <blockquote style="margin:0;flex:1;font-size:16px;line-height:1.62;color:#f0e6d6;">{{ r.quote }}</blockquote>
+          <div style="padding-top:14px;border-top:1px solid rgba(224,168,124,.18);">
+            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#e6cfb4;">{{ r.name }}</div>
+            <div style="margin-top:6px;font-size:13.5px;line-height:1.5;color:#8c7e6b;">{{ r.context }}</div>
+          </div>
+        </article>
+      </sc-for>
     </div>
 
-    <button type="button" onClick="{{ next }}" aria-label="Næste anmeldelse" style="width:48px;height:48px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.28);color:#e8d4bf;cursor:pointer;transition:background .3s,border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(255,255,255,.075);border-color:rgba(224,168,124,.5);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
-    </button>
-  </div>
+    <div style="margin-top:26px;display:flex;align-items:center;justify-content:center;gap:16px;">
+      <button type="button" onClick="{{ prev }}" aria-label="Forrige anmeldelse" style="width:48px;height:48px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.28);color:#e8d4bf;cursor:pointer;transition:background .3s,border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(255,255,255,.075);border-color:rgba(224,168,124,.5);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+      </button>
 
-  <p aria-live="polite" style="margin:14px 0 0;text-align:center;font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#6f6353;">{{ statusText }}</p>
+      <div ref="{{ dotsRef }}" style="display:flex;align-items:center;gap:9px;">
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="1">
+          <button type="button" data-dot="" onClick="{{ r.go }}" aria-label="{{ r.dotLabel }}" style="width:32px;height:44px;padding:0;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-radius:8px;"><span aria-hidden="true" style="display:block;width:8px;height:8px;border-radius:999px;background:#8c7e6b;transition:width .42s cubic-bezier(.22,.61,.36,1),background .3s;"></span></button>
+        </sc-for>
+      </div>
+
+      <button type="button" onClick="{{ next }}" aria-label="Næste anmeldelse" style="width:48px;height:48px;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.28);color:#e8d4bf;cursor:pointer;transition:background .3s,border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="background:rgba(255,255,255,.075);border-color:rgba(224,168,124,.5);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+      </button>
+    </div>
+
+    <p aria-live="polite" style="margin:14px 0 0;text-align:center;font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8c7e6b;">{{ statusText }}</p>
+  </sc-if>
 </section>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:520},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;preview&quot;],&quot;default&quot;:&quot;full&quot;,&quot;tsType&quot;:&quot;'full' | 'preview'&quot;,&quot;section&quot;:&quot;Karrusel&quot;}}">
+/* Karrusellen viser kun anmeldelser fra MA_SITE.reviews. Listen er tom,
+   indtil ordlyd, identitetsomfang og dateret samtykke er dokumenteret for
+   hver enkelt — derfor ingen eksempelanmeldelser og intet Review-schema. */
 class Component extends DCLogic {
   state = { index: 0 };
   stageRef = React.createRef();
   dotsRef = React.createRef();
   drag = 0;
+
+  list() {
+    const r = (window.MA_SITE || {}).reviews;
+    return Array.isArray(r) ? r.filter((x) => x && x.quote && x.consentDate) : [];
+  }
 
   componentDidMount() {
     this.reduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -169,9 +148,8 @@ class Component extends DCLogic {
     };
 
     if (this.props.variant === 'preview') {
-      stage.style.height = '340px';
       stage.querySelectorAll('[data-slide]').forEach((c) => {
-        c.style.width = '312px'; c.style.height = '272px'; c.style.margin = '-136px 0 0 -156px';
+        c.style.width = 'min(312px,86vw)';
         c.style.padding = '24px 24px 20px';
       });
     }
@@ -189,6 +167,18 @@ class Component extends DCLogic {
     if (!stage) return;
     const cards = Array.from(stage.querySelectorAll('[data-slide]'));
     if (!cards.length) return;
+
+    /* Kortene har ikke længere fast højde. Scenen måles efter det højeste
+       kort, så intet indhold falder uden for sin plade — uanset bredde,
+       skriftstørrelse eller hvor lang anmeldelsen er. */
+    cards.forEach((c) => { c.style.height = 'auto'; });
+    const tallest = cards.reduce((m, c) => Math.max(m, c.offsetHeight), 0);
+    stage.style.height = (tallest + 84) + 'px';
+    cards.forEach((c) => {
+      c.style.height = tallest + 'px';
+      c.style.margin = (-tallest / 2) + 'px 0 0 ' + (-c.offsetWidth / 2) + 'px';
+    });
+
     const cw = cards[0].offsetWidth || 352;
     const narrow = stage.clientWidth < 640;
     const spread = narrow ? cw * 0.46 : cw * 0.62;
@@ -201,7 +191,8 @@ class Component extends DCLogic {
       const a = Math.abs(o);
       const clamped = Math.max(-2.4, Math.min(2.4, o));
       const scale = Math.max(0.6, 1 - a * 0.09);
-      card.style.transition = (dragging || this.reduced) ? 'none' : 'transform .55s cubic-bezier(.22,.61,.36,1),opacity .45s cubic-bezier(.22,.61,.36,1),filter .45s';
+      /* Kun transform og opacity animeres — begge kan køre på compositoren. */
+      card.style.transition = (dragging || this.reduced) ? 'none' : 'transform .55s cubic-bezier(.22,.61,.36,1),opacity .45s cubic-bezier(.22,.61,.36,1)';
       card.style.transform = 'translate3d(' + (clamped * spread) + 'px,0,' + (-a * depth) + 'px) rotateY(' + (-clamped * rot) + 'deg) scale(' + scale + ')';
       card.style.opacity = a > 2.35 ? '0' : String(Math.max(0, 1 - a * 0.3));
       card.style.zIndex = String(100 - Math.round(a * 10));
@@ -215,32 +206,41 @@ class Component extends DCLogic {
       Array.from(dots.querySelectorAll('[data-dot]')).forEach((b, i) => {
         const on = i === this.state.index;
         const s = b.firstElementChild;
-        if (s) { s.style.width = on ? '26px' : '8px'; s.style.background = on ? '#cf8a4f' : '#5f5547'; }
+        if (s) { s.style.width = on ? '26px' : '8px'; s.style.background = on ? '#cf8a4f' : '#8c7e6b'; }
         b.setAttribute('aria-current', on ? 'true' : 'false');
       });
     }
   }
 
   goTo(i) {
-    const n = Math.max(0, Math.min(4, i));
+    const last = Math.max(0, this.list().length - 1);
+    const n = Math.max(0, Math.min(last, i));
     if (n === this.state.index) { this.layout(); return; }
     this.setState({ index: n });
   }
 
   renderVals() {
+    const list = this.list();
     return {
+      isEmpty: list.length === 0,
+      hasReviews: list.length > 0,
+      reviews: list.map((r, i) => ({
+        quote: r.quote,
+        name: r.name || 'Anonym',
+        context: r.context || '',
+        dotLabel: 'Gå til anmeldelse ' + (i + 1),
+        go: () => this.goTo(i)
+      })),
       stageRef: this.stageRef,
       dotsRef: this.dotsRef,
-      statusText: 'Anmeldelse ' + (this.state.index + 1) + ' af 5',
+      statusText: 'Anmeldelse ' + (this.state.index + 1) + ' af ' + list.length,
       prev: () => this.goTo(this.state.index - 1),
       next: () => this.goTo(this.state.index + 1),
-      go0: () => this.goTo(0), go1: () => this.goTo(1), go2: () => this.goTo(2),
-      go3: () => this.goTo(3), go4: () => this.goTo(4),
       onKeyDown: (e) => {
         if (e.key === 'ArrowLeft') { e.preventDefault(); this.goTo(this.state.index - 1); }
         else if (e.key === 'ArrowRight') { e.preventDefault(); this.goTo(this.state.index + 1); }
         else if (e.key === 'Home') { e.preventDefault(); this.goTo(0); }
-        else if (e.key === 'End') { e.preventDefault(); this.goTo(4); }
+        else if (e.key === 'End') { e.preventDefault(); this.goTo(list.length - 1); }
       }
     };
   }

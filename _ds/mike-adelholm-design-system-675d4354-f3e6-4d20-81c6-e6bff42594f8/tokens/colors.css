@@ -55,10 +55,12 @@
   --n-450:#a3937e;
   --n-500:#9c8b78;
   --n-550:#998a76;
-  --n-600:#8c7e6b;
-  --n-700:#7c6e5d;
-  --n-800:#6f6353;
-  --n-900:#5f5547;
+  --n-600:#8c7e6b;         /* mørkeste tone, der klarer WCAG AA (4.5:1) for
+                              normal tekst på #080706 — brug ikke noget mørkere
+                              til tekst, kun til streger og dekoration */
+  --n-700:#7c6e5d;         /* 4.07:1 — kun dekoration */
+  --n-800:#6f6353;         /* 3.44:1 — kun dekoration */
+  --n-900:#5f5547;         /* kun dekoration */
 
   /* ── Hårstreger: altid kobbertonede, aldrig grå ── */
   --line-copper-10:rgba(224,168,124,.10);

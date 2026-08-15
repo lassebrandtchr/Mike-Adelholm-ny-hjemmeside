@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<!-- Implementeringsfragment, ikke en side: hentes af dc-runtimet og må
+     ikke indekseres. Står derfor heller ikke i sitemap.xml. -->
+<meta name="robots" content="noindex,nofollow">
+<title>Sidefod (fragment)</title>
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/spacing.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/elevation.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
-<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
-<style>html,body{background:#080706;}
+<style>x-dc{display:none}</style>
+<style data-page-css>html,body{background:#080706;}
   /* Footerens linkkolonner er 18–20px høje tekstlinjer. På mobil er det for
      lidt at ramme med en tommel, så hitområdet vokser til 44px. Teksten
      flytter sig ikke — kun det klikbare felt. */
   @media (max-width:1179px){
     footer a{min-height:44px;display:flex;align-items:center}
-  }</style>
-</helmet>
+  }
+</style>
+<script defer src="vendor/react-18.3.1.production.min.js"></script>
+<script defer src="vendor/react-dom-18.3.1.production.min.js"></script>
+<script defer src="site-config.js"></script>
+<script defer src="site.js"></script>
+<script defer src="support.js"></script>
+</head>
+<body>
+<x-dc>
 <footer style="position:relative;overflow:hidden;background:linear-gradient(180deg,#080706,#000);border-top:1px solid rgba(224,168,124,.14);font-family:'Hanken Grotesk',system-ui,sans-serif;padding:clamp(56px,7vw,84px) 0 0;">
   <div aria-hidden="true" style="position:absolute;top:-220px;left:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.16),transparent 66%);pointer-events:none;"></div>
 
@@ -33,10 +41,10 @@
 
       <div style="flex:1 1 300px;max-width:380px;">
         <div style="display:flex;align-items:center;gap:12px;">
-          <img src="assets/logo-badge.webp" alt="Mike Adelholm" width="60" height="60" style="width:60px;height:60px;object-fit:contain;" loading="lazy" decoding="async">
+          <picture style="display:contents"><source type="image/avif" sizes="60px" srcset="assets/logo-badge-64.avif 64w, assets/logo-badge-128.avif 128w"><source type="image/webp" sizes="60px" srcset="assets/logo-badge-64.webp 64w, assets/logo-badge-128.webp 128w"><img src="assets/logo-badge.webp" alt="Mike Adelholm" width="60" height="60" style="width:60px;height:60px;object-fit:contain;" loading="lazy" decoding="async" sizes="60px"></picture>
           <span style="display:flex;flex-direction:column;gap:4px;">
             <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#f0e6d6;line-height:1;">Mike Adelholm</span>
-            <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8c7e6b;line-height:1.4;">Muskuloskeletal fysioterapeut<br>&amp; online coach · estd 2025</span>
+            <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#8c7e6b;line-height:1.4;">Fysioterapeut<br>&amp; online coach · estd 2025</span>
           </span>
         </div>
         <p style="margin:20px 0 0;font-size:15px;line-height:1.7;color:#8c7e6b;">Jeg hjælper dig med at blive stærkere, bevæge dig friere og holde fast i det — med træning og fysioterapeutisk vejledning i samme forløb.</p>
@@ -65,10 +73,21 @@
         <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:16px;">Kontakt</div>
         <div style="display:flex;flex-direction:column;gap:11px;">
           <a href="kontakt.dc.html" style="font-size:15px;color:#f3c79b;text-decoration:none;transition:transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateX(3px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">Book en samtale →</a>
-          <a href="mailto:" style="font-size:15px;color:#bcae99;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">[Indsæt e-mail]</a>
-          <a href="tel:" style="font-size:15px;color:#bcae99;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">[Indsæt telefonnummer]</a>
-          <span style="font-size:15px;color:#8c7e6b;">[Indsæt by eller online-dækning]</span>
-          <span style="font-size:14px;color:#6f6353;">Svartid: [Indsæt forventet svartid]</span>
+          <!-- E-mail, telefon, dækningsområde og svartid kommer fra
+               site-config.js. Er et felt ikke udfyldt, vises linjen ikke —
+               så står der hverken en pladsholder eller et tomt mailto:-link. -->
+          <sc-if value="{{ hasEmail }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ emailHref }}" style="font-size:15px;color:#bcae99;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ email }}</a>
+          </sc-if>
+          <sc-if value="{{ hasPhone }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ phoneHref }}" style="font-size:15px;color:#bcae99;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ phoneLabel }}</a>
+          </sc-if>
+          <sc-if value="{{ hasArea }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:15px;color:#8c7e6b;">{{ area }}</span>
+          </sc-if>
+          <sc-if value="{{ hasResponseTime }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:14px;color:#8c7e6b;">Svartid: {{ responseTime }}</span>
+          </sc-if>
         </div>
       </div>
     </div>
@@ -79,7 +98,7 @@
     </div>
 
     <div style="margin-top:clamp(28px,4vw,40px);padding:22px 0 clamp(28px,4vw,36px);border-top:1px solid rgba(224,168,124,.12);display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between;">
-      <span style="font-size:13.5px;color:#6f6353;">© 2026 Mike Adelholm · CVR [Indsæt CVR-nummer]</span>
+      <span style="font-size:13.5px;color:#8c7e6b;">{{ copyright }}</span>
       <span style="display:flex;flex-wrap:wrap;gap:20px;">
         <a href="privatliv.dc.html" style="font-size:13.5px;color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">Privatlivspolitik</a>
         <a href="kontakt.dc.html" style="font-size:13.5px;color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">Kontakt</a>
@@ -101,7 +120,32 @@ class Component extends DCLogic {
     this.mq.addEventListener('change', this.onMq);
   }
   componentWillUnmount() { if (this.mq) this.mq.removeEventListener('change', this.onMq); }
-  renderVals() { return { isMobile: this.state.isMobile }; }
+
+  renderVals() {
+    /* Kontaktoplysninger hentes fra site-config.js. Tomme felter giver tomme
+       strenge, og de tilhørende linjer renderes slet ikke. */
+    const cfg = (window.MA_SITE || {});
+    const c = cfg.contact || {};
+    const l = cfg.legal || {};
+    const email = (c.email || '').trim();
+    const phone = (c.phone || '').trim();
+    const cvr = (l.cvr || '').trim();
+
+    return {
+      isMobile: this.state.isMobile,
+      hasEmail: !!email,
+      email,
+      emailHref: 'mailto:' + email,
+      hasPhone: !!phone,
+      phoneLabel: (c.phoneLabel || '').trim() || phone,
+      phoneHref: 'tel:' + phone.replace(/[^\d+]/g, ''),
+      hasArea: !!(c.area || '').trim(),
+      area: (c.area || '').trim(),
+      hasResponseTime: !!(c.responseTime || '').trim(),
+      responseTime: (c.responseTime || '').trim(),
+      copyright: '© 2026 Mike Adelholm' + (cvr ? ' · CVR ' + cvr : '')
+    };
+  }
 }
 </script>
 </body>

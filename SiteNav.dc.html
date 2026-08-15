@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<!-- Implementeringsfragment, ikke en side: hentes af dc-runtimet og må
+     ikke indekseres. Står derfor heller ikke i sitemap.xml. -->
+<meta name="robots" content="noindex,nofollow">
+<title>Sidenavigation (fragment)</title>
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
@@ -17,10 +16,8 @@
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
-<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
-<style>
-  html,body{background:#080706;}
+<style>x-dc{display:none}</style>
+<style data-page-css>html,body{background:#080706;}
   @keyframes maNavIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
   @keyframes maSheetIn{from{opacity:0}to{opacity:1}}
   /* Berøringsmål: mindst 44px høje på mobil, hvor dokken skifter til
@@ -31,14 +28,21 @@
     header a[href="kontakt.dc.html"]{min-height:44px}
   }
 </style>
-</helmet>
+<script defer src="vendor/react-18.3.1.production.min.js"></script>
+<script defer src="vendor/react-dom-18.3.1.production.min.js"></script>
+<script defer src="site-config.js"></script>
+<script defer src="site.js"></script>
+<script defer src="support.js"></script>
+</head>
+<body>
+<x-dc>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;">
 
   <header style="position:fixed;top:14px;left:0;right:0;z-index:900;display:flex;justify-content:center;padding:0 14px;pointer-events:none;animation:maNavIn .6s cubic-bezier(.16,1,.3,1) both;">
     <div ref="{{ shellRef }}" style="pointer-events:auto;display:flex;align-items:center;gap:10px;max-width:100%;padding:9px 10px 9px 13px;border-radius:999px;background:linear-gradient(180deg,#151009 0%,#0a0806 100%);border:1px solid rgba(224,168,124,.22);box-shadow:0 20px 46px -22px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.045);transition:padding .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s cubic-bezier(.22,.61,.36,1),border-color .45s;">
 
       <a href="index.html" aria-label="Mike Adelholm — forside" style="display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0;padding:2px 4px 2px 2px;border-radius:999px;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">
-        <img src="assets/logo-badge.webp" alt="" width="36" height="36" style="width:36px;height:36px;object-fit:contain;display:block;" fetchpriority="high" decoding="async">
+        <picture style="display:contents"><source type="image/avif" sizes="36px" srcset="assets/logo-badge-64.avif 64w, assets/logo-badge-128.avif 128w"><source type="image/webp" sizes="36px" srcset="assets/logo-badge-64.webp 64w, assets/logo-badge-128.webp 128w"><img src="assets/logo-badge.webp" alt="" width="36" height="36" style="width:36px;height:36px;object-fit:contain;display:block;" fetchpriority="high" decoding="async" sizes="36px"></picture>
         <span style="display:flex;flex-direction:column;gap:2px;">
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#f0e6d6;line-height:1;white-space:nowrap;">Mike Adelholm</span>
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#8c7e6b;line-height:1;white-space:nowrap;">Fysioterapi &amp; coaching</span>
@@ -74,7 +78,7 @@
   <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
     <div id="ma-mobil-menu" role="dialog" aria-modal="true" aria-label="Menu" style="position:fixed;inset:0;z-index:950;background:#0a0806;overflow-y:auto;padding:20px 20px 40px;animation:maSheetIn .3s cubic-bezier(.22,.61,.36,1) both;">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px;">
-        <img src="assets/logo-badge.webp" alt="Mike Adelholm" width="44" height="44" style="width:44px;height:44px;object-fit:contain;">
+        <picture style="display:contents"><source type="image/avif" sizes="44px" srcset="assets/logo-badge-64.avif 64w, assets/logo-badge-128.avif 128w"><source type="image/webp" sizes="44px" srcset="assets/logo-badge-64.webp 64w, assets/logo-badge-128.webp 128w"><img src="assets/logo-badge.webp" alt="Mike Adelholm" width="44" height="44" style="width:44px;height:44px;object-fit:contain;" sizes="44px"></picture>
         <button type="button" ref="{{ closeRef }}" onClick="{{ toggleMenu }}" aria-label="Luk menu" style="width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.30);color:#e8d4bf;cursor:pointer;" style-focus="outline:2px solid #cf8a4f;outline-offset:2px;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
         </button>

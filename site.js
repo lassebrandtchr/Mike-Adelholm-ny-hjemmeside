@@ -15,6 +15,10 @@
 
   function show(el) {
     var kind = el.getAttribute('data-ma-kind');
+    el.addEventListener('transitionend', function clear() {
+      el.style.willChange = 'auto';
+      el.removeEventListener('transitionend', clear);
+    });
     if (kind === 'draw') {
       el.style.strokeDashoffset = '0';
     } else if (kind === 'grow') {
@@ -23,7 +27,6 @@
     } else {
       el.style.opacity = '1';
       el.style.transform = 'none';
-      el.style.filter = 'none';
     }
   }
 
@@ -39,10 +42,13 @@
     document.querySelectorAll('[data-reveal]').forEach(function (el) {
       if (!prep(el, 'reveal')) return;
       var d = parseInt(el.getAttribute('data-reveal'), 10) || 0;
+      /* Kun opacity og transform animeres. Den tidligere blur() kunne ikke
+         køre på compositoren og tvang en genoptegning af hele elementet i
+         hver frame. */
       el.style.opacity = '0';
       el.style.transform = 'translateY(18px)';
-      el.style.filter = 'blur(4px)';
-      el.style.transition = 'opacity .72s ' + EASE + ' ' + d + 'ms,transform .72s ' + EASE + ' ' + d + 'ms,filter .72s ' + EASE + ' ' + d + 'ms';
+      el.style.willChange = 'opacity, transform';
+      el.style.transition = 'opacity .72s ' + EASE + ' ' + d + 'ms,transform .72s ' + EASE + ' ' + d + 'ms';
       io.observe(el);
     });
 

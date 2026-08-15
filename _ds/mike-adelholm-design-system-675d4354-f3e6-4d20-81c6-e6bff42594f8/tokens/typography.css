@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
+/* Skrifterne defineres i tokens/fonts.css og hostes lokalt — se noten dér.
+   Et @import her ville blokere renderingen på et fremmed domæne. */
 
 :root{
   /* ═══ Skrift ═══

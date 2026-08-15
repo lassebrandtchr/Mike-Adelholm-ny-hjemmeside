@@ -1,31 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Resultater og anmeldelser — kun godkendt indhold | Mike Adelholm</title>
-<meta name="description" content="Godkendte anmeldelser, anonymiserede forløbseksempler og en ærlig ramme for, hvad du kan forvente. Ingen før-og-efter-løfter og ingen opdigtede tal.">
+<meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-eval&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data:; font-src &#x27;self&#x27;; connect-src &#x27;self&#x27; https:; form-action &#x27;self&#x27;; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;">
+<title>Resultater — hvad du kan forvente, og hvad jeg ikke lover | Mike Adelholm</title>
+<meta name="description" content="Hvad vi følger i et forløb, og hvorfor der hverken står anmeldelser eller før-og-efter-tal på siden, før de er godkendt af dem, det handler om.">
+<link rel="canonical" href="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/resultater.dc.html">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#080706">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mike Adelholm">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="Resultater — hvad du kan forvente, og hvad jeg ikke lover | Mike Adelholm">
+<meta property="og:description" content="Hvad vi følger i et forløb, og hvorfor der hverken står anmeldelser eller før-og-efter-tal på siden, før de er godkendt af dem, det handler om.">
+<meta property="og:url" content="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/resultater.dc.html">
+<meta property="og:image" content="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mike Adelholm — fysioterapi og online coaching">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Resultater — hvad du kan forvente, og hvad jeg ikke lover | Mike Adelholm">
+<meta name="twitter:description" content="Hvad vi følger i et forløb, og hvorfor der hverken står anmeldelser eller før-og-efter-tal på siden, før de er godkendt af dem, det handler om.">
+<meta name="twitter:image" content="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/assets/og-image.jpg">
+<meta name="twitter:image:alt" content="Mike Adelholm — fysioterapi og online coaching">
+
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preload" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/assets/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/assets/fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/spacing.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/elevation.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
 <link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
-<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
-<script src="site.js"></script>
-<style>
-  html,body{background:#080706;}
+
+<!-- Rå skabelon skjules, indtil dc-runtimet har renderet. Uden JavaScript
+     vises reserveindholdet øverst i dokumentet i stedet. -->
+<style>x-dc{display:none}</style>
+<style data-page-css>html,body{background:#080706;}
   a{color:#e0a877;}
   a:hover{color:#f3c79b;}
-  @keyframes maShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
   @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
@@ -44,7 +67,63 @@
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
-</helmet>
+
+<!-- React hostes lokalt (samme filer som unpkg leverede, samme SRI-hash).
+     Alle fire scripts er defer: de hentes parallelt med CSS og køres i
+     rækkefølge, når dokumentet er parset. -->
+<script defer src="vendor/react-18.3.1.production.min.js"></script>
+<script defer src="vendor/react-dom-18.3.1.production.min.js"></script>
+<script defer src="site-config.js"></script>
+<script defer src="site.js"></script>
+<script defer src="support.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/resultater.dc.html#brodkrumme",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Resultater",
+          "item": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/resultater.dc.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<noscript>
+  <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;padding:32px 20px;">
+    <div style="max-width:720px;margin:0 auto;">
+      <p style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;margin:0 0 16px;color:#f3ead9;">Mike Adelholm</p>
+      <p style="margin:0 0 20px;line-height:1.65;color:#bcae99;">Siden bygges i browseren med JavaScript. Slå JavaScript til for at se den fulde side — indtil da kan du bruge linkene herunder.</p>
+      <ul style="margin:0 0 24px;padding-left:20px;line-height:2;">
+      <li><a href="./">Forside</a></li>
+      <li><a href="online-coaching.dc.html">Online coaching</a></li>
+      <li><a href="styrke-performance.dc.html">Styrke &amp; performance</a></li>
+      <li><a href="smerter-genoptraening.dc.html">Smerter &amp; genoptræning</a></li>
+      <li><a href="forloeb.dc.html">Sådan foregår et forløb</a></li>
+      <li><a href="om-mike.dc.html">Om Mike</a></li>
+      <li><a href="viden.dc.html">Viden</a></li>
+      <li><a href="kontakt.dc.html">Kontakt</a></li>
+      </ul>
+      <p style="margin:0;line-height:1.65;color:#8c7e6b;">Ved akutte, kraftige eller forværrede symptomer skal du kontakte egen læge, vagtlæge eller 112.</p>
+    </div>
+  </div>
+</noscript>
+<x-dc>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
 
 <dc-import name="SiteNav" current="resultater" hint-size="100%,0px"></dc-import>
@@ -55,14 +134,14 @@
     <div data-ambient="" aria-hidden="true" style="position:absolute;top:-210px;right:-130px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.26),transparent 66%);pointer-events:none;animation:maPulse 11s ease-in-out infinite;"></div>
     <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
       <div data-reveal="0" style="max-width:760px;">
-        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#6f6353;">
+        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#8c7e6b;">
           <a href="index.html" style="color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;">Forside</a> <span aria-hidden="true">/</span> Resultater
         </nav>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span aria-hidden="true" style="width:34px;height:1.5px;background:linear-gradient(90deg,#cf8a4f,rgba(207,138,79,0));"></span>
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#c79064;">Resultater</span>
         </div>
-        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,4.8vw,60px);line-height:1.04;letter-spacing:-.018em;text-transform:uppercase;color:#f3ead9;margin:0 0 22px;">Kun det, <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:maShimmer 8s linear infinite;">jeg kan stå på mål for.</span></h1>
+        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,4.8vw,60px);line-height:1.04;letter-spacing:-.018em;text-transform:uppercase;color:#f3ead9;margin:0 0 22px;">Kun det, <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:100% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">jeg kan stå på mål for.</span></h1>
         <p style="margin:0;max-width:620px;font-size:clamp(16.5px,1.4vw,18.5px);line-height:1.62;color:#b6a791;">Her finder du anmeldelser, jeg har fået lov til at bruge, og anonymiserede eksempler på forløb. Ingen opdigtede tal, ingen lånte billeder og ingen løfter om, hvad du kommer til at opnå.</p>
       </div>
     </div>
@@ -74,7 +153,7 @@
        til at illustrere resultater, så båndet her er ren materialetekstur. -->
   <section aria-hidden="true" style="position:relative;overflow:hidden;background:#000;border-top:1px solid rgba(224,168,124,.1);border-bottom:1px solid rgba(224,168,124,.1);">
     <div style="position:relative;height:clamp(150px,18vw,240px);">
-      <img src="assets/resultater-plade.jpg" alt="" width="2000" height="848" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;" loading="lazy" decoding="async">
+      <picture style="display:contents"><source type="image/avif" sizes="100vw" srcset="assets/resultater-plade-768.avif 768w, assets/resultater-plade-1200.avif 1200w, assets/resultater-plade-1600.avif 1600w, assets/resultater-plade-2000.avif 2000w"><source type="image/webp" sizes="100vw" srcset="assets/resultater-plade-768.webp 768w, assets/resultater-plade-1200.webp 1200w, assets/resultater-plade-1600.webp 1600w, assets/resultater-plade-2000.webp 2000w"><img src="assets/resultater-plade.jpg" alt="" width="2000" height="848" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;" loading="lazy" decoding="async" sizes="100vw"></picture>
       <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,6,.86),rgba(8,7,6,.32) 46%,rgba(8,7,6,.92));"></span>
       <span style="position:absolute;inset:0;background:radial-gradient(120% 92% at 50% 52%,transparent 20%,rgba(8,7,6,.68) 100%);"></span>
     </div>
@@ -98,55 +177,13 @@
         <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:-.012em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Anonymiserede forløbseksempler</h2>
         <p style="margin:0;font-size:16.5px;line-height:1.62;color:#ab9c87;">Når jeg har fået lov, deler jeg eksempler på, hvordan et forløb er gået — hvad udgangspunktet var, hvad vi gjorde, og hvor det endte. Altid anonymiseret og altid med samtykke.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(14px,1.8vw,20px);">
-        <div data-bronze="" data-reveal="40" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px dashed rgba(224,168,124,.26);">
-          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Pladsholder · styrke</span>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Udgangspunkt</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt anonymiseret udgangspunkt]</p>
-          </div>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Det gjorde vi</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt hvad forløbet indeholdt]</p>
-          </div>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Hvor det endte</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt resultat, som personen har godkendt]</p>
-          </div>
-          <p style="margin:auto 0 0;padding-top:16px;border-top:1px solid rgba(224,168,124,.14);font-size:13px;line-height:1.55;color:#6f6353;">Deles kun med skriftligt samtykke. Et forløb kan ikke overføres til andre — dit udgangspunkt er dit eget.</p>
-        </div>
-        <div data-bronze="" data-reveal="100" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px dashed rgba(224,168,124,.26);">
-          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Pladsholder · genoptræning</span>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Udgangspunkt</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt anonymiseret udgangspunkt]</p>
-          </div>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Det gjorde vi</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt hvad forløbet indeholdt]</p>
-          </div>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Hvor det endte</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt resultat, som personen har godkendt]</p>
-          </div>
-          <p style="margin:auto 0 0;padding-top:16px;border-top:1px solid rgba(224,168,124,.14);font-size:13px;line-height:1.55;color:#6f6353;">Deles kun med skriftligt samtykke. Et forløb kan ikke overføres til andre — dit udgangspunkt er dit eget.</p>
-        </div>
-        <div data-bronze="" data-reveal="160" style="display:flex;flex-direction:column;gap:18px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px dashed rgba(224,168,124,.26);">
-          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;">Pladsholder · hverdag</span>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Udgangspunkt</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt anonymiseret udgangspunkt]</p>
-          </div>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Det gjorde vi</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt hvad forløbet indeholdt]</p>
-          </div>
-          <div>
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8c7e6b;margin-bottom:7px;">Hvor det endte</div>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:#a3937e;">[Indsæt resultat, som personen har godkendt]</p>
-          </div>
-          <p style="margin:auto 0 0;padding-top:16px;border-top:1px solid rgba(224,168,124,.14);font-size:13px;line-height:1.55;color:#6f6353;">Deles kun med skriftligt samtykke. Et forløb kan ikke overføres til andre — dit udgangspunkt er dit eget.</p>
-        </div>
+      <!-- Der stod tre pladsholderkort her med "[Indsæt …]"-tekst. De er
+           fjernet: et forløbseksempel må først på siden, når personen bag har
+           godkendt ordlyden skriftligt. -->
+      <div data-reveal="40" style="max-width:640px;padding:clamp(24px,2.8vw,32px);border-radius:22px;background:rgba(255,255,255,.02);border:1px dashed rgba(224,168,124,.3);">
+        <p style="margin:0 0 12px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#f1e7d7;">Ingen eksempler endnu</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#ab9c87;">Jeg deler først et forløb, når personen bag det har læst teksten og sagt ja på skrift. Indtil da står der ikke noget her — hellere en tom plads end et opdigtet forløb.</p>
+        <p style="margin:14px 0 0;font-size:15px;line-height:1.65;color:#8c7e6b;">Et forløb kan i øvrigt ikke overføres til andre. Dit udgangspunkt er dit eget, og det er dét, vi planlægger efter.</p>
       </div>
     </div>
   </section>
@@ -156,7 +193,7 @@
       <div data-reveal="0" style="flex:1 1 340px;min-width:0;">
         <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.1;letter-spacing:-.012em;text-transform:uppercase;color:#f1e7d7;margin:0 0 18px;">Hvad vi følger i et forløb</h2>
         <p style="margin:0 0 16px;font-size:16.5px;line-height:1.65;color:#ab9c87;">Fremgang er mere end vægten på stangen. Vi holder øje med flere ting, så vi kan se udviklingen, også i de uger hvor tallene står stille.</p>
-        <p style="margin:0;font-size:15.5px;line-height:1.7;color:#7c6e5d;">Hvad vi måler, aftaler vi ud fra dit mål. Det skal være noget, du selv kan mærke forskel på.</p>
+        <p style="margin:0;font-size:15.5px;line-height:1.7;color:#8c7e6b;">Hvad vi måler, aftaler vi ud fra dit mål. Det skal være noget, du selv kan mærke forskel på.</p>
       </div>
       <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:12px;">
         <div data-bronze="" data-reveal="40" style="display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
@@ -186,7 +223,7 @@
           <div style="flex:1 1 320px;min-width:0;">
             <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.14;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Billeder vises kun med samtykke</h2>
             <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#ab9c87;">Hvis en person på et tidspunkt giver skriftligt samtykke til at vise billeder fra sit forløb, kommer de her. Indtil da står felterne tomme.</p>
-            <p style="margin:0;font-size:15px;line-height:1.65;color:#7c6e5d;">Jeg bruger ikke lånte billeder, modelbilleder eller billeder af andre til at illustrere resultater. Og jeg lover ikke, at et billede kan gentages hos dig.</p>
+            <p style="margin:0;font-size:15px;line-height:1.65;color:#8c7e6b;">Jeg bruger ikke lånte billeder, modelbilleder eller billeder af andre til at illustrere resultater. Og jeg lover ikke, at et billede kan gentages hos dig.</p>
           </div>
           <div style="flex:1 1 320px;min-width:0;display:flex;gap:14px;">
             <div style="flex:1;aspect-ratio:3/4;border-radius:18px;border:1px dashed rgba(224,168,124,.3);background:rgba(255,255,255,.015);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:18px;">

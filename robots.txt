@@ -1,0 +1,24 @@
+# Alle crawlere må hente og indeksere siden.
+User-agent: *
+Allow: /
+
+# Implementeringsfragmenter er ikke sider. De skal kunne hentes af
+# browseren, men hører ikke til i et søgeresultat.
+User-agent: *
+Disallow: /Mike-Adelholm-ny-hjemmeside/SiteNav.dc.html
+Disallow: /Mike-Adelholm-ny-hjemmeside/SiteFooter.dc.html
+Disallow: /Mike-Adelholm-ny-hjemmeside/ReviewCarousel.dc.html
+
+# Søge-agenter (Googlebot, OAI-SearchBot, Claude-SearchBot, PerplexityBot)
+# er bevidst ikke blokeret — de er forudsætningen for at blive fundet.
+#
+# Vil ejeren frameldes træning af sprogmodeller, fjernes # herunder.
+# Det påvirker ikke søgning.
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: ClaudeBot
+# Disallow: /
+# User-agent: Google-Extended
+# Disallow: /
+
+Sitemap: https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/sitemap.xml
