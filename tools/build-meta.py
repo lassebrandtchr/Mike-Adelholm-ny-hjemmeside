@@ -32,6 +32,10 @@ DS = "_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8"
 OG_IMAGE = "assets/og-image.jpg"
 OG_IMAGE_ALT = "Mike Adelholm — fysioterapi og online coaching"
 
+# Token-filerne er kilden; de samles til én fil, så en side ikke skal hente ni
+# render-blokerende stylesheets. Bundtet lægges i tokens/, så de relative
+# url()-stier til skrifterne stadig passer.
+TOKEN_BUNDLE = "tokens/bundle.css"
 TOKEN_CSS = [
     "tokens/fonts.css",
     "tokens/colors.css",
@@ -42,6 +46,10 @@ TOKEN_CSS = [
     "tokens/motion.css",
     "tokens/shadows.css",
     "tokens/base.css",
+    # Regler, der hører til de importerede fragmenter (SiteNav, SiteFooter,
+    # ReviewCarousel). Deres eget <head> følger ikke med ind i siderne, så
+    # reglerne skal ligge i bundtet for at nå frem.
+    "components.css",
 ]
 
 PRELOAD_FONTS = [
@@ -310,8 +318,7 @@ def build_head(page: str, meta: dict, page_style: str) -> str:
     ]
     for f in PRELOAD_FONTS:
         lines.append(f'<link rel="preload" href="{f}" as="font" type="font/woff2" crossorigin>')
-    for c in TOKEN_CSS:
-        lines.append(f'<link rel="stylesheet" href="{DS}/{c}">')
+    lines.append(f'<link rel="stylesheet" href="{DS}/{TOKEN_BUNDLE}">')
     lines += [
         "",
         "<!-- Rå skabelon skjules, indtil dc-runtimet har renderet. Uden JavaScript",
@@ -408,7 +415,7 @@ def rewrite(path: Path, page: str, meta: dict, fragment: bool) -> None:
             "     ikke indekseres. Står derfor heller ikke i sitemap.xml. -->\n"
             '<meta name="robots" content="noindex,nofollow">\n'
             f"<title>{esc(FRAGMENTS[page])}</title>\n"
-            + "\n".join(f'<link rel="stylesheet" href="{DS}/{c}">' for c in TOKEN_CSS)
+            + f'<link rel="stylesheet" href="{DS}/{TOKEN_BUNDLE}">' 
             + "\n<style>x-dc{display:none}</style>\n"
             + (page_style + "\n" if page_style else "")
             + '<script defer src="vendor/react-18.3.1.production.min.js"></script>\n'
@@ -420,7 +427,10 @@ def rewrite(path: Path, page: str, meta: dict, fragment: bool) -> None:
         pre = ""
     else:
         new_head = build_head(page, meta, page_style)
-        pre = build_noscript(page)
+        # Ingen <noscript>-blok: tools/prerender.mjs lægger hele siden ind som
+        # statisk HTML, så en browser uden JavaScript får det rigtige indhold
+        # i stedet for en reserveliste med links.
+        pre = ""
 
     path.write_text(
         "<!DOCTYPE html>\n"
@@ -429,6 +439,14 @@ def rewrite(path: Path, page: str, meta: dict, fragment: bool) -> None:
         "<body>\n" + pre + body,
         encoding="utf-8",
     )
+
+
+def build_token_bundle() -> None:
+    parts = ["/* GENERERET af tools/build-meta.py — ret token-filerne, ikke denne. */"]
+    for name in TOKEN_CSS:
+        css = (ROOT / DS / name).read_text(encoding="utf-8")
+        parts.append(f"\n/* ── {name} ── */\n{css.strip()}")
+    (ROOT / DS / TOKEN_BUNDLE).write_text("\n".join(parts) + "\n", encoding="utf-8")
 
 
 def build_sitemap() -> None:
@@ -480,12 +498,14 @@ def build_robots() -> None:
 
 
 def main() -> None:
+    build_token_bundle()
     for page, meta in PAGES.items():
         rewrite(ROOT / page, page, meta, fragment=False)
         print("head:", page)
     for page in FRAGMENTS:
         rewrite(ROOT / page, page, {}, fragment=True)
         print("head:", page, "(noindex)")
+    build_token_bundle()
     build_sitemap()
     build_robots()
     print("skrev sitemap.xml og robots.txt")

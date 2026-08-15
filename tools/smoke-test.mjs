@@ -12,6 +12,14 @@
  * Exit 0 = alt grønt. Exit 1 = mindst én fejl.
  */
 import { chromium } from 'playwright';
+import { createRequire } from 'node:module';
+import { readFileSync } from 'node:fs';
+
+/* axe-core er valgfri. Er den installeret, køres den også. */
+let AXE = null;
+try {
+  AXE = readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
+} catch { /* springes over */ }
 
 const BASE = (process.argv[2] || 'http://127.0.0.1:8123').replace(/\/$/, '');
 
@@ -243,6 +251,128 @@ try {
   fail('kontakt', 'flowet kunne ikke gennemføres: ' + e.message.split('\n')[0]);
 }
 
+/* ── 5b. Kontaktformularen med tastatur alene ── */
+try {
+  const { page } = await load(ctx, 'kontakt.dc.html');
+  await page.waitForSelector('form');
+  await page.locator('#fokus-staerkere').focus();
+  await page.keyboard.press('ArrowDown');
+  const picked = await page.evaluate(() =>
+    document.querySelector('input[name="fokus"]:checked')?.value || '');
+  if (!picked) fail('kontakt/tastatur', 'piletast valgte ingen radioknap');
+
+  /* Enter i formularen skal sende — ikke bare gøre ingenting. */
+  await page.keyboard.press('Enter');
+  await page.waitForTimeout(400);
+  const step2 = await page.locator('#maal').count();
+  if (!step2) fail('kontakt/tastatur', 'Enter gik ikke videre til næste trin');
+  await page.close();
+} catch (e) {
+  fail('kontakt/tastatur', e.message.split('\n')[0]);
+}
+
+/* ── 5c. Pre-render: indhold og navigation uden JavaScript ── */
+for (const path of ['index.html', 'kontakt.dc.html', 'viden.dc.html']) {
+  const c = await browser.newContext({ javaScriptEnabled: false });
+  const page = await c.newPage();
+  await page.goto(`${BASE}/${path}`);
+  const text = await page.locator('body').innerText();
+  if (text.trim().length < 800) fail(path, `kun ${text.trim().length} tegn uden JavaScript`);
+  if (PLACEHOLDER.test(text)) fail(path, 'skabelontekst i pre-render');
+  /* Kun det synlige tæller: <x-dc> med råskabelonen bliver i dokumentet,
+     fordi dc-runtimet læser den derfra, men den er skjult med CSS. */
+  if (await page.locator('#dc-prerender h1').count() !== 1) fail(path, 'pre-render mangler præcis ét h1');
+  if (await page.locator('#dc-prerender a[href]').count() < 8) fail(path, 'pre-render mangler navigation');
+  const raw = await page.locator('x-dc').evaluate((e) => getComputedStyle(e).display).catch(() => 'none');
+  if (raw !== 'none') fail(path, 'råskabelonen er synlig uden JavaScript');
+  await c.close();
+}
+
+/* ── 5d. prefers-reduced-motion: alt indhold skal stå fast og synligt ── */
+{
+  const c = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
+  const page = await c.newPage();
+  await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('#dc-root main');
+  const hidden = await page.$$eval('#dc-root [data-reveal],#dc-root [data-grow]',
+    (els) => els.filter((e) => Number(getComputedStyle(e).opacity) < 0.9).length);
+  if (hidden) fail('reduced-motion', `${hidden} elementer står usynlige`);
+  await c.close();
+}
+
+/* ── 5e. Mobilnavigationen skal kunne åbnes og lukkes ── */
+{
+  const c = await browser.newContext({ viewport: { width: 375, height: 812 }, hasTouch: true, isMobile: true });
+  const page = await c.newPage();
+  const errs = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('#dc-root main');
+  const closed = await page.locator('#dc-root a:visible').count();
+  await page.locator('#dc-root header button').first().click();
+  await page.waitForTimeout(500);
+  const open = await page.locator('#dc-root a:visible').count();
+  if (open <= closed) fail('mobilnav', 'burgermenuen åbnede ikke');
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(400);
+  if (await page.locator('#dc-root a:visible').count() !== closed) {
+    fail('mobilnav', 'Escape lukkede ikke menuen igen');
+  }
+  for (const e of errs) fail('mobilnav', 'konsol ' + e);
+  await c.close();
+}
+
+/* ── 5f. Anmeldelseskarrusellen med rigtige data ──────────────────────────
+   Listen er tom i produktion, så koden bag ville ellers aldrig blive kørt.
+   Her lægges tre anmeldelser ind — én bevidst meget lang — for at fange den
+   fejl, auditten fandt: indhold, der faldt ud over kortets bund. */
+{
+  const c = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  await c.addInitScript(() => {
+    const fixture = [
+      { quote: 'Kort udsagn nummer et.', name: 'A', context: 'Online coaching', consentDate: '2026-01-01' },
+      { quote: 'Et markant længere udsagn, der fylder betydeligt mere plads end det første, netop for at se om kortene stadig kan rumme deres eget indhold uden at teksten falder ud over kanten af pladen.', name: 'B', context: 'Styrke & performance', consentDate: '2026-01-02' },
+      { quote: 'Tredje udsagn.', name: 'C', context: 'Smerter', consentDate: '2026-01-03' },
+    ];
+    const iv = setInterval(() => {
+      if (window.MA_SITE) { window.MA_SITE.reviews = fixture; clearInterval(iv); }
+    }, 5);
+  });
+  const page = await c.newPage();
+  const errs = [];
+  page.on('pageerror', (e) => errs.push(e.message));
+  await page.goto(`${BASE}/resultater.dc.html`, { waitUntil: 'networkidle' });
+  await page.waitForSelector('#dc-root article[data-slide]', { timeout: 15000 })
+    .catch(() => fail('karrusel', 'anmeldelserne blev ikke renderet'));
+  await page.waitForTimeout(1200);
+  if (await page.locator('#dc-root article[data-slide]').count() !== 3) {
+    fail('karrusel', 'forkert antal anmeldelser');
+  }
+  for (const [w, h] of [[375, 812], [768, 1024], [1363, 936], [1920, 1080]]) {
+    await page.setViewportSize({ width: w, height: h });
+    await page.waitForTimeout(700);
+    const over = await page.$$eval('#dc-root article[data-slide]', (cards) => {
+      let worst = 0;
+      for (const card of cards) {
+        const bottom = card.getBoundingClientRect().bottom;
+        for (const kid of card.children) {
+          worst = Math.max(worst, kid.getBoundingClientRect().bottom - bottom);
+        }
+      }
+      return Math.round(worst);
+    });
+    if (over > 1) fail('karrusel', `indhold stikker ${over}px ud af kortet @${w}`);
+  }
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.locator('#dc-root [role=group]').first().focus();
+  await page.keyboard.press('ArrowRight');
+  await page.waitForTimeout(500);
+  const status = (await page.locator('#dc-root [aria-live=polite]').last().innerText()).toLowerCase();
+  if (!/2 af 3/.test(status)) fail('karrusel', 'piletast skiftede ikke anmeldelse');
+  for (const e of errs) fail('karrusel', 'konsol ' + e);
+  await c.close();
+}
+
 /* ── 6. Responsivt: intet vandret overløb, ingen tekst uden for sit kort ── */
 const SIZES = [[320, 640], [375, 812], [430, 932], [768, 1024], [1024, 768], [1440, 900], [1920, 1080]];
 for (const [w, h] of SIZES) {
@@ -332,6 +462,26 @@ for (const [w, h] of SIZES) {
   });
   for (const b of bad) fail('kontrast index.html', b);
   await page.close();
+}
+
+/* ── 8. axe-core, hvis den er installeret ── */
+if (AXE) {
+  const page = await ctx.newPage();
+  for (const path of PAGES) {
+    await page.goto(`${BASE}/${path}`, { waitUntil: 'networkidle' });
+    await page.waitForSelector('#dc-root main, #dc-root footer');
+    /* evaluate frem for addScriptTag: sidens CSP tillader ikke inline script. */
+    await page.evaluate(AXE);
+    const res = await page.evaluate(() => axe.run(document.getElementById('dc-root'), {
+      runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'] },
+    }));
+    for (const v of res.violations) {
+      fail(path, `axe ${v.id} (${v.impact}, ${v.nodes.length}): ${v.help}`);
+    }
+  }
+  await page.close();
+} else {
+  notes.push('axe-core ikke installeret — tilgængelighedsreglerne blev ikke kørt');
 }
 
 await browser.close();

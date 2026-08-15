@@ -1,0 +1,380 @@
+/* GENERERET af tools/build-meta.py — ret token-filerne, ikke denne. */
+
+/* ── tokens/fonts.css ── */
+/* ═══ Skrift ═══
+   Begge skrifter hostes fra vores eget domæne. Tidligere blev Archivo hentet
+   via @import fra Google Fonts i tokens/typography.css; det kostede en
+   render-blokerende rundtur til to fremmede domæner og sendte samtidig
+   besøgendes IP til Google. Filerne er de samme variable woff2-subsets, som
+   Google Fonts selv leverer (Archivo v25, latin + latin-ext).
+   Apple Garamond er UDGÅET: den stammede fra en fejlagtig kilde
+   (Ole Bjerre-siden) og er ikke Mikes skrift. */
+
+/* Archivo — display/labels. Variable woff2, weights 500-900. */
+@font-face{font-family:'Archivo';src:url("../assets/fonts/Archivo-latin.woff2") format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';src:url("../assets/fonts/Archivo-latin-ext.woff2") format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* Hanken Grotesk — UI / body. Variable woff2, weights 100-900. */
+@font-face{font-family:'Hanken Grotesk';src:url("../assets/fonts/HankenGrotesk-latin.woff2") format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Hanken Grotesk';src:url("../assets/fonts/HankenGrotesk-latin-ext.woff2") format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Hanken Grotesk';src:url("../assets/fonts/HankenGrotesk-italic-latin.woff2") format('woff2');font-weight:100 900;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Hanken Grotesk';src:url("../assets/fonts/HankenGrotesk-italic-latin-ext.woff2") format('woff2');font-weight:100 900;font-style:italic;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* ── tokens/colors.css ── */
+:root{
+  /* ═══ MIKE ADELHOLM — kernepalette, hentet 1:1 fra landingssiden ═══ */
+
+  /* ── Ground: sort → varm nærsort ── */
+  --ink-1000:#000000;      /* hero-baggrund, dybeste lag */
+  --ink-950:#080706;       /* sidens standardbaggrund */
+  --ink-900:#0b0907;
+  --ink-850:#0d0a07;       /* kortbund, nedre stop */
+  --ink-800:#16110c;
+  --ink-750:#1a140e;       /* kortbund, øvre stop */
+  --ink-700:#1c150e;
+  --ink-650:#1c1107;       /* tekst PÅ kobber */
+  --ink-600:#2a2018;
+
+  /* ── Kobber/bronze: mærkets metal ── */
+  --copper-700:#7a5c44;
+  --copper-600:#8c5429;
+  --copper-550:#a5612f;
+  --copper-500:#bd7a44;
+  --copper-450:#c07f4a;
+  --copper-400:#c47f47;
+  --copper-350:#c98049;
+  --copper-300:#cf8a4f;    /* PRIMÆR accent — prikker, glød, ikoner */
+  --copper-250:#c79064;    /* øjenbryns-labels */
+  --copper-200:#d99a63;
+  --copper-150:#e0a877;
+  --copper-100:#e3a877;
+  --copper-050:#eab784;
+
+  /* ── Champagne: metallets lyseste ende (gradient-højlys) ── */
+  --champagne-300:#e7b083;
+  --champagne-200:#f3c089;
+  --champagne-150:#f3c79b;
+  --champagne-100:#f5c693;
+  --champagne-050:#f7d8b4;
+
+  /* ── Bone: varm læsbar tekst på sort ── */
+  --bone-000:#f3ead9;      /* h1 */
+  --bone-050:#f1e7d7;      /* h2 */
+  --bone-100:#f0e6d6;
+  --bone-150:#ede3d4;      /* brødtekst-standard */
+  --bone-200:#ecdcc6;
+  --bone-250:#e8d4bf;
+  --bone-300:#e7dccb;
+  --bone-350:#e6cfb4;      /* badge-tekst */
+  --bone-400:#ddd0bd;
+  --bone-450:#d6c4ac;
+
+  /* ── Dæmpede toner (sekundær tekst på sort) ── */
+  --n-100:#cdb9a2;
+  --n-200:#c8b69e;
+  --n-300:#bcae99;
+  --n-350:#b6a791;         /* hero-underrubrik */
+  --n-400:#ab9c87;         /* kort-brødtekst */
+  --n-450:#a3937e;
+  --n-500:#9c8b78;
+  --n-550:#998a76;
+  --n-600:#8c7e6b;         /* mørkeste tone, der klarer WCAG AA (4.5:1) for
+                              normal tekst på #080706 — brug ikke noget mørkere
+                              til tekst, kun til streger og dekoration */
+  --n-700:#7c6e5d;         /* 4.07:1 — kun dekoration */
+  --n-800:#6f6353;         /* 3.44:1 — kun dekoration */
+  --n-900:#5f5547;         /* kun dekoration */
+
+  /* ── Hårstreger: altid kobbertonede, aldrig grå ── */
+  --line-copper-10:rgba(224,168,124,.10);
+  --line-copper-16:rgba(224,168,124,.16);
+  --line-copper-18:rgba(224,168,124,.18);
+  --line-copper-22:rgba(224,168,124,.22);
+  --line-copper-30:rgba(224,168,124,.30);
+  --line-copper-34:rgba(224,168,124,.34);
+  --line-bone-035:rgba(255,255,255,.035);
+  --line-bone-06:rgba(255,255,255,.06);
+
+  /* ── Wash: hvid/kobber ved lav alpha (kortflader) ── */
+  --wash-bone-012:rgba(255,255,255,.012);
+  --wash-bone-03:rgba(255,255,255,.03);
+  --wash-bone-035:rgba(255,255,255,.035);
+  --wash-bone-05:rgba(255,255,255,.05);
+  --wash-copper-12:rgba(196,127,71,.12);
+  --wash-copper-32:rgba(207,138,79,.32);
+  --wash-copper-42:rgba(196,127,71,.42);
+  --wash-copper-50:rgba(196,127,71,.50);
+
+  /* ── Semantiske aliaser ── */
+  --surface-page:var(--ink-950);
+  --surface-hero:var(--ink-1000);
+  --surface-card:var(--wash-bone-05);
+  --surface-inset:var(--wash-bone-03);
+  --surface-chip:var(--wash-bone-035);
+
+  --text-heading:var(--bone-050);
+  --text-hero:var(--bone-000);
+  --text-body:var(--bone-150);
+  --text-muted:var(--n-400);
+  --text-subtle:var(--n-450);
+  --text-eyebrow:var(--copper-250);
+  --text-badge:var(--bone-350);
+  --text-on-copper:var(--ink-650);
+
+  --accent:var(--copper-300);
+  --accent-hover:var(--champagne-100);
+  --accent-soft:var(--copper-150);
+  --link:var(--copper-150);
+  --link-hover:var(--champagne-100);
+
+  --border-card:var(--line-copper-16);
+  --border-card-hover:var(--line-copper-34);
+  --border-field:var(--line-copper-22);
+  --border-field-focus:var(--copper-300);
+
+  /* ── Signaturflader ── */
+  --grad-cta:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f); /* @kind color */
+  --grad-metal-text:linear-gradient(120deg,#f7d8b4 0%,#e0a877 24%,#c07f4a 46%,#f3c79b 66%,#bd7a44 84%,#e7b083 100%); /* @kind color */
+  --grad-metal-text-short:linear-gradient(120deg,#f7d8b4,#cf8a4f,#f3c79b); /* @kind color */
+  --grad-card:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.012)); /* @kind color */
+  --grad-chip:linear-gradient(135deg,#1a140e,#0d0a07); /* @kind color */
+  --grad-icon-tile:linear-gradient(135deg,#1c150e,#0d0a07); /* @kind color */
+  --grad-strip:linear-gradient(180deg,#000,#080706); /* @kind color */
+  --grad-portrait:radial-gradient(120% 95% at 50% 12%,#2a2018 0%,#16110c 42%,#0b0907 100%); /* @kind color */
+  --grad-scrim:linear-gradient(180deg,transparent,rgba(8,7,6,.85)); /* @kind color */
+  --glow-hero:radial-gradient(circle,rgba(196,127,71,.42) 0%,rgba(140,84,41,.12) 38%,transparent 66%); /* @kind color */
+  --glow-badge:radial-gradient(circle,rgba(196,127,71,.5),transparent 70%); /* @kind color */
+  --glow-portrait:radial-gradient(95% 70% at 50% 8%,rgba(207,138,79,.32),transparent 58%); /* @kind color */
+  --sheen:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent); /* @kind color */
+  /* ── Aliaser: navne systemets kort og komponenter allerede bruger ── */
+  --ink-800-alias:var(--ink-800);
+  --gold-500:var(--copper-300);
+  --gold-600:var(--copper-450);
+  --gold-400:var(--champagne-200);
+  --bronze-600:var(--copper-600);
+  --champagne-500:var(--champagne-100);
+  --line-ink-08:rgba(11,9,7,.08);
+  --line-ink-10:rgba(11,9,7,.10);
+  --line-ink-14:rgba(11,9,7,.14);
+  --line-gold-20:var(--line-copper-18);
+  --line-gold-40:var(--line-copper-34);
+  --wash-gold-06:rgba(207,138,79,.06);
+  --wash-gold-12:var(--wash-copper-12);
+  --wash-gold-20:rgba(207,138,79,.20);
+  --grad-hero:var(--grad-portrait);
+  --grad-banner:var(--grad-strip);
+  --grad-gold:var(--grad-cta);
+}
+
+/* ── tokens/typography.css ── */
+/* Skrifterne defineres i tokens/fonts.css og hostes lokalt — se noten dér.
+   Et @import her ville blokere renderingen på et fremmed domæne. */
+
+:root{
+  /* ═══ Skrift ═══
+     Archivo — display/labels. Altid VERSALER, tung vægt, stramt spor.
+     Hanken Grotesk — brødtekst. Aldrig versaler, aldrig tungere end 600. */
+  --font-display:'Archivo',system-ui,sans-serif;
+  --font-body:'Hanken Grotesk',system-ui,sans-serif;
+
+  --fw-body:400; /* @kind font */
+  --fw-body-med:500; /* @kind font */
+  --fw-body-semi:600; /* @kind font */
+  --fw-display:700; /* @kind font */
+  --fw-display-bold:800; /* @kind font */
+  --fw-display-black:900; /* @kind font */
+
+  /* ── Skala (mobil-først, som på landingssiden) ── */
+  --fs-hero:43px;      --lh-hero:1.02; /* @kind font */   --ls-hero:-.015em;
+  --fs-h2:32px;        --lh-h2:1.08; /* @kind font */     --ls-h2:-.01em;
+  --fs-h2-sm:26px;
+  --fs-h3:19px;
+  --fs-lead:17px;      --lh-lead:1.6; /* @kind font */
+  --fs-body:15.5px;    --lh-body:1.6; /* @kind font */
+  --fs-body-sm:14.5px; --lh-body-sm:1.5; /* @kind font */
+  --fs-chip:12px;
+  --fs-eyebrow:11.5px; --ls-eyebrow:.30em;
+  --fs-badge:11px;     --ls-badge:.12em;
+  --ls-label:.26em;
+  --ls-cta:.05em;
+
+  /* ── Desktop-opskalering ── */
+  --fs-hero-lg:64px;
+  --fs-h2-lg:42px;
+}
+
+@media (min-width:900px){
+  :root{ --fs-hero:var(--fs-hero-lg); --fs-h2:var(--fs-h2-lg); }
+}
+
+:root{
+  /* ── Aliaser til eksisterende kort/komponenter ── */
+  --font-ui:var(--font-body);
+  --tracking-heading:var(--ls-h2);
+  --tracking-display:var(--ls-hero);
+  --leading-heading:var(--lh-h2);
+  --display-1:var(--fs-hero);
+  --display-2:var(--fs-h2);
+  --body-lg:var(--fs-lead);
+  --body-md:var(--fs-body);
+  --body-sm:var(--fs-body-sm);
+}
+
+/* ── tokens/spacing.css ── */
+:root{
+  --sp-1:4px; --sp-2:6px; --sp-3:9px; --sp-4:11px; --sp-5:14px; /* @kind spacing */
+  --sp-6:16px; --sp-7:18px; --sp-8:22px; --sp-9:26px; --sp-10:32px; /* @kind spacing */
+  --sp-11:40px; --sp-12:52px; --sp-13:64px; /* @kind spacing */
+
+  --gutter:32px; /* @kind spacing */
+  --gutter-mobile:20px; /* @kind spacing */
+  --measure:1180px; /* @kind spacing */
+  --measure-narrow:1080px; /* @kind spacing */
+  --measure-prose:920px; /* @kind spacing */
+
+  /* Fluid section rhythm — the source never uses a fixed section padding */
+  --section-y:clamp(60px,8vw,96px); /* @kind spacing */
+  --section-y-lg:clamp(70px,9vw,110px); /* @kind spacing */
+  --section-y-sm:clamp(40px,6vw,64px); /* @kind spacing */
+  --banner-y:150px; /* @kind spacing */
+  --card-p:28px; /* @kind spacing */
+  --panel-p:clamp(30px,4vw,52px); /* @kind spacing */
+}
+
+/* ── tokens/radius.css ── */
+:root{
+  --r-xs:9px; --r-sm:11px; --r-md:14px; --r-lg:16px; --r-xl:18px;
+  --r-2xl:22px; --r-3xl:24px; --r-4xl:26px; --r-5xl:28px; --r-6xl:30px;
+  --r-page:clamp(28px,5vw,52px); /* @kind radius */
+  --r-panel:clamp(28px,4vw,44px); /* @kind radius */
+  --r-pill:999px;
+  --r-round:50%;
+}
+
+/* ── tokens/elevation.css ── */
+:root{
+  /* Long, soft, warm-tinted, heavily negative-spread. Never neutral black. */
+  --sh-dock:0 12px 30px -20px rgba(23,19,14,.5);
+  --sh-card:0 30px 60px -40px rgba(23,19,14,.3);
+  --sh-card-hover:0 30px 54px -32px rgba(23,19,14,.38);
+  --sh-row-hover:0 22px 44px -30px rgba(23,19,14,.4);
+  --sh-panel:0 30px 64px -42px rgba(23,19,14,.3);
+  --sh-media:0 30px 60px -34px rgba(23,19,14,.42);
+  --sh-float:0 22px 42px -18px rgba(0,0,0,.7);
+  --sh-medal:0 46px 90px -26px rgba(0,0,0,.72),0 0 70px -10px rgba(217,154,43,.4),inset 0 2px 0 rgba(255,255,255,.6);
+  --sh-gold:0 16px 32px -14px rgba(217,154,43,.7);
+  --sh-gold-hover:0 24px 40px -14px rgba(217,154,43,.85);
+  --sh-gold-pill:0 8px 18px -8px rgba(217,154,43,.95);
+  --ring-focus:0 0 0 3px rgba(217,154,43,.18);
+}
+
+/* ── tokens/motion.css ── */
+:root{
+  --ease:cubic-bezier(.22,.61,.36,1); /* @kind other */
+  --ease-page:cubic-bezier(.16,1,.3,1); /* @kind other */
+  --dur-fast:.3s; /* @kind other */
+  --dur-base:.35s; /* @kind other */
+  --dur-slow:.45s; /* @kind other */
+  --dur-page:.72s; /* @kind other */
+  --lift:translateY(-3px); /* @kind other */
+  --lift-card:translateY(-6px); /* @kind other */
+  --nudge:translateX(4px); /* @kind other */
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pageIn{from{opacity:0;transform:translateY(22px) scale(.992)}to{opacity:1;transform:none}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes riseIn{from{opacity:0;transform:translateY(16px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes emberPulse{0%,100%{opacity:.45;transform:scale(.82)}50%{opacity:1;transform:scale(1)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.18}}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+/* ── tokens/shadows.css ── */
+:root{
+  /* ═══ Mikes signaturskygger & glød ═══ */
+  --shadow-cta:0 14px 34px -10px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);
+  --shadow-cta-hover:0 18px 42px -10px rgba(196,127,71,.85),inset 0 1px 0 rgba(255,255,255,.55);
+  --shadow-chip:0 12px 26px -12px rgba(0,0,0,.8);
+  --shadow-dark-card:0 18px 40px -20px rgba(0,0,0,.8);
+  --shadow-frame:0 30px 70px -30px rgba(0,0,0,.9),inset 0 0 70px rgba(0,0,0,.5);
+  --glow-dot:0 0 10px #cf8a4f;
+  --glow-text:0 0 24px rgba(207,138,79,.35);
+  --ease-mike:cubic-bezier(.16,1,.3,1); /* @kind other */
+  --dur-reveal:.7s; /* @kind other */
+  --loop-pulse:7s; /* @kind other */
+  --loop-float:6s; /* @kind other */
+  --loop-shimmer:7s; /* @kind other */
+  --loop-sheen:5s; /* @kind other */
+}
+
+@keyframes mikePulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.7;transform:scale(1.06)}}
+@keyframes mikeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes mikeShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
+@keyframes mikeSheen{0%{transform:translateX(-120%)}60%,100%{transform:translateX(220%)}}
+@keyframes mikeScrollDot{0%{transform:translateY(0);opacity:0}30%{opacity:1}100%{transform:translateY(14px);opacity:0}}
+
+/* ── tokens/base.css ── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--ink-800);overflow-x:hidden}
+body{background:var(--ink-800);color:var(--text-heading);font-family:var(--font-ui);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--link-hover)}
+::selection{background:var(--gold-500);color:var(--ink-800)}
+img{display:block}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;letter-spacing:var(--tracking-heading);line-height:var(--leading-heading);text-wrap:balance}
+p{text-wrap:pretty}
+button,input,textarea,select{font-family:inherit}
+
+/* ═══ Links i løbende tekst ═══
+   Sidens links er kobberfarvede uden understregning. Det holder i knapper og
+   kort, men et link midt i en tekst må ikke kun skille sig ud på farve
+   (WCAG 1.4.1). Understregningen sættes derfor på de links, der står inde i
+   brødtekst, og ikke på dem, der i forvejen har en knap- eller kortramme. */
+p a, li a, dd a, blockquote a, label span a {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+  text-decoration-thickness: .06em;
+}
+p a:hover, li a:hover, dd a:hover, blockquote a:hover, label span a:hover {
+  text-decoration-thickness: .12em;
+}
+
+/* ── components.css ── */
+/* ═══ Fælles komponentregler ═══
+   Reglerne her hører til SiteNav, SiteFooter og ReviewCarousel. Fragmenterne
+   hentes af dc-runtimet ind i de enkelte sider, og deres eget <head> følger
+   ikke med. Derfor ligger reglerne her og samles ind i tokens/bundle.css, som
+   alle sider indlæser.
+
+   Filen indeholder ingen url() — den kan derfor ligge hvor som helst. */
+
+/* Indgangsanimation for navigationsdokken (kun transform og opacity). */
+@keyframes maNavIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@keyframes maSheetIn{from{opacity:0}to{opacity:1}}
+
+/* ── Berøringsmål ────────────────────────────────────────────────────────────
+   Under 1180px skifter dokken til Book-knap + burger, og footerens linkkolonner
+   er 18–20px høje tekstlinjer. Begge dele er for lidt at ramme med en tommel,
+   så hitområdet vokser til 44px. Teksten flytter sig ikke — kun det klikbare
+   felt. Desktop-dokkens slanke proportioner er urørte. */
+@media (max-width:1179px){
+  header a[href="./"],
+  header a[href="kontakt.dc.html"]{min-height:44px}
+  footer a{min-height:44px;display:flex;align-items:center}
+}
+
+/* ═══ Bronzeplade-kort ═══
+   Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
+   style-strengen, fordi dc-runtimet omskriver style-attributten gennem React
+   (#f5c693 bliver til rgb(245, 198, 147)). */
+[data-bronze],[data-bronze] *{color:#1c1107!important}
+[data-bronze]{
+  border-color:rgba(28,17,7,.24)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+}
+[data-bronze] svg{stroke:#1c1107!important}
+/* Mørke ikonfliser på pladen beholder deres bronzefarvede ikon */
+[data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+[data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}

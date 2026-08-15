@@ -8,3 +8,17 @@ img{display:block}
 h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;letter-spacing:var(--tracking-heading);line-height:var(--leading-heading);text-wrap:balance}
 p{text-wrap:pretty}
 button,input,textarea,select{font-family:inherit}
+
+/* ═══ Links i løbende tekst ═══
+   Sidens links er kobberfarvede uden understregning. Det holder i knapper og
+   kort, men et link midt i en tekst må ikke kun skille sig ud på farve
+   (WCAG 1.4.1). Understregningen sættes derfor på de links, der står inde i
+   brødtekst, og ikke på dem, der i forvejen har en knap- eller kortramme. */
+p a, li a, dd a, blockquote a, label span a {
+  text-decoration: underline;
+  text-underline-offset: .18em;
+  text-decoration-thickness: .06em;
+}
+p a:hover, li a:hover, dd a:hover, blockquote a:hover, label span a:hover {
+  text-decoration-thickness: .12em;
+}

@@ -60,6 +60,11 @@ Send: nøjagtig titel, institution + år, samt link til
 autorisationsregistret (Styrelsen for Patientsikkerheds autorisationsregister),
 så kan titlen sættes tilbage og markeres op i JSON-LD.
 
+**Bemærk:** brandportrættet `assets/mike-brand-portrait.webp` har teksten
+"MUSKULOSKELETAL FYSIOTERAPEUT" trykt ind i selve billedet. Den kunne ikke
+rettes i koden. Enten skal dokumentationen frem, eller også skal billedet
+laves om.
+
 ## 4. Anmeldelser og forløbseksempler (P1 — `ReviewCarousel.dc.html`, `resultater.dc.html`)
 
 Fem anmeldelser og tre forløbseksempler var skrevet som eksempeltekst, men
@@ -106,6 +111,14 @@ faktisk er planlagt, hvis afsnittet skal tilbage.
   `https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/`. Skiftes der
   til eget domæne, skal `SITE_ORIGIN` i `tools/build-meta.py` rettes og
   scriptet køres igen, så canonical, Open Graph og `sitemap.xml` følger med.
+- **robots.txt ligger ikke på origin-roden.** Crawlere læser
+  `https://lassebrandtchr.github.io/robots.txt`, som hører til
+  brugerens `lassebrandtchr.github.io`-repo — ikke til dette projekt.
+  Filen her (`/Mike-Adelholm-ny-hjemmeside/robots.txt`) bliver derfor ikke
+  læst, så længe siden ligger på en projekt-URL. `sitemap.xml` kan indsendes
+  direkte i Google Search Console i mellemtiden, og `<meta name="robots">` på
+  hver side virker uanset hvad. Løsningen er enten et eget domæne eller at
+  kopiere indholdet til roden af `lassebrandtchr.github.io`.
 - **AI-træningscrawlere.** `robots.txt` tillader i dag alle crawlere,
   inklusive søge-agenter som Googlebot, OAI-SearchBot, Claude-SearchBot og
   PerplexityBot. Ønskes træningsdata frameldt (GPTBot, ClaudeBot,

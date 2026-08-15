@@ -5,6 +5,6 @@ html,body{background:#080706;}
      Book-knap + burger. Kun under 1180px, så desktop-dokkens slanke
      proportioner er urørte. */
   @media (max-width:1179px){
-    header a[href="index.html"],
+    header a[href="./"],
     header a[href="kontakt.dc.html"]{min-height:44px}
   }
