@@ -262,36 +262,37 @@
         <div style="display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline;justify-content:space-between;margin-bottom:22px;">
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#e6cfb4;">Kapacitet over 12 uger</span>
           <span style="display:flex;flex-wrap:wrap;gap:16px;">
-            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:22px;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#c98049,#f3c79b);"></span>Faktisk udvikling</span>
-            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#7c6e5d;"><span aria-hidden="true" style="width:22px;height:0;border-top:2px dashed rgba(224,168,124,.5);"></span>Forventet lige linje</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:22px;height:2.5px;border-radius:2px;background:linear-gradient(90deg,#1c1107,#3f2814);"></span>Faktisk udvikling</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#7c6e5d;"><span aria-hidden="true" style="width:22px;height:0;border-top:2px dashed rgba(28,17,7,.55);"></span>Forventet lige linje</span>
           </span>
         </div>
 
         <svg viewBox="0 0 640 270" role="img" aria-label="Diagram: kapacitet stiger over 12 uger i et ujævnt mønster med perioder, hvor niveauet holdes, og enkelte tilbagegange, men med samlet fremgang." style="width:100%;height:auto;display:block;overflow:visible;">
           <defs>
-            <linearGradient id="maLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a5612f"></stop><stop offset=".5" stop-color="#cf8a4f"></stop><stop offset="1" stop-color="#f3c79b"></stop></linearGradient>
+            <linearGradient id="maLine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1c1107"></stop><stop offset=".5" stop-color="#3f2814"></stop><stop offset="1" stop-color="#1c1107"></stop></linearGradient>
             <linearGradient id="maArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(207,138,79,.28)"></stop><stop offset="1" stop-color="rgba(207,138,79,0)"></stop></linearGradient>
           </defs>
-          <g stroke="rgba(224,168,124,.12)" stroke-width="1">
+          <g stroke="rgba(28,17,7,.18)" stroke-width="1">
             <line x1="40" y1="240" x2="620" y2="240"></line>
             <line x1="40" y1="196" x2="620" y2="196"></line>
             <line x1="40" y1="152" x2="620" y2="152"></line>
             <line x1="40" y1="108" x2="620" y2="108"></line>
             <line x1="40" y1="64" x2="620" y2="64"></line>
           </g>
-          <line x1="40" y1="224" x2="592" y2="64" stroke="rgba(224,168,124,.4)" stroke-width="1.5" stroke-dasharray="5 6"></line>
+          <line x1="40" y1="224" x2="592" y2="64" stroke="rgba(28,17,7,.55)" stroke-width="1.5" stroke-dasharray="5 6"></line>
           <path data-draw="1700" d="M40 224 L86 204 L132 180 L178 172 L224 176 L270 152 L316 130 L362 124 L408 136 L454 112 L500 90 L546 80 L592 64" fill="none" stroke="url(#maLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-          <g data-reveal="900" fill="#f3c79b">
-            <circle cx="40" cy="224" r="3.4"></circle><circle cx="86" cy="204" r="3.4"></circle><circle cx="132" cy="180" r="3.4"></circle><circle cx="178" cy="172" r="3.4"></circle><circle cx="224" cy="176" r="3.4"></circle><circle cx="270" cy="152" r="3.4"></circle><circle cx="316" cy="130" r="3.4"></circle><circle cx="362" cy="124" r="3.4"></circle><circle cx="408" cy="136" r="3.4"></circle><circle cx="454" cy="112" r="3.4"></circle><circle cx="500" cy="90" r="3.4"></circle><circle cx="546" cy="80" r="3.4"></circle><circle cx="592" cy="64" r="4.6"></circle>
+          <g data-reveal="900" fill="#1c1107">
+            <circle cx="40" cy="224" r="3.4"></circle><circle cx="86" cy="204" r="3.4"></circle><circle cx="132" cy="180" r="3.4"></circle><circle cx="178" cy="172" r="3.4"></circle><circle cx="224" cy="176" r="3.4"></circle><circle cx="270" cy="152" r="3.4"></circle><circle cx="316" cy="130" r="3.4"></circle><circle cx="362" cy="124" r="3.4"></circle><circle cx="408" cy="136" r="3.4"></circle><circle cx="454" cy="112" r="3.4"></circle><circle cx="500" cy="90" r="3.4"></circle><circle cx="546" cy="80" r="3.4"></circle>
+            <circle cx="592" cy="64" r="4.6" stroke="#fff6ea" stroke-width="1.6"></circle>
           </g>
-          <g data-reveal="1000" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12.5" fill="#8c7e6b">
+          <g data-reveal="1000" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12.5" fill="#1c1107">
             <text x="40" y="262">Uge 1</text>
             <text x="300" y="262">Uge 6</text>
             <text x="592" y="262" text-anchor="end">Uge 12</text>
-            <text x="224" y="200" fill="#a3937e" font-size="12">Plateau — vi holder niveauet</text>
-            <text x="408" y="162" fill="#a3937e" font-size="12">Travl uge — vi sænker dosis</text>
+            <text x="224" y="200" fill="#3f2814" font-size="12">Plateau — vi holder niveauet</text>
+            <text x="408" y="162" fill="#3f2814" font-size="12">Travl uge — vi sænker dosis</text>
           </g>
-          <text x="40" y="46" font-family="Archivo, system-ui, sans-serif" font-size="11" letter-spacing="2.2" fill="#c79064">KAPACITET</text>
+          <text x="40" y="46" font-family="Archivo, system-ui, sans-serif" font-size="11" letter-spacing="2.2" fill="#1c1107">KAPACITET</text>
         </svg>
 
         <p style="margin:18px 0 0;font-size:13.5px;line-height:1.6;color:#6f6353;">Illustration af et muligt forløb — ikke en kundecase.</p>
@@ -302,22 +303,22 @@
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 10px;">Mere kapacitet. Mindre begrænsning.</h3>
           <p style="margin:0 0 22px;font-size:15px;line-height:1.62;color:#ab9c87;">Når kroppen kan holde til mere, fylder begrænsningen mindre. Tilliden til bevægelsen følger typisk lidt efter kapaciteten.</p>
           <svg viewBox="0 0 420 210" role="img" aria-label="Diagram: kapacitet og tillid stiger over tid, mens oplevet begrænsning falder. Kurverne krydser hinanden på midten af forløbet." style="width:100%;height:auto;display:block;overflow:visible;">
-            <g stroke="rgba(224,168,124,.12)" stroke-width="1">
+            <g stroke="rgba(28,17,7,.18)" stroke-width="1">
               <line x1="10" y1="170" x2="410" y2="170"></line><line x1="10" y1="120" x2="410" y2="120"></line><line x1="10" y1="70" x2="410" y2="70"></line><line x1="10" y1="20" x2="410" y2="20"></line>
             </g>
-            <path data-draw="1500" d="M10 158 C110 150 150 118 210 100 C270 82 330 56 410 34" fill="none" stroke="#cf8a4f" stroke-width="2.8" stroke-linecap="round"></path>
-            <path data-draw="1500" data-draw-delay="200" d="M10 40 C90 48 150 74 210 100 C280 130 330 146 410 152" fill="none" stroke="#7a5c44" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0"></path>
-            <path data-draw="1500" data-draw-delay="400" d="M10 164 C120 162 160 142 210 128 C280 108 330 84 410 66" fill="none" stroke="rgba(243,199,155,.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 5"></path>
-            <circle data-reveal="1200" cx="210" cy="100" r="4.5" fill="#f3c79b"></circle>
-            <g data-reveal="1300" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12" fill="#a3937e">
+            <path data-draw="1500" d="M10 158 C110 150 150 118 210 100 C270 82 330 56 410 34" fill="none" stroke="#1c1107" stroke-width="2.8" stroke-linecap="round"></path>
+            <path data-draw="1500" data-draw-delay="200" d="M10 40 C90 48 150 74 210 100 C280 130 330 146 410 152" fill="none" stroke="#3f2814" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0"></path>
+            <path data-draw="1500" data-draw-delay="400" d="M10 164 C120 162 160 142 210 128 C280 108 330 84 410 66" fill="none" stroke="rgba(28,17,7,.55)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 5"></path>
+            <circle data-reveal="1200" cx="210" cy="100" r="4.5" fill="#1c1107" stroke="#fff6ea" stroke-width="1.6"></circle>
+            <g data-reveal="1300" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12" fill="#1c1107">
               <text x="10" y="196">Start</text>
               <text x="410" y="196" text-anchor="end">Senere i forløbet</text>
             </g>
           </svg>
           <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:12px 20px;">
-            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:2.6px;border-radius:2px;background:#cf8a4f;"></span>Kapacitet</span>
-            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:2.6px;border-radius:2px;background:#7a5c44;"></span>Oplevet begrænsning</span>
-            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:0;border-top:2px dashed rgba(243,199,155,.6);"></span>Tillid til bevægelsen</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:2.6px;border-radius:2px;background:#1c1107;"></span>Kapacitet</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:2.6px;border-radius:2px;background:#3f2814;"></span>Oplevet begrænsning</span>
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#a3937e;"><span aria-hidden="true" style="width:18px;height:0;border-top:2px dashed rgba(28,17,7,.55);"></span>Tillid til bevægelsen</span>
           </div>
           <p style="margin:16px 0 0;font-size:13.5px;line-height:1.6;color:#6f6353;">Illustration af et muligt forløb — ikke en kundecase.</p>
         </div>
@@ -325,20 +326,20 @@
         <div data-bronze="" data-reveal="160" style="flex:1 1 320px;min-width:0;padding:clamp(20px,2.4vw,30px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
           <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;text-transform:uppercase;color:#f0e6d6;margin:0 0 10px;">Konsistens slår perfektion</h3>
           <p style="margin:0 0 24px;font-size:15px;line-height:1.62;color:#ab9c87;">Tre gode uger og en halv uge slår én perfekt uge og tre sprunget over. Vi planlægger efter det.</p>
-          <div style="display:flex;align-items:flex-end;gap:6px;height:150px;padding-bottom:26px;border-bottom:1px solid rgba(224,168,124,.16);position:relative;">
-            <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:calc(26px + 68%);border-top:1.5px dashed rgba(224,168,124,.4);"></span>
-            <span data-grow="0" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#f3c79b,#a5612f);"></span>
-            <span data-grow="60" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#c98049,#7a5c44);"></span>
-            <span data-grow="120" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#f3c79b,#a5612f);"></span>
-            <span data-grow="180" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#f3c79b,#a5612f);"></span>
-            <span data-grow="240" style="flex:1;height:33%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#8c5429,#3a2a1c);"></span>
-            <span data-grow="300" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#c98049,#7a5c44);"></span>
-            <span data-grow="360" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#f3c79b,#a5612f);"></span>
-            <span data-grow="420" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#f3c79b,#a5612f);"></span>
-            <span data-grow="480" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#c98049,#7a5c44);"></span>
-            <span data-grow="540" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#f3c79b,#a5612f);"></span>
-            <span data-grow="600" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#f3c79b,#a5612f);"></span>
-            <span data-grow="660" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#c98049,#7a5c44);"></span>
+          <div style="display:flex;align-items:flex-end;gap:6px;height:150px;padding-bottom:26px;border-bottom:1px solid rgba(28,17,7,.18);position:relative;">
+            <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:calc(26px + 68%);border-top:1.5px dashed rgba(28,17,7,.55);"></span>
+            <span data-grow="0" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#3f2814,#1c1107);"></span>
+            <span data-grow="60" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#2b1a0e,#150d05);"></span>
+            <span data-grow="120" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#3f2814,#1c1107);"></span>
+            <span data-grow="180" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#3f2814,#1c1107);"></span>
+            <span data-grow="240" style="flex:1;height:33%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#150d05,#0a0603);"></span>
+            <span data-grow="300" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#2b1a0e,#150d05);"></span>
+            <span data-grow="360" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#3f2814,#1c1107);"></span>
+            <span data-grow="420" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#3f2814,#1c1107);"></span>
+            <span data-grow="480" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#2b1a0e,#150d05);"></span>
+            <span data-grow="540" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#3f2814,#1c1107);"></span>
+            <span data-grow="600" style="flex:1;height:100%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#3f2814,#1c1107);"></span>
+            <span data-grow="660" style="flex:1;height:66%;border-radius:5px 5px 0 0;background:linear-gradient(180deg,#2b1a0e,#150d05);"></span>
           </div>
           <div style="margin-top:12px;display:flex;justify-content:space-between;font-size:12.5px;color:#8c7e6b;">
             <span>Uge 1</span><span>Gennemførte træninger pr. uge</span><span>Uge 12</span>
