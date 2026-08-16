@@ -1,0 +1,20 @@
+{
+  "name": "mike-adelholm-hjemmeside",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Statisk site til Mike Adelholm. Ingen byggetrin til selve sitet — package.json findes kun for værktøjerne i tools/.",
+  "type": "module",
+  "scripts": {
+    "serve": "python3 -m http.server 8123",
+    "meta": "python3 tools/build-meta.py",
+    "images": "node tools/build-images.mjs && node tools/build-icons.mjs && python3 tools/build-picture.py",
+    "prerender": "node tools/prerender.mjs",
+    "build": "npm run meta && npm run prerender",
+    "test": "node tools/smoke-test.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.0",
+    "playwright": "^1.48.0",
+    "sharp": "^0.33.0"
+  }
+}

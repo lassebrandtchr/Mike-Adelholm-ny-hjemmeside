@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="da">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-eval&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data:; font-src &#x27;self&#x27;; connect-src &#x27;self&#x27; https:; form-action &#x27;self&#x27;; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;self&#x27;">
 <title>Sådan foregår et forløb — fire trin fra spørgsmål til plan | Mike Adelholm</title>
-<meta name="description" content="Sådan kommer du i gang: du svarer på et par spørgsmål, jeg læser dine svar, vi tager en samtale, og du får en klar vej frem.">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/fonts.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/colors.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/typography.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/radius.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/motion.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/shadows.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/base.css">
-<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/styles.css">
-<script src="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/_ds_bundle.js"></script>
-<script src="site.js"></script>
-<style>
-  html,body{background:#080706;}
+<meta name="description" content="Sådan kommer du i gang: du svarer på et par spørgsmål, jeg læser dine svar, vi tager en samtale, og du får en klar vej frem. Se taksterne med og uden lægehenvisning.">
+<link rel="canonical" href="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#080706">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mike Adelholm">
+<meta property="og:locale" content="da_DK">
+<meta property="og:title" content="Sådan foregår et forløb — fire trin fra spørgsmål til plan | Mike Adelholm">
+<meta property="og:description" content="Sådan kommer du i gang: du svarer på et par spørgsmål, jeg læser dine svar, vi tager en samtale, og du får en klar vej frem. Se taksterne med og uden lægehenvisning.">
+<meta property="og:url" content="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html">
+<meta property="og:image" content="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mike Adelholm — fysioterapi og online coaching">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sådan foregår et forløb — fire trin fra spørgsmål til plan | Mike Adelholm">
+<meta name="twitter:description" content="Sådan kommer du i gang: du svarer på et par spørgsmål, jeg læser dine svar, vi tager en samtale, og du får en klar vej frem. Se taksterne med og uden lægehenvisning.">
+<meta name="twitter:image" content="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/assets/og-image.jpg">
+<meta name="twitter:image:alt" content="Mike Adelholm — fysioterapi og online coaching">
+
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<link rel="preload" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/assets/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/assets/fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8/tokens/bundle.css">
+
+<!-- Rå skabelon skjules, indtil dc-runtimet har renderet. Uden JavaScript
+     vises reserveindholdet øverst i dokumentet i stedet. -->
+<style>x-dc{display:none}</style>
+<style data-page-css>html,body{background:#080706;}
   a{color:#e0a877;}
   a:hover{color:#f3c79b;}
   summary::-webkit-details-marker{display:none;}
-  @keyframes maShimmer{0%{background-position:0% 50%}100%{background-position:220% 50%}}
   @keyframes maPulse{0%,100%{opacity:.34;transform:scale(1)}50%{opacity:.62;transform:scale(1.05)}}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
@@ -45,7 +60,452 @@
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
-</helmet>
+
+<!-- React hostes lokalt (samme filer som unpkg leverede, samme SRI-hash).
+     Alle fire scripts er defer: de hentes parallelt med CSS og køres i
+     rækkefølge, når dokumentet er parset. -->
+<script defer src="vendor/react-18.3.1.production.min.js"></script>
+<script defer src="vendor/react-dom-18.3.1.production.min.js"></script>
+<script defer src="site-config.js"></script>
+<script defer src="site.js"></script>
+<script defer src="support.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#brodkrumme",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Forside",
+          "item": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sådan foregår et forløb",
+          "item": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser",
+      "name": "Videokonsultation hos muskuloskeletal fysioterapeut",
+      "serviceType": "Fysioterapi (video)",
+      "url": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser",
+      "provider": {
+        "@id": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/#virksomhed"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Danmark"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Første konsultation (video), med lægehenvisning",
+          "description": "Overenskomstens takst. Tilskud fra Sygeforsikringen „danmark“: 133 kr.",
+          "price": "321.49",
+          "priceCurrency": "DKK",
+          "url": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser"
+        },
+        {
+          "@type": "Offer",
+          "name": "Efterfølgende videokonsultation, med lægehenvisning",
+          "description": "Overenskomstens takst. Tilskud fra Sygeforsikringen „danmark“: 88 kr.",
+          "price": "204.41",
+          "priceCurrency": "DKK",
+          "url": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser"
+        },
+        {
+          "@type": "Offer",
+          "name": "Første videokonsultation, uden lægehenvisning",
+          "description": "Privatforløb. Ingen henvisning nødvendig.",
+          "price": "529.63",
+          "priceCurrency": "DKK",
+          "url": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser"
+        },
+        {
+          "@type": "Offer",
+          "name": "Efterfølgende videokonsultation, uden lægehenvisning",
+          "description": "Privatforløb. Fuldt fleksibelt forløb.",
+          "price": "336.76",
+          "priceCurrency": "DKK",
+          "url": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser"
+        },
+        {
+          "@type": "Offer",
+          "name": "Tillæg: programmering, med lægehenvisning",
+          "description": "Skræddersyet og periodiseret styrkeprogram i Excel.",
+          "price": "165.95",
+          "priceCurrency": "DKK",
+          "url": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser"
+        },
+        {
+          "@type": "Offer",
+          "name": "Tillæg: programmering, uden lægehenvisning",
+          "description": "Skræddersyet og periodiseret styrkeprogram i Excel.",
+          "price": "273.39",
+          "priceCurrency": "DKK",
+          "url": "https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/forloeb.dc.html#priser"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div id="dc-prerender"><div class="sc-host" data-sc-name="forloeb"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; background: rgb(8, 7, 6); color: rgb(237, 227, 212); overflow-x: hidden;"><div class="sc-host" data-sc-name="SiteNav" data-dc-tpl="1"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif;">
+
+  <div data-pre-wide=""><header data-dc-tpl="1" style="position: fixed; top: 14px; left: 0px; right: 0px; z-index: 900; display: flex; justify-content: center; padding: 0px 14px; pointer-events: none; animation: 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maNavIn;">
+    <div data-dc-tpl="2" style="pointer-events: auto; display: flex; align-items: center; gap: 10px; max-width: 100%; padding: 9px 10px 9px 13px; border-radius: 999px; background: linear-gradient(rgb(21, 16, 9) 0%, rgb(10, 8, 6) 100%); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.95) 0px 20px 46px -22px, rgba(255, 255, 255, 0.043) 0px 1px 0px inset; transition: padding 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.45s;">
+
+      <a data-dc-tpl="3" href="./" aria-label="Mike Adelholm — forside" class="scp4" style="display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; padding: 2px 4px 2px 2px; border-radius: 999px;">
+        <picture data-dc-tpl="4" style="display: contents;"><source data-dc-tpl="5" type="image/avif" sizes="36px" srcset="assets/logo-badge-64.avif 64w, assets/logo-badge-128.avif 128w"><source data-dc-tpl="6" type="image/webp" sizes="36px" srcset="assets/logo-badge-64.webp 64w, assets/logo-badge-128.webp 128w"><img data-dc-tpl="7" src="assets/logo-badge.webp" alt="" width="36" height="36" fetchpriority="high" decoding="async" sizes="36px" style="width: 36px; height: 36px; object-fit: contain; display: block;"></picture>
+        <span data-dc-tpl="8" style="display: flex; flex-direction: column; gap: 2px;">
+          <span data-dc-tpl="9" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: rgb(240, 230, 214); line-height: 1; white-space: nowrap;">Mike Adelholm</span>
+          <span data-dc-tpl="10" style="font-family: Archivo, system-ui, sans-serif; font-weight: 600; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(140, 126, 107); line-height: 1; white-space: nowrap;">Fysioterapi &amp; coaching</span>
+        </span>
+      </a>
+
+      
+        <span data-dc-tpl="12" style="width: 1px; height: 26px; background: rgba(224, 168, 124, 0.16); flex-shrink: 0;"></span>
+        <nav data-dc-tpl="13" aria-label="Hovednavigation" style="position: relative; display: flex; align-items: center; gap: 1px;" data-ma-wired="1">
+          <span data-dc-tpl="14" data-nav-pill="" aria-hidden="true" style="position: absolute; top: 50%; left: 383px; width: 76px; height: 31px; transform: translateY(-50%); border-radius: 999px; background: linear-gradient(135deg, rgba(245, 198, 147, 0.13), rgba(165, 97, 47, 0.2)); border: 1px solid rgba(224, 168, 124, 0.3); box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 0px inset; opacity: 1; pointer-events: none; transition: left 0.42s cubic-bezier(0.22, 0.61, 0.36, 1), width 0.42s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.3s;"></span>
+          <a data-dc-tpl="15" data-nav-key="forside" href="./" class="scp5 scp6" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Forside</a>
+          <a data-dc-tpl="16" data-nav-key="online-coaching" href="online-coaching.dc.html" class="scp5 scp6" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Online coaching</a>
+          <a data-dc-tpl="17" data-nav-key="styrke-performance" href="styrke-performance.dc.html" class="scp5 scp6" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Styrke</a>
+          <a data-dc-tpl="18" data-nav-key="smerter-genoptraening" href="smerter-genoptraening.dc.html" class="scp5 scp6" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Smerter</a>
+          <a data-dc-tpl="19" data-nav-key="forloeb" href="forloeb.dc.html" class="scp5 scp6" aria-current="page" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(243, 199, 155); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Forløb</a>
+          <a data-dc-tpl="20" data-nav-key="resultater" href="resultater.dc.html" class="scp5 scp6" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Resultater</a>
+          <a data-dc-tpl="21" data-nav-key="om-mike" href="om-mike.dc.html" class="scp5 scp6" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
+          <a data-dc-tpl="22" data-nav-key="viden" href="viden.dc.html" class="scp5 scp6" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
+        </nav>
+        <a data-dc-tpl="23" href="kontakt.dc.html" class="scp7 scp2" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; padding: 11px 17px; border-radius: 999px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; white-space: nowrap; box-shadow: rgba(196, 127, 71, 0.7) 0px 12px 26px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">Book en samtale<span data-dc-tpl="24" style="font-size: 13px; line-height: 0;">→</span></a>
+      
+
+      
+
+    </div>
+  </header></div><div data-pre-narrow=""><header data-dc-tpl="1" style="position: fixed; top: 14px; left: 0px; right: 0px; z-index: 900; display: flex; justify-content: center; padding: 0px 14px; pointer-events: none; animation: 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maNavIn;">
+    <div data-dc-tpl="2" style="pointer-events: auto; display: flex; align-items: center; gap: 10px; max-width: 100%; padding: 9px 10px 9px 13px; border-radius: 999px; background: linear-gradient(rgb(21, 16, 9) 0%, rgb(10, 8, 6) 100%); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.95) 0px 20px 46px -22px, rgba(255, 255, 255, 0.043) 0px 1px 0px inset; transition: padding 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.45s;">
+
+      <a data-dc-tpl="3" href="./" aria-label="Mike Adelholm — forside" class="scp4" style="display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; padding: 2px 4px 2px 2px; border-radius: 999px;">
+        <picture data-dc-tpl="4" style="display: contents;"><source data-dc-tpl="5" type="image/avif" sizes="36px" srcset="assets/logo-badge-64.avif 64w, assets/logo-badge-128.avif 128w"><source data-dc-tpl="6" type="image/webp" sizes="36px" srcset="assets/logo-badge-64.webp 64w, assets/logo-badge-128.webp 128w"><img data-dc-tpl="7" src="assets/logo-badge.webp" alt="" width="36" height="36" fetchpriority="high" decoding="async" sizes="36px" style="width: 36px; height: 36px; object-fit: contain; display: block;"></picture>
+        <span data-dc-tpl="8" style="display: flex; flex-direction: column; gap: 2px;">
+          <span data-dc-tpl="9" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: rgb(240, 230, 214); line-height: 1; white-space: nowrap;">Mike Adelholm</span>
+          <span data-dc-tpl="10" style="font-family: Archivo, system-ui, sans-serif; font-weight: 600; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(140, 126, 107); line-height: 1; white-space: nowrap;">Fysioterapi &amp; coaching</span>
+        </span>
+      </a>
+
+      
+
+      
+        <a data-dc-tpl="26" href="kontakt.dc.html" class="scp2" style="margin-left: auto; display: inline-flex; align-items: center; justify-content: center; padding: 12px 15px; border-radius: 999px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; box-shadow: rgba(196, 127, 71, 0.7) 0px 12px 26px -14px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset;">Book</a>
+        <button data-dc-tpl="27" type="button" aria-expanded="false" aria-controls="ma-mobil-menu" aria-label="Åbn menu" class="scp8 scp9" style="width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+          <svg data-dc-tpl="28" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="29" d="M3 7h18M3 12h18M3 17h18"></path></svg>
+        </button>
+      
+
+    </div>
+  </header></div>
+
+  </div></div><main data-dc-tpl="2" id="hovedindhold" style="animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maPageIn;">
+
+  <section data-dc-tpl="3" data-screen-label="Banner" style="position: relative; overflow: hidden; background: rgb(0, 0, 0); padding: clamp(112px, 13vw, 158px) 0px clamp(40px, 5vw, 60px);">
+    <div data-dc-tpl="4" data-ambient="" aria-hidden="true" style="position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 720px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.26), transparent 66%); pointer-events: none; animation: 11s ease-in-out 0s infinite normal none running maPulse;"></div>
+    <div data-dc-tpl="5" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <div data-dc-tpl="6" data-reveal="0" style="max-width: 720px;">
+        <nav data-dc-tpl="7" aria-label="Brødkrumme" style="margin-bottom: 22px; font-size: 13.5px; color: rgb(140, 126, 107);">
+          <a data-dc-tpl="8" href="./" class="scp0" style="color: rgb(140, 126, 107); text-decoration: none;">Forside</a> <span data-dc-tpl="9" aria-hidden="true">/</span> Sådan foregår et forløb
+        </nav>
+        <div data-dc-tpl="10" style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
+          <span data-dc-tpl="11" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+          <span data-dc-tpl="12" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Første skridt</span>
+        </div>
+        <h1 data-dc-tpl="13" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(34px, 4.8vw, 60px); line-height: 1.04; letter-spacing: -0.018em; text-transform: uppercase; color: rgb(243, 234, 217); margin: 0px 0px 22px;">Sådan kommer <span data-dc-tpl="14" style="background: linear-gradient(120deg, rgb(247, 216, 180), rgb(207, 138, 79) 50%, rgb(243, 199, 155)) 0% 0% / 100% text; -webkit-text-fill-color: transparent; color: transparent;">du i gang</span></h1>
+        <p data-dc-tpl="15" style="margin: 0px; max-width: 620px; font-size: clamp(16.5px, 1.4vw, 18.5px); line-height: 1.62; color: rgb(182, 167, 145);">Det skal være nemt at tage det første skridt. Sådan finder vi ud af, om et forløb med mig giver mening for dig.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section data-dc-tpl="16" aria-hidden="true" style="position: relative; overflow: hidden; background: rgb(0, 0, 0); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="17" style="position: relative; height: clamp(220px, 28vw, 390px);">
+      <picture data-dc-tpl="18" style="display: contents;"><source data-dc-tpl="19" type="image/avif" sizes="100vw" srcset="assets/forloeb-trin-768.avif 768w, assets/forloeb-trin-1200.avif 1200w, assets/forloeb-trin-1600.avif 1600w, assets/forloeb-trin-2000.avif 2000w"><source data-dc-tpl="20" type="image/webp" sizes="100vw" srcset="assets/forloeb-trin-768.webp 768w, assets/forloeb-trin-1200.webp 1200w, assets/forloeb-trin-1600.webp 1600w, assets/forloeb-trin-2000.webp 2000w"><img data-dc-tpl="21" src="assets/forloeb-trin.jpg" alt="" width="2000" height="848" fetchpriority="high" decoding="async" sizes="100vw" style="position: absolute; inset: 0px; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;"></picture>
+      <span data-dc-tpl="22" style="position: absolute; inset: 0px; background: linear-gradient(rgba(8, 7, 6, 0.78), rgba(8, 7, 6, 0.12) 46%, rgba(8, 7, 6, 0.9));"></span>
+      <span data-dc-tpl="23" style="position: absolute; inset: 0px; background: radial-gradient(120% 92% at 50% 52%, transparent 28%, rgba(8, 7, 6, 0.58) 100%);"></span>
+    </div>
+  </section>
+
+  <section data-dc-tpl="24" data-screen-label="Trin" style="padding: clamp(40px, 5vw, 64px) 0px clamp(60px, 7.5vw, 96px);">
+    <div data-dc-tpl="25" style="max-width: 900px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <ol data-dc-tpl="26" style="list-style: none; margin: 0px; padding: 0px; position: relative;">
+        <span data-dc-tpl="27" data-grow="0" data-grow-origin="top" aria-hidden="true" style="position: absolute; left: 29px; top: 24px; bottom: clamp(56px, 7vw, 80px); width: 1.5px; background: linear-gradient(rgba(224, 168, 124, 0.62), rgba(224, 168, 124, 0.5) 62%, rgba(224, 168, 124, 0.1));"></span>
+
+        <li data-dc-tpl="28" style="position: relative; display: flex; gap: clamp(20px, 3vw, 34px); padding-bottom: clamp(38px, 5vw, 56px);">
+          <span data-dc-tpl="29" data-reveal="0" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; background: radial-gradient(circle at 50% 30%, rgb(31, 24, 16), rgb(11, 9, 7)); border: 1.5px solid rgba(224, 168, 124, 0.55); box-shadow: rgb(8, 7, 6) 0px 0px 0px 6px, rgba(196, 127, 71, 0.7) 0px 12px 30px -14px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; color: rgb(243, 199, 155);">1</span>
+          <div data-dc-tpl="30" data-reveal="60" style="padding-top: 6px;">
+            <h2 data-dc-tpl="31" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(21px, 2.4vw, 28px); line-height: 1.16; letter-spacing: -0.005em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 12px;">Du svarer på et par spørgsmål</h2>
+            <p data-dc-tpl="32" style="margin: 0px; max-width: 560px; font-size: 17px; line-height: 1.65; color: rgb(171, 156, 135);">Fortæl kort, hvad du gerne vil have hjælp til, og hvad du håber at kunne opnå.</p>
+          </div>
+        </li>
+
+        <li data-dc-tpl="33" style="position: relative; display: flex; gap: clamp(20px, 3vw, 34px); padding-bottom: clamp(38px, 5vw, 56px);">
+          <span data-dc-tpl="34" data-reveal="0" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; background: radial-gradient(circle at 50% 30%, rgb(31, 24, 16), rgb(11, 9, 7)); border: 1.5px solid rgba(224, 168, 124, 0.4); box-shadow: rgb(8, 7, 6) 0px 0px 0px 6px, rgba(255, 255, 255, 0.06) 0px 1px 0px inset; display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; color: rgb(224, 168, 119);">2</span>
+          <div data-dc-tpl="35" data-reveal="60" style="padding-top: 6px;">
+            <h2 data-dc-tpl="36" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(21px, 2.4vw, 28px); line-height: 1.16; letter-spacing: -0.005em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 12px;">Jeg læser dine svar</h2>
+            <p data-dc-tpl="37" style="margin: 0px; max-width: 560px; font-size: 17px; line-height: 1.65; color: rgb(171, 156, 135);">Jeg bruger dit udgangspunkt til at vurdere, hvordan jeg bedst kan hjælpe dig videre.</p>
+          </div>
+        </li>
+
+        <li data-dc-tpl="38" style="position: relative; display: flex; gap: clamp(20px, 3vw, 34px); padding-bottom: clamp(38px, 5vw, 56px);">
+          <span data-dc-tpl="39" data-reveal="0" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; background: radial-gradient(circle at 50% 30%, rgb(31, 24, 16), rgb(11, 9, 7)); border: 1.5px solid rgba(224, 168, 124, 0.3); box-shadow: rgb(8, 7, 6) 0px 0px 0px 6px; display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; color: rgb(199, 144, 100);">3</span>
+          <div data-dc-tpl="40" data-reveal="60" style="padding-top: 6px;">
+            <h2 data-dc-tpl="41" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(21px, 2.4vw, 28px); line-height: 1.16; letter-spacing: -0.005em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 12px;">Vi tager en samtale</h2>
+            <p data-dc-tpl="42" style="margin: 0px; max-width: 560px; font-size: 17px; line-height: 1.65; color: rgb(171, 156, 135);">Vi taler om dine mål, din hverdag og om et forløb er det rigtige næste skridt.</p>
+          </div>
+        </li>
+
+        <li data-dc-tpl="43" style="position: relative; display: flex; gap: clamp(20px, 3vw, 34px);">
+          <span data-dc-tpl="44" data-reveal="0" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; background: radial-gradient(circle at 50% 30%, rgb(31, 24, 16), rgb(11, 9, 7)); border: 1.5px solid rgba(224, 168, 124, 0.22); box-shadow: rgb(8, 7, 6) 0px 0px 0px 6px; display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; color: rgb(163, 147, 126);">4</span>
+          <div data-dc-tpl="45" data-reveal="60" style="padding-top: 6px;">
+            <h2 data-dc-tpl="46" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(21px, 2.4vw, 28px); line-height: 1.16; letter-spacing: -0.005em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 12px;">Du får en klar vej frem</h2>
+            <p data-dc-tpl="47" style="margin: 0px; max-width: 560px; font-size: 17px; line-height: 1.65; color: rgb(171, 156, 135);">Hvis vi er et godt match, lægger vi en plan, der passer til dig og dit liv.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div data-dc-tpl="48" data-reveal="0" style="margin-top: clamp(40px, 5vw, 60px); display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+        <a data-dc-tpl="49" href="kontakt.dc.html" class="scp1 scp2" style="display: inline-flex; align-items: center; gap: 10px; padding: 19px 28px; border-radius: 16px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: rgba(196, 127, 71, 0.75) 0px 16px 40px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">Start med et par spørgsmål<span data-dc-tpl="50" style="font-size: 17px; line-height: 0;">→</span></a>
+        <span data-dc-tpl="51" style="font-size: 14.5px; color: rgb(140, 126, 107);">Det tager kun et par minutter, og du binder dig ikke til noget.</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="52" data-screen-label="Før og efter" style="position: relative; padding: clamp(56px, 7vw, 88px) 0px; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="53" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(18px, 2.4vw, 26px);">
+      <div data-dc-tpl="54" data-bronze="" data-reveal="0" style="flex: 1 1 340px; min-width: 0px; padding: clamp(26px, 3vw, 34px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14);">
+        <div data-dc-tpl="55" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 18px;">Før samtalen</div>
+        <h2 data-dc-tpl="56" style="margin: 0px 0px 14px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 25px); line-height: 1.16; text-transform: uppercase; color: rgb(240, 230, 214);">Du skal ikke forberede noget særligt</h2>
+        <p data-dc-tpl="57" style="margin: 0px 0px 14px; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Du behøver ikke vide, hvad der er i vejen, eller have en plan klar. Det er min opgave at stille de rigtige spørgsmål.</p>
+        <p data-dc-tpl="58" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(140, 126, 107);">Har du scanningssvar, en genoptræningsplan eller andet relevant, kan du nævne det — men det er ikke et krav.</p>
+      </div>
+      <div data-dc-tpl="59" data-bronze="" data-reveal="80" style="flex: 1 1 340px; min-width: 0px; padding: clamp(26px, 3vw, 34px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14);">
+        <div data-dc-tpl="60" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 18px;">Efter samtalen</div>
+        <h2 data-dc-tpl="61" style="margin: 0px 0px 14px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 25px); line-height: 1.16; text-transform: uppercase; color: rgb(240, 230, 214);">Du bestemmer, hvad der sker</h2>
+        <p data-dc-tpl="62" style="margin: 0px 0px 14px; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Er vi enige om, at et forløb er det rigtige, lægger vi en plan. Er vi ikke, siger jeg det ærligt og peger dig et bedre sted hen.</p>
+        <p data-dc-tpl="63" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(140, 126, 107);">Der er ingen salgstale — kun en ærlig vurdering af, om jeg kan hjælpe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="64" data-screen-label="Spørgsmål" style="padding: clamp(56px, 7vw, 88px) 0px;">
+    <div data-dc-tpl="65" style="max-width: 900px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <h2 data-dc-tpl="66" data-reveal="0" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 34px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px clamp(24px, 3vw, 34px);">Spørgsmål, jeg ofte får</h2>
+      <div data-dc-tpl="67" style="display: flex; flex-direction: column; gap: 12px;">
+        <details data-dc-tpl="68" data-bronze="" data-reveal="40" style="border-radius: 18px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); overflow: hidden;" data-ma-toggle="1">
+          <summary data-dc-tpl="69" class="scp3" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; cursor: pointer; list-style: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.01em; color: rgb(240, 230, 214);">Skal jeg vide, hvad der er i vejen, før jeg skriver?<span data-dc-tpl="70" aria-hidden="true" style="flex-shrink: 0; color: rgb(207, 138, 79); font-size: 20px; line-height: 1; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">+</span></summary>
+          <p data-dc-tpl="71" style="margin: 0px; padding: 0px 24px 24px; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Nej. De fleste skriver netop, fordi de er i tvivl. Du beskriver, hvad du oplever, og hvad du gerne vil kunne — resten tager vi derfra.</p>
+        </details>
+        <details data-dc-tpl="72" data-bronze="" data-reveal="90" style="border-radius: 18px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); overflow: hidden;" data-ma-toggle="1">
+          <summary data-dc-tpl="73" class="scp3" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; cursor: pointer; list-style: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.01em; color: rgb(240, 230, 214);">Hvad koster samtalen, og hvor lang tid tager den?<span data-dc-tpl="74" aria-hidden="true" style="flex-shrink: 0; color: rgb(207, 138, 79); font-size: 20px; line-height: 1; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">+</span></summary>
+          <p data-dc-tpl="75" style="margin: 0px; padding: 0px 24px 24px; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Samtalen bruger vi til at afklare, om et forløb er det rigtige for dig. Rammerne — længde og pris — aftaler vi, inden vi går i gang, så du kender dem, før du siger ja.</p>
+        </details>
+        <details data-dc-tpl="76" data-bronze="" data-reveal="140" style="border-radius: 18px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); overflow: hidden;" data-ma-toggle="1">
+          <summary data-dc-tpl="77" class="scp3" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; cursor: pointer; list-style: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.01em; color: rgb(240, 230, 214);">Hvor hurtigt hører jeg fra dig?<span data-dc-tpl="78" aria-hidden="true" style="flex-shrink: 0; color: rgb(207, 138, 79); font-size: 20px; line-height: 1; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">+</span></summary>
+          <p data-dc-tpl="79" style="margin: 0px; padding: 0px 24px 24px; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Du får svar fra mig personligt — ikke et autosvar.</p>
+        </details>
+        <details data-dc-tpl="80" data-bronze="" data-reveal="190" style="border-radius: 18px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); overflow: hidden;" data-ma-toggle="1">
+          <summary data-dc-tpl="81" class="scp3" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; cursor: pointer; list-style: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.01em; color: rgb(240, 230, 214);">Hvad hvis jeg har smerter lige nu?<span data-dc-tpl="82" aria-hidden="true" style="flex-shrink: 0; color: rgb(207, 138, 79); font-size: 20px; line-height: 1; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">+</span></summary>
+          <p data-dc-tpl="83" style="margin: 0px; padding: 0px 24px 24px; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Så er du ikke det forkerte sted. Læs mere om, hvordan jeg arbejder med <a data-dc-tpl="84" href="smerter-genoptraening.dc.html">smerter og genoptræning</a>. Er symptomerne akutte, kraftige eller forværrede, skal du dog kontakte egen læge, vagtlæge eller 112 først.</p>
+        </details>
+        <details data-dc-tpl="85" data-bronze="" data-reveal="240" style="border-radius: 18px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); overflow: hidden;" data-ma-toggle="1">
+          <summary data-dc-tpl="86" class="scp3" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; cursor: pointer; list-style: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.01em; color: rgb(240, 230, 214);">Hvad hvis jeg ikke er sikker på, at jeg vil i gang?<span data-dc-tpl="87" aria-hidden="true" style="flex-shrink: 0; color: rgb(207, 138, 79); font-size: 20px; line-height: 1; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">+</span></summary>
+          <p data-dc-tpl="88" style="margin: 0px; padding: 0px 24px 24px; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Så er en samtale et fint sted at starte. Du må gerne bruge den til at undersøge mulighederne uden at beslutte noget.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  
+  <section data-dc-tpl="89" id="priser" data-screen-label="Priser" style="position: relative; overflow: hidden; padding: clamp(56px, 7vw, 92px) 0px; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="90" data-ambient="" aria-hidden="true" style="position: absolute; top: -180px; left: 50%; transform: translateX(-50%); width: 700px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.16), transparent 66%); pointer-events: none; animation: 12s ease-in-out 0s infinite normal none running maPulse;"></div>
+
+    <div data-dc-tpl="91" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <div data-dc-tpl="92" data-reveal="0" style="max-width: 640px; margin-bottom: clamp(28px, 3.6vw, 42px);">
+        <div data-dc-tpl="93" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span data-dc-tpl="94" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+          <span data-dc-tpl="95" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Priser · egenbetaling</span>
+        </div>
+        <h2 data-dc-tpl="96" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 16px;">Gennemsigtige takster</h2>
+        <p data-dc-tpl="97" style="margin: 0px; font-size: 17px; line-height: 1.62; color: rgb(171, 156, 135);">Du kan komme til med og uden lægehenvisning. Beløbene herunder er det, du selv betaler.</p>
+      </div>
+
+      <div data-dc-tpl="98" style="display: flex; flex-wrap: wrap; gap: clamp(14px, 1.8vw, 20px); align-items: stretch;">
+
+        <div data-dc-tpl="99" data-reveal="40" style="flex: 1 1 340px; min-width: 0px; display: flex; flex-direction: column; padding: clamp(24px, 2.8vw, 32px); border-radius: 24px; background: rgba(255, 255, 255, 0.024); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.9) 0px 30px 64px -36px;">
+          <h3 data-dc-tpl="100" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(17px, 2vw, 21px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 6px;">Med lægehenvisning</h3>
+          <p data-dc-tpl="101" style="margin: 0px 0px 22px; font-size: 15px; color: rgb(140, 126, 107);">Overenskomstens takster</p>
+          <dl data-dc-tpl="102" style="margin: 0px; display: flex; flex-direction: column; gap: 18px;">
+            <div data-dc-tpl="103" style="display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid rgba(224, 168, 124, 0.14);">
+              <dt data-dc-tpl="104" style="flex: 1 1 200px; font-size: 16.5px; line-height: 1.5; color: rgb(231, 220, 203);">Første konsultation (video)<span data-dc-tpl="105" style="display: block; margin-top: 4px; font-size: 14.5px; color: rgb(140, 126, 107);">Tilskud fra „danmark“: 133 kr.</span></dt>
+              <dd data-dc-tpl="106" style="margin: 0px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 23px); color: rgb(243, 199, 155); white-space: nowrap;">321,49 kr.</dd>
+            </div>
+            <div data-dc-tpl="107" style="display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; justify-content: space-between;">
+              <dt data-dc-tpl="108" style="flex: 1 1 200px; font-size: 16.5px; line-height: 1.5; color: rgb(231, 220, 203);">Efterfølgende videokonsultation<span data-dc-tpl="109" style="display: block; margin-top: 4px; font-size: 14.5px; color: rgb(140, 126, 107);">Tilskud fra „danmark“: 88 kr.</span></dt>
+              <dd data-dc-tpl="110" style="margin: 0px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 23px); color: rgb(243, 199, 155); white-space: nowrap;">204,41 kr.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div data-dc-tpl="111" data-reveal="100" style="flex: 1 1 340px; min-width: 0px; display: flex; flex-direction: column; padding: clamp(24px, 2.8vw, 32px); border-radius: 24px; background: rgba(255, 255, 255, 0.024); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.9) 0px 30px 64px -36px;">
+          <h3 data-dc-tpl="112" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(17px, 2vw, 21px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 6px;">Uden lægehenvisning</h3>
+          <p data-dc-tpl="113" style="margin: 0px 0px 22px; font-size: 15px; color: rgb(140, 126, 107);">Privatforløb</p>
+          <dl data-dc-tpl="114" style="margin: 0px; display: flex; flex-direction: column; gap: 18px;">
+            <div data-dc-tpl="115" style="display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; justify-content: space-between; padding-bottom: 18px; border-bottom: 1px solid rgba(224, 168, 124, 0.14);">
+              <dt data-dc-tpl="116" style="flex: 1 1 200px; font-size: 16.5px; line-height: 1.5; color: rgb(231, 220, 203);">Første videokonsultation<span data-dc-tpl="117" style="display: block; margin-top: 4px; font-size: 14.5px; color: rgb(140, 126, 107);">Ingen henvisning nødvendig</span></dt>
+              <dd data-dc-tpl="118" style="margin: 0px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 23px); color: rgb(243, 199, 155); white-space: nowrap;">529,63 kr.</dd>
+            </div>
+            <div data-dc-tpl="119" style="display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; justify-content: space-between;">
+              <dt data-dc-tpl="120" style="flex: 1 1 200px; font-size: 16.5px; line-height: 1.5; color: rgb(231, 220, 203);">Efterfølgende videokonsultation<span data-dc-tpl="121" style="display: block; margin-top: 4px; font-size: 14.5px; color: rgb(140, 126, 107);">Fuldt fleksibelt forløb</span></dt>
+              <dd data-dc-tpl="122" style="margin: 0px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 23px); color: rgb(243, 199, 155); white-space: nowrap;">336,76 kr.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      
+      <div data-dc-tpl="123" data-reveal="130" style="margin-top: clamp(14px, 1.8vw, 20px); padding: clamp(24px, 2.8vw, 32px); border-radius: 24px; background: rgba(255, 255, 255, 0.024); border: 1px solid rgba(224, 168, 124, 0.22);">
+        <div data-dc-tpl="124" style="display: flex; align-items: center; gap: 13px; margin-bottom: 14px;">
+          <span data-dc-tpl="125" aria-hidden="true" style="flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid rgba(224, 168, 124, 0.55);">
+            <svg data-dc-tpl="126" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path data-dc-tpl="127" d="M12 16v-5"></path><path data-dc-tpl="128" d="M12 7.6h.01"></path>
+            </svg>
+          </span>
+          <h3 data-dc-tpl="129" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(16px, 1.9vw, 20px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px;">Om lægehenvisning</h3>
+        </div>
+        <p data-dc-tpl="130" style="margin: 0px 0px 14px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">En lægehenvisning under den offentlige sygesikring kan <strong data-dc-tpl="131" style="color: rgb(232, 212, 191); font-weight: 600;">udelukkende</strong> anvendes til decideret genoptræning og behandling af en lægeligt anerkendt skade.</p>
+        <p data-dc-tpl="132" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Ønsker du udelukkende præstationsfremme, optimering af din fysiske form eller ren styrkeudvikling, kører forløbet som en <strong data-dc-tpl="133" style="color: rgb(232, 212, 191); font-weight: 600;">privatydelse uden henvisning</strong>.</p>
+      </div>
+
+      <div data-dc-tpl="134" data-bronze="" data-reveal="160" style="margin-top: clamp(14px, 1.8vw, 20px); padding: clamp(24px, 2.8vw, 32px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16);">
+        <div data-dc-tpl="135" style="display: flex; align-items: center; gap: 13px; margin-bottom: 8px;">
+          <span data-dc-tpl="136" data-tile="" aria-hidden="true" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 13px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgb(28, 21, 14), rgb(13, 10, 7)); border: 1px solid rgba(224, 168, 124, 0.3);">
+            
+            <svg data-dc-tpl="137" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect data-dc-tpl="138" x="3" y="4" width="18" height="16" rx="2"></rect>
+              <path data-dc-tpl="139" d="M3 9h18M9 9v11M15 9v11"></path>
+              <path data-dc-tpl="140" d="M5.4 12.6h1.4M5.4 16h1.4M11 12.6h1.4M11 16h1.4M17 12.6h1.4M17 16h1.4"></path>
+            </svg>
+          </span>
+          <h3 data-dc-tpl="141" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(16px, 1.9vw, 19px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(28, 17, 7); margin: 0px;">Tillæg · programmering</h3>
+        </div>
+        <p data-dc-tpl="142" style="margin: 0px 0px 20px; font-size: 16px; line-height: 1.6;">Skræddersyet og periodiseret styrkeprogram i Excel — lagt oven på konsultationen.</p>
+        <div data-dc-tpl="143" style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <div data-dc-tpl="144" style="flex: 1 1 180px; padding: 16px 18px; border-radius: 15px; background: rgba(28, 17, 7, 0.12); border: 1px solid rgba(28, 17, 7, 0.2);">
+            <span data-dc-tpl="145" style="display: block; font-size: 14.5px; margin-bottom: 4px;">Med henvisning</span>
+            <span data-dc-tpl="146" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 23px);">165,95 kr.</span>
+          </div>
+          <div data-dc-tpl="147" style="flex: 1 1 180px; padding: 16px 18px; border-radius: 15px; background: rgba(28, 17, 7, 0.12); border: 1px solid rgba(28, 17, 7, 0.2);">
+            <span data-dc-tpl="148" style="display: block; font-size: 14.5px; margin-bottom: 4px;">Uden henvisning</span>
+            <span data-dc-tpl="149" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 23px);">273,39 kr.</span>
+          </div>
+        </div>
+      </div>
+
+      <p data-dc-tpl="150" data-reveal="200" style="margin: clamp(22px, 2.6vw, 30px) auto 0px; max-width: 620px; text-align: center; font-size: 15.5px; line-height: 1.65; color: rgb(140, 126, 107);">Mange private sundhedsforsikringer samt Sygeforsikringen „danmark“ dækker også privatforløb — alt efter dine personlige vilkår. Konsultationerne foregår i samarbejde med EmCare Sundhed.</p>
+    </div>
+  </section>
+
+
+  <section data-dc-tpl="151" data-screen-label="CTA" style="position: relative; overflow: hidden; padding: clamp(60px, 8vw, 104px) 0px; background: linear-gradient(rgb(0, 0, 0), rgb(8, 7, 6)); border-top: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="152" data-ambient="" aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 720px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.2), transparent 64%); pointer-events: none; animation: 10s ease-in-out 0s infinite normal none running maPulse;"></div>
+    <div data-dc-tpl="153" data-reveal="0" style="position: relative; max-width: 720px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); text-align: center;">
+      <h2 data-dc-tpl="154" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(26px, 3.6vw, 44px); line-height: 1.06; letter-spacing: -0.015em; text-transform: uppercase; color: rgb(243, 234, 217); margin: 0px 0px 18px;">Klar til det første skridt?</h2>
+      <p data-dc-tpl="155" style="margin: 0px auto 30px; max-width: 500px; font-size: 17px; line-height: 1.62; color: rgb(182, 167, 145);">Svar på nogle få spørgsmål, så tager vi den derfra.</p>
+      <a data-dc-tpl="156" href="kontakt.dc.html" class="scp1 scp2" style="display: inline-flex; align-items: center; gap: 10px; padding: 19px 28px; border-radius: 16px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: rgba(196, 127, 71, 0.75) 0px 16px 40px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">Book en samtale<span data-dc-tpl="157" style="font-size: 17px; line-height: 0;">→</span></a>
+    </div>
+  </section></main><div class="sc-host" data-sc-name="SiteFooter" data-dc-tpl="158"><footer data-dc-tpl="0" style="position: relative; overflow: hidden; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.14); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; padding: clamp(56px, 7vw, 84px) 0px 0px;">
+  <div data-dc-tpl="1" aria-hidden="true" style="position: absolute; top: -220px; left: -140px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.16), transparent 66%); pointer-events: none;"></div>
+
+  <div data-dc-tpl="2" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+    <div data-dc-tpl="3" style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 56px);">
+
+      <div data-dc-tpl="4" style="flex: 1 1 300px; max-width: 380px;">
+        <div data-dc-tpl="5" style="display: flex; align-items: center; gap: 12px;">
+          <picture data-dc-tpl="6" style="display: contents;"><source data-dc-tpl="7" type="image/avif" sizes="60px" srcset="assets/logo-badge-64.avif 64w, assets/logo-badge-128.avif 128w"><source data-dc-tpl="8" type="image/webp" sizes="60px" srcset="assets/logo-badge-64.webp 64w, assets/logo-badge-128.webp 128w"><img data-dc-tpl="9" src="assets/logo-badge.webp" alt="Mike Adelholm" width="60" height="60" loading="lazy" decoding="async" sizes="60px" style="width: 60px; height: 60px; object-fit: contain;"></picture>
+          <span data-dc-tpl="10" style="display: flex; flex-direction: column; gap: 4px;">
+            <span data-dc-tpl="11" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(240, 230, 214); line-height: 1;">Mike Adelholm</span>
+            <span data-dc-tpl="12" style="font-family: Archivo, system-ui, sans-serif; font-weight: 600; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(140, 126, 107); line-height: 1.4;">Muskuloskeletal fysioterapeut<br data-dc-tpl="13">&amp; online coach · estd 2025</span>
+          </span>
+        </div>
+        <p data-dc-tpl="14" style="margin: 20px 0px 0px; font-size: 15px; line-height: 1.7; color: rgb(140, 126, 107);">Jeg hjælper dig med at blive stærkere, bevæge dig friere og holde fast i det — med træning og fysioterapeutisk vejledning i samme forløb.</p>
+      </div>
+
+      <div data-dc-tpl="15" style="flex: 1 1 170px;">
+        <div data-dc-tpl="16" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 16px;">Sådan kan jeg hjælpe</div>
+        <div data-dc-tpl="17" style="display: flex; flex-direction: column; gap: 11px;">
+          <a data-dc-tpl="18" href="online-coaching.dc.html" class="scpa scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Online coaching</a>
+          <a data-dc-tpl="19" href="styrke-performance.dc.html" class="scpa scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Styrke &amp; performance</a>
+          <a data-dc-tpl="20" href="smerter-genoptraening.dc.html" class="scpa scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Smerter &amp; genoptræning</a>
+        </div>
+      </div>
+
+      <div data-dc-tpl="21" style="flex: 1 1 170px;">
+        <div data-dc-tpl="22" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 16px;">Forløb og baggrund</div>
+        <div data-dc-tpl="23" style="display: flex; flex-direction: column; gap: 11px;">
+          <a data-dc-tpl="24" href="forloeb.dc.html" class="scpa scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Sådan foregår et forløb</a>
+          <a data-dc-tpl="25" href="resultater.dc.html" class="scpa scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Resultater</a>
+          <a data-dc-tpl="26" href="om-mike.dc.html" class="scpa scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
+          <a data-dc-tpl="27" href="viden.dc.html" class="scpa scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
+        </div>
+      </div>
+
+      <div data-dc-tpl="28" style="flex: 1 1 220px;">
+        <div data-dc-tpl="29" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 16px;">Kontakt</div>
+        <div data-dc-tpl="30" style="display: flex; flex-direction: column; gap: 11px;">
+          <a data-dc-tpl="31" href="kontakt.dc.html" class="scpb scp4" style="font-size: 15px; color: rgb(243, 199, 155); text-decoration: none; transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Book en samtale →</a>
+          
+          
+            <a data-dc-tpl="33" href="mailto:ma@emcare.dk" class="scp0 scp4" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
+          
+          
+          
+          
+        </div>
+      </div>
+    </div>
+
+    <div data-dc-tpl="40" style="margin-top: clamp(36px, 5vw, 52px); padding: 20px 22px; border-radius: 16px; background: rgba(255, 255, 255, 0.024); border: 1px solid rgba(224, 168, 124, 0.14); display: flex; gap: 14px; align-items: flex-start;">
+      <span data-dc-tpl="41" aria-hidden="true" style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; background: rgba(207, 138, 79, 0.14); color: rgb(227, 168, 119); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14px;">!</span>
+      <p data-dc-tpl="42" style="margin: 0px; font-size: 14px; line-height: 1.65; color: rgb(140, 126, 107);">Online vejledning erstatter ikke en fysisk undersøgelse. Ved akutte, kraftige eller forværrede symptomer skal du kontakte egen læge, vagtlæge eller 112.</p>
+    </div>
+
+    
+    <div data-dc-tpl="43" style="margin-top: clamp(28px, 4vw, 40px); display: flex; flex-wrap: wrap; gap: 16px 22px; align-items: center;">
+      <a data-dc-tpl="44" href="https://emcare.dk" rel="noopener" class="scp4" style="flex-shrink: 0; display: block; width: 150px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(224, 168, 124, 0.2);">
+        <picture data-dc-tpl="45" style="display: contents;"><source data-dc-tpl="46" type="image/avif" sizes="150px" srcset="assets/emcare-sundhed-180.avif 180w, assets/emcare-sundhed-300.avif 300w"><source data-dc-tpl="47" type="image/webp" sizes="150px" srcset="assets/emcare-sundhed-180.webp 180w, assets/emcare-sundhed-300.webp 300w"><img data-dc-tpl="48" src="assets/emcare-sundhed.webp" alt="EmCare Sundhed" width="150" height="86" loading="lazy" decoding="async" sizes="150px" style="display: block; width: 100%; height: auto;"></picture>
+      </a>
+      <p data-dc-tpl="49" style="margin: 0px; flex: 1 1 240px; font-size: 14.5px; line-height: 1.65; color: rgb(140, 126, 107);">Konsultationer i samarbejde med EmCare Sundhed — med og uden lægehenvisning.</p>
+    </div>
+
+    <div data-dc-tpl="50" style="margin-top: clamp(28px, 4vw, 40px); padding: 22px 0px clamp(28px, 4vw, 36px); border-top: 1px solid rgba(224, 168, 124, 0.12); display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; justify-content: space-between;">
+      <span data-dc-tpl="51" style="font-size: 13.5px; color: rgb(140, 126, 107);"><span class="sc-interp">© 2026 Mike Adelholm</span></span>
+      <span data-dc-tpl="52" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <a data-dc-tpl="53" href="privatliv.dc.html" class="scp0 scp4" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Privatlivspolitik</a>
+        <a data-dc-tpl="54" href="kontakt.dc.html" class="scp0 scp4" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Kontakt</a>
+      </span>
+    </div>
+
+    
+  </div></footer></div></div></div></div><!--/dc-prerender-->
+<x-dc>
 <div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
 
 <dc-import name="SiteNav" current="forloeb" hint-size="100%,0px"></dc-import>
@@ -56,14 +516,14 @@
     <div data-ambient="" aria-hidden="true" style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:720px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.26),transparent 66%);pointer-events:none;animation:maPulse 11s ease-in-out infinite;"></div>
     <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
       <div data-reveal="0" style="max-width:720px;">
-        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#6f6353;">
-          <a href="index.html" style="color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;">Forside</a> <span aria-hidden="true">/</span> Sådan foregår et forløb
+        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#8c7e6b;">
+          <a href="./" style="color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;">Forside</a> <span aria-hidden="true">/</span> Sådan foregår et forløb
         </nav>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span aria-hidden="true" style="width:34px;height:1.5px;background:linear-gradient(90deg,#cf8a4f,rgba(207,138,79,0));"></span>
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#c79064;">Første skridt</span>
         </div>
-        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,4.8vw,60px);line-height:1.04;letter-spacing:-.018em;text-transform:uppercase;color:#f3ead9;margin:0 0 22px;">Sådan kommer <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:maShimmer 8s linear infinite;">du i gang</span></h1>
+        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,4.8vw,60px);line-height:1.04;letter-spacing:-.018em;text-transform:uppercase;color:#f3ead9;margin:0 0 22px;">Sådan kommer <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:100% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">du i gang</span></h1>
         <p style="margin:0;max-width:620px;font-size:clamp(16.5px,1.4vw,18.5px);line-height:1.62;color:#b6a791;">Det skal være nemt at tage det første skridt. Sådan finder vi ud af, om et forløb med mig giver mening for dig.</p>
       </div>
     </div>
@@ -75,7 +535,7 @@
        det i stedet for at stå som en firkantet blok. -->
   <section aria-hidden="true" style="position:relative;overflow:hidden;background:#000;border-top:1px solid rgba(224,168,124,.1);border-bottom:1px solid rgba(224,168,124,.1);">
     <div style="position:relative;height:clamp(220px,28vw,390px);">
-      <img src="assets/forloeb-trin.jpg" alt="" width="2000" height="848" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;" fetchpriority="high" decoding="async">
+      <picture style="display:contents"><source type="image/avif" sizes="100vw" srcset="assets/forloeb-trin-768.avif 768w, assets/forloeb-trin-1200.avif 1200w, assets/forloeb-trin-1600.avif 1600w, assets/forloeb-trin-2000.avif 2000w"><source type="image/webp" sizes="100vw" srcset="assets/forloeb-trin-768.webp 768w, assets/forloeb-trin-1200.webp 1200w, assets/forloeb-trin-1600.webp 1600w, assets/forloeb-trin-2000.webp 2000w"><img src="assets/forloeb-trin.jpg" alt="" width="2000" height="848" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;" fetchpriority="high" decoding="async" sizes="100vw"></picture>
       <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,6,.78),rgba(8,7,6,.12) 46%,rgba(8,7,6,.9));"></span>
       <span style="position:absolute;inset:0;background:radial-gradient(120% 92% at 50% 52%,transparent 28%,rgba(8,7,6,.58) 100%);"></span>
     </div>
@@ -121,7 +581,7 @@
 
       <div data-reveal="0" style="margin-top:clamp(40px,5vw,60px);display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
         <a href="kontakt.dc.html" style="display:inline-flex;align-items:center;gap:10px;padding:19px 28px;border-radius:16px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:14px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 16px 40px -12px rgba(196,127,71,.75),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">Start med et par spørgsmål<span style="font-size:17px;line-height:0;">→</span></a>
-        <span style="font-size:14.5px;color:#7c6e5d;">Det tager kun et par minutter, og du binder dig ikke til noget.</span>
+        <span style="font-size:14.5px;color:#8c7e6b;">Det tager kun et par minutter, og du binder dig ikke til noget.</span>
       </div>
     </div>
   </section>
@@ -132,13 +592,13 @@
         <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Før samtalen</div>
         <h2 style="margin:0 0 14px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,25px);line-height:1.16;text-transform:uppercase;color:#f0e6d6;">Du skal ikke forberede noget særligt</h2>
         <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#ab9c87;">Du behøver ikke vide, hvad der er i vejen, eller have en plan klar. Det er min opgave at stille de rigtige spørgsmål.</p>
-        <p style="margin:0;font-size:15.5px;line-height:1.65;color:#7c6e5d;">Har du scanningssvar, en genoptræningsplan eller andet relevant, kan du nævne det — men det er ikke et krav.</p>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:#8c7e6b;">Har du scanningssvar, en genoptræningsplan eller andet relevant, kan du nævne det — men det er ikke et krav.</p>
       </div>
       <div data-bronze="" data-reveal="80" style="flex:1 1 340px;min-width:0;padding:clamp(26px,3vw,34px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);">
         <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Efter samtalen</div>
         <h2 style="margin:0 0 14px;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2.2vw,25px);line-height:1.16;text-transform:uppercase;color:#f0e6d6;">Du bestemmer, hvad der sker</h2>
         <p style="margin:0 0 14px;font-size:16px;line-height:1.65;color:#ab9c87;">Er vi enige om, at et forløb er det rigtige, lægger vi en plan. Er vi ikke, siger jeg det ærligt og peger dig et bedre sted hen.</p>
-        <p style="margin:0;font-size:15.5px;line-height:1.65;color:#7c6e5d;">Der er ingen salgstale — kun en ærlig vurdering af, om jeg kan hjælpe.</p>
+        <p style="margin:0;font-size:15.5px;line-height:1.65;color:#8c7e6b;">Der er ingen salgstale — kun en ærlig vurdering af, om jeg kan hjælpe.</p>
       </div>
     </div>
   </section>
@@ -153,11 +613,11 @@
         </details>
         <details data-bronze="" data-reveal="90" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad koster samtalen, og hvor lang tid tager den?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
-          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">[Indsæt pris eller om samtalen er gratis] og [Indsæt varighed]. Samtalen bruger vi til at afklare, om et forløb er det rigtige for dig.</p>
+          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Samtalen bruger vi til at afklare, om et forløb er det rigtige for dig. Rammerne — længde og pris — aftaler vi, inden vi går i gang, så du kender dem, før du siger ja.</p>
         </details>
         <details data-bronze="" data-reveal="140" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvor hurtigt hører jeg fra dig?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
-          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">[Indsæt forventet svartid]. Du får svar fra mig personligt — ikke et autosvar.</p>
+          <p style="margin:0;padding:0 24px 24px;font-size:16px;line-height:1.65;color:#ab9c87;">Du får svar fra mig personligt — ikke et autosvar.</p>
         </details>
         <details data-bronze="" data-reveal="190" style="border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.14);overflow:hidden;">
           <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 24px;cursor:pointer;list-style:none;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em;color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:-2px;">Hvad hvis jeg har smerter lige nu?<span aria-hidden="true" style="flex-shrink:0;color:#cf8a4f;font-size:20px;line-height:1;">+</span></summary>
@@ -170,6 +630,100 @@
       </div>
     </div>
   </section>
+  <!-- ══ PRISER ══
+       De to takstsæt står side om side frem for i faner. Det er den samme
+       information, og det er dét, folk skal sammenligne — en fane ville
+       skjule halvdelen og kræve JavaScript for at nå den. -->
+  <section id="priser" data-screen-label="Priser" style="position:relative;overflow:hidden;padding:clamp(56px,7vw,92px) 0;background:linear-gradient(180deg,#080706,#000);border-top:1px solid rgba(224,168,124,.1);border-bottom:1px solid rgba(224,168,124,.1);">
+    <div data-ambient="" aria-hidden="true" style="position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.16),transparent 66%);pointer-events:none;animation:maPulse 12s ease-in-out infinite;"></div>
+
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
+      <div data-reveal="0" style="max-width:640px;margin-bottom:clamp(28px,3.6vw,42px);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span aria-hidden="true" style="width:34px;height:1.5px;background:linear-gradient(90deg,#cf8a4f,rgba(207,138,79,0));"></span>
+          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#c79064;">Priser · egenbetaling</span>
+        </div>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,40px);line-height:1.08;letter-spacing:-.012em;text-transform:uppercase;color:#f1e7d7;margin:0 0 16px;">Gennemsigtige takster</h2>
+        <p style="margin:0;font-size:17px;line-height:1.62;color:#ab9c87;">Du kan komme til med og uden lægehenvisning. Beløbene herunder er det, du selv betaler.</p>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(14px,1.8vw,20px);align-items:stretch;">
+
+        <div data-reveal="40" style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;padding:clamp(24px,2.8vw,32px);border-radius:24px;background:rgba(255,255,255,.025);border:1px solid rgba(224,168,124,.22);box-shadow:0 30px 64px -36px rgba(0,0,0,.9);">
+          <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(17px,2vw,21px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 6px;">Med lægehenvisning</h3>
+          <p style="margin:0 0 22px;font-size:15px;color:#8c7e6b;">Overenskomstens takster</p>
+          <dl style="margin:0;display:flex;flex-direction:column;gap:18px;">
+            <div style="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(224,168,124,.14);">
+              <dt style="flex:1 1 200px;font-size:16.5px;line-height:1.5;color:#e7dccb;">Første konsultation (video)<span style="display:block;margin-top:4px;font-size:14.5px;color:#8c7e6b;">Tilskud fra &bdquo;danmark&ldquo;: 133 kr.</span></dt>
+              <dd style="margin:0;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,23px);color:#f3c79b;white-space:nowrap;">321,49 kr.</dd>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;">
+              <dt style="flex:1 1 200px;font-size:16.5px;line-height:1.5;color:#e7dccb;">Efterfølgende videokonsultation<span style="display:block;margin-top:4px;font-size:14.5px;color:#8c7e6b;">Tilskud fra &bdquo;danmark&ldquo;: 88 kr.</span></dt>
+              <dd style="margin:0;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,23px);color:#f3c79b;white-space:nowrap;">204,41 kr.</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div data-reveal="100" style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;padding:clamp(24px,2.8vw,32px);border-radius:24px;background:rgba(255,255,255,.025);border:1px solid rgba(224,168,124,.22);box-shadow:0 30px 64px -36px rgba(0,0,0,.9);">
+          <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(17px,2vw,21px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 6px;">Uden lægehenvisning</h3>
+          <p style="margin:0 0 22px;font-size:15px;color:#8c7e6b;">Privatforløb</p>
+          <dl style="margin:0;display:flex;flex-direction:column;gap:18px;">
+            <div style="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(224,168,124,.14);">
+              <dt style="flex:1 1 200px;font-size:16.5px;line-height:1.5;color:#e7dccb;">Første videokonsultation<span style="display:block;margin-top:4px;font-size:14.5px;color:#8c7e6b;">Ingen henvisning nødvendig</span></dt>
+              <dd style="margin:0;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,23px);color:#f3c79b;white-space:nowrap;">529,63 kr.</dd>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;">
+              <dt style="flex:1 1 200px;font-size:16.5px;line-height:1.5;color:#e7dccb;">Efterfølgende videokonsultation<span style="display:block;margin-top:4px;font-size:14.5px;color:#8c7e6b;">Fuldt fleksibelt forløb</span></dt>
+              <dd style="margin:0;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,23px);color:#f3c79b;white-space:nowrap;">336,76 kr.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- Hvornår en henvisning må bruges. Står mellem taksterne og tillægget,
+           fordi det er dét, der afgør, hvilken af de to kolonner der gælder. -->
+      <div data-reveal="130" style="margin-top:clamp(14px,1.8vw,20px);padding:clamp(24px,2.8vw,32px);border-radius:24px;background:rgba(255,255,255,.025);border:1px solid rgba(224,168,124,.22);">
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:14px;">
+          <span aria-hidden="true" style="flex-shrink:0;width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid rgba(224,168,124,.55);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 16v-5"></path><path d="M12 7.6h.01"></path>
+            </svg>
+          </span>
+          <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,20px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0;">Om lægehenvisning</h3>
+        </div>
+        <p style="margin:0 0 14px;font-size:16.5px;line-height:1.7;color:#ab9c87;">En lægehenvisning under den offentlige sygesikring kan <strong style="color:#e8d4bf;font-weight:600;">udelukkende</strong> anvendes til decideret genoptræning og behandling af en lægeligt anerkendt skade.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.7;color:#ab9c87;">Ønsker du udelukkende præstationsfremme, optimering af din fysiske form eller ren styrkeudvikling, kører forløbet som en <strong style="color:#e8d4bf;font-weight:600;">privatydelse uden henvisning</strong>.</p>
+      </div>
+
+      <div data-bronze="" data-reveal="160" style="margin-top:clamp(14px,1.8vw,20px);padding:clamp(24px,2.8vw,32px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
+        <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+          <span data-tile="" aria-hidden="true" style="flex-shrink:0;width:44px;height:44px;border-radius:13px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1c150e,#0d0a07);border:1px solid rgba(224,168,124,.3);">
+            <!-- Regneark med periodiseret plan -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+              <path d="M3 9h18M9 9v11M15 9v11"></path>
+              <path d="M5.4 12.6h1.4M5.4 16h1.4M11 12.6h1.4M11 16h1.4M17 12.6h1.4M17 16h1.4"></path>
+            </svg>
+          </span>
+          <h3 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);letter-spacing:.02em;text-transform:uppercase;color:#1c1107;margin:0;">Tillæg · programmering</h3>
+        </div>
+        <p style="margin:0 0 20px;font-size:16px;line-height:1.6;">Skræddersyet og periodiseret styrkeprogram i Excel — lagt oven på konsultationen.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <div style="flex:1 1 180px;padding:16px 18px;border-radius:15px;background:rgba(28,17,7,.12);border:1px solid rgba(28,17,7,.2);">
+            <span style="display:block;font-size:14.5px;margin-bottom:4px;">Med henvisning</span>
+            <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,23px);">165,95 kr.</span>
+          </div>
+          <div style="flex:1 1 180px;padding:16px 18px;border-radius:15px;background:rgba(28,17,7,.12);border:1px solid rgba(28,17,7,.2);">
+            <span style="display:block;font-size:14.5px;margin-bottom:4px;">Uden henvisning</span>
+            <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,23px);">273,39 kr.</span>
+          </div>
+        </div>
+      </div>
+
+      <p data-reveal="200" style="margin:clamp(22px,2.6vw,30px) auto 0;max-width:620px;text-align:center;font-size:15.5px;line-height:1.65;color:#8c7e6b;">Mange private sundhedsforsikringer samt Sygeforsikringen &bdquo;danmark&ldquo; dækker også privatforløb — alt efter dine personlige vilkår. Konsultationerne foregår i samarbejde med EmCare Sundhed.</p>
+    </div>
+  </section>
+
 
   <section data-screen-label="CTA" style="position:relative;overflow:hidden;padding:clamp(60px,8vw,104px) 0;background:linear-gradient(180deg,#000,#080706);border-top:1px solid rgba(224,168,124,.1);">
     <div data-ambient="" aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.2),transparent 64%);pointer-events:none;animation:maPulse 10s ease-in-out infinite;"></div>

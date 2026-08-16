@@ -2,3 +2,4 @@
 .claude/
 .impeccable/
 deploy.command
+node_modules/

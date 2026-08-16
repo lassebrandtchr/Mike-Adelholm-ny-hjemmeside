@@ -1,0 +1,10 @@
+html,body{background:#080706;}
+  @keyframes maNavIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+  @keyframes maSheetIn{from{opacity:0}to{opacity:1}}
+  /* Berøringsmål: mindst 44px høje på mobil, hvor dokken skifter til
+     Book-knap + burger. Kun under 1180px, så desktop-dokkens slanke
+     proportioner er urørte. */
+  @media (max-width:1179px){
+    header a[href="./"],
+    header a[href="kontakt.dc.html"]{min-height:44px}
+  }

@@ -1,0 +1,7 @@
+html,body{background:#080706;}
+  /* Footerens linkkolonner er 18–20px høje tekstlinjer. På mobil er det for
+     lidt at ramme med en tommel, så hitområdet vokser til 44px. Teksten
+     flytter sig ikke — kun det klikbare felt. */
+  @media (max-width:1179px){
+    footer a{min-height:44px;display:flex;align-items:center}
+  }
