@@ -61,6 +61,27 @@
   /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
+
+  /* ═══ Blå plade ═══ Styrke-kortet. Samme opskrift som bronzepladen,
+     blot i blåt — se note ovenfor om data-attributten. */
+  [data-blue],[data-blue] *{color:#101c28!important}
+  [data-blue]{
+    border-color:rgba(16,28,40,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-blue] svg{stroke:#101c28!important}
+  [data-blue] [data-tile] svg{stroke:#bcd8f5!important}
+  [data-blue] [data-tile]{border-color:rgba(16,28,40,.3)!important}
+
+  /* ═══ Grøn plade ═══ Smerter/genoptræning-kortet, samme opskrift i grønt. */
+  [data-green],[data-green] *{color:#0d1f16!important}
+  [data-green]{
+    border-color:rgba(13,31,22,.24)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+  }
+  [data-green] svg{stroke:#0d1f16!important}
+  [data-green] [data-tile] svg{stroke:#bfe8d1!important}
+  [data-green] [data-tile]{border-color:rgba(13,31,22,.3)!important}
 </style>
 
 <!-- React hostes lokalt (samme filer som unpkg leverede, samme SRI-hash).
@@ -151,16 +172,16 @@
         <span data-dc-tpl="12" style="width: 1px; height: 26px; background: rgba(224, 168, 124, 0.16); flex-shrink: 0;"></span>
         <nav data-dc-tpl="13" aria-label="Hovednavigation" style="position: relative; display: flex; align-items: center; gap: 1px;" data-ma-wired="1">
           <span data-dc-tpl="14" data-nav-pill="" aria-hidden="true" style="position: absolute; top: 50%; left: 0px; width: 80px; height: 31px; transform: translateY(-50%); border-radius: 999px; background: linear-gradient(135deg, rgba(245, 198, 147, 0.13), rgba(165, 97, 47, 0.2)); border: 1px solid rgba(224, 168, 124, 0.3); box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 0px inset; opacity: 1; pointer-events: none; transition: left 0.42s cubic-bezier(0.22, 0.61, 0.36, 1), width 0.42s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.3s;"></span>
-          <a data-dc-tpl="15" data-nav-key="forside" href="./" class="scpa scpb" aria-current="page" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(243, 199, 155); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Forside</a>
-          <a data-dc-tpl="16" data-nav-key="online-coaching" href="online-coaching.dc.html" class="scpa scpb" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Online coaching</a>
-          <a data-dc-tpl="17" data-nav-key="styrke-performance" href="styrke-performance.dc.html" class="scpa scpb" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Styrke</a>
-          <a data-dc-tpl="18" data-nav-key="smerter-genoptraening" href="smerter-genoptraening.dc.html" class="scpa scpb" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Smerter</a>
-          <a data-dc-tpl="19" data-nav-key="forloeb" href="forloeb.dc.html" class="scpa scpb" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Forløb</a>
-          <a data-dc-tpl="20" data-nav-key="resultater" href="resultater.dc.html" class="scpa scpb" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Resultater</a>
-          <a data-dc-tpl="21" data-nav-key="om-mike" href="om-mike.dc.html" class="scpa scpb" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
-          <a data-dc-tpl="22" data-nav-key="viden" href="viden.dc.html" class="scpa scpb" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
+          <a data-dc-tpl="15" data-nav-key="forside" href="./" class="scpd scpe" aria-current="page" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(243, 199, 155); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Forside</a>
+          <a data-dc-tpl="16" data-nav-key="online-coaching" href="online-coaching.dc.html" class="scpd scpe" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Online coaching</a>
+          <a data-dc-tpl="17" data-nav-key="styrke-performance" href="styrke-performance.dc.html" class="scpd scpe" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Styrke</a>
+          <a data-dc-tpl="18" data-nav-key="smerter-genoptraening" href="smerter-genoptraening.dc.html" class="scpd scpe" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Smerter</a>
+          <a data-dc-tpl="19" data-nav-key="forloeb" href="forloeb.dc.html" class="scpd scpe" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Forløb</a>
+          <a data-dc-tpl="20" data-nav-key="resultater" href="resultater.dc.html" class="scpd scpe" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Resultater</a>
+          <a data-dc-tpl="21" data-nav-key="om-mike" href="om-mike.dc.html" class="scpd scpe" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
+          <a data-dc-tpl="22" data-nav-key="viden" href="viden.dc.html" class="scpd scpe" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
         </nav>
-        <a data-dc-tpl="23" href="kontakt.dc.html" class="scpc scp1" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; padding: 11px 17px; border-radius: 999px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; white-space: nowrap; box-shadow: rgba(196, 127, 71, 0.7) 0px 12px 26px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">Book en samtale<span data-dc-tpl="24" style="font-size: 13px; line-height: 0;">→</span></a>
+        <a data-dc-tpl="23" href="kontakt.dc.html" class="scpf scp1" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 8px; padding: 11px 17px; border-radius: 999px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; white-space: nowrap; box-shadow: rgba(196, 127, 71, 0.7) 0px 12px 26px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">Book en samtale<span data-dc-tpl="24" style="font-size: 13px; line-height: 0;">→</span></a>
       
 
       
@@ -181,7 +202,7 @@
 
       
         <a data-dc-tpl="26" href="kontakt.dc.html" class="scp1" style="margin-left: auto; display: inline-flex; align-items: center; justify-content: center; padding: 12px 15px; border-radius: 999px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; box-shadow: rgba(196, 127, 71, 0.7) 0px 12px 26px -14px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset;">Book</a>
-        <button data-dc-tpl="27" type="button" aria-expanded="false" aria-controls="ma-mobil-menu" aria-label="Åbn menu" class="scpd scpe" style="width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+        <button data-dc-tpl="27" type="button" aria-expanded="false" aria-controls="ma-mobil-menu" aria-label="Åbn menu" class="scpg scph" style="width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
           <svg data-dc-tpl="28" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="29" d="M3 7h18M3 12h18M3 17h18"></path></svg>
         </button>
       
@@ -360,7 +381,7 @@
       </div>
 
       <div data-dc-tpl="120" style="display: flex; flex-wrap: wrap; gap: clamp(16px, 2vw, 22px);">
-        <a data-dc-tpl="121" data-bronze="" data-reveal="80" href="styrke-performance.dc.html" class="scp4 scp5" style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+        <a data-dc-tpl="121" data-blue="" data-reveal="80" href="styrke-performance.dc.html" class="scp4 scp5" style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(215, 230, 248), rgb(111, 159, 214) 55%, rgb(90, 139, 191)); border: 1px solid rgba(91, 147, 207, 0.2); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
           <span data-dc-tpl="122" data-tile="" style="width: 54px; height: 54px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgb(28, 21, 14), rgb(13, 10, 7)); border: 1px solid rgba(224, 168, 124, 0.3);">
             <svg data-dc-tpl="123" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="124" d="M2 12h2M20 12h2M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"></path></svg>
           </span>
@@ -369,7 +390,7 @@
           <span data-dc-tpl="127" style="margin-top: auto; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Styrke &amp; performance →</span>
         </a>
 
-        <a data-dc-tpl="128" data-bronze="" data-reveal="160" href="smerter-genoptraening.dc.html" class="scp4 scp5" style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+        <a data-dc-tpl="128" data-green="" data-reveal="160" href="smerter-genoptraening.dc.html" class="scp6 scp7" style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(217, 239, 225), rgb(95, 172, 129) 55%, rgb(81, 158, 111)); border: 1px solid rgba(79, 168, 124, 0.2); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
           <span data-dc-tpl="129" data-tile="" style="width: 54px; height: 54px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgb(28, 21, 14), rgb(13, 10, 7)); border: 1px solid rgba(224, 168, 124, 0.3);">
             <svg data-dc-tpl="130" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="131" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
           </span>
@@ -440,28 +461,28 @@
       </div>
 
       <ol data-dc-tpl="179" style="flex: 1 1 440px; min-width: 0px; list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 14px;">
-        <li data-dc-tpl="180" data-bronze="" data-reveal="60" class="scp6" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+        <li data-dc-tpl="180" data-bronze="" data-reveal="60" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
           <span data-dc-tpl="181" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">01</span>
           <span data-dc-tpl="182">
             <span data-dc-tpl="183" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Vurdering af udgangspunkt</span>
             <span data-dc-tpl="184" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi gennemgår historik, træningserfaring, hverdag og hvad du gerne vil kunne. Jeg vurderer, hvad der kan lade sig gøre online — og hvad der bør undersøges fysisk.</span>
           </span>
         </li>
-        <li data-dc-tpl="185" data-bronze="" data-reveal="120" class="scp6" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+        <li data-dc-tpl="185" data-bronze="" data-reveal="120" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
           <span data-dc-tpl="186" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">02</span>
           <span data-dc-tpl="187">
             <span data-dc-tpl="188" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">En realistisk plan</span>
             <span data-dc-tpl="189" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Du får en plan, der passer til det udstyr, den tid og den restitution du faktisk har. Ikke et program til en hverdag, du ikke har.</span>
           </span>
         </li>
-        <li data-dc-tpl="190" data-bronze="" data-reveal="180" class="scp6" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+        <li data-dc-tpl="190" data-bronze="" data-reveal="180" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
           <span data-dc-tpl="191" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">03</span>
           <span data-dc-tpl="192">
             <span data-dc-tpl="193" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Løbende justering</span>
             <span data-dc-tpl="194" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi følger op, ser hvad der virker, og ændrer belastning, øvelsesvalg eller tempo. Fremdrift er sjældent en ret linje, og planen må godt vide det.</span>
           </span>
         </li>
-        <li data-dc-tpl="195" data-bronze="" data-reveal="240" class="scp6" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+        <li data-dc-tpl="195" data-bronze="" data-reveal="240" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
           <span data-dc-tpl="196" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">04</span>
           <span data-dc-tpl="197">
             <span data-dc-tpl="198" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Støtte undervejs</span>
@@ -586,7 +607,7 @@
         <span data-dc-tpl="307" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">To indgange, ét forløb</span>
       </div>
 
-      <a data-dc-tpl="308" data-bronze="" data-reveal="60" href="online-coaching.dc.html" class="scp7 scp5" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; margin-bottom: 16px; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+      <a data-dc-tpl="308" data-bronze="" data-reveal="60" href="online-coaching.dc.html" class="scp9 scpa" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; margin-bottom: 16px; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
         <span data-dc-tpl="309" style="flex: 1 1 320px; min-width: 0px;">
           <span data-dc-tpl="310" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 12px;">Online coaching</span>
           <span data-dc-tpl="311" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 14px;">Din plan, fulgt op og justeret</span>
@@ -595,7 +616,7 @@
         <span data-dc-tpl="313" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Læs mere<span data-dc-tpl="314" style="font-size: 16px; line-height: 0;">→</span></span>
       </a>
 
-      <a data-dc-tpl="315" data-bronze="" data-reveal="140" href="smerter-genoptraening.dc.html" class="scp7 scp5" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+      <a data-dc-tpl="315" data-bronze="" data-reveal="140" href="smerter-genoptraening.dc.html" class="scp9 scpa" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
         <span data-dc-tpl="316" style="flex: 1 1 320px; min-width: 0px;">
           <span data-dc-tpl="317" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 12px;">Smerter &amp; genoptræning</span>
           <span data-dc-tpl="318" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 14px;">Tilbage til træning i et roligt tempo</span>
@@ -616,7 +637,7 @@
         </div>
         <h2 data-dc-tpl="328" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 16px;">Sådan kommer du i gang</h2>
         <p data-dc-tpl="329" style="margin: 0px 0px 24px; font-size: 16.5px; line-height: 1.62; color: rgb(171, 156, 135);">Det skal være nemt at tage det første skridt. Fire trin fra spørgsmål til plan.</p>
-        <a data-dc-tpl="330" href="forloeb.dc.html" class="scp8 scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se hele forløbet<span data-dc-tpl="331" style="font-size: 16px; line-height: 0;">→</span></a>
+        <a data-dc-tpl="330" href="forloeb.dc.html" class="scpb scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se hele forløbet<span data-dc-tpl="331" style="font-size: 16px; line-height: 0;">→</span></a>
       </div>
 
       <ol data-dc-tpl="332" style="flex: 1 1 440px; min-width: 0px; list-style: none; margin: 0px; padding: 0px; position: relative;">
@@ -707,7 +728,7 @@
   </section></div>
       </div>
       <div data-dc-tpl="385" data-reveal="140" style="margin-top: 30px; text-align: center;">
-        <a data-dc-tpl="386" href="resultater.dc.html" class="scp8 scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se resultater og anmeldelser<span data-dc-tpl="387" style="font-size: 16px; line-height: 0;">→</span></a>
+        <a data-dc-tpl="386" href="resultater.dc.html" class="scpb scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se resultater og anmeldelser<span data-dc-tpl="387" style="font-size: 16px; line-height: 0;">→</span></a>
       </div>
     </div>
   </section>
@@ -720,7 +741,7 @@
       <picture data-dc-tpl="391" style="display: contents;"><source data-dc-tpl="392" type="image/avif" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" srcset="assets/logo-badge-large-300.avif 300w, assets/logo-badge-large-600.avif 600w"><source data-dc-tpl="393" type="image/webp" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" srcset="assets/logo-badge-large-300.webp 300w, assets/logo-badge-large-600.webp 600w"><img data-dc-tpl="394" src="assets/logo-badge-large.webp" alt="" width="300" height="300" loading="lazy" decoding="async" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" style="width: clamp(190px, 26vw, 300px); height: auto; aspect-ratio: 1 / 1; object-fit: contain; margin: 0px auto clamp(30px, 4vw, 42px);"></picture>
       <h2 data-dc-tpl="395" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 50px); line-height: 1.05; letter-spacing: -0.015em; text-transform: uppercase; color: rgb(243, 234, 217); margin: 0px 0px 20px;">Det første skridt er en samtale</h2>
       <p data-dc-tpl="396" style="margin: 0px auto 32px; max-width: 520px; font-size: 17.5px; line-height: 1.62; color: rgb(182, 167, 145);">Fortæl mig kort, hvad du gerne vil kunne. Så finder vi ud af, om et forløb med mig er det rigtige næste skridt for dig.</p>
-      <a data-dc-tpl="397" href="kontakt.dc.html" class="scp9 scp1" style="position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; padding: 19px 30px; border-radius: 16px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: rgba(196, 127, 71, 0.75) 0px 16px 40px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">
+      <a data-dc-tpl="397" href="kontakt.dc.html" class="scpc scp1" style="position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; padding: 19px 30px; border-radius: 16px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: rgba(196, 127, 71, 0.75) 0px 16px 40px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">
         <span data-dc-tpl="398" data-ambient="" aria-hidden="true" style="position: absolute; top: 0px; left: 0px; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent); animation: 6s ease-in-out 0s infinite normal none running maSheen;"></span>
         <span data-dc-tpl="399" style="position: relative;">Book en samtale</span><span data-dc-tpl="400" style="position: relative; font-size: 17px; line-height: 0;">→</span>
       </a>
@@ -746,29 +767,29 @@
       <div data-dc-tpl="15" style="flex: 1 1 170px;">
         <div data-dc-tpl="16" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 16px;">Sådan kan jeg hjælpe</div>
         <div data-dc-tpl="17" style="display: flex; flex-direction: column; gap: 11px;">
-          <a data-dc-tpl="18" href="online-coaching.dc.html" class="scpi scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Online coaching</a>
-          <a data-dc-tpl="19" href="styrke-performance.dc.html" class="scpi scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Styrke &amp; performance</a>
-          <a data-dc-tpl="20" href="smerter-genoptraening.dc.html" class="scpi scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Smerter &amp; genoptræning</a>
+          <a data-dc-tpl="18" href="online-coaching.dc.html" class="scpl scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Online coaching</a>
+          <a data-dc-tpl="19" href="styrke-performance.dc.html" class="scpl scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Styrke &amp; performance</a>
+          <a data-dc-tpl="20" href="smerter-genoptraening.dc.html" class="scpl scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Smerter &amp; genoptræning</a>
         </div>
       </div>
 
       <div data-dc-tpl="21" style="flex: 1 1 170px;">
         <div data-dc-tpl="22" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 16px;">Forløb og baggrund</div>
         <div data-dc-tpl="23" style="display: flex; flex-direction: column; gap: 11px;">
-          <a data-dc-tpl="24" href="forloeb.dc.html" class="scpi scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Sådan foregår et forløb</a>
-          <a data-dc-tpl="25" href="resultater.dc.html" class="scpi scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Resultater</a>
-          <a data-dc-tpl="26" href="om-mike.dc.html" class="scpi scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
-          <a data-dc-tpl="27" href="viden.dc.html" class="scpi scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
+          <a data-dc-tpl="24" href="forloeb.dc.html" class="scpl scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Sådan foregår et forløb</a>
+          <a data-dc-tpl="25" href="resultater.dc.html" class="scpl scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Resultater</a>
+          <a data-dc-tpl="26" href="om-mike.dc.html" class="scpl scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
+          <a data-dc-tpl="27" href="viden.dc.html" class="scpl scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
         </div>
       </div>
 
       <div data-dc-tpl="28" style="flex: 1 1 220px;">
         <div data-dc-tpl="29" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 16px;">Kontakt</div>
         <div data-dc-tpl="30" style="display: flex; flex-direction: column; gap: 11px;">
-          <a data-dc-tpl="31" href="kontakt.dc.html" class="scpj scp3" style="font-size: 15px; color: rgb(243, 199, 155); text-decoration: none; transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Book en samtale →</a>
+          <a data-dc-tpl="31" href="kontakt.dc.html" class="scpm scp3" style="font-size: 15px; color: rgb(243, 199, 155); text-decoration: none; transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Book en samtale →</a>
           
           
-            <a data-dc-tpl="33" href="mailto:ma@emcare.dk" class="scp8 scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
+            <a data-dc-tpl="33" href="mailto:ma@emcare.dk" class="scpb scp3" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
           
           
           
@@ -793,8 +814,8 @@
     <div data-dc-tpl="50" style="margin-top: clamp(28px, 4vw, 40px); padding: 22px 0px clamp(28px, 4vw, 36px); border-top: 1px solid rgba(224, 168, 124, 0.12); display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; justify-content: space-between;">
       <span data-dc-tpl="51" style="font-size: 13.5px; color: rgb(140, 126, 107);"><span class="sc-interp">© 2026 Mike Adelholm</span></span>
       <span data-dc-tpl="52" style="display: flex; flex-wrap: wrap; gap: 20px;">
-        <a data-dc-tpl="53" href="privatliv.dc.html" class="scp8 scp3" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Privatlivspolitik</a>
-        <a data-dc-tpl="54" href="kontakt.dc.html" class="scp8 scp3" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Kontakt</a>
+        <a data-dc-tpl="53" href="privatliv.dc.html" class="scpb scp3" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Privatlivspolitik</a>
+        <a data-dc-tpl="54" href="kontakt.dc.html" class="scpb scp3" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Kontakt</a>
       </span>
     </div>
 
@@ -980,7 +1001,7 @@
       </div>
 
       <div style="display:flex;flex-wrap:wrap;gap:clamp(16px,2vw,22px);">
-        <a data-bronze="" data-reveal="80" href="styrke-performance.dc.html" style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(224,168,124,.44);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #cf8a4f;outline-offset:4px;">
+        <a data-blue="" data-reveal="80" href="styrke-performance.dc.html" style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#d7e6f8,#6f9fd6 55%,#5a8bbf);border:1px solid rgba(91,147,207,.2);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(91,147,207,.5);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #5b93cf;outline-offset:4px;">
           <span data-tile="" style="width:54px;height:54px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1c150e,#0d0a07);border:1px solid rgba(224,168,124,.3);">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h2M20 12h2M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"></path></svg>
           </span>
@@ -989,7 +1010,7 @@
           <span style="margin-top:auto;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#e0a877;">Styrke &amp; performance →</span>
         </a>
 
-        <a data-bronze="" data-reveal="160" href="smerter-genoptraening.dc.html" style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(224,168,124,.44);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #cf8a4f;outline-offset:4px;">
+        <a data-green="" data-reveal="160" href="smerter-genoptraening.dc.html" style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#d9efe1,#5fac81 55%,#519e6f);border:1px solid rgba(79,168,124,.2);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(79,168,124,.5);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #4fa87c;outline-offset:4px;">
           <span data-tile="" style="width:54px;height:54px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1c150e,#0d0a07);border:1px solid rgba(224,168,124,.3);">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
           </span>
