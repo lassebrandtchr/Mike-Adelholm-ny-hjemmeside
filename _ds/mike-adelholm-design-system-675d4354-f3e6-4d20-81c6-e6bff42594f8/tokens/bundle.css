@@ -474,23 +474,26 @@ p a:hover, li a:hover, dd a:hover, blockquote a:hover, label span a:hover {
 .ma-book--direkte:focus-visible{outline:2px solid #a8d3ff;}
 
 /* ── Rolig sekundærknap ────────────────────────────────────────────────────
-   Samme form, uden farve — til links, der står i samme række. */
+   Hverken kobber eller blå: mørkt glas med lys kant, cremefarvet tekst og en
+   svag kobberglød under. Den skal kunne ses ved siden af bronzepladerne uden
+   at ligne dem eller stjæle opmærksomhed fra bookingknapperne. */
 .ma-book--rolig{
   font-weight:700;
   font-size:13px;
-  color:#e8d4bf;
-  background:rgba(255,255,255,.035);
-  border-color:rgba(224,168,124,.3);
-  box-shadow:none;
+  color:#f6ecdc;
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+  border-width:1.5px;
+  border-color:rgba(243,199,155,.52);
+  box-shadow:0 12px 30px -16px rgba(224,168,124,.55),inset 0 1px 0 rgba(255,255,255,.10);
   animation:none;
 }
 .ma-book--rolig::after{display:none;}
 .ma-book--rolig:hover,
 .ma-book--rolig:focus-visible{
-  color:#f3ead9;
-  background:rgba(255,255,255,.07);
-  border-color:rgba(243,199,155,.6);
-  box-shadow:none;
+  color:#fff6e8;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.06));
+  border-color:rgba(247,216,180,.9);
+  box-shadow:0 18px 40px -16px rgba(224,168,124,.8),inset 0 1px 0 rgba(255,255,255,.16);
 }
 .ma-book--rolig:focus-visible{outline:2px solid #cf8a4f;}
 
