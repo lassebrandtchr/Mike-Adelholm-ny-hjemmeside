@@ -62,26 +62,40 @@
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 
-  /* ═══ Blå plade ═══ Styrke-kortet. Samme opskrift som bronzepladen,
-     blot i blåt — se note ovenfor om data-attributten. */
-  [data-blue],[data-blue] *{color:#101c28!important}
+  /* ═══ Navy-plade ═══ Styrke-kortet. Mørkeblå med hvid skrift — modsat
+     bronzepladen, som er lys med mørk skrift. */
+  [data-blue],[data-blue] *{color:#f4f7fb!important}
   [data-blue]{
-    border-color:rgba(16,28,40,.24)!important;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+    border-color:rgba(255,255,255,.16)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 26px 54px -30px rgba(0,0,0,.85)!important;
   }
-  [data-blue] svg{stroke:#101c28!important}
-  [data-blue] [data-tile] svg{stroke:#bcd8f5!important}
-  [data-blue] [data-tile]{border-color:rgba(16,28,40,.3)!important}
+  [data-blue] svg{stroke:#f4f7fb!important}
 
-  /* ═══ Grøn plade ═══ Smerter/genoptræning-kortet, samme opskrift i grønt. */
-  [data-green],[data-green] *{color:#0d1f16!important}
+  /* ═══ Smaragd-plade ═══ Smerter/genoptræning-kortet, samme opskrift i grønt. */
+  [data-green],[data-green] *{color:#f4f7fb!important}
   [data-green]{
-    border-color:rgba(13,31,22,.24)!important;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+    border-color:rgba(255,255,255,.16)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 26px 54px -30px rgba(0,0,0,.85)!important;
   }
-  [data-green] svg{stroke:#0d1f16!important}
-  [data-green] [data-tile] svg{stroke:#bfe8d1!important}
-  [data-green] [data-tile]{border-color:rgba(13,31,22,.3)!important}
+  [data-green] svg{stroke:#f4f7fb!important}
+
+  /* ═══ Svævende ikoner i "vælg din vej"-kortene ═══
+     Ren CSS: :hover/:active på selve kortet-linket styrer alle ikonerne
+     under ét via CSS-variabler sat pr. ikon. prefers-reduced-motion slår
+     animation/transition fra globalt (design-systemets tokens/motion.css),
+     så der er ikke brug for et ekstra værn her. */
+  .card-float{position:absolute;z-index:-1;pointer-events:none;animation:maFloat 7s ease-in-out infinite;animation-delay:var(--fd,0s)}
+  .card-float svg{display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1);transform:rotate(var(--fr,0deg))}
+  a[data-blue]:hover .card-float svg,
+  a[data-green]:hover .card-float svg{
+    transform:translate(var(--hx,8px),var(--hy,-10px)) rotate(var(--hr,16deg));
+  }
+  a[data-blue]:active .card-float svg,
+  a[data-green]:active .card-float svg{
+    transition:transform .16s cubic-bezier(.3,0,.4,1),filter .16s ease;
+    transform:translate(var(--px,16px),var(--py,-20px)) rotate(var(--pr,26deg)) scale(1.08);
+    filter:blur(2.5px);
+  }
 </style>
 
 <!-- React hostes lokalt (samme filer som unpkg leverede, samme SRI-hash).
@@ -381,112 +395,126 @@
       </div>
 
       <div data-dc-tpl="120" style="display: flex; flex-wrap: wrap; gap: clamp(16px, 2vw, 22px);">
-        <a data-dc-tpl="121" data-blue="" data-reveal="80" href="styrke-performance.dc.html" class="scp4 scp5" style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(215, 230, 248), rgb(111, 159, 214) 55%, rgb(90, 139, 191)); border: 1px solid rgba(91, 147, 207, 0.2); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
-          <span data-dc-tpl="122" data-tile="" style="width: 54px; height: 54px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgb(28, 21, 14), rgb(13, 10, 7)); border: 1px solid rgba(224, 168, 124, 0.3);">
-            <svg data-dc-tpl="123" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="124" d="M2 12h2M20 12h2M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"></path></svg>
+        <a data-dc-tpl="121" data-blue="" data-reveal="80" href="styrke-performance.dc.html" class="scp4 scp5" style="position: relative; overflow: hidden; flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(28, 55, 96), rgb(15, 35, 64) 55%, rgb(10, 25, 48)); border: 1px solid rgba(255, 255, 255, 0.14); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+          <span data-dc-tpl="122" class="card-float" aria-hidden="true" style="left: 6%; top: 58%; opacity: 0.15; --fr: -8deg; --fd: 0s; --hx: 10px; --hy: -12px; --hr: 18deg; --px: 18px; --py: -22px; --pr: 30deg;"><svg data-dc-tpl="123" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="124" cx="17" cy="6" r="2.1"></circle><path data-dc-tpl="125" d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-dc-tpl="126" class="card-float" aria-hidden="true" style="left: 22%; top: 10%; opacity: 0.1; --fr: 16deg; --fd: .9s; --hx: -8px; --hy: -10px; --hr: -16deg; --px: -16px; --py: -20px; --pr: -28deg;"><svg data-dc-tpl="127" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="128" cx="17" cy="6" r="2.1"></circle><path data-dc-tpl="129" d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-dc-tpl="130" class="card-float" aria-hidden="true" style="left: 40%; top: 68%; opacity: 0.17; --fr: -4deg; --fd: 1.7s; --hx: 6px; --hy: 14px; --hr: 10deg; --px: 12px; --py: 24px; --pr: 18deg;"><svg data-dc-tpl="131" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="132" cx="17" cy="6" r="2.1"></circle><path data-dc-tpl="133" d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-dc-tpl="134" class="card-float" aria-hidden="true" style="left: 58%; top: 14%; opacity: 0.12; --fr: 22deg; --fd: .4s; --hx: -10px; --hy: 8px; --hr: -20deg; --px: -18px; --py: 16px; --pr: -32deg;"><svg data-dc-tpl="135" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="136" cx="17" cy="6" r="2.1"></circle><path data-dc-tpl="137" d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-dc-tpl="138" class="card-float" aria-hidden="true" style="left: 74%; top: 56%; opacity: 0.18; --fr: -18deg; --fd: 2.3s; --hx: 12px; --hy: -10px; --hr: 22deg; --px: 22px; --py: -18px; --pr: 34deg;"><svg data-dc-tpl="139" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="140" cx="17" cy="6" r="2.1"></circle><path data-dc-tpl="141" d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-dc-tpl="142" class="card-float" aria-hidden="true" style="left: 86%; top: 10%; opacity: 0.11; --fr: 10deg; --fd: 1.2s; --hx: -6px; --hy: -14px; --hr: -12deg; --px: -14px; --py: -24px; --pr: -22deg;"><svg data-dc-tpl="143" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="144" cx="17" cy="6" r="2.1"></circle><path data-dc-tpl="145" d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-dc-tpl="146" class="card-float" aria-hidden="true" style="left: 32%; top: 32%; opacity: 0.09; --fr: -26deg; --fd: 2s; --hx: 8px; --hy: 10px; --hr: 14deg; --px: 16px; --py: 18px; --pr: 24deg;"><svg data-dc-tpl="147" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle data-dc-tpl="148" cx="17" cy="6" r="2.1"></circle><path data-dc-tpl="149" d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-dc-tpl="150" data-tile="" style="width: 54px; height: 54px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.24);">
+            <svg data-dc-tpl="151" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="152" d="M2 12h2M20 12h2M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"></path></svg>
           </span>
-          <span data-dc-tpl="125" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2vw, 25px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214);">Jeg vil blive stærkere</span>
-          <span data-dc-tpl="126" style="font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Du træner allerede, eller du vil i gang for alvor. Du vil løfte tungere, holde til mere og have en plan, der bygger dig op i stedet for at slide dig ned.</span>
-          <span data-dc-tpl="127" style="margin-top: auto; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Styrke &amp; performance →</span>
+          <span data-dc-tpl="153" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2vw, 25px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214);">Jeg vil blive stærkere</span>
+          <span data-dc-tpl="154" style="font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Du træner allerede, eller du vil i gang for alvor. Du vil løfte tungere, holde til mere og have en plan, der bygger dig op i stedet for at slide dig ned.</span>
+          <span data-dc-tpl="155" style="margin-top: auto; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Styrke &amp; performance →</span>
         </a>
 
-        <a data-dc-tpl="128" data-green="" data-reveal="160" href="smerter-genoptraening.dc.html" class="scp6 scp7" style="flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(217, 239, 225), rgb(95, 172, 129) 55%, rgb(81, 158, 111)); border: 1px solid rgba(79, 168, 124, 0.2); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
-          <span data-dc-tpl="129" data-tile="" style="width: 54px; height: 54px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgb(28, 21, 14), rgb(13, 10, 7)); border: 1px solid rgba(224, 168, 124, 0.3);">
-            <svg data-dc-tpl="130" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="131" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <a data-dc-tpl="156" data-green="" data-reveal="160" href="smerter-genoptraening.dc.html" class="scp6 scp7" style="position: relative; overflow: hidden; flex: 1 1 380px; min-width: 0px; display: flex; flex-direction: column; gap: 18px; padding: clamp(26px, 3vw, 36px); border-radius: 24px; background: linear-gradient(160deg, rgb(24, 101, 71), rgb(18, 82, 58) 55%, rgb(9, 46, 32)); border: 1px solid rgba(255, 255, 255, 0.14); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+          <span data-dc-tpl="157" class="card-float" aria-hidden="true" style="left: 6%; top: 58%; opacity: 0.15; --fr: -8deg; --fd: 0s; --hx: 10px; --hy: -12px; --hr: 18deg; --px: 18px; --py: -22px; --pr: 30deg;"><svg data-dc-tpl="158" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="159" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-dc-tpl="160" class="card-float" aria-hidden="true" style="left: 22%; top: 10%; opacity: 0.1; --fr: 16deg; --fd: .9s; --hx: -8px; --hy: -10px; --hr: -16deg; --px: -16px; --py: -20px; --pr: -28deg;"><svg data-dc-tpl="161" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="162" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-dc-tpl="163" class="card-float" aria-hidden="true" style="left: 40%; top: 68%; opacity: 0.17; --fr: -4deg; --fd: 1.7s; --hx: 6px; --hy: 14px; --hr: 10deg; --px: 12px; --py: 24px; --pr: 18deg;"><svg data-dc-tpl="164" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="165" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-dc-tpl="166" class="card-float" aria-hidden="true" style="left: 58%; top: 14%; opacity: 0.12; --fr: 22deg; --fd: .4s; --hx: -10px; --hy: 8px; --hr: -20deg; --px: -18px; --py: 16px; --pr: -32deg;"><svg data-dc-tpl="167" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="168" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-dc-tpl="169" class="card-float" aria-hidden="true" style="left: 74%; top: 56%; opacity: 0.18; --fr: -18deg; --fd: 2.3s; --hx: 12px; --hy: -10px; --hr: 22deg; --px: 22px; --py: -18px; --pr: 34deg;"><svg data-dc-tpl="170" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="171" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-dc-tpl="172" class="card-float" aria-hidden="true" style="left: 86%; top: 10%; opacity: 0.11; --fr: 10deg; --fd: 1.2s; --hx: -6px; --hy: -14px; --hr: -12deg; --px: -14px; --py: -24px; --pr: -22deg;"><svg data-dc-tpl="173" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="174" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-dc-tpl="175" class="card-float" aria-hidden="true" style="left: 32%; top: 32%; opacity: 0.09; --fr: -26deg; --fd: 2s; --hx: 8px; --hy: 10px; --hr: 14deg; --px: 16px; --py: 18px; --pr: 24deg;"><svg data-dc-tpl="176" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path data-dc-tpl="177" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-dc-tpl="178" data-tile="" style="width: 54px; height: 54px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.24);">
+            <svg data-dc-tpl="179" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="180" d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
           </span>
-          <span data-dc-tpl="132" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2vw, 25px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214);">Jeg vil have færre smerter og mere overskud</span>
-          <span data-dc-tpl="133" style="font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Noget gør ondt, eller du er usikker på, hvor meget din krop kan holde til lige nu. Vi finder et niveau, du kan træne på — og bygger derfra i et tempo, der er til at holde.</span>
-          <span data-dc-tpl="134" style="margin-top: auto; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Smerter &amp; genoptræning →</span>
+          <span data-dc-tpl="181" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2vw, 25px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214);">Jeg vil have færre smerter og mere overskud</span>
+          <span data-dc-tpl="182" style="font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135);">Noget gør ondt, eller du er usikker på, hvor meget din krop kan holde til lige nu. Vi finder et niveau, du kan træne på — og bygger derfra i et tempo, der er til at holde.</span>
+          <span data-dc-tpl="183" style="margin-top: auto; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Smerter &amp; genoptræning →</span>
         </a>
       </div>
     </div>
   </section>
 
   
-  <section data-dc-tpl="135" aria-hidden="true" style="position: relative; overflow: hidden; background: rgb(0, 0, 0); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
-    <div data-dc-tpl="136" style="position: relative; height: clamp(230px, 30vw, 420px);">
-      <picture data-dc-tpl="137" style="display: contents;"><source data-dc-tpl="138" type="image/avif" sizes="100vw" srcset="assets/forside-studio-768.avif 768w, assets/forside-studio-1200.avif 1200w, assets/forside-studio-1600.avif 1600w, assets/forside-studio-2000.avif 2000w"><source data-dc-tpl="139" type="image/webp" sizes="100vw" srcset="assets/forside-studio-768.webp 768w, assets/forside-studio-1200.webp 1200w, assets/forside-studio-1600.webp 1600w, assets/forside-studio-2000.webp 2000w"><img data-dc-tpl="140" src="assets/forside-studio.jpg" alt="" width="2000" height="848" loading="lazy" decoding="async" sizes="100vw" style="position: absolute; inset: 0px; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%;"></picture>
-      <span data-dc-tpl="141" style="position: absolute; inset: 0px; background: linear-gradient(rgba(8, 7, 6, 0.86), rgba(8, 7, 6, 0.18) 46%, rgba(8, 7, 6, 0.9));"></span>
-      <span data-dc-tpl="142" style="position: absolute; inset: 0px; background: radial-gradient(120% 92% at 50% 52%, transparent 26%, rgba(8, 7, 6, 0.62) 100%);"></span>
+  <section data-dc-tpl="184" aria-hidden="true" style="position: relative; overflow: hidden; background: rgb(0, 0, 0); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="185" style="position: relative; height: clamp(230px, 30vw, 420px);">
+      <picture data-dc-tpl="186" style="display: contents;"><source data-dc-tpl="187" type="image/avif" sizes="100vw" srcset="assets/forside-studio-768.avif 768w, assets/forside-studio-1200.avif 1200w, assets/forside-studio-1600.avif 1600w, assets/forside-studio-2000.avif 2000w"><source data-dc-tpl="188" type="image/webp" sizes="100vw" srcset="assets/forside-studio-768.webp 768w, assets/forside-studio-1200.webp 1200w, assets/forside-studio-1600.webp 1600w, assets/forside-studio-2000.webp 2000w"><img data-dc-tpl="189" src="assets/forside-studio.jpg" alt="" width="2000" height="848" loading="lazy" decoding="async" sizes="100vw" style="position: absolute; inset: 0px; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%;"></picture>
+      <span data-dc-tpl="190" style="position: absolute; inset: 0px; background: linear-gradient(rgba(8, 7, 6, 0.86), rgba(8, 7, 6, 0.18) 46%, rgba(8, 7, 6, 0.9));"></span>
+      <span data-dc-tpl="191" style="position: absolute; inset: 0px; background: radial-gradient(120% 92% at 50% 52%, transparent 26%, rgba(8, 7, 6, 0.62) 100%);"></span>
     </div>
   </section>
 
   
-  <section data-dc-tpl="143" data-screen-label="Søjler" style="position: relative; overflow: hidden; padding: clamp(56px, 7vw, 88px) 0px; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0) 60%, rgb(8, 7, 6)); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
-    <div data-dc-tpl="144" data-ambient="" aria-hidden="true" style="position: absolute; bottom: -240px; left: -160px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.2), transparent 66%); pointer-events: none; animation: 11s ease-in-out 0s infinite normal none running maPulse;"></div>
-    <div data-dc-tpl="145" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
-      <div data-dc-tpl="146" data-reveal="0" style="display: flex; align-items: center; gap: 12px; margin-bottom: clamp(28px, 3.5vw, 40px);">
-        <span data-dc-tpl="147" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-        <span data-dc-tpl="148" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Det arbejder vi med</span>
+  <section data-dc-tpl="192" data-screen-label="Søjler" style="position: relative; overflow: hidden; padding: clamp(56px, 7vw, 88px) 0px; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0) 60%, rgb(8, 7, 6)); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="193" data-ambient="" aria-hidden="true" style="position: absolute; bottom: -240px; left: -160px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.2), transparent 66%); pointer-events: none; animation: 11s ease-in-out 0s infinite normal none running maPulse;"></div>
+    <div data-dc-tpl="194" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <div data-dc-tpl="195" data-reveal="0" style="display: flex; align-items: center; gap: 12px; margin-bottom: clamp(28px, 3.5vw, 40px);">
+        <span data-dc-tpl="196" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+        <span data-dc-tpl="197" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Det arbejder vi med</span>
       </div>
-      <div data-dc-tpl="149" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 2vw, 22px);">
-        <div data-dc-tpl="150" data-bronze="" data-reveal="60" style="padding: clamp(24px, 2.6vw, 32px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.2); box-shadow: rgba(0, 0, 0, 0.9) 0px 24px 50px -30px;">
-          <span data-dc-tpl="151" style="width: 52px; height: 52px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: rgba(207, 138, 79, 0.12); border: 1px solid rgba(224, 168, 124, 0.26); margin-bottom: 20px;">
-            <svg data-dc-tpl="152" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="153" d="M2 12h2M20 12h2M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"></path></svg>
+      <div data-dc-tpl="198" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 2vw, 22px);">
+        <div data-dc-tpl="199" data-bronze="" data-reveal="60" style="padding: clamp(24px, 2.6vw, 32px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.2); box-shadow: rgba(0, 0, 0, 0.9) 0px 24px 50px -30px;">
+          <span data-dc-tpl="200" style="width: 52px; height: 52px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: rgba(207, 138, 79, 0.12); border: 1px solid rgba(224, 168, 124, 0.26); margin-bottom: 20px;">
+            <svg data-dc-tpl="201" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="202" d="M2 12h2M20 12h2M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"></path></svg>
           </span>
-          <h3 data-dc-tpl="154" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 12px;">Styrke</h3>
-          <p data-dc-tpl="155" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi bygger kapacitet, hvor du har brug for den. Tung nok træning til at give effekt, doseret så du kan gentage den uge efter uge.</p>
+          <h3 data-dc-tpl="203" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 12px;">Styrke</h3>
+          <p data-dc-tpl="204" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi bygger kapacitet, hvor du har brug for den. Tung nok træning til at give effekt, doseret så du kan gentage den uge efter uge.</p>
         </div>
-        <div data-dc-tpl="156" data-bronze="" data-reveal="140" style="padding: clamp(24px, 2.6vw, 32px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.2); box-shadow: rgba(0, 0, 0, 0.9) 0px 24px 50px -30px;">
-          <span data-dc-tpl="157" style="width: 52px; height: 52px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: rgba(207, 138, 79, 0.12); border: 1px solid rgba(224, 168, 124, 0.26); margin-bottom: 20px;">
-            <svg data-dc-tpl="158" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="159" d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"></path></svg>
+        <div data-dc-tpl="205" data-bronze="" data-reveal="140" style="padding: clamp(24px, 2.6vw, 32px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.2); box-shadow: rgba(0, 0, 0, 0.9) 0px 24px 50px -30px;">
+          <span data-dc-tpl="206" style="width: 52px; height: 52px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: rgba(207, 138, 79, 0.12); border: 1px solid rgba(224, 168, 124, 0.26); margin-bottom: 20px;">
+            <svg data-dc-tpl="207" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="208" d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"></path></svg>
           </span>
-          <h3 data-dc-tpl="160" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 12px;">Bevægelse</h3>
-          <p data-dc-tpl="161" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Bevægelighed og teknik, der gør øvelserne til dine. Når bevægelsen føles sikker, tør du bruge den — også uden for træningen.</p>
+          <h3 data-dc-tpl="209" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 12px;">Bevægelse</h3>
+          <p data-dc-tpl="210" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Bevægelighed og teknik, der gør øvelserne til dine. Når bevægelsen føles sikker, tør du bruge den — også uden for træningen.</p>
         </div>
-        <div data-dc-tpl="162" data-bronze="" data-reveal="220" style="padding: clamp(24px, 2.6vw, 32px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.2); box-shadow: rgba(0, 0, 0, 0.9) 0px 24px 50px -30px;">
-          <span data-dc-tpl="163" style="width: 52px; height: 52px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: rgba(207, 138, 79, 0.12); border: 1px solid rgba(224, 168, 124, 0.26); margin-bottom: 20px;">
-            <svg data-dc-tpl="164" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="165" d="M3 17l6-6 4 4 7-7"></path><path data-dc-tpl="166" d="M14 8h6v6"></path></svg>
+        <div data-dc-tpl="211" data-bronze="" data-reveal="220" style="padding: clamp(24px, 2.6vw, 32px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.2); box-shadow: rgba(0, 0, 0, 0.9) 0px 24px 50px -30px;">
+          <span data-dc-tpl="212" style="width: 52px; height: 52px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: rgba(207, 138, 79, 0.12); border: 1px solid rgba(224, 168, 124, 0.26); margin-bottom: 20px;">
+            <svg data-dc-tpl="213" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="214" d="M3 17l6-6 4 4 7-7"></path><path data-dc-tpl="215" d="M14 8h6v6"></path></svg>
           </span>
-          <h3 data-dc-tpl="167" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 12px;">Fremdrift</h3>
-          <p data-dc-tpl="168" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Små, målbare skridt frem for store spring. Vi justerer undervejs, så planen følger din hverdag i stedet for at kæmpe mod den.</p>
+          <h3 data-dc-tpl="216" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 12px;">Fremdrift</h3>
+          <p data-dc-tpl="217" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Små, målbare skridt frem for store spring. Vi justerer undervejs, så planen følger din hverdag i stedet for at kæmpe mod den.</p>
         </div>
       </div>
     </div>
   </section>
 
   
-  <section data-dc-tpl="169" data-screen-label="Tilgang" style="padding: clamp(64px, 8vw, 104px) 0px;">
-    <div data-dc-tpl="170" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(32px, 4.5vw, 64px);">
-      <div data-dc-tpl="171" style="flex: 1 1 340px; min-width: 0px;">
-        <div data-dc-tpl="172" data-reveal="0" style="position: sticky; top: 112px;">
-          <div data-dc-tpl="173" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <span data-dc-tpl="174" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-            <span data-dc-tpl="175" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Tilgangen</span>
+  <section data-dc-tpl="218" data-screen-label="Tilgang" style="padding: clamp(64px, 8vw, 104px) 0px;">
+    <div data-dc-tpl="219" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(32px, 4.5vw, 64px);">
+      <div data-dc-tpl="220" style="flex: 1 1 340px; min-width: 0px;">
+        <div data-dc-tpl="221" data-reveal="0" style="position: sticky; top: 112px;">
+          <div data-dc-tpl="222" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <span data-dc-tpl="223" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+            <span data-dc-tpl="224" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Tilgangen</span>
           </div>
-          <h2 data-dc-tpl="176" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 18px;">Fysioterapi og træning i samme forløb</h2>
-          <p data-dc-tpl="177" style="margin: 0px 0px 18px; font-size: 17px; line-height: 1.62; color: rgb(171, 156, 135);">Jeg starter med at forstå dit udgangspunkt. Så lægger vi en plan, du kan gennemføre — og retter den til, når hverdagen, kroppen eller målet flytter sig.</p>
-          <p data-dc-tpl="178" style="margin: 0px; font-size: 15.5px; line-height: 1.7; color: rgb(140, 126, 107);">Det er ikke et fast program, du får udleveret én gang. Det er en plan, der bliver fulgt.</p>
+          <h2 data-dc-tpl="225" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 18px;">Fysioterapi og træning i samme forløb</h2>
+          <p data-dc-tpl="226" style="margin: 0px 0px 18px; font-size: 17px; line-height: 1.62; color: rgb(171, 156, 135);">Jeg starter med at forstå dit udgangspunkt. Så lægger vi en plan, du kan gennemføre — og retter den til, når hverdagen, kroppen eller målet flytter sig.</p>
+          <p data-dc-tpl="227" style="margin: 0px; font-size: 15.5px; line-height: 1.7; color: rgb(140, 126, 107);">Det er ikke et fast program, du får udleveret én gang. Det er en plan, der bliver fulgt.</p>
         </div>
       </div>
 
-      <ol data-dc-tpl="179" style="flex: 1 1 440px; min-width: 0px; list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 14px;">
-        <li data-dc-tpl="180" data-bronze="" data-reveal="60" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
-          <span data-dc-tpl="181" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">01</span>
-          <span data-dc-tpl="182">
-            <span data-dc-tpl="183" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Vurdering af udgangspunkt</span>
-            <span data-dc-tpl="184" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi gennemgår historik, træningserfaring, hverdag og hvad du gerne vil kunne. Jeg vurderer, hvad der kan lade sig gøre online — og hvad der bør undersøges fysisk.</span>
+      <ol data-dc-tpl="228" style="flex: 1 1 440px; min-width: 0px; list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 14px;">
+        <li data-dc-tpl="229" data-bronze="" data-reveal="60" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+          <span data-dc-tpl="230" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">01</span>
+          <span data-dc-tpl="231">
+            <span data-dc-tpl="232" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Vurdering af udgangspunkt</span>
+            <span data-dc-tpl="233" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi gennemgår historik, træningserfaring, hverdag og hvad du gerne vil kunne. Jeg vurderer, hvad der kan lade sig gøre online — og hvad der bør undersøges fysisk.</span>
           </span>
         </li>
-        <li data-dc-tpl="185" data-bronze="" data-reveal="120" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
-          <span data-dc-tpl="186" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">02</span>
-          <span data-dc-tpl="187">
-            <span data-dc-tpl="188" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">En realistisk plan</span>
-            <span data-dc-tpl="189" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Du får en plan, der passer til det udstyr, den tid og den restitution du faktisk har. Ikke et program til en hverdag, du ikke har.</span>
+        <li data-dc-tpl="234" data-bronze="" data-reveal="120" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+          <span data-dc-tpl="235" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">02</span>
+          <span data-dc-tpl="236">
+            <span data-dc-tpl="237" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">En realistisk plan</span>
+            <span data-dc-tpl="238" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Du får en plan, der passer til det udstyr, den tid og den restitution du faktisk har. Ikke et program til en hverdag, du ikke har.</span>
           </span>
         </li>
-        <li data-dc-tpl="190" data-bronze="" data-reveal="180" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
-          <span data-dc-tpl="191" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">03</span>
-          <span data-dc-tpl="192">
-            <span data-dc-tpl="193" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Løbende justering</span>
-            <span data-dc-tpl="194" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi følger op, ser hvad der virker, og ændrer belastning, øvelsesvalg eller tempo. Fremdrift er sjældent en ret linje, og planen må godt vide det.</span>
+        <li data-dc-tpl="239" data-bronze="" data-reveal="180" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+          <span data-dc-tpl="240" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">03</span>
+          <span data-dc-tpl="241">
+            <span data-dc-tpl="242" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Løbende justering</span>
+            <span data-dc-tpl="243" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Vi følger op, ser hvad der virker, og ændrer belastning, øvelsesvalg eller tempo. Fremdrift er sjældent en ret linje, og planen må godt vide det.</span>
           </span>
         </li>
-        <li data-dc-tpl="195" data-bronze="" data-reveal="240" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
-          <span data-dc-tpl="196" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">04</span>
-          <span data-dc-tpl="197">
-            <span data-dc-tpl="198" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Støtte undervejs</span>
-            <span data-dc-tpl="199" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Du står ikke alene med tvivlen. Når noget gør ondt, driller eller føles forkert, kan du skrive — og vi tager stilling til det sammen.</span>
+        <li data-dc-tpl="244" data-bronze="" data-reveal="240" class="scp8" style="display: flex; gap: 20px; padding: 24px; border-radius: 20px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s;">
+          <span data-dc-tpl="245" aria-hidden="true" style="flex-shrink: 0; font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: 22px; line-height: 1; color: rgba(224, 168, 124, 0.42);">04</span>
+          <span data-dc-tpl="246">
+            <span data-dc-tpl="247" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 9px;">Støtte undervejs</span>
+            <span data-dc-tpl="248" style="display: block; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Du står ikke alene med tvivlen. Når noget gør ondt, driller eller føles forkert, kan du skrive — og vi tager stilling til det sammen.</span>
           </span>
         </li>
       </ol>
@@ -495,104 +523,104 @@
 
   
   
-  <section data-dc-tpl="201" data-screen-label="Fremdrift" style="position: relative; overflow: hidden; padding: clamp(64px, 8vw, 100px) 0px; background: linear-gradient(rgb(0, 0, 0), rgb(8, 7, 6)); border-top: 1px solid rgba(224, 168, 124, 0.1);">
-    <div data-dc-tpl="202" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
-      <div data-dc-tpl="203" data-reveal="0" style="max-width: 660px; margin-bottom: clamp(30px, 4vw, 44px);">
-        <div data-dc-tpl="204" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-          <span data-dc-tpl="205" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-          <span data-dc-tpl="206" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Sådan ser fremdrift ud</span>
+  <section data-dc-tpl="250" data-screen-label="Fremdrift" style="position: relative; overflow: hidden; padding: clamp(64px, 8vw, 100px) 0px; background: linear-gradient(rgb(0, 0, 0), rgb(8, 7, 6)); border-top: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="251" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <div data-dc-tpl="252" data-reveal="0" style="max-width: 660px; margin-bottom: clamp(30px, 4vw, 44px);">
+        <div data-dc-tpl="253" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span data-dc-tpl="254" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+          <span data-dc-tpl="255" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Sådan ser fremdrift ud</span>
         </div>
-        <h2 data-dc-tpl="207" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 16px;">Styrke udvikles over tid</h2>
-        <p data-dc-tpl="208" style="margin: 0px; font-size: 17px; line-height: 1.62; color: rgb(171, 156, 135);">Udviklingen går sjældent lige op. Der er uger, hvor du flytter dig, og uger hvor du holder fast i det, du har. Begge dele er en del af at blive stærkere.</p>
+        <h2 data-dc-tpl="256" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 16px;">Styrke udvikles over tid</h2>
+        <p data-dc-tpl="257" style="margin: 0px; font-size: 17px; line-height: 1.62; color: rgb(171, 156, 135);">Udviklingen går sjældent lige op. Der er uger, hvor du flytter dig, og uger hvor du holder fast i det, du har. Begge dele er en del af at blive stærkere.</p>
       </div>
 
-      <div data-dc-tpl="209" data-bronze="" style="padding: clamp(20px, 2.6vw, 34px); border-radius: 26px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.18);">
-        <div data-dc-tpl="210" style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: baseline; justify-content: space-between; margin-bottom: 22px;">
-          <span data-dc-tpl="211" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(230, 207, 180);">Kapacitet over 12 uger</span>
-          <span data-dc-tpl="212" style="display: flex; flex-wrap: wrap; gap: 16px;">
-            <span data-dc-tpl="213" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="214" aria-hidden="true" style="width: 22px; height: 2.5px; border-radius: 2px; background: linear-gradient(90deg, rgb(28, 17, 7), rgb(63, 40, 20));"></span>Faktisk udvikling</span>
-            <span data-dc-tpl="215" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(140, 126, 107);"><span data-dc-tpl="216" aria-hidden="true" style="width: 22px; height: 0px; border-top: 2px dashed rgba(28, 17, 7, 0.55);"></span>Forventet lige linje</span>
+      <div data-dc-tpl="258" data-bronze="" style="padding: clamp(20px, 2.6vw, 34px); border-radius: 26px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.18);">
+        <div data-dc-tpl="259" style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: baseline; justify-content: space-between; margin-bottom: 22px;">
+          <span data-dc-tpl="260" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgb(230, 207, 180);">Kapacitet over 12 uger</span>
+          <span data-dc-tpl="261" style="display: flex; flex-wrap: wrap; gap: 16px;">
+            <span data-dc-tpl="262" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="263" aria-hidden="true" style="width: 22px; height: 2.5px; border-radius: 2px; background: linear-gradient(90deg, rgb(28, 17, 7), rgb(63, 40, 20));"></span>Faktisk udvikling</span>
+            <span data-dc-tpl="264" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(140, 126, 107);"><span data-dc-tpl="265" aria-hidden="true" style="width: 22px; height: 0px; border-top: 2px dashed rgba(28, 17, 7, 0.55);"></span>Forventet lige linje</span>
           </span>
         </div>
 
-        <svg data-dc-tpl="217" viewBox="0 0 640 270" role="img" aria-label="Diagram: kapacitet stiger over 12 uger i et ujævnt mønster med perioder, hvor niveauet holdes, og enkelte tilbagegange, men med samlet fremgang." style="width: 100%; height: auto; display: block; overflow: visible;">
-          <defs data-dc-tpl="218">
-            <linearGradient data-dc-tpl="219" id="maLine" x1="0" y1="0" x2="1" y2="0"><stop data-dc-tpl="220" offset="0" stop-color="#1c1107"></stop><stop data-dc-tpl="221" offset=".5" stop-color="#3f2814"></stop><stop data-dc-tpl="222" offset="1" stop-color="#1c1107"></stop></linearGradient>
-            <linearGradient data-dc-tpl="223" id="maArea" x1="0" y1="0" x2="0" y2="1"><stop data-dc-tpl="224" offset="0" stop-color="rgba(207,138,79,.28)"></stop><stop data-dc-tpl="225" offset="1" stop-color="rgba(207,138,79,0)"></stop></linearGradient>
+        <svg data-dc-tpl="266" viewBox="0 0 640 270" role="img" aria-label="Diagram: kapacitet stiger over 12 uger i et ujævnt mønster med perioder, hvor niveauet holdes, og enkelte tilbagegange, men med samlet fremgang." style="width: 100%; height: auto; display: block; overflow: visible;">
+          <defs data-dc-tpl="267">
+            <linearGradient data-dc-tpl="268" id="maLine" x1="0" y1="0" x2="1" y2="0"><stop data-dc-tpl="269" offset="0" stop-color="#1c1107"></stop><stop data-dc-tpl="270" offset=".5" stop-color="#3f2814"></stop><stop data-dc-tpl="271" offset="1" stop-color="#1c1107"></stop></linearGradient>
+            <linearGradient data-dc-tpl="272" id="maArea" x1="0" y1="0" x2="0" y2="1"><stop data-dc-tpl="273" offset="0" stop-color="rgba(207,138,79,.28)"></stop><stop data-dc-tpl="274" offset="1" stop-color="rgba(207,138,79,0)"></stop></linearGradient>
           </defs>
-          <g data-dc-tpl="226" stroke="rgba(28,17,7,.18)" stroke-width="1">
-            <line data-dc-tpl="227" x1="40" y1="240" x2="620" y2="240"></line>
-            <line data-dc-tpl="228" x1="40" y1="196" x2="620" y2="196"></line>
-            <line data-dc-tpl="229" x1="40" y1="152" x2="620" y2="152"></line>
-            <line data-dc-tpl="230" x1="40" y1="108" x2="620" y2="108"></line>
-            <line data-dc-tpl="231" x1="40" y1="64" x2="620" y2="64"></line>
+          <g data-dc-tpl="275" stroke="rgba(28,17,7,.18)" stroke-width="1">
+            <line data-dc-tpl="276" x1="40" y1="240" x2="620" y2="240"></line>
+            <line data-dc-tpl="277" x1="40" y1="196" x2="620" y2="196"></line>
+            <line data-dc-tpl="278" x1="40" y1="152" x2="620" y2="152"></line>
+            <line data-dc-tpl="279" x1="40" y1="108" x2="620" y2="108"></line>
+            <line data-dc-tpl="280" x1="40" y1="64" x2="620" y2="64"></line>
           </g>
-          <line data-dc-tpl="232" x1="40" y1="224" x2="592" y2="64" stroke="rgba(28,17,7,.55)" stroke-width="1.5" stroke-dasharray="5 6"></line>
-          <path data-dc-tpl="233" data-draw="1700" d="M40 224 L86 204 L132 180 L178 172 L224 176 L270 152 L316 130 L362 124 L408 136 L454 112 L500 90 L546 80 L592 64" fill="none" stroke="url(#maLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-          <g data-dc-tpl="234" data-reveal="900" fill="#1c1107">
-            <circle data-dc-tpl="235" cx="40" cy="224" r="3.4"></circle><circle data-dc-tpl="236" cx="86" cy="204" r="3.4"></circle><circle data-dc-tpl="237" cx="132" cy="180" r="3.4"></circle><circle data-dc-tpl="238" cx="178" cy="172" r="3.4"></circle><circle data-dc-tpl="239" cx="224" cy="176" r="3.4"></circle><circle data-dc-tpl="240" cx="270" cy="152" r="3.4"></circle><circle data-dc-tpl="241" cx="316" cy="130" r="3.4"></circle><circle data-dc-tpl="242" cx="362" cy="124" r="3.4"></circle><circle data-dc-tpl="243" cx="408" cy="136" r="3.4"></circle><circle data-dc-tpl="244" cx="454" cy="112" r="3.4"></circle><circle data-dc-tpl="245" cx="500" cy="90" r="3.4"></circle><circle data-dc-tpl="246" cx="546" cy="80" r="3.4"></circle>
-            <circle data-dc-tpl="247" cx="592" cy="64" r="4.6" stroke="#fff6ea" stroke-width="1.6"></circle>
+          <line data-dc-tpl="281" x1="40" y1="224" x2="592" y2="64" stroke="rgba(28,17,7,.55)" stroke-width="1.5" stroke-dasharray="5 6"></line>
+          <path data-dc-tpl="282" data-draw="1700" d="M40 224 L86 204 L132 180 L178 172 L224 176 L270 152 L316 130 L362 124 L408 136 L454 112 L500 90 L546 80 L592 64" fill="none" stroke="url(#maLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+          <g data-dc-tpl="283" data-reveal="900" fill="#1c1107">
+            <circle data-dc-tpl="284" cx="40" cy="224" r="3.4"></circle><circle data-dc-tpl="285" cx="86" cy="204" r="3.4"></circle><circle data-dc-tpl="286" cx="132" cy="180" r="3.4"></circle><circle data-dc-tpl="287" cx="178" cy="172" r="3.4"></circle><circle data-dc-tpl="288" cx="224" cy="176" r="3.4"></circle><circle data-dc-tpl="289" cx="270" cy="152" r="3.4"></circle><circle data-dc-tpl="290" cx="316" cy="130" r="3.4"></circle><circle data-dc-tpl="291" cx="362" cy="124" r="3.4"></circle><circle data-dc-tpl="292" cx="408" cy="136" r="3.4"></circle><circle data-dc-tpl="293" cx="454" cy="112" r="3.4"></circle><circle data-dc-tpl="294" cx="500" cy="90" r="3.4"></circle><circle data-dc-tpl="295" cx="546" cy="80" r="3.4"></circle>
+            <circle data-dc-tpl="296" cx="592" cy="64" r="4.6" stroke="#fff6ea" stroke-width="1.6"></circle>
           </g>
-          <g data-dc-tpl="248" data-reveal="1000" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12.5" fill="#1c1107">
-            <text data-dc-tpl="249" x="40" y="262">Uge 1</text>
-            <text data-dc-tpl="250" x="300" y="262">Uge 6</text>
-            <text data-dc-tpl="251" x="592" y="262" text-anchor="end">Uge 12</text>
-            <text data-dc-tpl="252" x="224" y="200" fill="#3f2814" font-size="12">Plateau — vi holder niveauet</text>
-            <text data-dc-tpl="253" x="408" y="162" fill="#3f2814" font-size="12">Travl uge — vi sænker dosis</text>
+          <g data-dc-tpl="297" data-reveal="1000" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12.5" fill="#1c1107">
+            <text data-dc-tpl="298" x="40" y="262">Uge 1</text>
+            <text data-dc-tpl="299" x="300" y="262">Uge 6</text>
+            <text data-dc-tpl="300" x="592" y="262" text-anchor="end">Uge 12</text>
+            <text data-dc-tpl="301" x="224" y="200" fill="#3f2814" font-size="12">Plateau — vi holder niveauet</text>
+            <text data-dc-tpl="302" x="408" y="162" fill="#3f2814" font-size="12">Travl uge — vi sænker dosis</text>
           </g>
-          <text data-dc-tpl="254" x="40" y="46" font-family="Archivo, system-ui, sans-serif" font-size="11" letter-spacing="2.2" fill="#1c1107">KAPACITET</text>
+          <text data-dc-tpl="303" x="40" y="46" font-family="Archivo, system-ui, sans-serif" font-size="11" letter-spacing="2.2" fill="#1c1107">KAPACITET</text>
         </svg>
 
-        <p data-dc-tpl="255" style="margin: 18px 0px 0px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Illustration af et muligt forløb — ikke en kundecase.</p>
+        <p data-dc-tpl="304" style="margin: 18px 0px 0px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Illustration af et muligt forløb — ikke en kundecase.</p>
       </div>
 
-      <div data-dc-tpl="256" style="margin-top: clamp(16px, 2vw, 22px); display: flex; flex-wrap: wrap; gap: clamp(16px, 2vw, 22px);">
-        <div data-dc-tpl="257" data-bronze="" data-reveal="80" style="flex: 1 1 400px; min-width: 0px; padding: clamp(20px, 2.4vw, 30px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16);">
-          <h3 data-dc-tpl="258" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 10px;">Mere kapacitet. Mindre begrænsning.</h3>
-          <p data-dc-tpl="259" style="margin: 0px 0px 22px; font-size: 15px; line-height: 1.62; color: rgb(171, 156, 135);">Når kroppen kan holde til mere, fylder begrænsningen mindre. Tilliden til bevægelsen følger typisk lidt efter kapaciteten.</p>
-          <svg data-dc-tpl="260" viewBox="0 0 420 210" role="img" aria-label="Diagram: kapacitet og tillid stiger over tid, mens oplevet begrænsning falder. Kurverne krydser hinanden på midten af forløbet." style="width: 100%; height: auto; display: block; overflow: visible;">
-            <g data-dc-tpl="261" stroke="rgba(28,17,7,.18)" stroke-width="1">
-              <line data-dc-tpl="262" x1="10" y1="170" x2="410" y2="170"></line><line data-dc-tpl="263" x1="10" y1="120" x2="410" y2="120"></line><line data-dc-tpl="264" x1="10" y1="70" x2="410" y2="70"></line><line data-dc-tpl="265" x1="10" y1="20" x2="410" y2="20"></line>
+      <div data-dc-tpl="305" style="margin-top: clamp(16px, 2vw, 22px); display: flex; flex-wrap: wrap; gap: clamp(16px, 2vw, 22px);">
+        <div data-dc-tpl="306" data-bronze="" data-reveal="80" style="flex: 1 1 400px; min-width: 0px; padding: clamp(20px, 2.4vw, 30px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16);">
+          <h3 data-dc-tpl="307" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 10px;">Mere kapacitet. Mindre begrænsning.</h3>
+          <p data-dc-tpl="308" style="margin: 0px 0px 22px; font-size: 15px; line-height: 1.62; color: rgb(171, 156, 135);">Når kroppen kan holde til mere, fylder begrænsningen mindre. Tilliden til bevægelsen følger typisk lidt efter kapaciteten.</p>
+          <svg data-dc-tpl="309" viewBox="0 0 420 210" role="img" aria-label="Diagram: kapacitet og tillid stiger over tid, mens oplevet begrænsning falder. Kurverne krydser hinanden på midten af forløbet." style="width: 100%; height: auto; display: block; overflow: visible;">
+            <g data-dc-tpl="310" stroke="rgba(28,17,7,.18)" stroke-width="1">
+              <line data-dc-tpl="311" x1="10" y1="170" x2="410" y2="170"></line><line data-dc-tpl="312" x1="10" y1="120" x2="410" y2="120"></line><line data-dc-tpl="313" x1="10" y1="70" x2="410" y2="70"></line><line data-dc-tpl="314" x1="10" y1="20" x2="410" y2="20"></line>
             </g>
-            <path data-dc-tpl="266" data-draw="1500" d="M10 158 C110 150 150 118 210 100 C270 82 330 56 410 34" fill="none" stroke="#1c1107" stroke-width="2.8" stroke-linecap="round"></path>
-            <path data-dc-tpl="267" data-draw="1500" data-draw-delay="200" d="M10 40 C90 48 150 74 210 100 C280 130 330 146 410 152" fill="none" stroke="#3f2814" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0"></path>
-            <path data-dc-tpl="268" data-draw="1500" data-draw-delay="400" d="M10 164 C120 162 160 142 210 128 C280 108 330 84 410 66" fill="none" stroke="rgba(28,17,7,.55)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 5"></path>
-            <circle data-dc-tpl="269" data-reveal="1200" cx="210" cy="100" r="4.5" fill="#1c1107" stroke="#fff6ea" stroke-width="1.6"></circle>
-            <g data-dc-tpl="270" data-reveal="1300" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12" fill="#1c1107">
-              <text data-dc-tpl="271" x="10" y="196">Start</text>
-              <text data-dc-tpl="272" x="410" y="196" text-anchor="end">Senere i forløbet</text>
+            <path data-dc-tpl="315" data-draw="1500" d="M10 158 C110 150 150 118 210 100 C270 82 330 56 410 34" fill="none" stroke="#1c1107" stroke-width="2.8" stroke-linecap="round"></path>
+            <path data-dc-tpl="316" data-draw="1500" data-draw-delay="200" d="M10 40 C90 48 150 74 210 100 C280 130 330 146 410 152" fill="none" stroke="#3f2814" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0"></path>
+            <path data-dc-tpl="317" data-draw="1500" data-draw-delay="400" d="M10 164 C120 162 160 142 210 128 C280 108 330 84 410 66" fill="none" stroke="rgba(28,17,7,.55)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 5"></path>
+            <circle data-dc-tpl="318" data-reveal="1200" cx="210" cy="100" r="4.5" fill="#1c1107" stroke="#fff6ea" stroke-width="1.6"></circle>
+            <g data-dc-tpl="319" data-reveal="1300" font-family="Hanken Grotesk, system-ui, sans-serif" font-size="12" fill="#1c1107">
+              <text data-dc-tpl="320" x="10" y="196">Start</text>
+              <text data-dc-tpl="321" x="410" y="196" text-anchor="end">Senere i forløbet</text>
             </g>
           </svg>
-          <div data-dc-tpl="273" style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px 20px;">
-            <span data-dc-tpl="274" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="275" aria-hidden="true" style="width: 18px; height: 2.6px; border-radius: 2px; background: rgb(28, 17, 7);"></span>Kapacitet</span>
-            <span data-dc-tpl="276" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="277" aria-hidden="true" style="width: 18px; height: 2.6px; border-radius: 2px; background: rgb(63, 40, 20);"></span>Oplevet begrænsning</span>
-            <span data-dc-tpl="278" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="279" aria-hidden="true" style="width: 18px; height: 0px; border-top: 2px dashed rgba(28, 17, 7, 0.55);"></span>Tillid til bevægelsen</span>
+          <div data-dc-tpl="322" style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px 20px;">
+            <span data-dc-tpl="323" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="324" aria-hidden="true" style="width: 18px; height: 2.6px; border-radius: 2px; background: rgb(28, 17, 7);"></span>Kapacitet</span>
+            <span data-dc-tpl="325" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="326" aria-hidden="true" style="width: 18px; height: 2.6px; border-radius: 2px; background: rgb(63, 40, 20);"></span>Oplevet begrænsning</span>
+            <span data-dc-tpl="327" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: rgb(163, 147, 126);"><span data-dc-tpl="328" aria-hidden="true" style="width: 18px; height: 0px; border-top: 2px dashed rgba(28, 17, 7, 0.55);"></span>Tillid til bevægelsen</span>
           </div>
-          <p data-dc-tpl="280" style="margin: 16px 0px 0px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Illustration af et muligt forløb — ikke en kundecase.</p>
+          <p data-dc-tpl="329" style="margin: 16px 0px 0px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Illustration af et muligt forløb — ikke en kundecase.</p>
         </div>
 
-        <div data-dc-tpl="281" data-bronze="" data-reveal="160" style="flex: 1 1 320px; min-width: 0px; padding: clamp(20px, 2.4vw, 30px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16);">
-          <h3 data-dc-tpl="282" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 10px;">Konsistens slår perfektion</h3>
-          <p data-dc-tpl="283" style="margin: 0px 0px 24px; font-size: 15px; line-height: 1.62; color: rgb(171, 156, 135);">Tre gode uger og en halv uge slår én perfekt uge og tre sprunget over. Vi planlægger efter det.</p>
-          <div data-dc-tpl="284" style="display: flex; align-items: flex-end; gap: 6px; height: 150px; padding-bottom: 26px; border-bottom: 1px solid rgba(28, 17, 7, 0.18); position: relative;">
-            <span data-dc-tpl="285" aria-hidden="true" style="position: absolute; left: 0px; right: 0px; bottom: calc(68% + 26px); border-top: 1.5px dashed rgba(28, 17, 7, 0.55);"></span>
-            <span data-dc-tpl="286" data-grow="0" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
-            <span data-dc-tpl="287" data-grow="60" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
-            <span data-dc-tpl="288" data-grow="120" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
-            <span data-dc-tpl="289" data-grow="180" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
-            <span data-dc-tpl="290" data-grow="240" style="flex: 1 1 0%; height: 33%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(21, 13, 5), rgb(10, 6, 3));"></span>
-            <span data-dc-tpl="291" data-grow="300" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
-            <span data-dc-tpl="292" data-grow="360" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
-            <span data-dc-tpl="293" data-grow="420" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
-            <span data-dc-tpl="294" data-grow="480" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
-            <span data-dc-tpl="295" data-grow="540" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
-            <span data-dc-tpl="296" data-grow="600" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
-            <span data-dc-tpl="297" data-grow="660" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
+        <div data-dc-tpl="330" data-bronze="" data-reveal="160" style="flex: 1 1 320px; min-width: 0px; padding: clamp(20px, 2.4vw, 30px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16);">
+          <h3 data-dc-tpl="331" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase; color: rgb(240, 230, 214); margin: 0px 0px 10px;">Konsistens slår perfektion</h3>
+          <p data-dc-tpl="332" style="margin: 0px 0px 24px; font-size: 15px; line-height: 1.62; color: rgb(171, 156, 135);">Tre gode uger og en halv uge slår én perfekt uge og tre sprunget over. Vi planlægger efter det.</p>
+          <div data-dc-tpl="333" style="display: flex; align-items: flex-end; gap: 6px; height: 150px; padding-bottom: 26px; border-bottom: 1px solid rgba(28, 17, 7, 0.18); position: relative;">
+            <span data-dc-tpl="334" aria-hidden="true" style="position: absolute; left: 0px; right: 0px; bottom: calc(68% + 26px); border-top: 1.5px dashed rgba(28, 17, 7, 0.55);"></span>
+            <span data-dc-tpl="335" data-grow="0" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
+            <span data-dc-tpl="336" data-grow="60" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
+            <span data-dc-tpl="337" data-grow="120" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
+            <span data-dc-tpl="338" data-grow="180" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
+            <span data-dc-tpl="339" data-grow="240" style="flex: 1 1 0%; height: 33%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(21, 13, 5), rgb(10, 6, 3));"></span>
+            <span data-dc-tpl="340" data-grow="300" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
+            <span data-dc-tpl="341" data-grow="360" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
+            <span data-dc-tpl="342" data-grow="420" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
+            <span data-dc-tpl="343" data-grow="480" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
+            <span data-dc-tpl="344" data-grow="540" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
+            <span data-dc-tpl="345" data-grow="600" style="flex: 1 1 0%; height: 100%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(63, 40, 20), rgb(28, 17, 7));"></span>
+            <span data-dc-tpl="346" data-grow="660" style="flex: 1 1 0%; height: 66%; border-radius: 5px 5px 0px 0px; background: linear-gradient(rgb(43, 26, 14), rgb(21, 13, 5));"></span>
           </div>
-          <div data-dc-tpl="298" style="margin-top: 12px; display: flex; justify-content: space-between; font-size: 12.5px; color: rgb(140, 126, 107);">
-            <span data-dc-tpl="299">Uge 1</span><span data-dc-tpl="300">Gennemførte træninger pr. uge</span><span data-dc-tpl="301">Uge 12</span>
+          <div data-dc-tpl="347" style="margin-top: 12px; display: flex; justify-content: space-between; font-size: 12.5px; color: rgb(140, 126, 107);">
+            <span data-dc-tpl="348">Uge 1</span><span data-dc-tpl="349">Gennemførte træninger pr. uge</span><span data-dc-tpl="350">Uge 12</span>
           </div>
-          <p data-dc-tpl="302" style="margin: 16px 0px 0px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Illustration af et muligt forløb — ikke en kundecase.</p>
+          <p data-dc-tpl="351" style="margin: 16px 0px 0px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Illustration af et muligt forløb — ikke en kundecase.</p>
         </div>
       </div>
     </div>
@@ -600,74 +628,74 @@
   
 
   
-  <section data-dc-tpl="303" data-screen-label="Ydelser" style="padding: clamp(64px, 8vw, 104px) 0px;">
-    <div data-dc-tpl="304" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
-      <div data-dc-tpl="305" data-reveal="0" style="display: flex; align-items: center; gap: 12px; margin-bottom: clamp(28px, 3.5vw, 40px);">
-        <span data-dc-tpl="306" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-        <span data-dc-tpl="307" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">To indgange, ét forløb</span>
+  <section data-dc-tpl="352" data-screen-label="Ydelser" style="padding: clamp(64px, 8vw, 104px) 0px;">
+    <div data-dc-tpl="353" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <div data-dc-tpl="354" data-reveal="0" style="display: flex; align-items: center; gap: 12px; margin-bottom: clamp(28px, 3.5vw, 40px);">
+        <span data-dc-tpl="355" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+        <span data-dc-tpl="356" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">To indgange, ét forløb</span>
       </div>
 
-      <a data-dc-tpl="308" data-bronze="" data-reveal="60" href="online-coaching.dc.html" class="scp9 scpa" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; margin-bottom: 16px; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
-        <span data-dc-tpl="309" style="flex: 1 1 320px; min-width: 0px;">
-          <span data-dc-tpl="310" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 12px;">Online coaching</span>
-          <span data-dc-tpl="311" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 14px;">Din plan, fulgt op og justeret</span>
-          <span data-dc-tpl="312" style="display: block; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135); max-width: 560px;">Individuel plan, check-ins og feedback undervejs. Du ved, hvad du skal gøre — og hvorfor du gør det.</span>
+      <a data-dc-tpl="357" data-bronze="" data-reveal="60" href="online-coaching.dc.html" class="scp9 scpa" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; margin-bottom: 16px; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+        <span data-dc-tpl="358" style="flex: 1 1 320px; min-width: 0px;">
+          <span data-dc-tpl="359" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 12px;">Online coaching</span>
+          <span data-dc-tpl="360" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 14px;">Din plan, fulgt op og justeret</span>
+          <span data-dc-tpl="361" style="display: block; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135); max-width: 560px;">Individuel plan, check-ins og feedback undervejs. Du ved, hvad du skal gøre — og hvorfor du gør det.</span>
         </span>
-        <span data-dc-tpl="313" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Læs mere<span data-dc-tpl="314" style="font-size: 16px; line-height: 0;">→</span></span>
+        <span data-dc-tpl="362" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Læs mere<span data-dc-tpl="363" style="font-size: 16px; line-height: 0;">→</span></span>
       </a>
 
-      <a data-dc-tpl="315" data-bronze="" data-reveal="140" href="smerter-genoptraening.dc.html" class="scp9 scpa" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
-        <span data-dc-tpl="316" style="flex: 1 1 320px; min-width: 0px;">
-          <span data-dc-tpl="317" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 12px;">Smerter &amp; genoptræning</span>
-          <span data-dc-tpl="318" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 14px;">Tilbage til træning i et roligt tempo</span>
-          <span data-dc-tpl="319" style="display: block; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135); max-width: 560px;">Gør det ondt, eller er du usikker på belastning? Vi finder et sted at starte og bygger op derfra — uden dramatik.</span>
+      <a data-dc-tpl="364" data-bronze="" data-reveal="140" href="smerter-genoptraening.dc.html" class="scp9 scpa" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: center; padding: clamp(24px, 3vw, 38px); border-radius: 24px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.14); text-decoration: none; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, box-shadow 0.35s;">
+        <span data-dc-tpl="365" style="flex: 1 1 320px; min-width: 0px;">
+          <span data-dc-tpl="366" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 12px;">Smerter &amp; genoptræning</span>
+          <span data-dc-tpl="367" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.15; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 14px;">Tilbage til træning i et roligt tempo</span>
+          <span data-dc-tpl="368" style="display: block; font-size: 16px; line-height: 1.65; color: rgb(171, 156, 135); max-width: 560px;">Gør det ondt, eller er du usikker på belastning? Vi finder et sted at starte og bygger op derfra — uden dramatik.</span>
         </span>
-        <span data-dc-tpl="320" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Læs mere<span data-dc-tpl="321" style="font-size: 16px; line-height: 0;">→</span></span>
+        <span data-dc-tpl="369" style="flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119);">Læs mere<span data-dc-tpl="370" style="font-size: 16px; line-height: 0;">→</span></span>
       </a>
     </div>
   </section>
 
   
-  <section data-dc-tpl="322" data-screen-label="Kom i gang" style="position: relative; overflow: hidden; padding: clamp(56px, 7vw, 88px) 0px; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
-    <div data-dc-tpl="323" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(30px, 4vw, 60px);">
-      <div data-dc-tpl="324" data-reveal="0" style="flex: 1 1 300px; min-width: 0px;">
-        <div data-dc-tpl="325" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-          <span data-dc-tpl="326" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-          <span data-dc-tpl="327" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Første skridt</span>
+  <section data-dc-tpl="371" data-screen-label="Kom i gang" style="position: relative; overflow: hidden; padding: clamp(56px, 7vw, 88px) 0px; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.1); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="372" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(30px, 4vw, 60px);">
+      <div data-dc-tpl="373" data-reveal="0" style="flex: 1 1 300px; min-width: 0px;">
+        <div data-dc-tpl="374" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span data-dc-tpl="375" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+          <span data-dc-tpl="376" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Første skridt</span>
         </div>
-        <h2 data-dc-tpl="328" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 16px;">Sådan kommer du i gang</h2>
-        <p data-dc-tpl="329" style="margin: 0px 0px 24px; font-size: 16.5px; line-height: 1.62; color: rgb(171, 156, 135);">Det skal være nemt at tage det første skridt. Fire trin fra spørgsmål til plan.</p>
-        <a data-dc-tpl="330" href="forloeb.dc.html" class="scpb scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se hele forløbet<span data-dc-tpl="331" style="font-size: 16px; line-height: 0;">→</span></a>
+        <h2 data-dc-tpl="377" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 16px;">Sådan kommer du i gang</h2>
+        <p data-dc-tpl="378" style="margin: 0px 0px 24px; font-size: 16.5px; line-height: 1.62; color: rgb(171, 156, 135);">Det skal være nemt at tage det første skridt. Fire trin fra spørgsmål til plan.</p>
+        <a data-dc-tpl="379" href="forloeb.dc.html" class="scpb scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se hele forløbet<span data-dc-tpl="380" style="font-size: 16px; line-height: 0;">→</span></a>
       </div>
 
-      <ol data-dc-tpl="332" style="flex: 1 1 440px; min-width: 0px; list-style: none; margin: 0px; padding: 0px; position: relative;">
-        <span data-dc-tpl="333" aria-hidden="true" style="position: absolute; left: 17px; top: 14px; bottom: 22px; width: 1px; background: linear-gradient(rgba(224, 168, 124, 0.44), rgba(224, 168, 124, 0.08));"></span>
-        <li data-dc-tpl="334" data-reveal="60" style="position: relative; display: flex; gap: 20px; padding-bottom: 26px;">
-          <span data-dc-tpl="335" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">1</span>
-          <span data-dc-tpl="336" style="padding-top: 5px;">
-            <span data-dc-tpl="337" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Du svarer på et par spørgsmål</span>
-            <span data-dc-tpl="338" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Kort om hvad du gerne vil have hjælp til.</span>
+      <ol data-dc-tpl="381" style="flex: 1 1 440px; min-width: 0px; list-style: none; margin: 0px; padding: 0px; position: relative;">
+        <span data-dc-tpl="382" aria-hidden="true" style="position: absolute; left: 17px; top: 14px; bottom: 22px; width: 1px; background: linear-gradient(rgba(224, 168, 124, 0.44), rgba(224, 168, 124, 0.08));"></span>
+        <li data-dc-tpl="383" data-reveal="60" style="position: relative; display: flex; gap: 20px; padding-bottom: 26px;">
+          <span data-dc-tpl="384" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">1</span>
+          <span data-dc-tpl="385" style="padding-top: 5px;">
+            <span data-dc-tpl="386" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Du svarer på et par spørgsmål</span>
+            <span data-dc-tpl="387" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Kort om hvad du gerne vil have hjælp til.</span>
           </span>
         </li>
-        <li data-dc-tpl="339" data-reveal="120" style="position: relative; display: flex; gap: 20px; padding-bottom: 26px;">
-          <span data-dc-tpl="340" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">2</span>
-          <span data-dc-tpl="341" style="padding-top: 5px;">
-            <span data-dc-tpl="342" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Jeg læser dine svar</span>
-            <span data-dc-tpl="343" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Jeg bruger dit udgangspunkt til at vurdere næste skridt.</span>
+        <li data-dc-tpl="388" data-reveal="120" style="position: relative; display: flex; gap: 20px; padding-bottom: 26px;">
+          <span data-dc-tpl="389" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">2</span>
+          <span data-dc-tpl="390" style="padding-top: 5px;">
+            <span data-dc-tpl="391" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Jeg læser dine svar</span>
+            <span data-dc-tpl="392" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Jeg bruger dit udgangspunkt til at vurdere næste skridt.</span>
           </span>
         </li>
-        <li data-dc-tpl="344" data-reveal="180" style="position: relative; display: flex; gap: 20px; padding-bottom: 26px;">
-          <span data-dc-tpl="345" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">3</span>
-          <span data-dc-tpl="346" style="padding-top: 5px;">
-            <span data-dc-tpl="347" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Vi tager en samtale</span>
-            <span data-dc-tpl="348" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Om dine mål, din hverdag og om et forløb passer.</span>
+        <li data-dc-tpl="393" data-reveal="180" style="position: relative; display: flex; gap: 20px; padding-bottom: 26px;">
+          <span data-dc-tpl="394" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">3</span>
+          <span data-dc-tpl="395" style="padding-top: 5px;">
+            <span data-dc-tpl="396" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Vi tager en samtale</span>
+            <span data-dc-tpl="397" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Om dine mål, din hverdag og om et forløb passer.</span>
           </span>
         </li>
-        <li data-dc-tpl="349" data-reveal="240" style="position: relative; display: flex; gap: 20px;">
-          <span data-dc-tpl="350" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">4</span>
-          <span data-dc-tpl="351" style="padding-top: 5px;">
-            <span data-dc-tpl="352" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Du får en klar vej frem</span>
-            <span data-dc-tpl="353" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Er vi et godt match, lægger vi en plan, der passer til dig.</span>
+        <li data-dc-tpl="398" data-reveal="240" style="position: relative; display: flex; gap: 20px;">
+          <span data-dc-tpl="399" aria-hidden="true" style="position: relative; z-index: 1; flex-shrink: 0; width: 35px; height: 35px; border-radius: 50%; background: rgb(13, 10, 7); border: 1.5px solid rgba(224, 168, 124, 0.5); display: inline-flex; align-items: center; justify-content: center; color: rgb(243, 199, 155); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13px;">4</span>
+          <span data-dc-tpl="400" style="padding-top: 5px;">
+            <span data-dc-tpl="401" style="display: block; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15.5px; letter-spacing: 0.03em; text-transform: uppercase; color: rgb(240, 230, 214); margin-bottom: 7px;">Du får en klar vej frem</span>
+            <span data-dc-tpl="402" style="display: block; font-size: 15px; line-height: 1.6; color: rgb(140, 126, 107);">Er vi et godt match, lægger vi en plan, der passer til dig.</span>
           </span>
         </li>
       </ol>
@@ -675,25 +703,25 @@
   </section>
 
   
-  <section data-dc-tpl="354" data-screen-label="Om Mike" style="padding: clamp(64px, 8vw, 100px) 0px;">
-    <div data-dc-tpl="355" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap-reverse; align-items: center; gap: clamp(32px, 5vw, 64px);">
-      <div data-dc-tpl="356" data-reveal="60" style="flex: 1 1 420px; min-width: 0px;">
-        <div data-dc-tpl="357" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-          <span data-dc-tpl="358" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-          <span data-dc-tpl="359" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Om Mike</span>
+  <section data-dc-tpl="403" data-screen-label="Om Mike" style="padding: clamp(64px, 8vw, 100px) 0px;">
+    <div data-dc-tpl="404" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap-reverse; align-items: center; gap: clamp(32px, 5vw, 64px);">
+      <div data-dc-tpl="405" data-reveal="60" style="flex: 1 1 420px; min-width: 0px;">
+        <div data-dc-tpl="406" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span data-dc-tpl="407" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+          <span data-dc-tpl="408" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Om Mike</span>
         </div>
-        <h2 data-dc-tpl="360" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 18px;">Én person hele vejen</h2>
-        <p data-dc-tpl="361" style="margin: 0px 0px 16px; font-size: 17px; line-height: 1.65; color: rgb(171, 156, 135);">Jeg er muskuloskeletal fysioterapeut og online coach. Det betyder, at du får både den faglige vurdering og træningen fra samme person — og at planen hænger sammen hele vejen.</p>
-        <p data-dc-tpl="362" style="margin: 0px 0px 26px; font-size: 16px; line-height: 1.7; color: rgb(140, 126, 107);">Jeg lover ikke hurtige løsninger. Jeg lover, at vi finder et udgangspunkt, du kan stå på, og bygger derfra.</p>
-        <a data-dc-tpl="363" href="om-mike.dc.html" class="scp2 scp3" style="display: inline-flex; align-items: center; gap: 9px; padding: 16px 24px; border-radius: 15px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, background 0.35s;">Læs om min tilgang</a>
+        <h2 data-dc-tpl="409" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 18px;">Én person hele vejen</h2>
+        <p data-dc-tpl="410" style="margin: 0px 0px 16px; font-size: 17px; line-height: 1.65; color: rgb(171, 156, 135);">Jeg er muskuloskeletal fysioterapeut og online coach. Det betyder, at du får både den faglige vurdering og træningen fra samme person — og at planen hænger sammen hele vejen.</p>
+        <p data-dc-tpl="411" style="margin: 0px 0px 26px; font-size: 16px; line-height: 1.7; color: rgb(140, 126, 107);">Jeg lover ikke hurtige løsninger. Jeg lover, at vi finder et udgangspunkt, du kan stå på, og bygger derfra.</p>
+        <a data-dc-tpl="412" href="om-mike.dc.html" class="scp2 scp3" style="display: inline-flex; align-items: center; gap: 9px; padding: 16px 24px; border-radius: 15px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.35s, background 0.35s;">Læs om min tilgang</a>
       </div>
 
-      <div data-dc-tpl="364" data-reveal="0" style="flex: 1 1 300px; min-width: 0px; display: flex; justify-content: center;">
-        <div data-dc-tpl="365" style="position: relative; width: min(340px, 80vw); aspect-ratio: 1 / 1;">
-          <div data-dc-tpl="366" data-ambient="" aria-hidden="true" style="position: absolute; inset: -14px; border-radius: 50%; border: 1.5px dashed rgba(224, 168, 124, 0.34); animation: 46s linear 0s infinite normal none running maSpin;"></div>
-          <div data-dc-tpl="367" aria-hidden="true" style="position: absolute; inset: 6%; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.3), transparent 68%);"></div>
-          <div data-dc-tpl="368" style="position: absolute; inset: 0px; border-radius: 50%; overflow: hidden; border: 10px solid rgba(207, 138, 79, 0.85); background: radial-gradient(120% 100% at 50% 6%, rgb(42, 32, 24), rgb(11, 9, 7) 72%); box-shadow: rgba(0, 0, 0, 0.95) 0px 30px 60px -28px, rgba(255, 255, 255, 0.14) 0px 2px 0px inset;">
-            <picture data-dc-tpl="369" style="display: contents;"><source data-dc-tpl="370" type="image/avif" sizes="(min-width:440px) 340px, 80vw" srcset="assets/mike-portrait-340.avif 340w, assets/mike-portrait-460.avif 460w, assets/mike-portrait-680.avif 680w"><source data-dc-tpl="371" type="image/webp" sizes="(min-width:440px) 340px, 80vw" srcset="assets/mike-portrait-340.webp 340w, assets/mike-portrait-460.webp 460w, assets/mike-portrait-680.webp 680w"><img data-dc-tpl="372" src="assets/mike-portrait.webp" alt="Mike Adelholm" loading="lazy" decoding="async" sizes="(min-width:440px) 340px, 80vw" style="position: absolute; inset: 0px; width: 100%; height: 100%; object-fit: cover; object-position: 50% 96%; transform: scale(1.12);"></picture>
+      <div data-dc-tpl="413" data-reveal="0" style="flex: 1 1 300px; min-width: 0px; display: flex; justify-content: center;">
+        <div data-dc-tpl="414" style="position: relative; width: min(340px, 80vw); aspect-ratio: 1 / 1;">
+          <div data-dc-tpl="415" data-ambient="" aria-hidden="true" style="position: absolute; inset: -14px; border-radius: 50%; border: 1.5px dashed rgba(224, 168, 124, 0.34); animation: 46s linear 0s infinite normal none running maSpin;"></div>
+          <div data-dc-tpl="416" aria-hidden="true" style="position: absolute; inset: 6%; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.3), transparent 68%);"></div>
+          <div data-dc-tpl="417" style="position: absolute; inset: 0px; border-radius: 50%; overflow: hidden; border: 10px solid rgba(207, 138, 79, 0.85); background: radial-gradient(120% 100% at 50% 6%, rgb(42, 32, 24), rgb(11, 9, 7) 72%); box-shadow: rgba(0, 0, 0, 0.95) 0px 30px 60px -28px, rgba(255, 255, 255, 0.14) 0px 2px 0px inset;">
+            <picture data-dc-tpl="418" style="display: contents;"><source data-dc-tpl="419" type="image/avif" sizes="(min-width:440px) 340px, 80vw" srcset="assets/mike-portrait-340.avif 340w, assets/mike-portrait-460.avif 460w, assets/mike-portrait-680.avif 680w"><source data-dc-tpl="420" type="image/webp" sizes="(min-width:440px) 340px, 80vw" srcset="assets/mike-portrait-340.webp 340w, assets/mike-portrait-460.webp 460w, assets/mike-portrait-680.webp 680w"><img data-dc-tpl="421" src="assets/mike-portrait.webp" alt="Mike Adelholm" loading="lazy" decoding="async" sizes="(min-width:440px) 340px, 80vw" style="position: absolute; inset: 0px; width: 100%; height: 100%; object-fit: cover; object-position: 50% 96%; transform: scale(1.12);"></picture>
           </div>
         </div>
       </div>
@@ -702,19 +730,19 @@
 
   
   
-  <section data-dc-tpl="374" data-screen-label="Anmeldelser" style="position: relative; overflow: hidden; padding: clamp(56px, 7vw, 90px) 0px; background: linear-gradient(rgb(0, 0, 0), rgb(8, 7, 6)); border-top: 1px solid rgba(224, 168, 124, 0.1);">
-    <div data-dc-tpl="375" data-ambient="" aria-hidden="true" style="position: absolute; top: -200px; right: -140px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.18), transparent 66%); pointer-events: none; animation: 12s ease-in-out 0s infinite normal none running maPulse;"></div>
-    <div data-dc-tpl="376" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
-      <div data-dc-tpl="377" data-reveal="0" style="max-width: 620px; margin-bottom: clamp(26px, 3.4vw, 38px);">
-        <div data-dc-tpl="378" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-          <span data-dc-tpl="379" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-          <span data-dc-tpl="380" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Anmeldelser</span>
+  <section data-dc-tpl="423" data-screen-label="Anmeldelser" style="position: relative; overflow: hidden; padding: clamp(56px, 7vw, 90px) 0px; background: linear-gradient(rgb(0, 0, 0), rgb(8, 7, 6)); border-top: 1px solid rgba(224, 168, 124, 0.1);">
+    <div data-dc-tpl="424" data-ambient="" aria-hidden="true" style="position: absolute; top: -200px; right: -140px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.18), transparent 66%); pointer-events: none; animation: 12s ease-in-out 0s infinite normal none running maPulse;"></div>
+    <div data-dc-tpl="425" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
+      <div data-dc-tpl="426" data-reveal="0" style="max-width: 620px; margin-bottom: clamp(26px, 3.4vw, 38px);">
+        <div data-dc-tpl="427" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span data-dc-tpl="428" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
+          <span data-dc-tpl="429" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Anmeldelser</span>
         </div>
-        <h2 data-dc-tpl="381" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Ord fra dem, jeg har hjulpet</h2>
-        <p data-dc-tpl="382" style="margin: 0px; font-size: 16.5px; line-height: 1.62; color: rgb(171, 156, 135);">Her viser jeg kun anmeldelser, jeg har fået lov til at bruge — med navn, hvis personen har sagt ja til det.</p>
+        <h2 data-dc-tpl="430" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.012em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Ord fra dem, jeg har hjulpet</h2>
+        <p data-dc-tpl="431" style="margin: 0px; font-size: 16.5px; line-height: 1.62; color: rgb(171, 156, 135);">Her viser jeg kun anmeldelser, jeg har fået lov til at bruge — med navn, hvis personen har sagt ja til det.</p>
       </div>
-      <div data-dc-tpl="383" data-reveal="80">
-        <div class="sc-host" data-sc-name="ReviewCarousel" data-dc-tpl="384"><section data-dc-tpl="0" aria-roledescription="karrusel" aria-label="Anmeldelser" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; position: relative; width: 100%;">
+      <div data-dc-tpl="432" data-reveal="80">
+        <div class="sc-host" data-sc-name="ReviewCarousel" data-dc-tpl="433"><section data-dc-tpl="0" aria-roledescription="karrusel" aria-label="Anmeldelser" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; position: relative; width: 100%;">
 
   
   
@@ -727,27 +755,27 @@
 
   </section></div>
       </div>
-      <div data-dc-tpl="385" data-reveal="140" style="margin-top: 30px; text-align: center;">
-        <a data-dc-tpl="386" href="resultater.dc.html" class="scpb scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se resultater og anmeldelser<span data-dc-tpl="387" style="font-size: 16px; line-height: 0;">→</span></a>
+      <div data-dc-tpl="434" data-reveal="140" style="margin-top: 30px; text-align: center;">
+        <a data-dc-tpl="435" href="resultater.dc.html" class="scpb scp3" style="display: inline-flex; align-items: center; min-height: 44px; gap: 9px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(224, 168, 119); text-decoration: none;">Se resultater og anmeldelser<span data-dc-tpl="436" style="font-size: 16px; line-height: 0;">→</span></a>
       </div>
     </div>
   </section>
   
 
   
-  <section data-dc-tpl="388" data-screen-label="CTA" style="position: relative; overflow: hidden; padding: clamp(70px, 9vw, 120px) 0px;">
-    <div data-dc-tpl="389" data-ambient="" aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 760px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.22), transparent 64%); pointer-events: none; animation: 10s ease-in-out 0s infinite normal none running maPulse;"></div>
-    <div data-dc-tpl="390" data-reveal="0" style="position: relative; max-width: 760px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); text-align: center;">
-      <picture data-dc-tpl="391" style="display: contents;"><source data-dc-tpl="392" type="image/avif" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" srcset="assets/logo-badge-large-300.avif 300w, assets/logo-badge-large-600.avif 600w"><source data-dc-tpl="393" type="image/webp" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" srcset="assets/logo-badge-large-300.webp 300w, assets/logo-badge-large-600.webp 600w"><img data-dc-tpl="394" src="assets/logo-badge-large.webp" alt="" width="300" height="300" loading="lazy" decoding="async" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" style="width: clamp(190px, 26vw, 300px); height: auto; aspect-ratio: 1 / 1; object-fit: contain; margin: 0px auto clamp(30px, 4vw, 42px);"></picture>
-      <h2 data-dc-tpl="395" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 50px); line-height: 1.05; letter-spacing: -0.015em; text-transform: uppercase; color: rgb(243, 234, 217); margin: 0px 0px 20px;">Det første skridt er en samtale</h2>
-      <p data-dc-tpl="396" style="margin: 0px auto 32px; max-width: 520px; font-size: 17.5px; line-height: 1.62; color: rgb(182, 167, 145);">Fortæl mig kort, hvad du gerne vil kunne. Så finder vi ud af, om et forløb med mig er det rigtige næste skridt for dig.</p>
-      <a data-dc-tpl="397" href="kontakt.dc.html" class="scpc scp1" style="position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; padding: 19px 30px; border-radius: 16px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: rgba(196, 127, 71, 0.75) 0px 16px 40px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">
-        <span data-dc-tpl="398" data-ambient="" aria-hidden="true" style="position: absolute; top: 0px; left: 0px; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent); animation: 6s ease-in-out 0s infinite normal none running maSheen;"></span>
-        <span data-dc-tpl="399" style="position: relative;">Book en samtale</span><span data-dc-tpl="400" style="position: relative; font-size: 17px; line-height: 0;">→</span>
+  <section data-dc-tpl="437" data-screen-label="CTA" style="position: relative; overflow: hidden; padding: clamp(70px, 9vw, 120px) 0px;">
+    <div data-dc-tpl="438" data-ambient="" aria-hidden="true" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 760px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.22), transparent 64%); pointer-events: none; animation: 10s ease-in-out 0s infinite normal none running maPulse;"></div>
+    <div data-dc-tpl="439" data-reveal="0" style="position: relative; max-width: 760px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); text-align: center;">
+      <picture data-dc-tpl="440" style="display: contents;"><source data-dc-tpl="441" type="image/avif" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" srcset="assets/logo-badge-large-300.avif 300w, assets/logo-badge-large-600.avif 600w"><source data-dc-tpl="442" type="image/webp" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" srcset="assets/logo-badge-large-300.webp 300w, assets/logo-badge-large-600.webp 600w"><img data-dc-tpl="443" src="assets/logo-badge-large.webp" alt="" width="300" height="300" loading="lazy" decoding="async" sizes="(max-width:730px) 190px, (min-width:1155px) 300px, 26vw" style="width: clamp(190px, 26vw, 300px); height: auto; aspect-ratio: 1 / 1; object-fit: contain; margin: 0px auto clamp(30px, 4vw, 42px);"></picture>
+      <h2 data-dc-tpl="444" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 50px); line-height: 1.05; letter-spacing: -0.015em; text-transform: uppercase; color: rgb(243, 234, 217); margin: 0px 0px 20px;">Det første skridt er en samtale</h2>
+      <p data-dc-tpl="445" style="margin: 0px auto 32px; max-width: 520px; font-size: 17.5px; line-height: 1.62; color: rgb(182, 167, 145);">Fortæl mig kort, hvad du gerne vil kunne. Så finder vi ud af, om et forløb med mig er det rigtige næste skridt for dig.</p>
+      <a data-dc-tpl="446" href="kontakt.dc.html" class="scpc scp1" style="position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 10px; padding: 19px 30px; border-radius: 16px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); color: rgb(28, 17, 7); text-decoration: none; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 14.5px; letter-spacing: 0.06em; text-transform: uppercase; box-shadow: rgba(196, 127, 71, 0.75) 0px 16px 40px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);">
+        <span data-dc-tpl="447" data-ambient="" aria-hidden="true" style="position: absolute; top: 0px; left: 0px; width: 40%; height: 100%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent); animation: 6s ease-in-out 0s infinite normal none running maSheen;"></span>
+        <span data-dc-tpl="448" style="position: relative;">Book en samtale</span><span data-dc-tpl="449" style="position: relative; font-size: 17px; line-height: 0;">→</span>
       </a>
-      <p data-dc-tpl="401" style="margin: 20px 0px 0px; font-size: 14.5px; color: rgb(140, 126, 107);">Ingen salgstale. Du får svar fra mig personligt.</p>
+      <p data-dc-tpl="450" style="margin: 20px 0px 0px; font-size: 14.5px; color: rgb(140, 126, 107);">Ingen salgstale. Du får svar fra mig personligt.</p>
     </div>
-  </section></main><div class="sc-host" data-sc-name="SiteFooter" data-dc-tpl="402"><footer data-dc-tpl="0" style="position: relative; overflow: hidden; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.14); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; padding: clamp(56px, 7vw, 84px) 0px 0px;">
+  </section></main><div class="sc-host" data-sc-name="SiteFooter" data-dc-tpl="451"><footer data-dc-tpl="0" style="position: relative; overflow: hidden; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.14); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; padding: clamp(56px, 7vw, 84px) 0px 0px;">
   <div data-dc-tpl="1" aria-hidden="true" style="position: absolute; top: -220px; left: -140px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.16), transparent 66%); pointer-events: none;"></div>
 
   <div data-dc-tpl="2" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
@@ -1001,8 +1029,15 @@
       </div>
 
       <div style="display:flex;flex-wrap:wrap;gap:clamp(16px,2vw,22px);">
-        <a data-blue="" data-reveal="80" href="styrke-performance.dc.html" style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#d7e6f8,#6f9fd6 55%,#5a8bbf);border:1px solid rgba(91,147,207,.2);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(91,147,207,.5);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #5b93cf;outline-offset:4px;">
-          <span data-tile="" style="width:54px;height:54px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1c150e,#0d0a07);border:1px solid rgba(224,168,124,.3);">
+        <a data-blue="" data-reveal="80" href="styrke-performance.dc.html" style="position:relative;overflow:hidden;flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#1c3760,#0f2340 55%,#0a1930);border:1px solid rgba(255,255,255,.14);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(91,147,207,.6);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #5b93cf;outline-offset:4px;">
+          <span class="card-float" aria-hidden="true" style="left:6%;top:58%;opacity:.15;--fr:-8deg;--fd:0s;--hx:10px;--hy:-12px;--hr:18deg;--px:18px;--py:-22px;--pr:30deg;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.1"></circle><path d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:22%;top:10%;opacity:.1;--fr:16deg;--fd:.9s;--hx:-8px;--hy:-10px;--hr:-16deg;--px:-16px;--py:-20px;--pr:-28deg;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.1"></circle><path d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:40%;top:68%;opacity:.17;--fr:-4deg;--fd:1.7s;--hx:6px;--hy:14px;--hr:10deg;--px:12px;--py:24px;--pr:18deg;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.1"></circle><path d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:58%;top:14%;opacity:.12;--fr:22deg;--fd:.4s;--hx:-10px;--hy:8px;--hr:-20deg;--px:-18px;--py:16px;--pr:-32deg;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.1"></circle><path d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:74%;top:56%;opacity:.18;--fr:-18deg;--fd:2.3s;--hx:12px;--hy:-10px;--hr:22deg;--px:22px;--py:-18px;--pr:34deg;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.1"></circle><path d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:86%;top:10%;opacity:.11;--fr:10deg;--fd:1.2s;--hx:-6px;--hy:-14px;--hr:-12deg;--px:-14px;--py:-24px;--pr:-22deg;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.1"></circle><path d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:32%;top:32%;opacity:.09;--fr:-26deg;--fd:2s;--hx:8px;--hy:10px;--hr:14deg;--px:16px;--py:18px;--pr:24deg;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="6" r="2.1"></circle><path d="M15.2 7.6 12.5 12 12 16.5 Q 3 15.5 3 11 Q 3 6.5 9 4"></path></svg></span>
+          <span data-tile="" style="width:54px;height:54px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h2M20 12h2M5 8v8M19 8v8M8 6v12M16 6v12M8 12h8"></path></svg>
           </span>
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2vw,25px);line-height:1.15;text-transform:uppercase;color:#f0e6d6;">Jeg vil blive stærkere</span>
@@ -1010,8 +1045,15 @@
           <span style="margin-top:auto;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#e0a877;">Styrke &amp; performance →</span>
         </a>
 
-        <a data-green="" data-reveal="160" href="smerter-genoptraening.dc.html" style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#d9efe1,#5fac81 55%,#519e6f);border:1px solid rgba(79,168,124,.2);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(79,168,124,.5);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #4fa87c;outline-offset:4px;">
-          <span data-tile="" style="width:54px;height:54px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1c150e,#0d0a07);border:1px solid rgba(224,168,124,.3);">
+        <a data-green="" data-reveal="160" href="smerter-genoptraening.dc.html" style="position:relative;overflow:hidden;flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px;padding:clamp(26px,3vw,36px);border-radius:24px;background:linear-gradient(160deg,#186547,#12523a 55%,#092e20);border:1px solid rgba(255,255,255,.14);text-decoration:none;transition:transform .35s cubic-bezier(.22,.61,.36,1),border-color .35s,box-shadow .35s;" style-hover="transform:translateY(-6px);border-color:rgba(79,168,124,.6);box-shadow:0 30px 60px -34px rgba(0,0,0,.95);" style-focus="outline:2px solid #4fa87c;outline-offset:4px;">
+          <span class="card-float" aria-hidden="true" style="left:6%;top:58%;opacity:.15;--fr:-8deg;--fd:0s;--hx:10px;--hy:-12px;--hr:18deg;--px:18px;--py:-22px;--pr:30deg;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:22%;top:10%;opacity:.1;--fr:16deg;--fd:.9s;--hx:-8px;--hy:-10px;--hr:-16deg;--px:-16px;--py:-20px;--pr:-28deg;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:40%;top:68%;opacity:.17;--fr:-4deg;--fd:1.7s;--hx:6px;--hy:14px;--hr:10deg;--px:12px;--py:24px;--pr:18deg;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:58%;top:14%;opacity:.12;--fr:22deg;--fd:.4s;--hx:-10px;--hy:8px;--hr:-20deg;--px:-18px;--py:16px;--pr:-32deg;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:74%;top:56%;opacity:.18;--fr:-18deg;--fd:2.3s;--hx:12px;--hy:-10px;--hr:22deg;--px:22px;--py:-18px;--pr:34deg;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:86%;top:10%;opacity:.11;--fr:10deg;--fd:1.2s;--hx:-6px;--hy:-14px;--hr:-12deg;--px:-14px;--py:-24px;--pr:-22deg;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span class="card-float" aria-hidden="true" style="left:32%;top:32%;opacity:.09;--fr:-26deg;--fd:2s;--hx:8px;--hy:10px;--hr:14deg;--px:16px;--py:18px;--pr:24deg;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+          <span data-tile="" style="width:54px;height:54px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e3a877" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
           </span>
           <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(20px,2vw,25px);line-height:1.15;text-transform:uppercase;color:#f0e6d6;">Jeg vil have færre smerter og mere overskud</span>

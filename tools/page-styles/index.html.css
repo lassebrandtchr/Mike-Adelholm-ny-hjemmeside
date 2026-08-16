@@ -22,23 +22,37 @@ html,body{background:#080706;}
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 
-  /* ═══ Blå plade ═══ Styrke-kortet. Samme opskrift som bronzepladen,
-     blot i blåt — se note ovenfor om data-attributten. */
-  [data-blue],[data-blue] *{color:#101c28!important}
+  /* ═══ Navy-plade ═══ Styrke-kortet. Mørkeblå med hvid skrift — modsat
+     bronzepladen, som er lys med mørk skrift. */
+  [data-blue],[data-blue] *{color:#f4f7fb!important}
   [data-blue]{
-    border-color:rgba(16,28,40,.24)!important;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+    border-color:rgba(255,255,255,.16)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 26px 54px -30px rgba(0,0,0,.85)!important;
   }
-  [data-blue] svg{stroke:#101c28!important}
-  [data-blue] [data-tile] svg{stroke:#bcd8f5!important}
-  [data-blue] [data-tile]{border-color:rgba(16,28,40,.3)!important}
+  [data-blue] svg{stroke:#f4f7fb!important}
 
-  /* ═══ Grøn plade ═══ Smerter/genoptræning-kortet, samme opskrift i grønt. */
-  [data-green],[data-green] *{color:#0d1f16!important}
+  /* ═══ Smaragd-plade ═══ Smerter/genoptræning-kortet, samme opskrift i grønt. */
+  [data-green],[data-green] *{color:#f4f7fb!important}
   [data-green]{
-    border-color:rgba(13,31,22,.24)!important;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
+    border-color:rgba(255,255,255,.16)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 26px 54px -30px rgba(0,0,0,.85)!important;
   }
-  [data-green] svg{stroke:#0d1f16!important}
-  [data-green] [data-tile] svg{stroke:#bfe8d1!important}
-  [data-green] [data-tile]{border-color:rgba(13,31,22,.3)!important}
+  [data-green] svg{stroke:#f4f7fb!important}
+
+  /* ═══ Svævende ikoner i "vælg din vej"-kortene ═══
+     Ren CSS: :hover/:active på selve kortet-linket styrer alle ikonerne
+     under ét via CSS-variabler sat pr. ikon. prefers-reduced-motion slår
+     animation/transition fra globalt (design-systemets tokens/motion.css),
+     så der er ikke brug for et ekstra værn her. */
+  .card-float{position:absolute;z-index:-1;pointer-events:none;animation:maFloat 7s ease-in-out infinite;animation-delay:var(--fd,0s)}
+  .card-float svg{display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1);transform:rotate(var(--fr,0deg))}
+  a[data-blue]:hover .card-float svg,
+  a[data-green]:hover .card-float svg{
+    transform:translate(var(--hx,8px),var(--hy,-10px)) rotate(var(--hr,16deg));
+  }
+  a[data-blue]:active .card-float svg,
+  a[data-green]:active .card-float svg{
+    transition:transform .16s cubic-bezier(.3,0,.4,1),filter .16s ease;
+    transform:translate(var(--px,16px),var(--py,-20px)) rotate(var(--pr,26deg)) scale(1.08);
+    filter:blur(2.5px);
+  }
