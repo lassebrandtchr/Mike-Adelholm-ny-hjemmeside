@@ -10,9 +10,8 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 window.MA_SITE = {
   contact: {
-    /* Modtageradresse for kontaktformularen og for "skriv til mig"-links.
-       Fx 'mike@eksempeldomæne.dk'. */
-    email: '',
+    /* Modtageradresse for kontaktformularen og for "skriv til mig"-links. */
+    email: 'ma@emcare.dk',
 
     /* Telefonnummer i internationalt format til tel:-link, fx '+4512345678'. */
     phone: '',

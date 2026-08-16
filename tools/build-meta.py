@@ -31,6 +31,7 @@ SITE_NAME = "Mike Adelholm"
 DS = "_ds/mike-adelholm-design-system-675d4354-f3e6-4d20-81c6-e6bff42594f8"
 OG_IMAGE = "assets/og-image.jpg"
 OG_IMAGE_ALT = "Mike Adelholm — fysioterapi og online coaching"
+CONTACT_EMAIL = "ma@emcare.dk"   # samme adresse som i site-config.js
 
 # Token-filerne er kilden; de samles til én fil, så en side ikke skal hente ni
 # render-blokerende stylesheets. Bundtet lægges i tokens/, så de relative
@@ -118,7 +119,23 @@ PAGES = {
         nav="Sådan foregår et forløb",
         title="Sådan foregår et forløb — fire trin fra spørgsmål til plan | Mike Adelholm",
         desc="Sådan kommer du i gang: du svarer på et par spørgsmål, jeg læser dine svar, "
-             "vi tager en samtale, og du får en klar vej frem.",
+             "vi tager en samtale, og du får en klar vej frem. Se taksterne med og uden "
+             "lægehenvisning.",
+        # Egenbetaling, som den står synligt på siden.
+        offers=[
+            ("Første konsultation (video), med lægehenvisning",
+             "Overenskomstens takst. Tilskud fra Sygeforsikringen \u201edanmark\u201c: 133 kr.", "321.49"),
+            ("Efterfølgende videokonsultation, med lægehenvisning",
+             "Overenskomstens takst. Tilskud fra Sygeforsikringen \u201edanmark\u201c: 88 kr.", "204.41"),
+            ("Første videokonsultation, uden lægehenvisning",
+             "Privatforløb. Ingen henvisning nødvendig.", "529.63"),
+            ("Efterfølgende videokonsultation, uden lægehenvisning",
+             "Privatforløb. Fuldt fleksibelt forløb.", "336.76"),
+            ("Tillæg: programmering, med lægehenvisning",
+             "Skræddersyet og periodiseret styrkeprogram i Excel.", "165.95"),
+            ("Tillæg: programmering, uden lægehenvisning",
+             "Skræddersyet og periodiseret styrkeprogram i Excel.", "273.39"),
+        ],
         priority="0.8",
     ),
     "resultater.dc.html": dict(
@@ -132,9 +149,10 @@ PAGES = {
     "om-mike.dc.html": dict(
         slug="om-mike.dc.html",
         nav="Om Mike",
-        title="Om Mike — fysioterapeut og online coach | Mike Adelholm",
-        desc="Tilgang og hvad du kan forvente af mig som fysioterapeut og coach. Én person "
-             "hele vejen, faglighed uden fagsprog og ærlighed om, hvad der kan loves.",
+        title="Om Mike — muskuloskeletal fysioterapeut og online coach | Mike Adelholm",
+        desc="Muskuloskeletal fysioterapeut siden 2018, elitebokser i seks år, styrkeløfter og "
+             "strongman. Én person hele vejen, faglighed uden fagsprog og ærlighed om, "
+             "hvad der kan loves.",
         priority="0.8",
     ),
     "viden.dc.html": dict(
@@ -203,7 +221,14 @@ def jsonld(page: str, meta: dict) -> list[dict]:
         "logo": BASE_URL + "assets/logo-badge.webp",
         "description": "Online coaching og fysioterapeutisk vejledning i samme forløb.",
         "founder": {"@id": BASE_URL + "#mike"},
+        "email": CONTACT_EMAIL,
         "availableLanguage": "da",
+    }
+    emcare = {
+        "@type": "Organization",
+        "@id": BASE_URL + "#emcare",
+        "name": "EmCare Sundhed",
+        "url": "https://emcare.dk",
     }
     person = {
         "@type": "Person",
@@ -211,8 +236,18 @@ def jsonld(page: str, meta: dict) -> list[dict]:
         "name": "Mike Adelholm",
         "url": BASE_URL + "om-mike.dc.html",
         "image": BASE_URL + "assets/mike-brand-portrait.webp",
-        "jobTitle": "Fysioterapeut og online coach",
+        "jobTitle": "Muskuloskeletal fysioterapeut og online coach",
         "worksFor": {"@id": BASE_URL + "#virksomhed"},
+        "affiliation": {"@id": BASE_URL + "#emcare"},
+        "email": CONTACT_EMAIL,
+        "knowsAbout": [
+            "Muskuloskeletal fysioterapi",
+            "Genoptræning",
+            "Styrketræning",
+            "Styrkeløft",
+            "Strongman",
+            "Boksning",
+        ],
     }
 
     blocks: list[dict] = []
@@ -230,6 +265,7 @@ def jsonld(page: str, meta: dict) -> list[dict]:
                 },
                 provider,
                 person,
+                emcare,
             ],
         })
     else:
@@ -260,6 +296,28 @@ def jsonld(page: str, meta: dict) -> list[dict]:
             })
         if page == "om-mike.dc.html":
             graph.append(person)
+            graph.append(emcare)
+        if meta.get("offers"):
+            graph.append({
+                "@type": "Service",
+                "@id": page_url(meta["slug"]) + "#priser",
+                "name": "Videokonsultation hos muskuloskeletal fysioterapeut",
+                "serviceType": "Fysioterapi (video)",
+                "url": page_url(meta["slug"]) + "#priser",
+                "provider": {"@id": BASE_URL + "#virksomhed"},
+                "areaServed": {"@type": "Country", "name": "Danmark"},
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": name,
+                        "description": desc,
+                        "price": price,
+                        "priceCurrency": "DKK",
+                        "url": page_url(meta["slug"]) + "#priser",
+                    }
+                    for name, desc, price in meta["offers"]
+                ],
+            })
         # Sundhedsfagligt indhold: kun de oplysninger, der også står synligt på
         # siden — forfatter og dato for seneste gennemgang. Der markeres
         # bevidst ingen reviewedBy og ingen citations op, før de findes.

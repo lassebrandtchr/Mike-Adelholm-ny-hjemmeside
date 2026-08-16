@@ -19,6 +19,8 @@
   header a[href="./"],
   header a[href="kontakt.dc.html"]{min-height:44px}
   footer a{min-height:44px;display:flex;align-items:center}
+  /* Logolinket er allerede stort nok og skal ikke centreres som en tekstlinje. */
+  footer a:has(img){min-height:0;display:block}
 }
 
 /* ═══ Bronzeplade-kort ═══

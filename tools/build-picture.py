@@ -43,6 +43,12 @@ PLAN = {
 # Samme fil optræder i flere slots med vidt forskellig visningsstørrelse.
 # Nøglen er en entydig stump af selve img-tagget.
 BY_CONTEXT = {
+    # EmCare-mærket optræder i to størrelser: et bånd på forsiden og et lille
+    # mærke i sidefoden.
+    "assets/emcare-sundhed.webp": [
+        ("width=\"150\"", [180, 300], "150px"),
+        (None, [180, 300, 520], "(max-width:700px) 200px, (min-width:1000px) 260px, 26vw"),
+    ],
     "assets/mike-portrait.webp": [
         # Forsidens hero: kortet er højst 460 px bredt.
         ("fetchpriority=\"high\"", [340, 460, 680, 920],
