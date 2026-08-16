@@ -23,8 +23,7 @@ html,body{background:#080706;}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 
   /* ═══ Navy-plade ═══ Styrke-kortet. Mørkeblå med hvid skrift — modsat
-     bronzepladen, som er lys med mørk skrift. Mættet farve + højlys-stribe
-     (samme maSheen-teknik som bookingknapperne) for et blankt, lakeret look. */
+     bronzepladen, som er lys med mørk skrift. */
   [data-blue],[data-blue] *{color:#f4f7fb!important}
   [data-blue]{
     border-color:rgba(255,255,255,.22)!important;
@@ -40,25 +39,29 @@ html,body{background:#080706;}
   }
   [data-green] svg{stroke:#f4f7fb!important}
 
-  /* Blank højlys-stribe, der glider hen over pladen — samme mekanik som
-     bookingknappernes ::after i components.css, blot som et ægte element,
-     fordi kortene ikke går gennem den delte klasse. */
-  .card-sheen{position:absolute;top:0;left:0;width:46%;height:100%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:maSheen 5s ease-in-out infinite;}
-
   /* ═══ Svævende ikoner i "vælg din vej"-kortene ═══
-     Ren CSS: :hover/:active på selve kortet-linket styrer alle ikonerne
-     under ét via CSS-variabler sat pr. ikon. prefers-reduced-motion slår
-     animation/transition fra globalt (design-systemets tokens/motion.css),
-     så der er ikke brug for et ekstra værn her. */
-  .card-float{position:absolute;z-index:-1;pointer-events:none;animation:maFloat 7s ease-in-out infinite;animation-delay:var(--fd,0s)}
-  .card-float svg{display:block;transition:transform .55s cubic-bezier(.22,.61,.36,1);transform:rotate(var(--fr,0deg))}
-  a[data-blue]:hover .card-float svg,
-  a[data-green]:hover .card-float svg{
-    transform:translate(var(--hx,8px),var(--hy,-10px)) rotate(var(--hr,16deg));
+     Ikonerne selv (ydre span) driver roligt rundt hele tiden — ikke kun ved
+     hover — via en løkke, der bruger hvert ikons egne CSS-variabler som
+     driftmål. Klikket lægger et ekstra, hurtigere ryk oven i på svg'en
+     (et andet element, så det ikke kolliderer med den kørende animation:
+     en animation vinder altid over en almindelig transform-regel på samme
+     element). prefers-reduced-motion slår animation/transition fra globalt
+     (design-systemets tokens/motion.css), så der er ikke brug for et
+     ekstra værn her.
+     Ikonerne ligger FØR tile/overskrift/tekst i markup'et og har bevidst
+     ikke z-index — flex-børn med z-index:auto males i dokumentrækkefølge,
+     så teksten (der kommer efter) lægger sig ovenpå af sig selv. Et negativt
+     z-index blev prøvet først, men fik ikonerne til periodisk at forsvinde
+     midt i den kørende animation (formentlig et kompositeringsuheld i
+     Chromium) — undgås ved slet ikke at bruge negativt z-index her. */
+  @keyframes cardIconDrift{
+    0%,100%{transform:translate(0,0) rotate(var(--fr,0deg))}
+    50%{transform:translate(var(--hx,8px),var(--hy,-10px)) rotate(calc(var(--fr,0deg) + var(--hr,16deg)))}
   }
+  .card-float{position:absolute;pointer-events:none;animation:cardIconDrift 11s ease-in-out infinite;animation-delay:var(--fd,0s)}
+  .card-float svg{display:block;transition:transform .18s cubic-bezier(.3,0,.4,1),filter .18s ease;}
   a[data-blue]:active .card-float svg,
   a[data-green]:active .card-float svg{
-    transition:transform .16s cubic-bezier(.3,0,.4,1),filter .16s ease;
-    transform:translate(var(--px,16px),var(--py,-20px)) rotate(var(--pr,26deg)) scale(1.08);
+    transform:translate(var(--px,16px),var(--py,-20px)) rotate(var(--pr,26deg)) scale(1.1);
     filter:blur(2.5px);
   }
