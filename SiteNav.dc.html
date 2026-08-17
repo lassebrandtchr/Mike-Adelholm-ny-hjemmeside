@@ -139,14 +139,42 @@ class Component extends DCLogic {
     window.removeEventListener('keydown', this.onKey);
   }
 
-  /* Active-page marking + the gliding bronze pill. Applied from script so the
-     markup paints instantly and stays plain HTML for editing. */
+  /* Active-page marking + the gliding pill. Applied from script so the
+     markup paints instantly and stays plain HTML for editing.
+     Styrke & Smerter get the same blue/green as their cards on forsiden,
+     so navbar and cards read as one system; every other item keeps the
+     default bronze. */
+  static NAV_ACCENTS = {
+    'styrke-performance': {
+      text: '#bcd4f5',
+      rest: 'linear-gradient(135deg,rgba(122,168,230,.16),rgba(47,92,176,.30))',
+      hover: 'linear-gradient(135deg,rgba(122,168,230,.26),rgba(47,92,176,.42))',
+      border: 'rgba(91,147,207,.45)'
+    },
+    'smerter-genoptraening': {
+      text: '#a9e0c4',
+      rest: 'linear-gradient(135deg,rgba(101,196,153,.16),rgba(13,122,80,.30))',
+      hover: 'linear-gradient(135deg,rgba(101,196,153,.26),rgba(13,122,80,.42))',
+      border: 'rgba(79,168,124,.45)'
+    }
+  };
+  static NAV_ACCENT_DEFAULT = {
+    text: '#f3c79b',
+    rest: 'linear-gradient(135deg,rgba(245,198,147,.13),rgba(165,97,47,.2))',
+    hover: 'linear-gradient(135deg,rgba(245,198,147,.2),rgba(165,97,47,.3))',
+    border: 'rgba(224,168,124,.30)'
+  };
+
+  accentFor(key) {
+    return Component.NAV_ACCENTS[key] || Component.NAV_ACCENT_DEFAULT;
+  }
+
   wire() {
     const cur = this.props.current || '';
     document.querySelectorAll('[data-nav-key]').forEach((a) => {
       const on = a.getAttribute('data-nav-key') === cur;
       a.setAttribute('aria-current', on ? 'page' : 'false');
-      if (on) { a.style.color = '#f3c79b'; a.style.fontWeight = '800'; }
+      if (on) { a.style.color = this.accentFor(cur).text; a.style.fontWeight = '800'; }
     });
 
     const nav = this.listRef.current;
@@ -165,12 +193,20 @@ class Component extends DCLogic {
     const rest = () => {
       if (!active) { if (pill) pill.style.opacity = '0'; return; }
       place(active, true);
-      if (pill) pill.style.background = 'linear-gradient(135deg,rgba(245,198,147,.13),rgba(165,97,47,.2))';
+      if (pill) {
+        const accent = this.accentFor(active.getAttribute('data-nav-key'));
+        pill.style.background = accent.rest;
+        pill.style.borderColor = accent.border;
+      }
     };
 
     links.forEach((a) => {
       const enter = () => {
-        if (pill) pill.style.background = 'linear-gradient(135deg,rgba(245,198,147,.2),rgba(165,97,47,.3))';
+        if (pill) {
+          const accent = this.accentFor(a.getAttribute('data-nav-key'));
+          pill.style.background = accent.hover;
+          pill.style.borderColor = accent.border;
+        }
         place(a, true);
       };
       a.addEventListener('mouseenter', enter);
