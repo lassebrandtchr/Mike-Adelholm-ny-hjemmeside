@@ -23,20 +23,16 @@
   footer a:has(img){min-height:0;display:block}
 }
 
-/* ── Smalle skærme (≤ 374px, fx iPhone SE og en del ældre/billige Android) ──
-   Dokken (logo + Book-knap + burger) er bredere end det, der er plads til
-   her: uden denne regel løber burgerknappen uden for skærmen og kan slet
-   ikke rammes. Undertitlen under logoet fjernes, og Book-knappen strammes,
-   så hele dokken igen er inden for skærmen — uden at røre noget over denne
-   bredde. */
-@media (max-width:374px){
-  header a[aria-label="Mike Adelholm — forside"] > span > span:last-child{display:none}
-  /* !important: målene har gap/padding sat i style-attributten, som ellers
-     altid vinder over eksterne regler. */
-  header div[style*="pointer-events:auto"]{gap:6px!important;padding:9px 8px 9px 10px!important}
-  header a[aria-label="Mike Adelholm — forside"]{gap:6px!important}
-  header a[aria-label="Mike Adelholm — forside"] img{width:30px!important;height:30px!important}
-  header a.ma-book--kompakt{padding:12px 8px!important}
+/* ── Telefoner (≤ 479px) ─────────────────────────────────────────────────────
+   Dokken har fire klikmål på mobil (tema, Book, burger — plus logoet):
+   for bredt til et telefonvindue, hvis navnet under logoet også skal med.
+   Ordmærket skjules derfor, og kun mærket (badge'et) står tilbage — dokken
+   er stadig let at genkende, og alle fire mål er fuldt synlige og fulde
+   44px, uanset skærmbredde herunder. */
+@media (max-width:479px){
+  /* !important: span'en har display:flex i sin egen style-attribut, som
+     ellers altid vinder over en ekstern regel. */
+  header a[aria-label="Mike Adelholm — forside"] > span{display:none!important}
 }
 
 /* ═══ Bronzeplade-kort ═══
