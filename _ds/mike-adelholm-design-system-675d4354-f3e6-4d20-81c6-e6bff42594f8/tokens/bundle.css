@@ -160,6 +160,19 @@
   --copper-150-text:var(--copper-150);
   --copper-250-text:var(--copper-250);
   --champagne-150-text:var(--champagne-150);
+
+  /* Bronze-gradienten i H1-highlighttekst (background-clip:text). Samme
+     idé som "-text"-tonerne ovenfor: skal dybere i lyst tema for at holde
+     gløden, uændret på mørk bund. */
+  --grad-bronze-1:#f7d8b4;
+  --grad-bronze-2:#cf8a4f;
+  --grad-bronze-3:#f3c79b;
+  --grad-bronze-hero-1:#f7d8b4;
+  --grad-bronze-hero-2:#e0a877;
+  --grad-bronze-hero-3:#c07f4a;
+  --grad-bronze-hero-4:#f3c79b;
+  --grad-bronze-hero-5:#bd7a44;
+  --grad-bronze-hero-6:#e7b083;
   /* Samme idé for Styrke (blå) og Smerter (grøn) — deres øjenbryns-labels
      bruger korttemaets blå/grønne accentfarve direkte som tekst. */
   --blue-accent-text:#5b93cf;
@@ -280,6 +293,17 @@
   --copper-150-text:#8c5429;
   --copper-250-text:#7a5c44;
   --champagne-150-text:#6b4020;
+
+  --grad-bronze-1:#c98049;
+  --grad-bronze-2:#8c5429;
+  --grad-bronze-3:#a5612f;
+  --grad-bronze-hero-1:#cf8a4f;
+  --grad-bronze-hero-2:#a5612f;
+  --grad-bronze-hero-3:#7a5c44;
+  --grad-bronze-hero-4:#bd7a44;
+  --grad-bronze-hero-5:#8c5429;
+  --grad-bronze-hero-6:#c07f4a;
+
   --text-eyebrow:#7a5c44;
   --link:#8c5429;
   --link-hover:#6b4020;
