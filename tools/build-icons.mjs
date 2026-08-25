@@ -6,9 +6,10 @@
  *   npm i sharp && node tools/build-icons.mjs
  */
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-const DIR = new URL('../assets/', import.meta.url).pathname;
+const DIR = fileURLToPath(new URL('../assets/', import.meta.url));
 const badge = readFileSync(DIR + 'logo-badge.webp');
 
 /* Faviconet vises oftest på en lys fane-baggrund; badgen har transparent

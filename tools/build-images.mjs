@@ -11,9 +11,10 @@
  */
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { basename, extname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-const DIR = new URL('../assets/', import.meta.url).pathname;
+const DIR = fileURLToPath(new URL('../assets/', import.meta.url));
 
 /* Bredder pr. billedslot — se sizes-attributterne i HTML'en. */
 const PLAN = {
@@ -31,6 +32,12 @@ const PLAN = {
   'mike-brand-portrait.webp': [430, 640, 860],
   'logo-badge.webp': [64, 128, 256],
   'logo-badge-large.webp': [300, 600],
+  'ig-overhead-loft.jpg': [220, 440],
+  'ig-squat.jpg': [220, 440],
+  'ig-log-lift.jpg': [220, 440],
+  'ig-max-reps.jpg': [220, 440],
+  'ig-fra-gulvet.jpg': [220, 440],
+  'ig-strongman.jpg': [220, 440],
 };
 
 let made = 0;
