@@ -5,3 +5,8 @@ deploy.command
 node_modules/
 __pycache__/
 *.pyc
+
+# Hele Flaticon Uicons-pakken (~27 MB, tusindvis af SVG'er) — kun de ~25
+# ikoner der reelt bruges, er inlinet i siderne. Selve pakken er kildemateriale,
+# ikke en del af sitet.
+Flaticon symbols/
