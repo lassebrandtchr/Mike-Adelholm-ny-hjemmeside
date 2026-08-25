@@ -18,10 +18,11 @@
  * Kør igen, når sidernes indhold ændres. Scriptet er idempotent.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const BASE = (process.argv[2] || 'http://127.0.0.1:8123').replace(/\/$/, '');
-const ROOT = new URL('..', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
 
 const PAGES = [
   'index.html',
