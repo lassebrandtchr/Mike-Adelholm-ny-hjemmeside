@@ -526,6 +526,8 @@ p a:hover, li a:hover, dd a:hover, blockquote a:hover, label span a:hover {
 [data-bronze] svg{stroke:#1c1107!important}
 /* Mørke ikonfliser på pladen beholder deres bronzefarvede ikon */
 [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+/* I lyst tema bliver ink-700/850 (fliseflaen) lyse sandtoner, saa den champagnefarvede ikon-streg ovenfor bliver usynlig -- tving den moerk der. */
+:root[data-theme="light"] [data-bronze] [data-tile] svg{stroke:var(--ink-650)!important}
 [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 
 /* ── Pre-render: begge udgaver af navigationen ───────────────────────────────

@@ -83,6 +83,8 @@
   [data-bronze] svg{stroke:var(--ink-650)!important}
   /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
+  /* I lyst tema bliver ink-700/850 (fliseflaen) lyse sandtoner, saa den champagnefarvede ikon-streg ovenfor bliver usynlig -- tving den moerk der. */
+  :root[data-theme="light"] [data-bronze] [data-tile] svg{stroke:var(--ink-650)!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
 </style>
 
