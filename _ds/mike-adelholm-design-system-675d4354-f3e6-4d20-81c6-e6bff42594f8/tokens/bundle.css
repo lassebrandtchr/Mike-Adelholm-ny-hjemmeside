@@ -8,7 +8,13 @@
    besøgendes IP til Google. Filerne er de samme variable woff2-subsets, som
    Google Fonts selv leverer (Archivo v25, latin + latin-ext).
    Apple Garamond er UDGÅET: den stammede fra en fejlagtig kilde
-   (Ole Bjerre-siden) og er ikke Mikes skrift. */
+   (Ole Bjerre-siden) og er ikke Mikes skrift.
+
+   EB Garamond er tilføjt 2026-08-25, bevidst, kun til "Hold fast." i
+   hero-overskriften. Apples Garamond-font er markeret "Confidential" i sine
+   font-metadata og må ikke distribueres som webfont fra et offentligt site —
+   EB Garamond er samme klassiske Garamond-tegnform, men open source og
+   licenseret til webfont-brug. */
 
 /* Archivo — display/labels. Variable woff2, weights 500-900. */
 @font-face{font-family:'Archivo';src:url("../assets/fonts/Archivo-latin.woff2") format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -19,6 +25,9 @@
 @font-face{font-family:'Hanken Grotesk';src:url("../assets/fonts/HankenGrotesk-latin-ext.woff2") format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:'Hanken Grotesk';src:url("../assets/fonts/HankenGrotesk-italic-latin.woff2") format('woff2');font-weight:100 900;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Hanken Grotesk';src:url("../assets/fonts/HankenGrotesk-italic-latin-ext.woff2") format('woff2');font-weight:100 900;font-style:italic;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* EB Garamond — kun "Hold fast." i hero-overskriften. Bold italic, latin subset. */
+@font-face{font-family:'EB Garamond';src:url("../assets/fonts/EBGaramond-BoldItalic-latin.woff2") format('woff2');font-weight:700;font-style:italic;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 
 /* ── tokens/colors.css ── */
 :root{
@@ -614,20 +623,20 @@ p a:hover, li a:hover, dd a:hover, blockquote a:hover, label span a:hover {
 .ma-book--rolig{
   font-weight:700;
   font-size:13px;
-  color:#f6ecdc;
-  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
+  color:var(--bone-050);
+  background:linear-gradient(180deg,rgba(var(--glass-rgb),.10),rgba(var(--glass-rgb),.03));
   border-width:1.5px;
-  border-color:rgba(243,199,155,.52);
-  box-shadow:0 12px 30px -16px rgba(224,168,124,.55),inset 0 1px 0 rgba(255,255,255,.10);
+  border-color:var(--line-copper-30);
+  box-shadow:0 12px 30px -16px rgba(224,168,124,.55),inset 0 1px 0 rgba(var(--glass-rgb),.10);
   animation:none;
 }
 .ma-book--rolig::after{display:none;}
 .ma-book--rolig:hover,
 .ma-book--rolig:focus-visible{
-  color:#fff6e8;
-  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.06));
-  border-color:rgba(247,216,180,.9);
-  box-shadow:0 18px 40px -16px rgba(224,168,124,.8),inset 0 1px 0 rgba(255,255,255,.16);
+  color:var(--bone-000);
+  background:linear-gradient(180deg,rgba(var(--glass-rgb),.16),rgba(var(--glass-rgb),.06));
+  border-color:var(--line-copper-34);
+  box-shadow:0 18px 40px -16px rgba(224,168,124,.8),inset 0 1px 0 rgba(var(--glass-rgb),.16);
 }
 .ma-book--rolig:focus-visible{outline:2px solid #cf8a4f;}
 
