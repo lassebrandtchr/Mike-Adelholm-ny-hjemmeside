@@ -489,6 +489,22 @@ p a:hover, li a:hover, dd a:hover, blockquote a:hover, label span a:hover {
   footer a:has(img){min-height:0;display:block}
 }
 
+/* ── Smalle skærme (≤ 374px, fx iPhone SE og en del ældre/billige Android) ──
+   Dokken (logo + Book-knap + burger) er bredere end det, der er plads til
+   her: uden denne regel løber burgerknappen uden for skærmen og kan slet
+   ikke rammes. Undertitlen under logoet fjernes, og Book-knappen strammes,
+   så hele dokken igen er inden for skærmen — uden at røre noget over denne
+   bredde. */
+@media (max-width:374px){
+  header a[aria-label="Mike Adelholm — forside"] > span > span:last-child{display:none}
+  /* !important: målene har gap/padding sat i style-attributten, som ellers
+     altid vinder over eksterne regler. */
+  header div[style*="pointer-events:auto"]{gap:6px!important;padding:9px 8px 9px 10px!important}
+  header a[aria-label="Mike Adelholm — forside"]{gap:6px!important}
+  header a[aria-label="Mike Adelholm — forside"] img{width:30px!important;height:30px!important}
+  header a.ma-book--kompakt{padding:12px 8px!important}
+}
+
 /* ═══ Bronzeplade-kort ═══
    Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
    style-strengen, fordi dc-runtimet omskriver style-attributten gennem React
