@@ -9,7 +9,13 @@
 <link rel="canonical" href="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/privatliv.dc.html">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#080706">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="dark light">
+
+<!-- Lyst/mørkt tema: sættes før CSS'en indlæses, så siden aldrig blinker
+     i det forkerte tema. Ekstern fil, ikke inline — CSP'ens script-src
+     tillader ikke 'unsafe-inline'. Ikke defer/async: skal køre og sætte
+     data-theme, før noget når at male. -->
+<script src="theme-init.js"></script>
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mike Adelholm">
@@ -38,9 +44,9 @@
 <!-- Rå skabelon skjules, indtil dc-runtimet har renderet. Uden JavaScript
      vises reserveindholdet øverst i dokumentet i stedet. -->
 <style>x-dc{display:none}</style>
-<style data-page-css>html,body{background:#080706;}
-  a{color:#e0a877;}
-  a:hover{color:#f3c79b;}
+<style data-page-css>html,body{background:var(--ink-950);}
+  a{color:var(--copper-150-text);}
+  a:hover{color:var(--champagne-150-text);}
   @keyframes maPageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 
@@ -48,12 +54,12 @@
      Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
      style-strengen, fordi dc-runtimet omskriver style-attributten gennem
      React (#f5c693 bliver til rgb(245, 198, 147)). */
-  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze],[data-bronze] *{color:var(--ink-650)!important}
   [data-bronze]{
     border-color:rgba(28,17,7,.24)!important;
     box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
   }
-  [data-bronze] svg{stroke:#1c1107!important}
+  [data-bronze] svg{stroke:var(--ink-650)!important}
   /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
@@ -95,7 +101,7 @@
 </script>
 </head>
 <body>
-<div id="dc-prerender"><div class="sc-host" data-sc-name="privatliv"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; background: rgb(8, 7, 6); color: rgb(237, 227, 212); overflow-x: hidden;"><div class="sc-host" data-sc-name="SiteNav" data-dc-tpl="1"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif;">
+<div id="dc-prerender"><div class="sc-host" data-sc-name="privatliv"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; background: var(--ink-950); color: var(--bone-150); overflow-x: hidden;"><div class="sc-host" data-sc-name="SiteNav" data-dc-tpl="1"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif;">
 
   <div data-pre-wide=""><header data-dc-tpl="1" style="position: fixed; top: 14px; left: 0px; right: 0px; z-index: 900; display: flex; justify-content: center; padding: 0px 14px; pointer-events: none; animation: 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maNavIn;">
     <div data-dc-tpl="2" style="pointer-events: auto; display: flex; align-items: center; gap: 10px; max-width: 100%; padding: 9px 10px 9px 13px; border-radius: 999px; background: linear-gradient(rgb(21, 16, 9) 0%, rgb(10, 8, 6) 100%); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.95) 0px 20px 46px -22px, rgba(255, 255, 255, 0.043) 0px 1px 0px inset; transition: padding 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.45s;">
@@ -121,7 +127,13 @@
           <a data-dc-tpl="21" data-nav-key="om-mike" href="om-mike.dc.html" class="scp2 scp3" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
           <a data-dc-tpl="22" data-nav-key="viden" href="viden.dc.html" class="scp2 scp3" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
         </nav>
-        <a data-dc-tpl="23" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="flex-shrink: 0; white-space: nowrap;"><span data-dc-tpl="24">Book online nu</span><span data-dc-tpl="25" aria-hidden="true" style="font-size: 13px; line-height: 0;">→</span></a>
+        <button data-dc-tpl="23" type="button" data-theme-action="light" aria-label="Skift til lyst tema" title="Skift til lyst tema" class="scp4 scp5" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+          <svg data-dc-tpl="24" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="25" cx="12" cy="12" r="4"></circle><path data-dc-tpl="26" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        </button>
+        <button data-dc-tpl="27" type="button" data-theme-action="dark" aria-label="Skift til mørkt tema" title="Skift til mørkt tema" class="scp4 scp5" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+          <svg data-dc-tpl="28" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="29" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+        </button>
+        <a data-dc-tpl="30" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="flex-shrink: 0; white-space: nowrap;"><span data-dc-tpl="31">Book online nu</span><span data-dc-tpl="32" aria-hidden="true" style="font-size: 13px; line-height: 0;">→</span></a>
       
 
       
@@ -141,9 +153,15 @@
       
 
       
-        <a data-dc-tpl="27" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="margin-left: auto; flex-shrink: 0; white-space: nowrap; padding: 12px 15px; letter-spacing: 0.08em;"><span data-dc-tpl="28">Book</span></a>
-        <button data-dc-tpl="29" type="button" aria-expanded="false" aria-controls="ma-mobil-menu" aria-label="Åbn menu" class="scp4 scp5" style="width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
-          <svg data-dc-tpl="30" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="31" d="M3 7h18M3 12h18M3 17h18"></path></svg>
+        <button data-dc-tpl="34" type="button" data-theme-action="light" aria-label="Skift til lyst tema" title="Skift til lyst tema" class="scp4 scp5" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer;" tabindex="-1">
+          <svg data-dc-tpl="35" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="36" cx="12" cy="12" r="4"></circle><path data-dc-tpl="37" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        </button>
+        <button data-dc-tpl="38" type="button" data-theme-action="dark" aria-label="Skift til mørkt tema" title="Skift til mørkt tema" class="scp4 scp5" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer;" tabindex="-1">
+          <svg data-dc-tpl="39" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="40" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+        </button>
+        <a data-dc-tpl="41" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="margin-left: auto; flex-shrink: 0; white-space: nowrap; padding: 12px 15px; letter-spacing: 0.08em;"><span data-dc-tpl="42">Book</span></a>
+        <button data-dc-tpl="43" type="button" aria-expanded="false" aria-controls="ma-mobil-menu" aria-label="Åbn menu" class="scp4 scp5" style="width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+          <svg data-dc-tpl="44" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="45" d="M3 7h18M3 12h18M3 17h18"></path></svg>
         </button>
       
 
@@ -152,14 +170,14 @@
 
   </div></div><main data-dc-tpl="2" id="hovedindhold" style="animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maPageIn;">
 
-  <section data-dc-tpl="3" data-screen-label="Banner" style="background: rgb(0, 0, 0); padding: clamp(112px, 13vw, 150px) 0px clamp(36px, 4.5vw, 56px); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
+  <section data-dc-tpl="3" data-screen-label="Banner" style="background: var(--ink-1000); padding: clamp(112px, 13vw, 150px) 0px clamp(36px, 4.5vw, 56px); border-bottom: 1px solid rgba(224, 168, 124, 0.1);">
     <div data-dc-tpl="4" style="max-width: 820px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
-      <nav data-dc-tpl="5" aria-label="Brødkrumme" style="margin-bottom: 22px; font-size: 13.5px; color: rgb(140, 126, 107);">
-        <a data-dc-tpl="6" href="./" class="scp0" style="color: rgb(140, 126, 107); text-decoration: none;">Forside</a> <span data-dc-tpl="7" aria-hidden="true">/</span> Privatlivspolitik
+      <nav data-dc-tpl="5" aria-label="Brødkrumme" style="margin-bottom: 22px; font-size: 13.5px; color: var(--n-600);">
+        <a data-dc-tpl="6" href="./" class="scp0" style="color: var(--n-600); text-decoration: none;">Forside</a> <span data-dc-tpl="7" aria-hidden="true">/</span> Privatlivspolitik
       </nav>
-      <h1 data-dc-tpl="8" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 48px); line-height: 1.18; letter-spacing: -0.015em; text-transform: uppercase; color: rgb(243, 234, 217); margin: 0px 0px 18px;">Privatlivspolitik</h1>
-      <p data-dc-tpl="9" style="margin: 0px; font-size: 17px; line-height: 1.65; color: rgb(171, 156, 135);">Sådan behandler jeg de oplysninger, du giver mig. Skriv til mig, hvis noget er uklart.</p>
-      <p data-dc-tpl="10" style="margin: 16px 0px 0px; font-size: 14px; color: rgb(140, 126, 107);">Senest opdateret: <span class="sc-interp">15. august 2026</span></p>
+      <h1 data-dc-tpl="8" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(30px, 4vw, 48px); line-height: 1.18; letter-spacing: -0.015em; text-transform: uppercase; color: var(--bone-000); margin: 0px 0px 18px;">Privatlivspolitik</h1>
+      <p data-dc-tpl="9" style="margin: 0px; font-size: 17px; line-height: 1.65; color: var(--n-400);">Sådan behandler jeg de oplysninger, du giver mig. Skriv til mig, hvis noget er uklart.</p>
+      <p data-dc-tpl="10" style="margin: 16px 0px 0px; font-size: 14px; color: var(--n-600);">Senest opdateret: <span class="sc-interp">15. august 2026</span></p>
     </div>
   </section>
 
@@ -168,63 +186,63 @@
 
       
       
-        <div data-dc-tpl="14" data-reveal="0" style="padding: 22px 24px; border-radius: 18px; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(224, 168, 124, 0.3);">
-          <p data-dc-tpl="15" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: rgb(171, 156, 135);">Politikken mangler stadig virksomhedens stamoplysninger og bør gennemgås juridisk, før siden markedsføres. Den er ikke juridisk rådgivning.</p>
+        <div data-dc-tpl="14" data-reveal="0" style="padding: 22px 24px; border-radius: 18px; background: rgba(var(--glass-rgb),.02); border: 1px dashed rgba(224, 168, 124, 0.3);">
+          <p data-dc-tpl="15" style="margin: 0px; font-size: 15.5px; line-height: 1.65; color: var(--n-400);">Politikken mangler stadig virksomhedens stamoplysninger og bør gennemgås juridisk, før siden markedsføres. Den er ikke juridisk rådgivning.</p>
         </div>
       
 
       <div data-dc-tpl="16" data-reveal="40">
-        <h2 data-dc-tpl="17" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Dataansvarlig</h2>
-        <p data-dc-tpl="18" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);"><span class="sc-interp">Mike Adelholm. (Virksomhedens fulde stamoplysninger er endnu ikke offentliggjort på siden.)</span></p>
+        <h2 data-dc-tpl="17" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Dataansvarlig</h2>
+        <p data-dc-tpl="18" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);"><span class="sc-interp">Mike Adelholm. (Virksomhedens fulde stamoplysninger er endnu ikke offentliggjort på siden.)</span></p>
         
-          <p data-dc-tpl="20" style="margin: 10px 0px 0px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Kontakt: <span class="sc-interp">ma@emcare.dk</span></p>
+          <p data-dc-tpl="20" style="margin: 10px 0px 0px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Kontakt: <span class="sc-interp">ma@emcare.dk</span></p>
         
         
       </div>
 
       <div data-dc-tpl="24" data-reveal="60">
-        <h2 data-dc-tpl="25" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Hvilke oplysninger jeg behandler</h2>
-        <p data-dc-tpl="26" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Kontaktformularen beder om <span class="sc-interp">hvad du gerne vil have hjælp til, eventuelt dit mål og din nuværende træning, samt navn, e-mail og eventuelt telefonnummer</span>. Der er ikke andre felter, og siden indsamler ikke noget om dig i baggrunden.</p>
-        <p data-dc-tpl="27" style="margin: 0px; font-size: 16px; line-height: 1.7; color: rgb(140, 126, 107);"><span class="sc-interp">Formularen beder bevidst ikke om helbredsoplysninger. Dem tager vi mundtligt i samtalen, hvor de ikke skal sendes over internettet.</span></p>
+        <h2 data-dc-tpl="25" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Hvilke oplysninger jeg behandler</h2>
+        <p data-dc-tpl="26" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Kontaktformularen beder om <span class="sc-interp">hvad du gerne vil have hjælp til, eventuelt dit mål og din nuværende træning, samt navn, e-mail og eventuelt telefonnummer</span>. Der er ikke andre felter, og siden indsamler ikke noget om dig i baggrunden.</p>
+        <p data-dc-tpl="27" style="margin: 0px; font-size: 16px; line-height: 1.7; color: var(--n-600);"><span class="sc-interp">Formularen beder bevidst ikke om helbredsoplysninger. Dem tager vi mundtligt i samtalen, hvor de ikke skal sendes over internettet.</span></p>
       </div>
 
       <div data-dc-tpl="28" data-reveal="70">
-        <h2 data-dc-tpl="29" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Hvordan henvendelsen sendes</h2>
-        <p data-dc-tpl="30" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);"><span class="sc-interp">Formularen sender ikke noget af sig selv. Den samler dine svar og åbner din egen mailklient med et emne — du skriver og sender selv beskeden, så oplysningerne går fra dit eget mailprogram til mig. Hverken navn, e-mail eller helbredsoplysninger lægges i en webadresse.</span></p>
+        <h2 data-dc-tpl="29" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Hvordan henvendelsen sendes</h2>
+        <p data-dc-tpl="30" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);"><span class="sc-interp">Formularen sender ikke noget af sig selv. Den samler dine svar og åbner din egen mailklient med et emne — du skriver og sender selv beskeden, så oplysningerne går fra dit eget mailprogram til mig. Hverken navn, e-mail eller helbredsoplysninger lægges i en webadresse.</span></p>
       </div>
 
       <div data-dc-tpl="31" data-reveal="80">
-        <h2 data-dc-tpl="32" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Formål og grundlag</h2>
-        <p data-dc-tpl="33" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Oplysningerne bruges til at besvare din henvendelse, vurdere om et forløb er relevant, og — hvis vi indgår en aftale — til at planlægge og følge dit forløb. Grundlaget er dit samtykke (databeskyttelsesforordningens artikel 6, stk. 1, litra a, og for helbredsoplysninger artikel 9, stk. 2, litra a) samt opfyldelse af vores aftale (artikel 6, stk. 1, litra b).</p>
+        <h2 data-dc-tpl="32" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Formål og grundlag</h2>
+        <p data-dc-tpl="33" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Oplysningerne bruges til at besvare din henvendelse, vurdere om et forløb er relevant, og — hvis vi indgår en aftale — til at planlægge og følge dit forløb. Grundlaget er dit samtykke (databeskyttelsesforordningens artikel 6, stk. 1, litra a, og for helbredsoplysninger artikel 9, stk. 2, litra a) samt opfyldelse af vores aftale (artikel 6, stk. 1, litra b).</p>
       </div>
 
       <div data-dc-tpl="35" data-reveal="100">
-        <h2 data-dc-tpl="36" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Opbevaring og videregivelse</h2>
-        <p data-dc-tpl="37" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);"><span class="sc-interp">Oplysningerne opbevares kun, så længe det er nødvendigt for at besvare din henvendelse og gennemføre et eventuelt forløb, samt så længe lovgivningen kræver det. Den præcise opbevaringsperiode er endnu ikke fastsat skriftligt her; spørg mig, hvis du vil vide, hvor længe jeg har noget om dig.</span></p>
-        <p data-dc-tpl="38" style="margin: 0px; font-size: 16px; line-height: 1.7; color: rgb(140, 126, 107);"><span class="sc-interp">Jeg videregiver ikke dine oplysninger til andre uden dit samtykke. Ud over hostingudbyderen nedenfor er der ikke tilknyttet databehandlere til denne side.</span></p>
+        <h2 data-dc-tpl="36" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Opbevaring og videregivelse</h2>
+        <p data-dc-tpl="37" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);"><span class="sc-interp">Oplysningerne opbevares kun, så længe det er nødvendigt for at besvare din henvendelse og gennemføre et eventuelt forløb, samt så længe lovgivningen kræver det. Den præcise opbevaringsperiode er endnu ikke fastsat skriftligt her; spørg mig, hvis du vil vide, hvor længe jeg har noget om dig.</span></p>
+        <p data-dc-tpl="38" style="margin: 0px; font-size: 16px; line-height: 1.7; color: var(--n-600);"><span class="sc-interp">Jeg videregiver ikke dine oplysninger til andre uden dit samtykke. Ud over hostingudbyderen nedenfor er der ikke tilknyttet databehandlere til denne side.</span></p>
       </div>
 
       <div data-dc-tpl="39" data-reveal="120">
-        <h2 data-dc-tpl="40" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Anmeldelser, billeder og eksempler</h2>
-        <p data-dc-tpl="41" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Anmeldelser, forløbseksempler og billeder vises kun med dit skriftlige samtykke, og du kan trække samtykket tilbage igen. Trækker du det tilbage, fjerner jeg indholdet fra siden.</p>
+        <h2 data-dc-tpl="40" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Anmeldelser, billeder og eksempler</h2>
+        <p data-dc-tpl="41" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Anmeldelser, forløbseksempler og billeder vises kun med dit skriftlige samtykke, og du kan trække samtykket tilbage igen. Trækker du det tilbage, fjerner jeg indholdet fra siden.</p>
       </div>
 
       <div data-dc-tpl="42" data-reveal="140">
-        <h2 data-dc-tpl="43" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Cookies, statistik og eksterne tjenester</h2>
-        <p data-dc-tpl="44" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Siden sætter ingen cookies. Der er ingen besøgsstatistik, ingen annoncesporing og ingen deling med sociale medier.</p>
-        <p data-dc-tpl="45" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Alt, siden henter — skrifttyper, billeder, stilark og JavaScript — ligger på samme domæne som siden selv. Din browser kontakter derfor ikke andre virksomheder, når du læser her, og din IP-adresse deles ikke med tredjeparter.</p>
-        <p data-dc-tpl="46" style="margin: 0px; font-size: 16px; line-height: 1.7; color: rgb(140, 126, 107);">Dine svar i kontaktformularen ligger kun i din egen browsers hukommelse, indtil du sender dem eller forlader siden. De gemmes ikke lokalt bagefter.</p>
+        <h2 data-dc-tpl="43" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Cookies, statistik og eksterne tjenester</h2>
+        <p data-dc-tpl="44" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Siden sætter ingen cookies. Der er ingen besøgsstatistik, ingen annoncesporing og ingen deling med sociale medier.</p>
+        <p data-dc-tpl="45" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Alt, siden henter — skrifttyper, billeder, stilark og JavaScript — ligger på samme domæne som siden selv. Din browser kontakter derfor ikke andre virksomheder, når du læser her, og din IP-adresse deles ikke med tredjeparter.</p>
+        <p data-dc-tpl="46" style="margin: 0px; font-size: 16px; line-height: 1.7; color: var(--n-600);">Dine svar i kontaktformularen ligger kun i din egen browsers hukommelse, indtil du sender dem eller forlader siden. De gemmes ikke lokalt bagefter.</p>
       </div>
 
       <div data-dc-tpl="47" data-reveal="150">
-        <h2 data-dc-tpl="48" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Hosting</h2>
-        <p data-dc-tpl="49" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Siden hostes på GitHub Pages (GitHub, Inc.). Som ved enhver webhosting registrerer udbyderen tekniske oplysninger om forespørgslen, blandt andet din IP-adresse, i sine driftslogfiler. Jeg har ikke adgang til de logfiler.</p>
+        <h2 data-dc-tpl="48" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Hosting</h2>
+        <p data-dc-tpl="49" style="margin: 0px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Siden hostes på GitHub Pages (GitHub, Inc.). Som ved enhver webhosting registrerer udbyderen tekniske oplysninger om forespørgslen, blandt andet din IP-adresse, i sine driftslogfiler. Jeg har ikke adgang til de logfiler.</p>
       </div>
 
       <div data-dc-tpl="50" data-reveal="160">
-        <h2 data-dc-tpl="51" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 14px;">Dine rettigheder</h2>
-        <p data-dc-tpl="52" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: rgb(171, 156, 135);">Du har ret til at se, hvilke oplysninger jeg har om dig, at få rettet fejl, at få slettet oplysninger, at begrænse behandlingen, at gøre indsigelse, at få dine oplysninger udleveret i et almindeligt format og at trække et samtykke tilbage. <span class="sc-interp">Skriv til ma@emcare.dk, så hjælper jeg dig.</span></p>
-        <p data-dc-tpl="53" style="margin: 0px; font-size: 16px; line-height: 1.7; color: rgb(140, 126, 107);">Er du utilfreds med, hvordan jeg behandler dine oplysninger, kan du klage til Datatilsynet, Carl Jacobsens Vej 35, 2500 Valby.</p>
+        <h2 data-dc-tpl="51" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(19px, 2.2vw, 24px); letter-spacing: 0.02em; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 14px;">Dine rettigheder</h2>
+        <p data-dc-tpl="52" style="margin: 0px 0px 12px; font-size: 16.5px; line-height: 1.7; color: var(--n-400);">Du har ret til at se, hvilke oplysninger jeg har om dig, at få rettet fejl, at få slettet oplysninger, at begrænse behandlingen, at gøre indsigelse, at få dine oplysninger udleveret i et almindeligt format og at trække et samtykke tilbage. <span class="sc-interp">Skriv til ma@emcare.dk, så hjælper jeg dig.</span></p>
+        <p data-dc-tpl="53" style="margin: 0px; font-size: 16px; line-height: 1.7; color: var(--n-600);">Er du utilfreds med, hvordan jeg behandler dine oplysninger, kan du klage til Datatilsynet, Carl Jacobsens Vej 35, 2500 Valby.</p>
       </div>
 
     </div>
@@ -274,7 +292,7 @@
           <p data-dc-tpl="43" style="margin: 0px 0px 12px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Den blå knap går direkte til EmCares bookingportal, hvor du booker en online konsultation.</p>
           
           
-            <a data-dc-tpl="45" href="mailto:ma@emcare.dk" class="scp0 scp1" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
+            <a data-dc-tpl="45" href="mailto:ma@emcare.dk" class="scp7 scp1" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
           
           
           
@@ -299,28 +317,28 @@
     <div data-dc-tpl="62" style="margin-top: clamp(28px, 4vw, 40px); padding: 22px 0px clamp(28px, 4vw, 36px); border-top: 1px solid rgba(224, 168, 124, 0.12); display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; justify-content: space-between;">
       <span data-dc-tpl="63" style="font-size: 13.5px; color: rgb(140, 126, 107);"><span class="sc-interp">© 2026 Mike Adelholm</span></span>
       <span data-dc-tpl="64" style="display: flex; flex-wrap: wrap; gap: 20px;">
-        <a data-dc-tpl="65" href="privatliv.dc.html" class="scp0 scp1" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Privatlivspolitik</a>
-        <a data-dc-tpl="66" href="kontakt.dc.html" class="scp0 scp1" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Kontakt</a>
+        <a data-dc-tpl="65" href="privatliv.dc.html" class="scp7 scp1" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Privatlivspolitik</a>
+        <a data-dc-tpl="66" href="kontakt.dc.html" class="scp7 scp1" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Kontakt</a>
       </span>
     </div>
 
     
   </div></footer></div></div></div></div><!--/dc-prerender-->
 <x-dc>
-<div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
+<div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--ink-950);color:var(--bone-150);overflow-x:hidden;">
 
 <dc-import name="SiteNav" current="privatliv" hint-size="100%,0px"></dc-import>
 
 <main id="hovedindhold" style="animation:maPageIn .5s cubic-bezier(.16,1,.3,1) both;">
 
-  <section data-screen-label="Banner" style="background:#000;padding:clamp(112px,13vw,150px) 0 clamp(36px,4.5vw,56px);border-bottom:1px solid rgba(224,168,124,.1);">
+  <section data-screen-label="Banner" style="background:var(--ink-1000);padding:clamp(112px,13vw,150px) 0 clamp(36px,4.5vw,56px);border-bottom:1px solid rgba(224,168,124,.1);">
     <div style="max-width:820px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
-      <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#8c7e6b;">
-        <a href="./" style="color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;">Forside</a> <span aria-hidden="true">/</span> Privatlivspolitik
+      <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:var(--n-600);">
+        <a href="./" style="color:var(--n-600);text-decoration:none;" style-hover="color:var(--champagne-150-text);">Forside</a> <span aria-hidden="true">/</span> Privatlivspolitik
       </nav>
-      <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(30px,4vw,48px);line-height:1.18;letter-spacing:-.015em;text-transform:uppercase;color:#f3ead9;margin:0 0 18px;">Privatlivspolitik</h1>
-      <p style="margin:0;font-size:17px;line-height:1.65;color:#ab9c87;">Sådan behandler jeg de oplysninger, du giver mig. Skriv til mig, hvis noget er uklart.</p>
-      <p style="margin:16px 0 0;font-size:14px;color:#8c7e6b;">Senest opdateret: {{ updated }}</p>
+      <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(30px,4vw,48px);line-height:1.18;letter-spacing:-.015em;text-transform:uppercase;color:var(--bone-000);margin:0 0 18px;">Privatlivspolitik</h1>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:var(--n-400);">Sådan behandler jeg de oplysninger, du giver mig. Skriv til mig, hvis noget er uklart.</p>
+      <p style="margin:16px 0 0;font-size:14px;color:var(--n-600);">Senest opdateret: {{ updated }}</p>
     </div>
   </section>
 
@@ -333,65 +351,65 @@
            opbevaringsperiode, databehandlere), kommer fra site-config.js og
            vises først, når de er udfyldt. Se NEEDS_INPUT.md. -->
       <sc-if value="{{ needsReview }}" hint-placeholder-val="{{ true }}">
-        <div data-reveal="0" style="padding:22px 24px;border-radius:18px;background:rgba(255,255,255,.02);border:1px dashed rgba(224,168,124,.3);">
-          <p style="margin:0;font-size:15.5px;line-height:1.65;color:#ab9c87;">Politikken mangler stadig virksomhedens stamoplysninger og bør gennemgås juridisk, før siden markedsføres. Den er ikke juridisk rådgivning.</p>
+        <div data-reveal="0" style="padding:22px 24px;border-radius:18px;background:rgba(var(--glass-rgb),.02);border:1px dashed rgba(224,168,124,.3);">
+          <p style="margin:0;font-size:15.5px;line-height:1.65;color:var(--n-400);">Politikken mangler stadig virksomhedens stamoplysninger og bør gennemgås juridisk, før siden markedsføres. Den er ikke juridisk rådgivning.</p>
         </div>
       </sc-if>
 
       <div data-reveal="40">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Dataansvarlig</h2>
-        <p style="margin:0;font-size:16.5px;line-height:1.7;color:#ab9c87;">{{ controller }}</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Dataansvarlig</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.7;color:var(--n-400);">{{ controller }}</p>
         <sc-if value="{{ hasContact }}" hint-placeholder-val="{{ false }}">
-          <p style="margin:10px 0 0;font-size:16.5px;line-height:1.7;color:#ab9c87;">Kontakt: {{ contactLine }}</p>
+          <p style="margin:10px 0 0;font-size:16.5px;line-height:1.7;color:var(--n-400);">Kontakt: {{ contactLine }}</p>
         </sc-if>
         <sc-if value="{{ noContact }}" hint-placeholder-val="{{ true }}">
-          <p style="margin:10px 0 0;font-size:16px;line-height:1.7;color:#8c7e6b;">Indtil der er offentliggjort en kontaktadresse, kan du skrive til mig gennem <a href="kontakt.dc.html">kontaktformularen</a>.</p>
+          <p style="margin:10px 0 0;font-size:16px;line-height:1.7;color:var(--n-600);">Indtil der er offentliggjort en kontaktadresse, kan du skrive til mig gennem <a href="kontakt.dc.html">kontaktformularen</a>.</p>
         </sc-if>
       </div>
 
       <div data-reveal="60">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Hvilke oplysninger jeg behandler</h2>
-        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Kontaktformularen beder om {{ collectedFields }}. Der er ikke andre felter, og siden indsamler ikke noget om dig i baggrunden.</p>
-        <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">{{ sensitiveNote }}</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Hvilke oplysninger jeg behandler</h2>
+        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:var(--n-400);">Kontaktformularen beder om {{ collectedFields }}. Der er ikke andre felter, og siden indsamler ikke noget om dig i baggrunden.</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:var(--n-600);">{{ sensitiveNote }}</p>
       </div>
 
       <div data-reveal="70">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Hvordan henvendelsen sendes</h2>
-        <p style="margin:0;font-size:16.5px;line-height:1.7;color:#ab9c87;">{{ deliveryNote }}</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Hvordan henvendelsen sendes</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.7;color:var(--n-400);">{{ deliveryNote }}</p>
       </div>
 
       <div data-reveal="80">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Formål og grundlag</h2>
-        <p style="margin:0;font-size:16.5px;line-height:1.7;color:#ab9c87;">Oplysningerne bruges til at besvare din henvendelse, vurdere om et forløb er relevant, og — hvis vi indgår en aftale — til at planlægge og følge dit forløb. Grundlaget er dit samtykke (databeskyttelsesforordningens artikel 6, stk. 1, litra a, og for helbredsoplysninger artikel 9, stk. 2, litra a) samt opfyldelse af vores aftale (artikel 6, stk. 1, litra b).<sc-if value="{{ hasExtraBasis }}" hint-placeholder-val="{{ false }}"> {{ extraBasis }}</sc-if></p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Formål og grundlag</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.7;color:var(--n-400);">Oplysningerne bruges til at besvare din henvendelse, vurdere om et forløb er relevant, og — hvis vi indgår en aftale — til at planlægge og følge dit forløb. Grundlaget er dit samtykke (databeskyttelsesforordningens artikel 6, stk. 1, litra a, og for helbredsoplysninger artikel 9, stk. 2, litra a) samt opfyldelse af vores aftale (artikel 6, stk. 1, litra b).<sc-if value="{{ hasExtraBasis }}" hint-placeholder-val="{{ false }}"> {{ extraBasis }}</sc-if></p>
       </div>
 
       <div data-reveal="100">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Opbevaring og videregivelse</h2>
-        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:#ab9c87;">{{ retentionNote }}</p>
-        <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">{{ processorNote }}</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Opbevaring og videregivelse</h2>
+        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:var(--n-400);">{{ retentionNote }}</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:var(--n-600);">{{ processorNote }}</p>
       </div>
 
       <div data-reveal="120">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Anmeldelser, billeder og eksempler</h2>
-        <p style="margin:0;font-size:16.5px;line-height:1.7;color:#ab9c87;">Anmeldelser, forløbseksempler og billeder vises kun med dit skriftlige samtykke, og du kan trække samtykket tilbage igen. Trækker du det tilbage, fjerner jeg indholdet fra siden.</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Anmeldelser, billeder og eksempler</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.7;color:var(--n-400);">Anmeldelser, forløbseksempler og billeder vises kun med dit skriftlige samtykke, og du kan trække samtykket tilbage igen. Trækker du det tilbage, fjerner jeg indholdet fra siden.</p>
       </div>
 
       <div data-reveal="140">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Cookies, statistik og eksterne tjenester</h2>
-        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Siden sætter ingen cookies. Der er ingen besøgsstatistik, ingen annoncesporing og ingen deling med sociale medier.</p>
-        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Alt, siden henter — skrifttyper, billeder, stilark og JavaScript — ligger på samme domæne som siden selv. Din browser kontakter derfor ikke andre virksomheder, når du læser her, og din IP-adresse deles ikke med tredjeparter.</p>
-        <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">Dine svar i kontaktformularen ligger kun i din egen browsers hukommelse, indtil du sender dem eller forlader siden. De gemmes ikke lokalt bagefter.</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Cookies, statistik og eksterne tjenester</h2>
+        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:var(--n-400);">Siden sætter ingen cookies. Der er ingen besøgsstatistik, ingen annoncesporing og ingen deling med sociale medier.</p>
+        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:var(--n-400);">Alt, siden henter — skrifttyper, billeder, stilark og JavaScript — ligger på samme domæne som siden selv. Din browser kontakter derfor ikke andre virksomheder, når du læser her, og din IP-adresse deles ikke med tredjeparter.</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:var(--n-600);">Dine svar i kontaktformularen ligger kun i din egen browsers hukommelse, indtil du sender dem eller forlader siden. De gemmes ikke lokalt bagefter.</p>
       </div>
 
       <div data-reveal="150">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Hosting</h2>
-        <p style="margin:0;font-size:16.5px;line-height:1.7;color:#ab9c87;">Siden hostes på GitHub Pages (GitHub, Inc.). Som ved enhver webhosting registrerer udbyderen tekniske oplysninger om forespørgslen, blandt andet din IP-adresse, i sine driftslogfiler. Jeg har ikke adgang til de logfiler.</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Hosting</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.7;color:var(--n-400);">Siden hostes på GitHub Pages (GitHub, Inc.). Som ved enhver webhosting registrerer udbyderen tekniske oplysninger om forespørgslen, blandt andet din IP-adresse, i sine driftslogfiler. Jeg har ikke adgang til de logfiler.</p>
       </div>
 
       <div data-reveal="160">
-        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">Dine rettigheder</h2>
-        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:#ab9c87;">Du har ret til at se, hvilke oplysninger jeg har om dig, at få rettet fejl, at få slettet oplysninger, at begrænse behandlingen, at gøre indsigelse, at få dine oplysninger udleveret i et almindeligt format og at trække et samtykke tilbage. {{ rightsContact }}</p>
-        <p style="margin:0;font-size:16px;line-height:1.7;color:#8c7e6b;">Er du utilfreds med, hvordan jeg behandler dine oplysninger, kan du klage til Datatilsynet, Carl Jacobsens Vej 35, 2500 Valby.</p>
+        <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(19px,2.2vw,24px);letter-spacing:.02em;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">Dine rettigheder</h2>
+        <p style="margin:0 0 12px;font-size:16.5px;line-height:1.7;color:var(--n-400);">Du har ret til at se, hvilke oplysninger jeg har om dig, at få rettet fejl, at få slettet oplysninger, at begrænse behandlingen, at gøre indsigelse, at få dine oplysninger udleveret i et almindeligt format og at trække et samtykke tilbage. {{ rightsContact }}</p>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:var(--n-600);">Er du utilfreds med, hvordan jeg behandler dine oplysninger, kan du klage til Datatilsynet, Carl Jacobsens Vej 35, 2500 Valby.</p>
       </div>
 
     </div>

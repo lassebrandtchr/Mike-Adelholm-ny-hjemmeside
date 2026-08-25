@@ -9,7 +9,13 @@
 <link rel="canonical" href="https://lassebrandtchr.github.io/Mike-Adelholm-ny-hjemmeside/kontakt.dc.html">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#080706">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="dark light">
+
+<!-- Lyst/mørkt tema: sættes før CSS'en indlæses, så siden aldrig blinker
+     i det forkerte tema. Ekstern fil, ikke inline — CSP'ens script-src
+     tillader ikke 'unsafe-inline'. Ikke defer/async: skal køre og sætte
+     data-theme, før noget når at male. -->
+<script src="theme-init.js"></script>
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mike Adelholm">
@@ -38,10 +44,10 @@
 <!-- Rå skabelon skjules, indtil dc-runtimet har renderet. Uden JavaScript
      vises reserveindholdet øverst i dokumentet i stedet. -->
 <style>x-dc{display:none}</style>
-<style data-page-css>html,body{background:#080706;}
-  a{color:#e0a877;}
-  a:hover{color:#f3c79b;}
-  input::placeholder,textarea::placeholder{color:#8c7e6b;}
+<style data-page-css>html,body{background:var(--ink-950);}
+  a{color:var(--copper-150-text);}
+  a:hover{color:var(--champagne-150-text);}
+  input::placeholder,textarea::placeholder{color:var(--n-600);}
   /* Kontaktpanelets mail- og telefonlink er 21px hoeje tekstlinjer — for lidt
      at ramme paa mobil, hvor de netop er den hurtigste vej til at skrive. */
   @media (max-width:1179px){
@@ -69,12 +75,12 @@
      Samme bronze som CTA-knappen. Markeret med data-bronze frem for via
      style-strengen, fordi dc-runtimet omskriver style-attributten gennem
      React (#f5c693 bliver til rgb(245, 198, 147)). */
-  [data-bronze],[data-bronze] *{color:#1c1107!important}
+  [data-bronze],[data-bronze] *{color:var(--ink-650)!important}
   [data-bronze]{
     border-color:rgba(28,17,7,.24)!important;
     box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 26px 54px -30px rgba(0,0,0,.85)!important;
   }
-  [data-bronze] svg{stroke:#1c1107!important}
+  [data-bronze] svg{stroke:var(--ink-650)!important}
   /* Moerke ikonfliser paa pladen beholder deres bronzefarvede ikon */
   [data-bronze] [data-tile] svg{stroke:#f3c79b!important}
   [data-bronze] [data-tile]{border-color:rgba(28,17,7,.3)!important}
@@ -116,7 +122,7 @@
 </script>
 </head>
 <body>
-<div id="dc-prerender"><div class="sc-host" data-sc-name="kontakt"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; background: rgb(8, 7, 6); color: rgb(237, 227, 212); overflow-x: hidden;"><div class="sc-host" data-sc-name="SiteNav" data-dc-tpl="1"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif;">
+<div id="dc-prerender"><div class="sc-host" data-sc-name="kontakt"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; background: var(--ink-950); color: var(--bone-150); overflow-x: hidden;"><div class="sc-host" data-sc-name="SiteNav" data-dc-tpl="1"><div data-dc-tpl="0" style="font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif;">
 
   <div data-pre-wide=""><header data-dc-tpl="1" style="position: fixed; top: 14px; left: 0px; right: 0px; z-index: 900; display: flex; justify-content: center; padding: 0px 14px; pointer-events: none; animation: 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maNavIn;">
     <div data-dc-tpl="2" style="pointer-events: auto; display: flex; align-items: center; gap: 10px; max-width: 100%; padding: 9px 10px 9px 13px; border-radius: 999px; background: linear-gradient(rgb(21, 16, 9) 0%, rgb(10, 8, 6) 100%); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.95) 0px 20px 46px -22px, rgba(255, 255, 255, 0.043) 0px 1px 0px inset; transition: padding 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.45s;">
@@ -142,7 +148,13 @@
           <a data-dc-tpl="21" data-nav-key="om-mike" href="om-mike.dc.html" class="scpb scpc" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Om Mike</a>
           <a data-dc-tpl="22" data-nav-key="viden" href="viden.dc.html" class="scpb scpc" aria-current="false" style="position: relative; padding: 9px 11px; border-radius: 999px; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: rgb(188, 174, 153); text-decoration: none; white-space: nowrap; transition: color 0.3s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">Viden</a>
         </nav>
-        <a data-dc-tpl="23" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="flex-shrink: 0; white-space: nowrap;"><span data-dc-tpl="24">Book online nu</span><span data-dc-tpl="25" aria-hidden="true" style="font-size: 13px; line-height: 0;">→</span></a>
+        <button data-dc-tpl="23" type="button" data-theme-action="light" aria-label="Skift til lyst tema" title="Skift til lyst tema" class="scpd scpe" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+          <svg data-dc-tpl="24" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="25" cx="12" cy="12" r="4"></circle><path data-dc-tpl="26" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        </button>
+        <button data-dc-tpl="27" type="button" data-theme-action="dark" aria-label="Skift til mørkt tema" title="Skift til mørkt tema" class="scpd scpe" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+          <svg data-dc-tpl="28" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="29" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+        </button>
+        <a data-dc-tpl="30" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="flex-shrink: 0; white-space: nowrap;"><span data-dc-tpl="31">Book online nu</span><span data-dc-tpl="32" aria-hidden="true" style="font-size: 13px; line-height: 0;">→</span></a>
       
 
       
@@ -162,9 +174,15 @@
       
 
       
-        <a data-dc-tpl="27" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="margin-left: auto; flex-shrink: 0; white-space: nowrap; padding: 12px 15px; letter-spacing: 0.08em;"><span data-dc-tpl="28">Book</span></a>
-        <button data-dc-tpl="29" type="button" aria-expanded="false" aria-controls="ma-mobil-menu" aria-label="Åbn menu" class="scpd scpe" style="width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
-          <svg data-dc-tpl="30" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="31" d="M3 7h18M3 12h18M3 17h18"></path></svg>
+        <button data-dc-tpl="34" type="button" data-theme-action="light" aria-label="Skift til lyst tema" title="Skift til lyst tema" class="scpd scpe" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer;" tabindex="-1">
+          <svg data-dc-tpl="35" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle data-dc-tpl="36" cx="12" cy="12" r="4"></circle><path data-dc-tpl="37" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        </button>
+        <button data-dc-tpl="38" type="button" data-theme-action="dark" aria-label="Skift til mørkt tema" title="Skift til mørkt tema" class="scpd scpe" style="width: 38px; height: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer;" tabindex="-1">
+          <svg data-dc-tpl="39" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="40" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
+        </button>
+        <a data-dc-tpl="41" href="kontakt.dc.html" class="ma-book ma-book--kompakt" style="margin-left: auto; flex-shrink: 0; white-space: nowrap; padding: 12px 15px; letter-spacing: 0.08em;"><span data-dc-tpl="42">Book</span></a>
+        <button data-dc-tpl="43" type="button" aria-expanded="false" aria-controls="ma-mobil-menu" aria-label="Åbn menu" class="scpd scpe" style="width: 44px; height: 44px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(224, 168, 124, 0.3); color: rgb(232, 212, 191); cursor: pointer; transition: background 0.3s, border-color 0.3s;" tabindex="-1">
+          <svg data-dc-tpl="44" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="45" d="M3 7h18M3 12h18M3 17h18"></path></svg>
         </button>
       
 
@@ -173,64 +191,64 @@
 
   </div></div><main data-dc-tpl="2" id="hovedindhold" style="animation: 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maPageIn;">
 
-  <section data-dc-tpl="3" data-screen-label="Banner" style="position: relative; overflow: hidden; background: rgb(0, 0, 0); padding: clamp(112px, 13vw, 152px) 0px clamp(36px, 4.5vw, 54px);">
+  <section data-dc-tpl="3" data-screen-label="Banner" style="position: relative; overflow: hidden; background: var(--ink-1000); padding: clamp(112px, 13vw, 152px) 0px clamp(36px, 4.5vw, 54px);">
     <div data-dc-tpl="4" data-ambient="" aria-hidden="true" style="position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 760px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.26), transparent 66%); pointer-events: none; animation: 11s ease-in-out 0s infinite normal none running maPulse;"></div>
     <div data-dc-tpl="5" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
       <div data-dc-tpl="6" data-reveal="0" style="max-width: 700px;">
-        <nav data-dc-tpl="7" aria-label="Brødkrumme" style="margin-bottom: 22px; font-size: 13.5px; color: rgb(140, 126, 107);">
-          <a data-dc-tpl="8" href="./" class="scp0" style="color: rgb(140, 126, 107); text-decoration: none;">Forside</a> <span data-dc-tpl="9" aria-hidden="true">/</span> Kontakt
+        <nav data-dc-tpl="7" aria-label="Brødkrumme" style="margin-bottom: 22px; font-size: 13.5px; color: var(--n-600);">
+          <a data-dc-tpl="8" href="./" class="scp0" style="color: var(--n-600); text-decoration: none;">Forside</a> <span data-dc-tpl="9" aria-hidden="true">/</span> Kontakt
         </nav>
         <div data-dc-tpl="10" style="display: flex; align-items: center; gap: 12px; margin-bottom: 18px;">
           <span data-dc-tpl="11" aria-hidden="true" style="width: 34px; height: 1.5px; background: linear-gradient(90deg, rgb(207, 138, 79), rgba(207, 138, 79, 0));"></span>
-          <span data-dc-tpl="12" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: rgb(199, 144, 100);">Kontakt</span>
+          <span data-dc-tpl="12" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--copper-250-text);">Kontakt</span>
         </div>
-        <h1 data-dc-tpl="13" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(32px, 4.4vw, 54px); line-height: 1.17; letter-spacing: -0.018em; text-transform: uppercase; color: rgb(243, 234, 217); margin: 0px 0px 20px;">Book en <span data-dc-tpl="14" style="background: linear-gradient(120deg, rgb(247, 216, 180), rgb(207, 138, 79) 50%, rgb(243, 199, 155)) 0% 0% / 100% text; -webkit-text-fill-color: transparent; color: transparent;">samtale med mig</span></h1>
-        <p data-dc-tpl="15" style="margin: 0px 0px 28px; max-width: 560px; font-size: clamp(16.5px, 1.4vw, 18.5px); line-height: 1.62; color: rgb(182, 167, 145);">Tre korte trin. Du behøver ikke have styr på det hele først — skriv det, du ved lige nu.</p>
+        <h1 data-dc-tpl="13" style="font-family: Archivo, system-ui, sans-serif; font-weight: 900; font-size: clamp(32px, 4.4vw, 54px); line-height: 1.17; letter-spacing: -0.018em; text-transform: uppercase; color: var(--bone-000); margin: 0px 0px 20px;">Book en <span data-dc-tpl="14" style="background: linear-gradient(120deg, rgb(247, 216, 180), rgb(207, 138, 79) 50%, rgb(243, 199, 155)) 0% 0% / 100% text; -webkit-text-fill-color: transparent; color: transparent;">samtale med mig</span></h1>
+        <p data-dc-tpl="15" style="margin: 0px 0px 28px; max-width: 560px; font-size: clamp(16.5px, 1.4vw, 18.5px); line-height: 1.62; color: var(--n-350);">Tre korte trin. Du behøver ikke have styr på det hele først — skriv det, du ved lige nu.</p>
       </div>
     </div>
   </section>
 
-  <section data-dc-tpl="26" data-screen-label="Formular" style="padding: clamp(30px, 4vw, 50px) 0px clamp(56px, 7vw, 88px);">
-    <div data-dc-tpl="27" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(20px, 2.6vw, 32px); align-items: flex-start;">
+  <section data-dc-tpl="16" data-screen-label="Formular" style="padding: clamp(30px, 4vw, 50px) 0px clamp(56px, 7vw, 88px);">
+    <div data-dc-tpl="17" style="max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px); display: flex; flex-wrap: wrap; gap: clamp(20px, 2.6vw, 32px); align-items: flex-start;">
 
-      <div data-dc-tpl="28" style="flex: 1 1 560px; min-width: 0px; padding: clamp(24px, 3vw, 40px); border-radius: 26px; background: linear-gradient(168deg, rgb(26, 20, 14), rgb(13, 10, 7) 72%); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.95) 0px 34px 74px -38px;">
+      <div data-dc-tpl="18" style="flex: 1 1 560px; min-width: 0px; padding: clamp(24px, 3vw, 40px); border-radius: 26px; background: linear-gradient(168deg,var(--ink-750),var(--ink-850) 72%); border: 1px solid rgba(224, 168, 124, 0.22); box-shadow: rgba(0, 0, 0, 0.95) 0px 34px 74px -38px;">
 
         
-        <form data-dc-tpl="29" novalidate="">
+        <form data-dc-tpl="19" novalidate="">
 
-        <div data-dc-tpl="30" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-          <span data-dc-tpl="31" aria-hidden="true" style="flex: 1 1 0%; height: 4px; border-radius: 999px; background: rgba(224, 168, 124, 0.14); overflow: hidden;"><span data-dc-tpl="32" style="display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, rgb(201, 128, 73), rgb(243, 199, 155)); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); transform: scaleX(1); transform-origin: left center;"></span></span>
-          <span data-dc-tpl="33" aria-hidden="true" style="flex: 1 1 0%; height: 4px; border-radius: 999px; background: rgba(224, 168, 124, 0.14); overflow: hidden;"><span data-dc-tpl="34" style="display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, rgb(201, 128, 73), rgb(243, 199, 155)); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); transform: scaleX(0); transform-origin: left center;"></span></span>
-          <span data-dc-tpl="35" aria-hidden="true" style="flex: 1 1 0%; height: 4px; border-radius: 999px; background: rgba(224, 168, 124, 0.14); overflow: hidden;"><span data-dc-tpl="36" style="display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, rgb(201, 128, 73), rgb(243, 199, 155)); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); transform: scaleX(0); transform-origin: left center;"></span></span>
+        <div data-dc-tpl="20" style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+          <span data-dc-tpl="21" aria-hidden="true" style="flex: 1 1 0%; height: 4px; border-radius: 999px; background: rgba(224, 168, 124, 0.14); overflow: hidden;"><span data-dc-tpl="22" style="display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, rgb(201, 128, 73), rgb(243, 199, 155)); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); transform: scaleX(1); transform-origin: left center;"></span></span>
+          <span data-dc-tpl="23" aria-hidden="true" style="flex: 1 1 0%; height: 4px; border-radius: 999px; background: rgba(224, 168, 124, 0.14); overflow: hidden;"><span data-dc-tpl="24" style="display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, rgb(201, 128, 73), rgb(243, 199, 155)); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); transform: scaleX(0); transform-origin: left center;"></span></span>
+          <span data-dc-tpl="25" aria-hidden="true" style="flex: 1 1 0%; height: 4px; border-radius: 999px; background: rgba(224, 168, 124, 0.14); overflow: hidden;"><span data-dc-tpl="26" style="display: block; height: 100%; width: 100%; border-radius: 999px; background: linear-gradient(90deg, rgb(201, 128, 73), rgb(243, 199, 155)); transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1); transform: scaleX(0); transform-origin: left center;"></span></span>
         </div>
-        <p data-dc-tpl="37" style="margin: 0px 0px 26px; font-family: Archivo, system-ui, sans-serif; font-weight: 600; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgb(140, 126, 107);"><span class="sc-interp">Trin 1 af 3 · Dit udgangspunkt</span></p>
+        <p data-dc-tpl="27" style="margin: 0px 0px 26px; font-family: Archivo, system-ui, sans-serif; font-weight: 600; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--n-600);"><span class="sc-interp">Trin 1 af 3 · Dit udgangspunkt</span></p>
 
         
-          <div data-dc-tpl="39" style="animation: 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maStepIn;">
-            <fieldset data-dc-tpl="40" style="margin: 0px; padding: 0px; border: 0px; min-width: 0px;">
-              <legend data-dc-tpl="41" style="padding: 0px; float: left; width: 100%;">
-                <h2 data-dc-tpl="42" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(21px, 2.4vw, 27px); line-height: 1.28; text-transform: uppercase; color: rgb(241, 231, 215); margin: 0px 0px 10px;">Hvad vil du gerne have hjælp til?</h2>
-                <p data-dc-tpl="43" style="margin: 0px 0px 24px; font-size: 16px; line-height: 1.62; color: rgb(171, 156, 135);">Vælg det, der ligner din situation mest. Du kan uddybe på næste trin.</p>
+          <div data-dc-tpl="29" style="animation: 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0s 1 normal both running maStepIn;">
+            <fieldset data-dc-tpl="30" style="margin: 0px; padding: 0px; border: 0px; min-width: 0px;">
+              <legend data-dc-tpl="31" style="padding: 0px; float: left; width: 100%;">
+                <h2 data-dc-tpl="32" style="font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: clamp(21px, 2.4vw, 27px); line-height: 1.28; text-transform: uppercase; color: var(--bone-050); margin: 0px 0px 10px;">Hvad vil du gerne have hjælp til?</h2>
+                <p data-dc-tpl="33" style="margin: 0px 0px 24px; font-size: 16px; line-height: 1.62; color: var(--n-400);">Vælg det, der ligner din situation mest. Du kan uddybe på næste trin.</p>
               </legend>
-              <div data-dc-tpl="44" style="clear: both; display: flex; flex-direction: column; gap: 10px;">
+              <div data-dc-tpl="34" style="clear: both; display: flex; flex-direction: column; gap: 10px;">
                 
-                  <label data-dc-tpl="46" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(224, 168, 124, 0.18); color: rgb(231, 220, 203); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
-                    <input data-dc-tpl="47" type="radio" name="fokus" id="fokus-staerkere" class="scp2 scp3" value="Blive stærkere" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
+                  <label data-dc-tpl="36" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(var(--glass-rgb),.03); border: 1px solid rgba(224, 168, 124, 0.18); color: var(--bone-300); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
+                    <input data-dc-tpl="37" type="radio" name="fokus" id="fokus-staerkere" class="scp2 scp3" value="Blive stærkere" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
                     <span class="sc-interp">Jeg vil blive stærkere</span>
                   </label>
                 
-                  <label data-dc-tpl="46" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(224, 168, 124, 0.18); color: rgb(231, 220, 203); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
-                    <input data-dc-tpl="47" type="radio" name="fokus" id="fokus-smerter" class="scp2 scp3" value="Færre smerter og genoptræning" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
+                  <label data-dc-tpl="36" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(var(--glass-rgb),.03); border: 1px solid rgba(224, 168, 124, 0.18); color: var(--bone-300); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
+                    <input data-dc-tpl="37" type="radio" name="fokus" id="fokus-smerter" class="scp2 scp3" value="Færre smerter og genoptræning" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
                     <span class="sc-interp">Jeg vil have færre smerter eller i gang efter en skade</span>
                   </label>
                 
-                  <label data-dc-tpl="46" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(224, 168, 124, 0.18); color: rgb(231, 220, 203); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
-                    <input data-dc-tpl="47" type="radio" name="fokus" id="fokus-begge" class="scp2 scp3" value="Begge dele" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
+                  <label data-dc-tpl="36" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(var(--glass-rgb),.03); border: 1px solid rgba(224, 168, 124, 0.18); color: var(--bone-300); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
+                    <input data-dc-tpl="37" type="radio" name="fokus" id="fokus-begge" class="scp2 scp3" value="Begge dele" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
                     <span class="sc-interp">Begge dele — jeg vil træne, men noget driller</span>
                   </label>
                 
-                  <label data-dc-tpl="46" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(224, 168, 124, 0.18); color: rgb(231, 220, 203); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
-                    <input data-dc-tpl="47" type="radio" name="fokus" id="fokus-usikker" class="scp2 scp3" value="Ikke sikker endnu" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
+                  <label data-dc-tpl="36" data-opt="" class="scp1" style="display: flex; align-items: center; gap: 14px; width: 100%; min-height: 56px; padding: 17px 20px; border-radius: 16px; background: rgba(var(--glass-rgb),.03); border: 1px solid rgba(224, 168, 124, 0.18); color: var(--bone-300); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; font-size: 16.5px; text-align: left; cursor: pointer; transition: border-color 0.3s, background 0.3s, transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);">
+                    <input data-dc-tpl="37" type="radio" name="fokus" id="fokus-usikker" class="scp2 scp3" value="Ikke sikker endnu" style="flex-shrink: 0; width: 20px; height: 20px; margin: 0px; appearance: none; border-radius: 50%; border: 1.5px solid rgba(224, 168, 124, 0.4); background: transparent; cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s;" tabindex="-1">
                     <span class="sc-interp">Jeg er ikke sikker endnu</span>
                   </label>
                 
@@ -247,31 +265,31 @@
 
         
         
-        <p data-dc-tpl="119" aria-live="polite" role="status" style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"><span class="sc-interp"></span></p>
+        <p data-dc-tpl="109" aria-live="polite" role="status" style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;"><span class="sc-interp"></span></p>
 
         
-          <div data-dc-tpl="121" style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(224, 168, 124, 0.14); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
+          <div data-dc-tpl="111" style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(224, 168, 124, 0.14); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
             
-            <button data-dc-tpl="125" type="submit" class="scp6 scp7" style="margin-left: auto; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 18px 26px; border-radius: 15px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); border: 0px; color: rgb(28, 17, 7); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13.5px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; box-shadow: rgba(196, 127, 71, 0.7) 0px 14px 34px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);" tabindex="-1"><span class="sc-interp">Videre</span><span data-dc-tpl="126" aria-hidden="true" style="font-size: 16px; line-height: 0;">→</span></button>
+            <button data-dc-tpl="115" type="submit" class="scp6 scp7" style="margin-left: auto; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 18px 26px; border-radius: 15px; background: linear-gradient(135deg, rgb(245, 198, 147), rgb(201, 128, 73) 55%, rgb(165, 97, 47)); border: 0px; color: var(--ink-650); font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 13.5px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; box-shadow: rgba(196, 127, 71, 0.7) 0px 14px 34px -12px, rgba(255, 255, 255, 0.5) 0px 1px 0px inset; transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);" tabindex="-1"><span class="sc-interp">Videre</span><span data-dc-tpl="116" aria-hidden="true" style="font-size: 16px; line-height: 0;">→</span></button>
           </div>
         
         </form>
       </div>
 
-      <aside data-dc-tpl="127" style="flex: 1 1 300px; min-width: 0px; display: flex; flex-direction: column; gap: 16px;">
-        <div data-dc-tpl="128" data-reveal="0" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: linear-gradient(165deg, rgba(47, 111, 174, 0.16), rgba(255, 255, 255, 0.01)); border: 1px solid rgba(126, 178, 232, 0.34);">
-          <div data-dc-tpl="129" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(143, 189, 233); margin-bottom: 14px;">Book online konsultation</div>
-          <p data-dc-tpl="130" style="margin: 0px 0px 18px; font-size: 15.5px; line-height: 1.62; color: rgb(171, 156, 135);">Ved du allerede, hvad du vil? Knappen går direkte til EmCares bookingportal, hvor du vælger en ledig tid til en online konsultation hos mig.</p>
-          <a data-dc-tpl="131" href="https://ezme.io/c/XuD/fqVF" target="_blank" rel="noopener noreferrer" class="ma-book ma-book--direkte ma-book--fuld" aria-label="Book en online konsultation direkte i EmCares bookingportal — åbner i et nyt vindue"><span data-dc-tpl="132" aria-hidden="true" style="display: inline-flex;"><svg data-dc-tpl="133" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect data-dc-tpl="134" x="3" y="4.5" width="18" height="16" rx="2.5"></rect><path data-dc-tpl="135" d="M8 2.5v4M16 2.5v4M3 10h18"></path><path data-dc-tpl="136" d="m8.6 14.6 2.2 2.2 4.4-4.4"></path></svg></span><span data-dc-tpl="137">Book online konsultation</span><span data-dc-tpl="138" aria-hidden="true" style="font-size: 15px; line-height: 0;">↗</span></a>
+      <aside data-dc-tpl="117" style="flex: 1 1 300px; min-width: 0px; display: flex; flex-direction: column; gap: 16px;">
+        <div data-dc-tpl="118" data-reveal="0" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: linear-gradient(165deg,rgba(47,111,174,.16),rgba(var(--glass-rgb),.012)); border: 1px solid rgba(126, 178, 232, 0.34);">
+          <div data-dc-tpl="119" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(143, 189, 233); margin-bottom: 14px;">Book online konsultation</div>
+          <p data-dc-tpl="120" style="margin: 0px 0px 18px; font-size: 15.5px; line-height: 1.62; color: var(--n-400);">Ved du allerede, hvad du vil? Knappen går direkte til EmCares bookingportal, hvor du vælger en ledig tid til en online konsultation hos mig.</p>
+          <a data-dc-tpl="121" href="https://ezme.io/c/XuD/fqVF" target="_blank" rel="noopener noreferrer" class="ma-book ma-book--direkte ma-book--fuld" aria-label="Book en online konsultation direkte i EmCares bookingportal — åbner i et nyt vindue"><span data-dc-tpl="122" aria-hidden="true" style="display: inline-flex;"><svg data-dc-tpl="123" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect data-dc-tpl="124" x="3" y="4.5" width="18" height="16" rx="2.5"></rect><path data-dc-tpl="125" d="M8 2.5v4M16 2.5v4M3 10h18"></path><path data-dc-tpl="126" d="m8.6 14.6 2.2 2.2 4.4-4.4"></path></svg></span><span data-dc-tpl="127">Book online konsultation</span><span data-dc-tpl="128" aria-hidden="true" style="font-size: 15px; line-height: 0;">↗</span></a>
         </div>
 
         
         
-          <div data-dc-tpl="140" data-bronze="" data-reveal="60" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16);">
-            <div data-dc-tpl="141" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 18px;">Direkte kontakt</div>
-            <div data-dc-tpl="142" style="display: flex; flex-direction: column; gap: 12px;">
+          <div data-dc-tpl="130" data-bronze="" data-reveal="60" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: linear-gradient(160deg, rgb(245, 198, 147), rgb(205, 132, 80) 55%, rgb(184, 115, 64)); border: 1px solid rgba(224, 168, 124, 0.16);">
+            <div data-dc-tpl="131" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper-250-text); margin-bottom: 18px;">Direkte kontakt</div>
+            <div data-dc-tpl="132" style="display: flex; flex-direction: column; gap: 12px;">
               
-                <a data-dc-tpl="144" href="mailto:ma@emcare.dk" class="scp0 scp9" style="font-size: 16px; color: rgb(224, 168, 119); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
+                <a data-dc-tpl="134" href="mailto:ma@emcare.dk" class="scp0 scp9" style="font-size: 16px; color: var(--copper-150-text); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
               
               
               
@@ -280,25 +298,25 @@
           </div>
         
 
-        <div data-dc-tpl="151" data-reveal="120" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(224, 168, 124, 0.14);">
-          <div data-dc-tpl="152" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(199, 144, 100); margin-bottom: 16px;">Hvad der sker bagefter</div>
-          <ol data-dc-tpl="153" style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 13px; counter-reset: ma 0;">
-            <li data-dc-tpl="154" style="display: flex; gap: 12px; font-size: 15.5px; line-height: 1.6; color: rgb(171, 156, 135);"><span data-dc-tpl="155" aria-hidden="true" style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(207, 138, 79, 0.14); color: rgb(224, 168, 119); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11.5px;">1</span>Jeg læser dine svar.</li>
-            <li data-dc-tpl="156" style="display: flex; gap: 12px; font-size: 15.5px; line-height: 1.6; color: rgb(171, 156, 135);"><span data-dc-tpl="157" aria-hidden="true" style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(207, 138, 79, 0.14); color: rgb(224, 168, 119); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11.5px;">2</span>Vi aftaler en tid til en kort samtale.</li>
-            <li data-dc-tpl="158" style="display: flex; gap: 12px; font-size: 15.5px; line-height: 1.6; color: rgb(171, 156, 135);"><span data-dc-tpl="159" aria-hidden="true" style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(207, 138, 79, 0.14); color: rgb(224, 168, 119); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11.5px;">3</span>Du beslutter, om du vil videre.</li>
+        <div data-dc-tpl="141" data-reveal="120" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: rgba(var(--glass-rgb),.02); border: 1px solid rgba(224, 168, 124, 0.14);">
+          <div data-dc-tpl="142" style="font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper-250-text); margin-bottom: 16px;">Hvad der sker bagefter</div>
+          <ol data-dc-tpl="143" style="list-style: none; margin: 0px; padding: 0px; display: flex; flex-direction: column; gap: 13px; counter-reset: ma 0;">
+            <li data-dc-tpl="144" style="display: flex; gap: 12px; font-size: 15.5px; line-height: 1.6; color: var(--n-400);"><span data-dc-tpl="145" aria-hidden="true" style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(207, 138, 79, 0.14); color: var(--copper-150-text); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11.5px;">1</span>Jeg læser dine svar.</li>
+            <li data-dc-tpl="146" style="display: flex; gap: 12px; font-size: 15.5px; line-height: 1.6; color: var(--n-400);"><span data-dc-tpl="147" aria-hidden="true" style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(207, 138, 79, 0.14); color: var(--copper-150-text); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11.5px;">2</span>Vi aftaler en tid til en kort samtale.</li>
+            <li data-dc-tpl="148" style="display: flex; gap: 12px; font-size: 15.5px; line-height: 1.6; color: var(--n-400);"><span data-dc-tpl="149" aria-hidden="true" style="flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(207, 138, 79, 0.14); color: var(--copper-150-text); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 700; font-size: 11.5px;">3</span>Du beslutter, om du vil videre.</li>
           </ol>
         </div>
 
-        <div data-dc-tpl="160" data-reveal="180" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: linear-gradient(165deg, rgba(207, 138, 79, 0.1), rgba(255, 255, 255, 0.01)); border: 1px solid rgba(224, 168, 124, 0.3);">
-          <div data-dc-tpl="161" style="display: flex; gap: 13px; align-items: flex-start;">
-            <span data-dc-tpl="162" aria-hidden="true" style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 9px; background: rgba(207, 138, 79, 0.18); color: rgb(243, 199, 155); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15px;">!</span>
-            <p data-dc-tpl="163" style="margin: 0px; font-size: 15px; line-height: 1.65; color: rgb(216, 199, 177);">Ved akutte, kraftige eller forværrede symptomer skal du kontakte egen læge, vagtlæge eller 112 — ikke denne formular.</p>
+        <div data-dc-tpl="150" data-reveal="180" style="padding: clamp(22px, 2.4vw, 28px); border-radius: 22px; background: linear-gradient(165deg,rgba(207,138,79,.1),rgba(var(--glass-rgb),.012)); border: 1px solid rgba(224, 168, 124, 0.3);">
+          <div data-dc-tpl="151" style="display: flex; gap: 13px; align-items: flex-start;">
+            <span data-dc-tpl="152" aria-hidden="true" style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 9px; background: rgba(207, 138, 79, 0.18); color: var(--champagne-150-text); display: inline-flex; align-items: center; justify-content: center; font-family: Archivo, system-ui, sans-serif; font-weight: 800; font-size: 15px;">!</span>
+            <p data-dc-tpl="153" style="margin: 0px; font-size: 15px; line-height: 1.65; color: rgb(216, 199, 177);">Ved akutte, kraftige eller forværrede symptomer skal du kontakte egen læge, vagtlæge eller 112 — ikke denne formular.</p>
           </div>
         </div>
       </aside>
 
     </div>
-  </section></main><div class="sc-host" data-sc-name="SiteFooter" data-dc-tpl="164"><footer data-dc-tpl="0" style="position: relative; overflow: hidden; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.14); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; padding: clamp(56px, 7vw, 84px) 0px 0px;">
+  </section></main><div class="sc-host" data-sc-name="SiteFooter" data-dc-tpl="154"><footer data-dc-tpl="0" style="position: relative; overflow: hidden; background: linear-gradient(rgb(8, 7, 6), rgb(0, 0, 0)); border-top: 1px solid rgba(224, 168, 124, 0.14); font-family: &quot;Hanken Grotesk&quot;, system-ui, sans-serif; padding: clamp(56px, 7vw, 84px) 0px 0px;">
   <div data-dc-tpl="1" aria-hidden="true" style="position: absolute; top: -220px; left: -140px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(196, 127, 71, 0.16), transparent 66%); pointer-events: none;"></div>
 
   <div data-dc-tpl="2" style="position: relative; max-width: 1180px; margin: 0px auto; padding: 0px clamp(20px, 4vw, 32px);">
@@ -344,7 +362,7 @@
           <p data-dc-tpl="43" style="margin: 0px 0px 12px; font-size: 13.5px; line-height: 1.6; color: rgb(140, 126, 107);">Den blå knap går direkte til EmCares bookingportal, hvor du booker en online konsultation.</p>
           
           
-            <a data-dc-tpl="45" href="mailto:ma@emcare.dk" class="scp0 scp9" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
+            <a data-dc-tpl="45" href="mailto:ma@emcare.dk" class="scpg scp9" style="font-size: 15px; color: rgb(188, 174, 153); text-decoration: none;"><span class="sc-interp">ma@emcare.dk</span></a>
           
           
           
@@ -369,33 +387,33 @@
     <div data-dc-tpl="62" style="margin-top: clamp(28px, 4vw, 40px); padding: 22px 0px clamp(28px, 4vw, 36px); border-top: 1px solid rgba(224, 168, 124, 0.12); display: flex; flex-wrap: wrap; gap: 12px 26px; align-items: center; justify-content: space-between;">
       <span data-dc-tpl="63" style="font-size: 13.5px; color: rgb(140, 126, 107);"><span class="sc-interp">© 2026 Mike Adelholm</span></span>
       <span data-dc-tpl="64" style="display: flex; flex-wrap: wrap; gap: 20px;">
-        <a data-dc-tpl="65" href="privatliv.dc.html" class="scp0 scp9" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Privatlivspolitik</a>
-        <a data-dc-tpl="66" href="kontakt.dc.html" class="scp0 scp9" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Kontakt</a>
+        <a data-dc-tpl="65" href="privatliv.dc.html" class="scpg scp9" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Privatlivspolitik</a>
+        <a data-dc-tpl="66" href="kontakt.dc.html" class="scpg scp9" style="font-size: 13.5px; color: rgb(140, 126, 107); text-decoration: none;">Kontakt</a>
       </span>
     </div>
 
     
   </div></footer></div></div></div></div><!--/dc-prerender-->
 <x-dc>
-<div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:#080706;color:#ede3d4;overflow-x:hidden;">
+<div style="font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--ink-950);color:var(--bone-150);overflow-x:hidden;">
 
 <dc-import name="SiteNav" current="kontakt" hint-size="100%,0px"></dc-import>
 
 <main id="hovedindhold" style="animation:maPageIn .5s cubic-bezier(.16,1,.3,1) both;">
 
-  <section data-screen-label="Banner" style="position:relative;overflow:hidden;background:#000;padding:clamp(112px,13vw,152px) 0 clamp(36px,4.5vw,54px);">
+  <section data-screen-label="Banner" style="position:relative;overflow:hidden;background:var(--ink-1000);padding:clamp(112px,13vw,152px) 0 clamp(36px,4.5vw,54px);">
     <div data-ambient="" aria-hidden="true" style="position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:760px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,127,71,.26),transparent 66%);pointer-events:none;animation:maPulse 11s ease-in-out infinite;"></div>
     <div style="position:relative;max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);">
       <div data-reveal="0" style="max-width:700px;">
-        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:#8c7e6b;">
-          <a href="./" style="color:#8c7e6b;text-decoration:none;" style-hover="color:#f3c79b;">Forside</a> <span aria-hidden="true">/</span> Kontakt
+        <nav aria-label="Brødkrumme" style="margin-bottom:22px;font-size:13.5px;color:var(--n-600);">
+          <a href="./" style="color:var(--n-600);text-decoration:none;" style-hover="color:var(--champagne-150-text);">Forside</a> <span aria-hidden="true">/</span> Kontakt
         </nav>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
           <span aria-hidden="true" style="width:34px;height:1.5px;background:linear-gradient(90deg,#cf8a4f,rgba(207,138,79,0));"></span>
-          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#c79064;">Kontakt</span>
+          <span style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--copper-250-text);">Kontakt</span>
         </div>
-        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(32px,4.4vw,54px);line-height:1.17;letter-spacing:-.018em;text-transform:uppercase;color:#f3ead9;margin:0 0 20px;">Book en <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:100% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">samtale med mig</span></h1>
-        <p style="margin:0 0 28px;max-width:560px;font-size:clamp(16.5px,1.4vw,18.5px);line-height:1.62;color:#b6a791;">Tre korte trin. Du behøver ikke have styr på det hele først — skriv det, du ved lige nu.</p>
+        <h1 style="font-family:'Archivo',system-ui,sans-serif;font-weight:900;font-size:clamp(32px,4.4vw,54px);line-height:1.17;letter-spacing:-.018em;text-transform:uppercase;color:var(--bone-000);margin:0 0 20px;">Book en <span style="background:linear-gradient(120deg,#f7d8b4,#cf8a4f 50%,#f3c79b);background-size:100% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">samtale med mig</span></h1>
+        <p style="margin:0 0 28px;max-width:560px;font-size:clamp(16.5px,1.4vw,18.5px);line-height:1.62;color:var(--n-350);">Tre korte trin. Du behøver ikke have styr på det hele først — skriv det, du ved lige nu.</p>
       </div>
     </div>
   </section>
@@ -403,7 +421,7 @@
   <section data-screen-label="Formular" style="padding:clamp(30px,4vw,50px) 0 clamp(56px,7vw,88px);">
     <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,32px);display:flex;flex-wrap:wrap;gap:clamp(20px,2.6vw,32px);align-items:flex-start;">
 
-      <div style="flex:1 1 560px;min-width:0;padding:clamp(24px,3vw,40px);border-radius:26px;background:linear-gradient(168deg,#1a140e,#0d0a07 72%);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 74px -38px rgba(0,0,0,.95);">
+      <div style="flex:1 1 560px;min-width:0;padding:clamp(24px,3vw,40px);border-radius:26px;background:linear-gradient(168deg,var(--ink-750),var(--ink-850) 72%);border:1px solid rgba(224,168,124,.22);box-shadow:0 34px 74px -38px rgba(0,0,0,.95);">
 
         <!-- Rigtig <form>: Enter sender, browserens autofyld virker, og
              valideringen kan pege på det felt, der mangler. -->
@@ -414,18 +432,18 @@
           <span ref="{{ bar2Ref }}" aria-hidden="true" style="flex:1;height:4px;border-radius:999px;background:rgba(224,168,124,.14);overflow:hidden;"><span style="display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#c98049,#f3c79b);transition:transform .5s cubic-bezier(.22,.61,.36,1);transform:scaleX(0);transform-origin:left;"></span></span>
           <span ref="{{ bar3Ref }}" aria-hidden="true" style="flex:1;height:4px;border-radius:999px;background:rgba(224,168,124,.14);overflow:hidden;"><span style="display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#c98049,#f3c79b);transition:transform .5s cubic-bezier(.22,.61,.36,1);transform:scaleX(0);transform-origin:left;"></span></span>
         </div>
-        <p style="margin:0 0 26px;font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8c7e6b;">{{ stepLabel }}</p>
+        <p style="margin:0 0 26px;font-family:'Archivo',system-ui,sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--n-600);">{{ stepLabel }}</p>
 
         <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
           <div style="animation:maStepIn .45s cubic-bezier(.16,1,.3,1) both;">
             <fieldset style="margin:0;padding:0;border:0;min-width:0;">
               <legend style="padding:0;float:left;width:100%;">
-                <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.28;text-transform:uppercase;color:#f1e7d7;margin:0 0 10px;">Hvad vil du gerne have hjælp til?</h2>
-                <p style="margin:0 0 24px;font-size:16px;line-height:1.62;color:#ab9c87;">Vælg det, der ligner din situation mest. Du kan uddybe på næste trin.</p>
+                <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.28;text-transform:uppercase;color:var(--bone-050);margin:0 0 10px;">Hvad vil du gerne have hjælp til?</h2>
+                <p style="margin:0 0 24px;font-size:16px;line-height:1.62;color:var(--n-400);">Vælg det, der ligner din situation mest. Du kan uddybe på næste trin.</p>
               </legend>
               <div style="clear:both;display:flex;flex-direction:column;gap:10px;">
                 <sc-for list="{{ focusOptions }}" as="opt" hint-placeholder-count="4">
-                  <label data-opt="" style="display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:17px 20px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.18);color:#e7dccb;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;text-align:left;cursor:pointer;transition:border-color .3s,background .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="border-color:rgba(224,168,124,.44);background:rgba(255,255,255,.055);transform:translateX(3px);">
+                  <label data-opt="" style="display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:17px 20px;border-radius:16px;background:rgba(var(--glass-rgb),.03);border:1px solid rgba(224,168,124,.18);color:var(--bone-300);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;text-align:left;cursor:pointer;transition:border-color .3s,background .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="border-color:rgba(224,168,124,.44);background:rgba(var(--glass-rgb),.055);transform:translateX(3px);">
                     <input type="radio" name="fokus" id="{{ opt.id }}" value="{{ opt.value }}" checked="{{ opt.checked }}" onChange="{{ onFokus }}" style="flex-shrink:0;width:20px;height:20px;margin:0;appearance:none;-webkit-appearance:none;border-radius:50%;border:1.5px solid rgba(224,168,124,.4);background:transparent;cursor:pointer;transition:border-color .3s,box-shadow .3s;" style-checked="border-color:#cf8a4f;box-shadow:inset 0 0 0 4.5px #cf8a4f;" style-focus-visible="outline:2px solid #cf8a4f;outline-offset:3px;">
                     {{ opt.label }}
                   </label>
@@ -437,26 +455,26 @@
 
         <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
           <div style="animation:maStepIn .45s cubic-bezier(.16,1,.3,1) both;">
-            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.28;text-transform:uppercase;color:#f1e7d7;margin:0 0 10px;">{{ step2Heading }}</h2>
-            <p style="margin:0 0 24px;font-size:16px;line-height:1.62;color:#ab9c87;">{{ step2Intro }}</p>
+            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.28;text-transform:uppercase;color:var(--bone-050);margin:0 0 10px;">{{ step2Heading }}</h2>
+            <p style="margin:0 0 24px;font-size:16px;line-height:1.62;color:var(--n-400);">{{ step2Intro }}</p>
             <div style="display:flex;flex-direction:column;gap:20px;">
               <!-- Fritekst om symptomer indsamles kun, når der er et
                    HTTPS-endepunkt at sende den sikkert til. Uden det ville
                    helbredsoplysninger ende i en mailto-URL. -->
               <sc-if value="{{ collectsSituation }}" hint-placeholder-val="{{ false }}">
                 <div style="display:flex;flex-direction:column;gap:9px;">
-                  <label for="situation" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c79064;">Hvad oplever du lige nu?</label>
-                  <textarea ref="{{ descRef }}" id="situation" name="situation" required="{{ collectsSituation }}" aria-describedby="situation-hjaelp" onInput="{{ onDesc }}" rows="4" placeholder="Fx: Jeg har haft ondt i skulderen i tre måneder, når jeg presser over hovedet." style="width:100%;padding:16px 17px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.2);color:#f0e6d6;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;line-height:1.6;resize:vertical;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);"></textarea>
-                  <p id="situation-hjaelp" style="margin:0;font-size:14px;line-height:1.6;color:#8c7e6b;">Et par sætninger er nok. Skriv kun det, du selv synes er nødvendigt.</p>
+                  <label for="situation" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-250-text);">Hvad oplever du lige nu?</label>
+                  <textarea ref="{{ descRef }}" id="situation" name="situation" required="{{ collectsSituation }}" aria-describedby="situation-hjaelp" onInput="{{ onDesc }}" rows="4" placeholder="Fx: Jeg har haft ondt i skulderen i tre måneder, når jeg presser over hovedet." style="width:100%;padding:16px 17px;border-radius:14px;background:rgba(var(--glass-rgb),.03);border:1px solid rgba(224,168,124,.2);color:var(--bone-100);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;line-height:1.6;resize:vertical;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);"></textarea>
+                  <p id="situation-hjaelp" style="margin:0;font-size:14px;line-height:1.6;color:var(--n-600);">Et par sætninger er nok. Skriv kun det, du selv synes er nødvendigt.</p>
                 </div>
               </sc-if>
               <div style="display:flex;flex-direction:column;gap:9px;">
-                <label for="maal" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c79064;">Hvad vil du gerne kunne? <span style="font-weight:600;letter-spacing:.08em;color:#8c7e6b;">(valgfrit)</span></label>
-                <textarea ref="{{ goalRef }}" id="maal" name="maal" onInput="{{ onGoal }}" rows="3" placeholder="Fx: Træne fire gange om ugen uden at skulle tage hensyn hele tiden." style="width:100%;padding:16px 17px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.2);color:#f0e6d6;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;line-height:1.6;resize:vertical;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);"></textarea>
+                <label for="maal" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-250-text);">Hvad vil du gerne kunne? <span style="font-weight:600;letter-spacing:.08em;color:var(--n-600);">(valgfrit)</span></label>
+                <textarea ref="{{ goalRef }}" id="maal" name="maal" onInput="{{ onGoal }}" rows="3" placeholder="Fx: Træne fire gange om ugen uden at skulle tage hensyn hele tiden." style="width:100%;padding:16px 17px;border-radius:14px;background:rgba(var(--glass-rgb),.03);border:1px solid rgba(224,168,124,.2);color:var(--bone-100);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;line-height:1.6;resize:vertical;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);"></textarea>
               </div>
               <div style="display:flex;flex-direction:column;gap:9px;">
-                <label for="traening" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c79064;">Hvor meget træner du nu? <span style="font-weight:600;letter-spacing:.08em;color:#8c7e6b;">(valgfrit)</span></label>
-                <input ref="{{ trainRef }}" id="traening" name="traening" onInput="{{ onTrain }}" type="text" placeholder="Fx: to gange om ugen i et almindeligt fitnesscenter" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.2);color:#f0e6d6;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
+                <label for="traening" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-250-text);">Hvor meget træner du nu? <span style="font-weight:600;letter-spacing:.08em;color:var(--n-600);">(valgfrit)</span></label>
+                <input ref="{{ trainRef }}" id="traening" name="traening" onInput="{{ onTrain }}" type="text" placeholder="Fx: to gange om ugen i et almindeligt fitnesscenter" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(var(--glass-rgb),.03);border:1px solid rgba(224,168,124,.2);color:var(--bone-100);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
               </div>
             </div>
           </div>
@@ -464,46 +482,46 @@
 
         <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
           <div style="animation:maStepIn .45s cubic-bezier(.16,1,.3,1) both;">
-            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.28;text-transform:uppercase;color:#f1e7d7;margin:0 0 10px;">Hvordan får jeg fat på dig?</h2>
-            <p style="margin:0 0 24px;font-size:16px;line-height:1.62;color:#ab9c87;">Jeg bruger kun dine oplysninger til at svare på din henvendelse.</p>
+            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(21px,2.4vw,27px);line-height:1.28;text-transform:uppercase;color:var(--bone-050);margin:0 0 10px;">Hvordan får jeg fat på dig?</h2>
+            <p style="margin:0 0 24px;font-size:16px;line-height:1.62;color:var(--n-400);">Jeg bruger kun dine oplysninger til at svare på din henvendelse.</p>
             <div style="display:flex;flex-direction:column;gap:18px;">
               <div style="display:flex;flex-wrap:wrap;gap:14px;">
                 <div style="flex:1 1 200px;display:flex;flex-direction:column;gap:9px;">
-                  <label for="navn" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c79064;">Navn</label>
-                  <input ref="{{ nameRef }}" id="navn" name="navn" onInput="{{ onName }}" type="text" required="" autocomplete="name" placeholder="Dit navn" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.2);color:#f0e6d6;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
+                  <label for="navn" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-250-text);">Navn</label>
+                  <input ref="{{ nameRef }}" id="navn" name="navn" onInput="{{ onName }}" type="text" required="" autocomplete="name" placeholder="Dit navn" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(var(--glass-rgb),.03);border:1px solid rgba(224,168,124,.2);color:var(--bone-100);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
                 </div>
                 <div style="flex:1 1 200px;display:flex;flex-direction:column;gap:9px;">
-                  <label for="email" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c79064;">E-mail</label>
-                  <input ref="{{ mailRef }}" id="email" name="email" onInput="{{ onMail }}" type="email" required="" autocomplete="email" placeholder="din@mail.dk" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.2);color:#f0e6d6;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
+                  <label for="email" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-250-text);">E-mail</label>
+                  <input ref="{{ mailRef }}" id="email" name="email" onInput="{{ onMail }}" type="email" required="" autocomplete="email" placeholder="din@mail.dk" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(var(--glass-rgb),.03);border:1px solid rgba(224,168,124,.2);color:var(--bone-100);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
                 </div>
               </div>
               <div style="display:flex;flex-direction:column;gap:9px;">
-                <label for="telefon" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c79064;">Telefon <span style="font-weight:600;letter-spacing:.08em;color:#8c7e6b;">(valgfrit)</span></label>
-                <input ref="{{ phoneRef }}" id="telefon" name="telefon" onInput="{{ onPhone }}" type="tel" autocomplete="tel" placeholder="Kun hvis du helst vil ringes op" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(224,168,124,.2);color:#f0e6d6;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
+                <label for="telefon" style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper-250-text);">Telefon <span style="font-weight:600;letter-spacing:.08em;color:var(--n-600);">(valgfrit)</span></label>
+                <input ref="{{ phoneRef }}" id="telefon" name="telefon" onInput="{{ onPhone }}" type="tel" autocomplete="tel" placeholder="Kun hvis du helst vil ringes op" style="width:100%;min-height:52px;padding:15px 17px;border-radius:14px;background:rgba(var(--glass-rgb),.03);border:1px solid rgba(224,168,124,.2);color:var(--bone-100);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16.5px;" style-focus="outline:2px solid #cf8a4f;outline-offset:1px;border-color:rgba(224,168,124,.44);">
               </div>
-              <label style="display:flex;gap:13px;align-items:flex-start;padding:18px 19px;border-radius:16px;background:rgba(255,255,255,.025);border:1px solid rgba(224,168,124,.16);cursor:pointer;">
+              <label style="display:flex;gap:13px;align-items:flex-start;padding:18px 19px;border-radius:16px;background:rgba(var(--glass-rgb),.025);border:1px solid rgba(224,168,124,.16);cursor:pointer;">
                 <input ref="{{ consentRef }}" id="samtykke" name="samtykke" onChange="{{ onConsent }}" type="checkbox" required="" style="flex-shrink:0;width:22px;height:22px;margin-top:1px;accent-color:#cf8a4f;cursor:pointer;" style-focus-visible="outline:2px solid #cf8a4f;outline-offset:2px;">
-                <span style="font-size:15.5px;line-height:1.6;color:#bcae99;">Jeg accepterer, at Mike må kontakte mig om min henvendelse og behandle mine oplysninger som beskrevet i <a href="privatliv.dc.html">privatlivspolitikken</a>.</span>
+                <span style="font-size:15.5px;line-height:1.6;color:var(--n-300);">Jeg accepterer, at Mike må kontakte mig om min henvendelse og behandle mine oplysninger som beskrevet i <a href="privatliv.dc.html">privatlivspolitikken</a>.</span>
               </label>
-              <p style="margin:0;font-size:14px;line-height:1.65;color:#8c7e6b;">{{ healthNotice }}</p>
+              <p style="margin:0;font-size:14px;line-height:1.65;color:var(--n-600);">{{ healthNotice }}</p>
             </div>
           </div>
         </sc-if>
 
         <sc-if value="{{ isDone }}" hint-placeholder-val="{{ false }}">
           <div style="animation:maCheck .5s cubic-bezier(.16,1,.3,1) both;">
-            <span aria-hidden="true" style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;display:inline-flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;margin-bottom:24px;box-shadow:0 16px 36px -14px rgba(196,127,71,.8);">✓</span>
-            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);line-height:1.26;text-transform:uppercase;color:#f1e7d7;margin:0 0 14px;">{{ doneHeading }}</h2>
-            <p style="margin:0 0 24px;font-size:16.5px;line-height:1.65;color:#ab9c87;">{{ doneIntro }}</p>
+            <span aria-hidden="true" style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:var(--ink-650);display:inline-flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;margin-bottom:24px;box-shadow:0 16px 36px -14px rgba(196,127,71,.8);">✓</span>
+            <h2 style="font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);line-height:1.26;text-transform:uppercase;color:var(--bone-050);margin:0 0 14px;">{{ doneHeading }}</h2>
+            <p style="margin:0 0 24px;font-size:16.5px;line-height:1.65;color:var(--n-400);">{{ doneIntro }}</p>
 
             <sc-if value="{{ showSummary }}" hint-placeholder-val="{{ false }}">
               <div data-bronze="" style="padding:22px 24px;border-radius:18px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);margin-bottom:24px;">
-                <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#c79064;margin-bottom:16px;">Dine svar</div>
+                <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper-250-text);margin-bottom:16px;">Dine svar</div>
                 <dl style="margin:0;display:flex;flex-direction:column;gap:14px;">
                   <sc-for list="{{ summaryRows }}" as="row" hint-placeholder-count="3">
                     <div style="display:flex;flex-wrap:wrap;gap:6px 20px;">
-                      <dt style="flex:0 0 120px;font-size:14px;color:#8c7e6b;">{{ row.label }}</dt>
-                      <dd style="flex:1 1 200px;margin:0;font-size:16px;line-height:1.6;color:#e7dccb;">{{ row.value }}</dd>
+                      <dt style="flex:0 0 120px;font-size:14px;color:var(--n-600);">{{ row.label }}</dt>
+                      <dd style="flex:1 1 200px;margin:0;font-size:16px;line-height:1.6;color:var(--bone-300);">{{ row.value }}</dd>
                     </div>
                   </sc-for>
                 </dl>
@@ -514,16 +532,16 @@
               <!-- Mailto-linket bærer kun et emne. Navn, e-mail og alt om
                    helbred holdes ude af URL'en. -->
               <sc-if value="{{ showMailtoCta }}" hint-placeholder-val="{{ false }}">
-                <a href="{{ mailtoHref }}" onClick="{{ onMailto }}" style="display:inline-flex;align-items:center;gap:10px;padding:18px 26px;border-radius:15px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:#1c1107;text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 14px 34px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">{{ mailtoLabel }}<span aria-hidden="true" style="font-size:16px;line-height:0;">→</span></a>
+                <a href="{{ mailtoHref }}" onClick="{{ onMailto }}" style="display:inline-flex;align-items:center;gap:10px;padding:18px 26px;border-radius:15px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);color:var(--ink-650);text-decoration:none;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 14px 34px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">{{ mailtoLabel }}<span aria-hidden="true" style="font-size:16px;line-height:0;">→</span></a>
               </sc-if>
               <sc-if value="{{ showCopyCta }}" hint-placeholder-val="{{ false }}">
-                <button type="button" onClick="{{ copySummary }}" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:18px 26px;border-radius:15px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);border:0;color:#1c1107;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">{{ copyLabel }}</button>
+                <button type="button" onClick="{{ copySummary }}" style="display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:18px 26px;border-radius:15px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);border:0;color:var(--ink-650);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">{{ copyLabel }}</button>
               </sc-if>
               <a href="https://ezme.io/c/XuD/fqVF" target="_blank" rel="noopener noreferrer" class="ma-book ma-book--direkte" aria-label="Book en online konsultation direkte i EmCares bookingportal — åbner i et nyt vindue"><span aria-hidden="true" style="display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"></rect><path d="M8 2.5v4M16 2.5v4M3 10h18"></path><path d="m8.6 14.6 2.2 2.2 4.4-4.4"></path></svg></span><span>Book online konsultation</span><span aria-hidden="true" style="font-size:15px;line-height:0;">↗</span></a>
-              <button type="button" onClick="{{ restart }}" style="display:inline-flex;align-items:center;gap:9px;min-height:52px;padding:17px 22px;border-radius:15px;background:rgba(255,255,255,.035);border:1px solid rgba(224,168,124,.28);color:#e8d4bf;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="border-color:rgba(243,199,155,.6);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ restartLabel }}</button>
+              <button type="button" onClick="{{ restart }}" style="display:inline-flex;align-items:center;gap:9px;min-height:52px;padding:17px 22px;border-radius:15px;background:rgba(var(--glass-rgb),.035);border:1px solid rgba(224,168,124,.28);color:var(--bone-250);font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,transform .3s cubic-bezier(.22,.61,.36,1);" style-hover="border-color:rgba(243,199,155,.6);transform:translateY(-2px);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ restartLabel }}</button>
             </div>
             <sc-if value="{{ hasDoneNote }}" hint-placeholder-val="{{ false }}">
-              <p style="margin:20px 0 0;font-size:14px;line-height:1.65;color:#8c7e6b;">{{ doneNote }}</p>
+              <p style="margin:20px 0 0;font-size:14px;line-height:1.65;color:var(--n-600);">{{ doneNote }}</p>
             </sc-if>
           </div>
         </sc-if>
@@ -531,25 +549,25 @@
         <!-- Én fælles statuslinje: fejl læses op med det samme (assertive),
              kvitteringer høfligt (polite). -->
         <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
-          <p id="formular-fejl" role="alert" style="margin:20px 0 0;padding:14px 16px;border-radius:12px;background:rgba(207,138,79,.1);border:1px solid rgba(224,168,124,.34);font-size:15px;line-height:1.55;color:#f3c79b;">{{ errorText }}</p>
+          <p id="formular-fejl" role="alert" style="margin:20px 0 0;padding:14px 16px;border-radius:12px;background:rgba(207,138,79,.1);border:1px solid rgba(224,168,124,.34);font-size:15px;line-height:1.55;color:var(--champagne-150-text);">{{ errorText }}</p>
         </sc-if>
         <p aria-live="polite" role="status" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">{{ statusText }}</p>
 
         <sc-if value="{{ showControls }}" hint-placeholder-val="{{ true }}">
           <div style="margin-top:28px;padding-top:24px;border-top:1px solid rgba(224,168,124,.14);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
             <sc-if value="{{ canGoBack }}" hint-placeholder-val="{{ false }}">
-              <button type="button" onClick="{{ back }}" style="display:inline-flex;align-items:center;gap:9px;min-height:52px;padding:16px 20px;border-radius:15px;background:transparent;border:1px solid rgba(224,168,124,.22);color:#bcae99;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,color .3s;" style-hover="border-color:rgba(224,168,124,.5);color:#f0e6d6;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;"><span aria-hidden="true" style="font-size:15px;line-height:0;">←</span>Tilbage</button>
+              <button type="button" onClick="{{ back }}" style="display:inline-flex;align-items:center;gap:9px;min-height:52px;padding:16px 20px;border-radius:15px;background:transparent;border:1px solid rgba(224,168,124,.22);color:var(--n-300);font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:border-color .3s,color .3s;" style-hover="border-color:rgba(224,168,124,.5);color:var(--bone-100);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;"><span aria-hidden="true" style="font-size:15px;line-height:0;">←</span>Tilbage</button>
             </sc-if>
-            <button type="submit" disabled="{{ isSending }}" style="margin-left:auto;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:18px 26px;border-radius:15px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);border:0;color:#1c1107;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">{{ nextLabel }}<span aria-hidden="true" style="font-size:16px;line-height:0;">→</span></button>
+            <button type="submit" disabled="{{ isSending }}" style="margin-left:auto;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:18px 26px;border-radius:15px;background:linear-gradient(135deg,#f5c693,#c98049 55%,#a5612f);border:0;color:var(--ink-650);font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 34px -12px rgba(196,127,71,.7),inset 0 1px 0 rgba(255,255,255,.5);transition:transform .35s cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-3px);" style-focus="outline:2px solid #f3c79b;outline-offset:3px;">{{ nextLabel }}<span aria-hidden="true" style="font-size:16px;line-height:0;">→</span></button>
           </div>
         </sc-if>
         </form>
       </div>
 
       <aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px;">
-        <div data-reveal="0" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(165deg,rgba(47,111,174,.16),rgba(255,255,255,.012));border:1px solid rgba(126,178,232,.34);">
+        <div data-reveal="0" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(165deg,rgba(47,111,174,.16),rgba(var(--glass-rgb),.012));border:1px solid rgba(126,178,232,.34);">
           <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8fbde9;margin-bottom:14px;">Book online konsultation</div>
-          <p style="margin:0 0 18px;font-size:15.5px;line-height:1.62;color:#ab9c87;">Ved du allerede, hvad du vil? Knappen går direkte til EmCares bookingportal, hvor du vælger en ledig tid til en online konsultation hos mig.</p>
+          <p style="margin:0 0 18px;font-size:15.5px;line-height:1.62;color:var(--n-400);">Ved du allerede, hvad du vil? Knappen går direkte til EmCares bookingportal, hvor du vælger en ledig tid til en online konsultation hos mig.</p>
           <a href="https://ezme.io/c/XuD/fqVF" target="_blank" rel="noopener noreferrer" class="ma-book ma-book--direkte ma-book--fuld" aria-label="Book en online konsultation direkte i EmCares bookingportal — åbner i et nyt vindue"><span aria-hidden="true" style="display:inline-flex;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"></rect><path d="M8 2.5v4M16 2.5v4M3 10h18"></path><path d="m8.6 14.6 2.2 2.2 4.4-4.4"></path></svg></span><span>Book online konsultation</span><span aria-hidden="true" style="font-size:15px;line-height:0;">↗</span></a>
         </div>
 
@@ -557,36 +575,36 @@
              site-config.js. Er ingen udfyldt, står formularen alene. -->
         <sc-if value="{{ hasDirectContact }}" hint-placeholder-val="{{ false }}">
           <div data-bronze="" data-reveal="60" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(160deg,#f5c693,#cd8450 55%,#b87340);border:1px solid rgba(224,168,124,.16);">
-            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:18px;">Direkte kontakt</div>
+            <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper-250-text);margin-bottom:18px;">Direkte kontakt</div>
             <div style="display:flex;flex-direction:column;gap:12px;">
               <sc-if value="{{ hasEmail }}" hint-placeholder-val="{{ false }}">
-                <a href="{{ emailHref }}" style="font-size:16px;color:#e0a877;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ email }}</a>
+                <a href="{{ emailHref }}" style="font-size:16px;color:var(--copper-150-text);text-decoration:none;" style-hover="color:var(--champagne-150-text);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ email }}</a>
               </sc-if>
               <sc-if value="{{ hasPhone }}" hint-placeholder-val="{{ false }}">
-                <a href="{{ phoneHref }}" style="font-size:16px;color:#bcae99;text-decoration:none;" style-hover="color:#f3c79b;" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ phoneLabel }}</a>
+                <a href="{{ phoneHref }}" style="font-size:16px;color:var(--n-300);text-decoration:none;" style-hover="color:var(--champagne-150-text);" style-focus="outline:2px solid #cf8a4f;outline-offset:3px;">{{ phoneLabel }}</a>
               </sc-if>
               <sc-if value="{{ hasArea }}" hint-placeholder-val="{{ false }}">
-                <span style="font-size:15.5px;color:#8c7e6b;">{{ area }}</span>
+                <span style="font-size:15.5px;color:var(--n-600);">{{ area }}</span>
               </sc-if>
               <sc-if value="{{ hasResponseTime }}" hint-placeholder-val="{{ false }}">
-                <span style="font-size:14.5px;color:#8c7e6b;">Svartid: {{ responseTime }}</span>
+                <span style="font-size:14.5px;color:var(--n-600);">Svartid: {{ responseTime }}</span>
               </sc-if>
             </div>
           </div>
         </sc-if>
 
-        <div data-reveal="120" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:rgba(255,255,255,.02);border:1px solid rgba(224,168,124,.14);">
-          <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#c79064;margin-bottom:16px;">Hvad der sker bagefter</div>
+        <div data-reveal="120" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:rgba(var(--glass-rgb),.02);border:1px solid rgba(224,168,124,.14);">
+          <div style="font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper-250-text);margin-bottom:16px;">Hvad der sker bagefter</div>
           <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;counter-reset:ma;">
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:#ab9c87;"><span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.14);color:#e0a877;display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11.5px;">1</span>Jeg læser dine svar.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:#ab9c87;"><span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.14);color:#e0a877;display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11.5px;">2</span>Vi aftaler en tid til en kort samtale.</li>
-            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:#ab9c87;"><span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.14);color:#e0a877;display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11.5px;">3</span>Du beslutter, om du vil videre.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--n-400);"><span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.14);color:var(--copper-150-text);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11.5px;">1</span>Jeg læser dine svar.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--n-400);"><span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.14);color:var(--copper-150-text);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11.5px;">2</span>Vi aftaler en tid til en kort samtale.</li>
+            <li style="display:flex;gap:12px;font-size:15.5px;line-height:1.6;color:var(--n-400);"><span aria-hidden="true" style="flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(207,138,79,.14);color:var(--copper-150-text);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:700;font-size:11.5px;">3</span>Du beslutter, om du vil videre.</li>
           </ol>
         </div>
 
-        <div data-reveal="180" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(165deg,rgba(207,138,79,.1),rgba(255,255,255,.012));border:1px solid rgba(224,168,124,.3);">
+        <div data-reveal="180" style="padding:clamp(22px,2.4vw,28px);border-radius:22px;background:linear-gradient(165deg,rgba(207,138,79,.1),rgba(var(--glass-rgb),.012));border:1px solid rgba(224,168,124,.3);">
           <div style="display:flex;gap:13px;align-items:flex-start;">
-            <span aria-hidden="true" style="flex-shrink:0;width:28px;height:28px;border-radius:9px;background:rgba(207,138,79,.18);color:#f3c79b;display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:15px;">!</span>
+            <span aria-hidden="true" style="flex-shrink:0;width:28px;height:28px;border-radius:9px;background:rgba(207,138,79,.18);color:var(--champagne-150-text);display:inline-flex;align-items:center;justify-content:center;font-family:'Archivo',system-ui,sans-serif;font-weight:800;font-size:15px;">!</span>
             <p style="margin:0;font-size:15px;line-height:1.65;color:#d8c7b1;">Ved akutte, kraftige eller forværrede symptomer skal du kontakte egen læge, vagtlæge eller 112 — ikke denne formular.</p>
           </div>
         </div>

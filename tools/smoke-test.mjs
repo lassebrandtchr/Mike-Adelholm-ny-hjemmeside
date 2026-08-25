@@ -317,7 +317,7 @@ for (const [path, w] of [['index.html', 1280], ['index.html', 375], ['index.html
   await page.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
   await page.waitForSelector('#dc-root main');
   const closed = await page.locator('#dc-root a:visible').count();
-  await page.locator('#dc-root header button').first().click();
+  await page.locator('#dc-root header button[aria-label="Åbn menu"]').click();
   await page.waitForTimeout(500);
   const open = await page.locator('#dc-root a:visible').count();
   if (open <= closed) fail('mobilnav', 'burgermenuen åbnede ikke');

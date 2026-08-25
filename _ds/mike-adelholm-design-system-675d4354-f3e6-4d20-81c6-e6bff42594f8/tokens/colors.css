@@ -3,14 +3,27 @@
 
   /* ── Ground: sort → varm nærsort ── */
   --ink-1000:#000000;      /* hero-baggrund, dybeste lag */
+  --ink-975:#0a0603;
   --ink-950:#080706;       /* sidens standardbaggrund */
+  --ink-925:#150d05;
   --ink-900:#0b0907;
   --ink-850:#0d0a07;       /* kortbund, nedre stop */
+  --ink-825:#2b1a0e;
   --ink-800:#16110c;
+  --ink-775:#1f1810;
   --ink-750:#1a140e;       /* kortbund, øvre stop */
   --ink-700:#1c150e;
-  --ink-650:#1c1107;       /* tekst PÅ kobber */
+  --ink-650:#1c1107;       /* tekst PÅ kobber — uændret i lyst tema, står altid på kobberpladen */
   --ink-600:#2a2018;
+
+  /* RGB-tripler til rgba(var(--x),alpha) — bruges hvor kildefilerne har
+     hårdkodet rgba(8,7,6,…) direkte (glød/vignet/scrim-lag), så alfaværdien
+     kan blive stående uændret, mens selve farven skifter med temaet. */
+  --ink-950-rgb:8,7,6;
+  /* "Glas"-overlays: kortenes svage rgba(255,255,255,alpha)-baggrunde. På
+     mørk bund er det en hvid vask; på lys bund bliver den til en varm,
+     mørk vask i stedet — samme opskrift, spejlvendt. */
+  --glass-rgb:255,255,255;
 
   /* ── Kobber/bronze: mærkets metal ── */
   --copper-700:#7a5c44;
@@ -102,7 +115,19 @@
   --accent-hover:var(--champagne-100);
   --accent-soft:var(--copper-150);
   --link:var(--copper-150);
-  --link-hover:var(--champagne-100);
+  --link-hover:var(--champagne-150);
+
+  /* "Tekst"-udgaver af de lyse kobber/champagne-toner: samme farve som
+     resten af mærkets metal på mørk bund, men de skal kunne blive dybere i
+     lyst tema, uden at ændre de samme toners brug som ikon/kant/baggrund
+     andre steder. Kun brugt hvor kobber/champagne står som løbende tekst. */
+  --copper-150-text:var(--copper-150);
+  --copper-250-text:var(--copper-250);
+  --champagne-150-text:var(--champagne-150);
+  /* Samme idé for Styrke (blå) og Smerter (grøn) — deres øjenbryns-labels
+     bruger korttemaets blå/grønne accentfarve direkte som tekst. */
+  --blue-accent-text:#5b93cf;
+  --green-accent-text:#4fa87c;
 
   --border-card:var(--line-copper-16);
   --border-card-hover:var(--line-copper-34);
@@ -142,3 +167,100 @@
   --grad-banner:var(--grad-strip);
   --grad-gold:var(--grad-cta);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   LYST TEMA
+   Slås til med <html data-theme="light">. Kun grundtonerne (ink/bone/n) og
+   kantfarverne skifter — selve kobber/bronze/champagne-paletten ("den
+   flotte bronzefarve") og logoet er identiske i begge temaer. ink-650
+   ("tekst PÅ kobber") skifter heller ikke: den tekst står altid på
+   kobberpladen, uanset sidens tema.
+   ═══════════════════════════════════════════════════════════════════════ */
+:root[data-theme="light"]{
+  color-scheme:light;
+
+  /* ── Ground: sort-skalaen bliver til en varm sandhvid skala ── */
+  --ink-1000:#ffffff;
+  --ink-975:#fffdf9;
+  --ink-950:#faf6ee;       /* sidens standardbaggrund */
+  --ink-925:#f6efe1;
+  --ink-900:#f7f0e2;
+  --ink-850:#f3ebdc;       /* kortbund, nedre stop */
+  --ink-825:#f0e4cf;
+  --ink-800:#ecdec5;
+  --ink-775:#e9d9bd;
+  --ink-750:#fbf8f3;       /* kortbund, øvre stop */
+  --ink-700:#e4d2b3;
+  --ink-600:#dcc9a8;
+
+  --ink-950-rgb:250,246,238;
+  --glass-rgb:28,17,7;
+
+  /* ── Bone: var lys tekst på sort — bliver til mørk, varm tekst på lys ── */
+  --bone-000:#1e1608;
+  --bone-050:#221a0b;
+  --bone-100:#261d0d;
+  --bone-150:#2c2313;
+  --bone-200:#362a17;
+  --bone-250:#40331d;
+  --bone-300:#3c2f1a;
+  --bone-350:#4c3b22;
+  --bone-400:#54432c;
+  --bone-450:#5c4a34;
+
+  /* ── Dæmpede toner: samme rolle, spejlvendt lysstyrke ── */
+  --n-100:#47392a;
+  --n-200:#4d3f2e;
+  --n-300:#544433;
+  --n-350:#584735;
+  --n-400:#5c4b38;
+  --n-450:#63513d;
+  --n-500:#695642;
+  --n-550:#6d5a45;
+  --n-600:#5a4a37;         /* mørkeste tone med AA (4.5:1) på ny standardbaggrund */
+  --n-700:#8a7860;         /* stadig kun dekoration, ikke tekst */
+  --n-800:#9a8870;
+  --n-900:#a89680;
+
+  /* ── Hårstreger: mørkere kobbertone, så linjen ses på lys bund ── */
+  --line-copper-10:rgba(122,92,68,.14);
+  --line-copper-16:rgba(122,92,68,.20);
+  --line-copper-18:rgba(122,92,68,.22);
+  --line-copper-22:rgba(122,92,68,.28);
+  --line-copper-30:rgba(122,92,68,.36);
+  --line-copper-34:rgba(122,92,68,.42);
+  --line-bone-035:rgba(28,17,7,.06);
+  --line-bone-06:rgba(28,17,7,.10);
+
+  /* ── Wash: samme opskrift, ink-tonet i stedet for hvid ── */
+  --wash-bone-012:rgba(28,17,7,.02);
+  --wash-bone-03:rgba(28,17,7,.045);
+  --wash-bone-035:rgba(28,17,7,.05);
+  --wash-bone-05:rgba(28,17,7,.07);
+
+  /* ── Kobber/champagne som løbende tekst: skal dybere for at holde
+       kontrasten på lys bund. Selve kobber/champagne-tonerne (ikoner,
+       kanter, baggrunde, CTA-gradient) er urørte. ── */
+  --copper-150-text:#8c5429;
+  --copper-250-text:#7a5c44;
+  --champagne-150-text:#6b4020;
+  --text-eyebrow:#7a5c44;
+  --link:#8c5429;
+  --link-hover:#6b4020;
+  --blue-accent-text:#1c3f8a;
+  --green-accent-text:#0a5c3d;
+}
+
+/* Temaknappens to tilstande (SiteNav): begge ligger altid i DOM'et, CSS
+   afgør hvilken der vises — så knappen virker uden en ekstra React-render.
+   data-theme-action="light" = knappen der skifter TIL lyst (vises i mørkt
+   tema); data-theme-action="dark" = omvendt. !important, fordi reglen skal
+   vinde over enhver inline display, elementerne måtte have. */
+[data-theme-action]{display:none!important}
+[data-theme-action="light"]{display:inline-flex!important}
+:root[data-theme="light"] [data-theme-action="light"]{display:none!important}
+:root[data-theme="light"] [data-theme-action="dark"]{display:inline-flex!important}
+[data-theme-action-row]{display:none!important}
+[data-theme-action-row="light"]{display:flex!important}
+:root[data-theme="light"] [data-theme-action-row="light"]{display:none!important}
+:root[data-theme="light"] [data-theme-action-row="dark"]{display:flex!important}

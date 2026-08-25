@@ -171,7 +171,7 @@
 
 .ma-book-rad{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
 .ma-book-rad--midt{justify-content:center;}
-.ma-book-note{margin:16px 0 0;font-size:14.5px;line-height:1.6;color:#8c7e6b;}
+.ma-book-note{margin:16px 0 0;font-size:14.5px;line-height:1.6;color:var(--n-600);}
 .ma-book-rad--midt + .ma-book-note{text-align:center;}
 
 /* Under 480px står knapperne bedst i fuld bredde under hinanden — dokkens
