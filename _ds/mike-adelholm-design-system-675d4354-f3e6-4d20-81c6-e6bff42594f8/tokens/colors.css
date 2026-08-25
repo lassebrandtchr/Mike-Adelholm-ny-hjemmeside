@@ -24,6 +24,14 @@
      mørk bund er det en hvid vask; på lys bund bliver den til en varm,
      mørk vask i stedet — samme opskrift, spejlvendt. */
   --glass-rgb:255,255,255;
+  /* Faste scrim/vignet-lag ovenpå Higgsfield-billederne (billedbånd + de
+     mindre kort-fotos). Disse fotos er mørk, atmosfærisk stemningsfotografi
+     og skal altid tones ned med et mørkt lag — IKKE --ink-950-rgb, som i
+     lyst tema bliver næsten hvid og lægger en hvid "tåge" hen over billedet
+     i stedet for at dæmpe det. Sættes bevidst ikke i det lyse temas
+     :root[data-theme="light"]-blok herunder, så den forbliver mørk uanset
+     tema. */
+  --photo-scrim-rgb:8,7,6;
 
   /* ── Kobber/bronze: mærkets metal ── */
   --copper-700:#7a5c44;
